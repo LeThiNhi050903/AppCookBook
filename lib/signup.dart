@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
+  late TextEditingController _usernameController;
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
   bool _obscurePassword = true;
@@ -17,29 +18,31 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
+    _usernameController = TextEditingController();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
   }
 
   @override
   void dispose() {
+    _usernameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
 
-  void _login() {
+  void _signup() {
     setState(() {
       _isLoading = true;
     });
-    // Simulate login process
+    // Simulate signup process
     Future.delayed(const Duration(seconds: 2), () {
       if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Login successful!')),
+        const SnackBar(content: Text('Đăng ký thành công !')),
       );
     });
   }
@@ -69,43 +72,35 @@ class _LoginPageState extends State<LoginPage> {
                 child: IntrinsicHeight(
                   child: Column(
                     children: [
-                      Spacer(flex: 2),
+                      Spacer(flex: 1),
                       _buildLogoSection(size: logoSize),
                       SizedBox(height: gapMedium),
                       _buildInputField(
-                        controller: _emailController,
+                        controller: _usernameController,
                         hintText: 'User name or email address',
                         prefixIcon: Icons.person_outline,
+                        keyboardType: TextInputType.text,
+                        width: fieldWidth,
+                      ),
+                      SizedBox(height: gapSmall),
+                      _buildInputField(
+                        controller: _emailController,
+                        hintText: 'Email',
+                        prefixIcon: Icons.email_outlined,
                         keyboardType: TextInputType.emailAddress,
                         width: fieldWidth,
                       ),
                       SizedBox(height: gapSmall),
                       _buildPasswordField(width: fieldWidth),
                       SizedBox(height: gapMedium),
-                      _buildLoginButton(width: fieldWidth),
-                      SizedBox(height: gapSmall),
-                      GestureDetector(
-                        onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Forgot password clicked')),
-                          );
-                        },
-                        child: const Text(
-                          'Quên mật khẩu?',
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontSize: 14,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
+                      _buildSignupButton(width: fieldWidth),
                       SizedBox(height: gapSmall),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const Text(
-                            "Chưa có tài khoản? ",
+                            'Đã có tài khoản? ',
                             style: TextStyle(
                               color: Colors.black87,
                               fontSize: 14,
@@ -114,11 +109,11 @@ class _LoginPageState extends State<LoginPage> {
                           GestureDetector(
                             onTap: () {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Sign up clicked')),
+                                const SnackBar(content: Text('Sign in clicked')),
                               );
                             },
                             child: const Text(
-                              'Đăng ký',
+                              'Đăng nhập',
                               style: TextStyle(
                                 color: Color(0xFFFFA500),
                                 fontSize: 14,
@@ -128,11 +123,11 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ],
                       ),
-                      Spacer(flex: 1),
+                      SizedBox(height: gapMedium),
                       _buildDividerWithText(),
                       SizedBox(height: gapMedium),
                       _buildSocialLoginButtons(maxWidth: fieldWidth),
-                      Spacer(flex: 3),
+                      Spacer(flex: 2),
                     ],
                   ),
                 ),
@@ -256,12 +251,12 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildLoginButton({double? width}) {
+  Widget _buildSignupButton({double? width}) {
     return SizedBox(
       width: width ?? 150,
       height: 48,
       child: ElevatedButton(
-        onPressed: _isLoading ? null : _login,
+        onPressed: _isLoading ? null : _signup,
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFFFA500),
           disabledBackgroundColor: Colors.grey[400],
@@ -280,14 +275,19 @@ class _LoginPageState extends State<LoginPage> {
                   strokeWidth: 2,
                 ),
               )
-            : const Text(
-                'ĐĂNG NHẬP',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  letterSpacing: 1,
-                ),
+            : const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'ĐĂNG KÝ',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
               ),
       ),
     );
@@ -305,7 +305,7 @@ class _LoginPageState extends State<LoginPage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
-            'HOẶC',
+            'Hoặc',
             style: TextStyle(
               color: Colors.grey[600],
               fontSize: 12,
@@ -335,7 +335,7 @@ class _LoginPageState extends State<LoginPage> {
             backgroundColor: const Color(0xFF1877F2),
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Facebook login clicked')),
+                const SnackBar(content: Text('Facebook signup clicked')),
               );
             },
           ),
@@ -344,7 +344,7 @@ class _LoginPageState extends State<LoginPage> {
             backgroundColor: const Color(0xFFEA4335),
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Google login clicked')),
+                const SnackBar(content: Text('Google signup clicked')),
               );
             },
           ),
