@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'signup.dart';
+import 'home.dart';
+import 'forgotpass.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -28,20 +32,53 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  void _login() {
+  Future<void> _login() async {
+    String email = _emailController.text.trim();
+    String password = _passwordController.text.trim();
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Vui lòng nhập email và mật khẩu")),
+      );
+      return;
+    }
     setState(() {
       _isLoading = true;
     });
-    // Simulate login process
-    Future.delayed(const Duration(seconds: 2), () {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Login successful!')),
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
       );
-    });
+
+    } on FirebaseAuthException catch (e) {
+      String message = "Đăng nhập thất bại";
+      if (e.code == 'user-not-found') {
+        message = "Không tìm thấy tài khoản";
+      } 
+      else if (e.code == 'wrong-password') {
+        message = "Sai mật khẩu";
+      } 
+      else if (e.code == 'invalid-email') {
+        message = "Email không hợp lệ";
+      }
+      setState(() {
+        _isLoading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)),
+      );
+    }
   }
 
   @override
@@ -55,11 +92,8 @@ class _LoginPageState extends State<LoginPage> {
             final h = constraints.maxHeight;
             final logoSize = w * 0.5;
             final fieldWidth = w * 0.85;
-            // vertical gaps use small fractions so they shrink on short screens
             final gapSmall = h * 0.015;
             final gapMedium = h * 0.025;
-
-            // wrapper allows content to scroll when keyboard is present
             return SingleChildScrollView(
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -69,13 +103,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: IntrinsicHeight(
                   child: Column(
                     children: [
-                      Spacer(flex: 2),
+                      const Spacer(flex: 2),
                       _buildLogoSection(size: logoSize),
                       SizedBox(height: gapMedium),
                       _buildInputField(
                         controller: _emailController,
-                        hintText: 'User name or email address',
-                        prefixIcon: Icons.person_outline,
+                        hintText: 'Email',
+                        prefixIcon: Icons.email_outlined,
                         keyboardType: TextInputType.emailAddress,
                         width: fieldWidth,
                       ),
@@ -84,10 +118,14 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: gapMedium),
                       _buildLoginButton(width: fieldWidth),
                       SizedBox(height: gapSmall),
+
                       GestureDetector(
                         onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Forgot password clicked')),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ForgotPasswordPage(),
+                            ),
                           );
                         },
                         child: const Text(
@@ -102,7 +140,6 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: gapSmall),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
                         children: [
                           const Text(
                             "Chưa có tài khoản? ",
@@ -113,8 +150,11 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Sign up clicked')),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignupPage(),
+                                ),
                               );
                             },
                             child: const Text(
@@ -128,11 +168,11 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ],
                       ),
-                      Spacer(flex: 1),
+                      const Spacer(flex: 1),
                       _buildDividerWithText(),
                       SizedBox(height: gapMedium),
                       _buildSocialLoginButtons(maxWidth: fieldWidth),
-                      Spacer(flex: 3),
+                      const Spacer(flex: 3),
                     ],
                   ),
                 ),
@@ -145,7 +185,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buildLogoSection({double? size}) {
-    // size is the width/height to use for the logo; defaults to 240
     final logoDim = size ?? 240;
     return Column(
       children: [
@@ -167,7 +206,6 @@ class _LoginPageState extends State<LoginPage> {
     TextInputType keyboardType = TextInputType.text,
     double? width,
   }) {
-    // match Figma style: light border, white background, no heavy shadow
     return SizedBox(
       width: width ?? 150,
       child: TextField(
@@ -175,31 +213,9 @@ class _LoginPageState extends State<LoginPage> {
         keyboardType: keyboardType,
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: const TextStyle(
-            color: Color(0xFF9E9E9E),
-            fontSize: 14,
-          ),
-          prefixIcon: Icon(
-            prefixIcon,
-            color: Colors.black,
-          ),
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 12,
-          ),
-          filled: true,
-          fillColor: Colors.white,
+          prefixIcon: Icon(prefixIcon),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(color: Colors.black),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(color: Color(0xFFFFA500), width: 1.5),
           ),
         ),
       ),
@@ -214,42 +230,21 @@ class _LoginPageState extends State<LoginPage> {
         obscureText: _obscurePassword,
         decoration: InputDecoration(
           hintText: 'Password',
-          hintStyle: const TextStyle(
-            color: Color(0xFF9E9E9E),
-            fontSize: 14,
-          ),
-          prefixIcon: const Icon(
-            Icons.lock_outline,
-            color: Colors.black,
-          ),
-          suffixIcon: GestureDetector(
-            onTap: () {
+          prefixIcon: const Icon(Icons.lock_outline),
+          suffixIcon: IconButton(
+            icon: Icon(
+              _obscurePassword
+                  ? Icons.visibility_off
+                  : Icons.visibility,
+            ),
+            onPressed: () {
               setState(() {
                 _obscurePassword = !_obscurePassword;
               });
             },
-            child: Icon(
-              _obscurePassword ? Icons.visibility_off : Icons.visibility,
-              color: const Color(0xFF9E9E9E),
-            ),
           ),
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 12,
-          ),
-          filled: true,
-          fillColor: Colors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(color: Colors.black),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: const BorderSide(color: Color(0xFFFFA500), width: 1.5),
           ),
         ),
       ),
@@ -264,29 +259,18 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: _isLoading ? null : _login,
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFFFA500),
-          disabledBackgroundColor: Colors.grey[400],
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
-          elevation: 6,
-          shadowColor: const Color(0x33000000),
         ),
         child: _isLoading
-            ? const SizedBox(
-                height: 24,
-                width: 24,
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  strokeWidth: 2,
-                ),
-              )
+            ? const CircularProgressIndicator(color: Colors.white)
             : const Text(
                 'ĐĂNG NHẬP',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
-                  letterSpacing: 1,
                 ),
               ),
       ),
@@ -296,12 +280,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildDividerWithText() {
     return Row(
       children: [
-        Expanded(
-          child: Container(
-            height: 1,
-            color: Colors.grey[300],
-          ),
-        ),
+        Expanded(child: Container(height: 1,color: Colors.grey[300])),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
@@ -309,22 +288,15 @@ class _LoginPageState extends State<LoginPage> {
             style: TextStyle(
               color: Colors.grey[600],
               fontSize: 12,
-              fontWeight: FontWeight.w500,
             ),
           ),
         ),
-        Expanded(
-          child: Container(
-            height: 1,
-            color: Colors.grey[300],
-          ),
-        ),
+        Expanded(child: Container(height: 1,color: Colors.grey[300])),
       ],
     );
   }
 
   Widget _buildSocialLoginButtons({double? maxWidth}) {
-    // constrain the row to a maximum width and distribute spacing evenly
     return SizedBox(
       width: maxWidth,
       child: Row(
@@ -335,7 +307,7 @@ class _LoginPageState extends State<LoginPage> {
             backgroundColor: const Color(0xFF1877F2),
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Facebook login clicked')),
+                const SnackBar(content: Text('Facebook signup clicked')),
               );
             },
           ),
@@ -344,7 +316,7 @@ class _LoginPageState extends State<LoginPage> {
             backgroundColor: const Color(0xFFEA4335),
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Google login clicked')),
+                const SnackBar(content: Text('Google signup clicked')),
               );
             },
           ),
@@ -362,7 +334,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // alternative implementation that uses IconData instead of asset images
   Widget _buildSocialIconButton({
     required IconData icon,
     required Color backgroundColor,

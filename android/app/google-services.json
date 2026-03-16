@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "701455481856",
+    "project_id": "appcookbook-49403",
+    "storage_bucket": "appcookbook-49403.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701455481856:android:dae5deb3361fa741e8ace5",
+        "android_client_info": {
+          "package_name": "com.example.dantn_app_cookbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701455481856-ic0rpne9e0gc5rtffkpils51k1lp3p7s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dantn_app_cookbook",
+            "certificate_hash": "803599f1afecd56695b133704f39ebc171deaf73"
+          }
+        },
+        {
+          "client_id": "701455481856-ioi9i1n44vnogtnv3761cfqhks29i1b0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc8Lavx9gHfDZqg4nSqRpGCpgQclFRr3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701455481856-ioi9i1n44vnogtnv3761cfqhks29i1b0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

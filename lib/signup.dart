@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'home.dart';
+import 'login.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -31,22 +34,70 @@ class _SignupPageState extends State<SignupPage> {
     super.dispose();
   }
 
-  void _signup() {
+  Future<void> _signup() async {
+
+    String email = _emailController.text.trim();
+    String password = _passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Vui lòng nhập đầy đủ thông tin")),
+      );
+      return;
+    }
+
+    if (password.length < 6) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Mật khẩu phải ít nhất 6 ký tự")),
+      );
+      return;
+    }
+
     setState(() {
       _isLoading = true;
     });
-    // Simulate signup process
-    Future.delayed(const Duration(seconds: 2), () {
+
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if (!mounted) return;
+      setState(() {
+        _isLoading = false;
+      });
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+      );
+
+    } on FirebaseAuthException catch (e) {
+
+      String message = "";
+      if (e.code == 'email-already-in-use') {
+        message = "Email đã tồn tại";
+      }
+      else if (e.code == 'invalid-email') {
+        message = "Email không hợp lệ";
+      }
+      else if (e.code == 'weak-password') {
+        message = "Mật khẩu quá yếu";
+      }
+      else {
+        message = e.message ?? "Đăng ký thất bại";
+      }
+
       if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Đăng ký thành công !')),
+        SnackBar(content: Text(message)),
       );
-    });
+    }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,11 +109,9 @@ class _SignupPageState extends State<SignupPage> {
             final h = constraints.maxHeight;
             final logoSize = w * 0.5;
             final fieldWidth = w * 0.85;
-            // vertical gaps use small fractions so they shrink on short screens
             final gapSmall = h * 0.015;
             final gapMedium = h * 0.025;
 
-            // wrapper allows content to scroll when keyboard is present
             return SingleChildScrollView(
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -72,12 +121,12 @@ class _SignupPageState extends State<SignupPage> {
                 child: IntrinsicHeight(
                   child: Column(
                     children: [
-                      Spacer(flex: 1),
+                      const Spacer(flex: 1),
                       _buildLogoSection(size: logoSize),
                       SizedBox(height: gapMedium),
                       _buildInputField(
                         controller: _usernameController,
-                        hintText: 'User name or email address',
+                        hintText: 'User name',
                         prefixIcon: Icons.person_outline,
                         keyboardType: TextInputType.text,
                         width: fieldWidth,
@@ -85,7 +134,7 @@ class _SignupPageState extends State<SignupPage> {
                       SizedBox(height: gapSmall),
                       _buildInputField(
                         controller: _emailController,
-                        hintText: 'Email',
+                        hintText: 'Email address',
                         prefixIcon: Icons.email_outlined,
                         keyboardType: TextInputType.emailAddress,
                         width: fieldWidth,
@@ -97,7 +146,6 @@ class _SignupPageState extends State<SignupPage> {
                       SizedBox(height: gapSmall),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
                         children: [
                           const Text(
                             'Đã có tài khoản? ',
@@ -108,8 +156,11 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Sign in clicked')),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginPage(),
+                                ),
                               );
                             },
                             child: const Text(
@@ -127,7 +178,7 @@ class _SignupPageState extends State<SignupPage> {
                       _buildDividerWithText(),
                       SizedBox(height: gapMedium),
                       _buildSocialLoginButtons(maxWidth: fieldWidth),
-                      Spacer(flex: 2),
+                      const Spacer(flex: 2),
                     ],
                   ),
                 ),
@@ -140,7 +191,6 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   Widget _buildLogoSection({double? size}) {
-    // size is the width/height to use for the logo; defaults to 240
     final logoDim = size ?? 240;
     return Column(
       children: [
@@ -162,7 +212,6 @@ class _SignupPageState extends State<SignupPage> {
     TextInputType keyboardType = TextInputType.text,
     double? width,
   }) {
-    // match Figma style: light border, white background, no heavy shadow
     return SizedBox(
       width: width ?? 150,
       child: TextField(
@@ -324,7 +373,6 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   Widget _buildSocialLoginButtons({double? maxWidth}) {
-    // constrain the row to a maximum width and distribute spacing evenly
     return SizedBox(
       width: maxWidth,
       child: Row(
@@ -362,7 +410,6 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 
-  // alternative implementation that uses IconData instead of asset images
   Widget _buildSocialIconButton({
     required IconData icon,
     required Color backgroundColor,
