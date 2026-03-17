@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'googlelogin.dart';
 import 'signup.dart';
 import 'home.dart';
 import 'forgotpass.dart';
@@ -297,12 +298,13 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buildSocialLoginButtons({double? maxWidth}) {
-    return SizedBox(
-      width: maxWidth,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          _buildSocialIconButton(
+  return SizedBox(
+    width: maxWidth,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        /// FACEBOOK
+       _buildSocialIconButton(
             icon: FontAwesomeIcons.facebookF,
             backgroundColor: const Color(0xFF1877F2),
             onTap: () {
@@ -311,28 +313,43 @@ class _LoginPageState extends State<LoginPage> {
               );
             },
           ),
-          _buildSocialIconButton(
-            icon: FontAwesomeIcons.google,
-            backgroundColor: const Color(0xFFEA4335),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Google signup clicked')),
+        /// GOOGLE
+        _buildSocialIconButton(
+          icon: FontAwesomeIcons.google,
+          backgroundColor: const Color(0xFFEA4335),
+          onTap: () async {
+            setState(() => _isLoading = true);
+            var user = await GoogleAuthService().signInWithGoogle();
+            if (!mounted) return; 
+            setState(() => _isLoading = false);
+            if (user != null) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
               );
-            },
-          ),
-          _buildSocialIconButton(
-            icon: FontAwesomeIcons.apple,
-            backgroundColor: Colors.black,
-            onTap: () {
+            } else {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Apple login clicked')),
+                const SnackBar(content: Text('Google login failed')),
               );
-            },
-          ),
-        ],
-      ),
-    );
-  }
+            }
+          },
+        ),
+        /// APPLE
+        _buildSocialIconButton(
+          icon: FontAwesomeIcons.apple,
+          backgroundColor: Colors.black,
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Apple chưa hỗ trợ')),
+            );
+          },
+        ),
+      ],
+    ),
+  );
+}
 
   Widget _buildSocialIconButton({
     required IconData icon,

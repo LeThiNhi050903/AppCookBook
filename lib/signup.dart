@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'home.dart';
 import 'login.dart';
+import 'googlelogin.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -388,14 +389,27 @@ class _SignupPageState extends State<SignupPage> {
             },
           ),
           _buildSocialIconButton(
-            icon: FontAwesomeIcons.google,
-            backgroundColor: const Color(0xFFEA4335),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Google signup clicked')),
+          icon: FontAwesomeIcons.google,
+          backgroundColor: const Color(0xFFEA4335),
+          onTap: () async {
+            setState(() => _isLoading = true);
+            var user = await GoogleAuthService().signInWithGoogle();
+            if (!mounted) return; 
+            setState(() => _isLoading = false);
+            if (user != null) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
               );
-            },
-          ),
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Google login failed')),
+              );
+            }
+          },
+        ),
           _buildSocialIconButton(
             icon: FontAwesomeIcons.apple,
             backgroundColor: Colors.black,

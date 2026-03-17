@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'login.dart';
+import 'home.dart';
+import 'googlelogin.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -13,33 +15,28 @@ class ForgotPasswordPage extends StatefulWidget {
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   final TextEditingController emailController = TextEditingController();
+  bool _isLoading = false;
 
   Future<void> handleSubmit() async {
-
     String email = emailController.text.trim();
-
     if (email.isEmpty) {
       showMessage("Vui lòng nhập email");
       return;
     }
-
     try {
-
       await FirebaseAuth.instance.sendPasswordResetEmail(
         email: email,
       );
-
+      if (!mounted) return;
       showMessage("Đã gửi email đặt lại mật khẩu");
-
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => const LoginPage(),
         ),
       );
-
     } on FirebaseAuthException catch (e) {
-
+      if (!mounted) return; 
       if (e.code == 'user-not-found') {
         showMessage("Email chưa được đăng ký");
       } else if (e.code == 'invalid-email') {
@@ -47,7 +44,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       } else {
         showMessage("Có lỗi xảy ra");
       }
-
     }
   }
 
@@ -175,9 +171,28 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           _buildSocialIconButton(
             icon: FontAwesomeIcons.google,
             backgroundColor: const Color(0xFFEA4335),
-            onTap: () {
-              showMessage("Google signup clicked");
-            },
+            onTap: () async {
+              setState(() => _isLoading = true);
+
+              var user = await GoogleAuthService().signInWithGoogle();
+
+              if (!mounted) return;
+
+              setState(() => _isLoading = false);
+
+              if (user != null) {
+                Navigator.pushReplacement(
+                  this.context, 
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                );
+              } else {
+                ScaffoldMessenger.of(this.context).showSnackBar(
+                  const SnackBar(content: Text('Google login failed')),
+                );
+              }
+            }
           ),
           _buildSocialIconButton(
             icon: FontAwesomeIcons.apple,
