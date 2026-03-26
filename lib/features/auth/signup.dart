@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'home.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../home/home.dart';
 import 'login.dart';
 import 'googlelogin.dart';
 
@@ -36,33 +37,39 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   Future<void> _signup() async {
-
+    String username = _usernameController.text.trim();
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
 
-    if (email.isEmpty || password.isEmpty) {
+    if (username.isEmpty || email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Vui lòng nhập đầy đủ thông tin")),
       );
       return;
     }
-
     if (password.length < 6) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Mật khẩu phải ít nhất 6 ký tự")),
       );
       return;
     }
-
     setState(() {
       _isLoading = true;
     });
-
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      String uid = userCredential.user!.uid;
+      await userCredential.user!.updateDisplayName(username);
+      await FirebaseFirestore.instance.collection('users').doc(uid).set({
+        'username': username,
+        'email': email,
+        'uid': uid,
+        'createdAt': Timestamp.now(),
+      });
       if (!mounted) return;
       setState(() {
         _isLoading = false;
@@ -73,23 +80,17 @@ class _SignupPageState extends State<SignupPage> {
           builder: (context) => const HomeScreen(),
         ),
       );
-
     } on FirebaseAuthException catch (e) {
-
       String message = "";
       if (e.code == 'email-already-in-use') {
         message = "Email đã tồn tại";
-      }
-      else if (e.code == 'invalid-email') {
+      } else if (e.code == 'invalid-email') {
         message = "Email không hợp lệ";
-      }
-      else if (e.code == 'weak-password') {
+      } else if (e.code == 'weak-password') {
         message = "Mật khẩu quá yếu";
-      }
-      else {
+      } else {
         message = e.message ?? "Đăng ký thất bại";
       }
-
       if (!mounted) return;
       setState(() {
         _isLoading = false;
@@ -112,7 +113,6 @@ class _SignupPageState extends State<SignupPage> {
             final fieldWidth = w * 0.85;
             final gapSmall = h * 0.015;
             final gapMedium = h * 0.025;
-
             return SingleChildScrollView(
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom,

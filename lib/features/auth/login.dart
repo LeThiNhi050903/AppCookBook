@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'googlelogin.dart';
 import 'signup.dart';
-import 'home.dart';
+import '../home/home.dart';
 import 'forgotpass.dart';
 
 class LoginPage extends StatefulWidget {
@@ -119,7 +119,6 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: gapMedium),
                       _buildLoginButton(width: fieldWidth),
                       SizedBox(height: gapSmall),
-
                       GestureDetector(
                         onTap: () {
                           Navigator.push(

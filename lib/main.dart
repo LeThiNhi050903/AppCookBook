@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'login.dart';
-import 'signup.dart';
-import 'home.dart';
-import 'forgotpass.dart';
+import 'features/auth/login.dart';
+import 'features/auth/signup.dart';
+import 'features/home/home.dart';
+import 'features/auth/forgotpass.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   runApp(const MyApp());
 }
 
