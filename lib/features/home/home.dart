@@ -4,6 +4,7 @@ import '../../core/services/local_service.dart';
 import '../../core/widgets/avatar.dart';
 import '../../core/widgets/bottomnav.dart';
 import '../../core/widgets/ai_plant_button.dart';
+import '../notification/notification_screen.dart';
 import 'tabhome.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -137,7 +138,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.notifications_none, size: 28),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationScreen(),
+                ),
+              );
+            }
           ),
         ],
       ),

@@ -128,6 +128,7 @@ class _TabHomeState extends State<TabHome> {
                   "0 Người theo dõi",
                   style: TextStyle(
                     color: Colors.white70,
+                    fontWeight: FontWeight.bold,
                     fontSize: 12,
                   ),
                 ),

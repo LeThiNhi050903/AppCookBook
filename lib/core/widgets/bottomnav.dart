@@ -9,7 +9,6 @@ class AppBottomNav extends StatelessWidget {
   });
 
   void _onItemTapped(BuildContext context, int index) {
-    if (index == currentIndex) return;
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -27,29 +26,19 @@ class AppBottomNav extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       elevation: 10,
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.grey,
       showSelectedLabels: false,
       showUnselectedLabels: false,
-      items: [
-        const BottomNavigationBarItem(
-          icon: Icon(Icons.home, size: iconSize),
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home, size: iconSize, color: Colors.black),
           label: "Home",
         ),
-        const BottomNavigationBarItem(
-          icon: Icon(
-            Icons.storage,
-            size: iconSize,
-            color: Colors.black,
-          ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.storage, size: iconSize, color: Colors.black),
           label: "Storage",
         ),
-        const BottomNavigationBarItem(
-          icon: Icon(
-            Icons.add_box_outlined,
-            size: iconSize,
-            color: Colors.black,
-          ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.add_box_outlined, size: iconSize, color: Colors.black),
           label: "Add",
         ),
       ],
