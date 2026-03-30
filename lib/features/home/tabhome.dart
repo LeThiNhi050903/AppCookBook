@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../core/widgets/avatar.dart';
+import 'package:dantn_app_cookbook/features/create_recipe/create_recipe.dart';
 
 class TabHome extends StatefulWidget {
   const TabHome({super.key}); 
@@ -75,7 +76,13 @@ class _TabHomeState extends State<TabHome> {
                       () => Navigator.pop(context)),
                   _drawerItem(Icons.storage, "Kho của bạn", () {}),
                   _drawerItem(Icons.event_note, "Kế hoạch", () {}),
-                  _drawerItem(Icons.create, "Tạo công thức", () {}),
+                  _drawerItem(Icons.create, "Tạo công thức", () {
+                    Navigator.pop(context); 
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CreateRecipeScreen()),
+                    );
+                  }),
                   _drawerItem(Icons.people, "Bạn bếp", () {}),
                   _drawerItem(Icons.settings, "Cài đặt", () {}),
                   _drawerItem(Icons.help, "Hỗ trợ", () {}),

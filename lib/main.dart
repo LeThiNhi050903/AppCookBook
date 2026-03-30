@@ -19,6 +19,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CookBook',
+      builder: (context, child) {
+        return GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus(); // ẩn bàn phím toàn app
+          },
+          child: child,
+        );
+      },
+
       initialRoute: "/login",
       routes: {
         "/login": (context) => const LoginPage(),

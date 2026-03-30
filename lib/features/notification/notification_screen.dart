@@ -52,7 +52,7 @@ class NotificationScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: const [
             AiPlantButton(),
-            AppBottomNav(currentIndex: 0), 
+            AppBottomNav(currentIndex: 1), 
           ],
         ),
       ),
