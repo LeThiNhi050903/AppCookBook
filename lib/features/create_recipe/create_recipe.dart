@@ -4,7 +4,6 @@ import 'package:image_picker/image_picker.dart';
 
 class CreateRecipeScreen extends StatefulWidget {
   const CreateRecipeScreen({super.key});
-
   @override
   State<CreateRecipeScreen> createState() => _CreateRecipeScreenState();
 }
@@ -174,8 +173,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
     );
   }
 
-  // --- TÁCH CÁC HÀM BUILD NHỎ (HÀM GỐC) ---
-
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
       backgroundColor: Colors.white, elevation: 0,
@@ -239,7 +236,13 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
           }),
           itemBuilder: (context, index) => _buildEditableRow(index, true, 0),
         ),
-        Center(child: TextButton.icon(onPressed: () => setState(() => ingredientControllers.add(TextEditingController())), icon: const Icon(Icons.add, color: Colors.black), label: const Text("Nguyên liệu", style: TextStyle(color: Colors.black)))),
+        Center(
+          child: TextButton.icon(
+            onPressed: () => setState(() => ingredientControllers.add(TextEditingController())), 
+            icon: const Icon(Icons.add, color: Colors.black), 
+            label: const Text("Nguyên liệu", style: TextStyle(color: Colors.black))
+          )
+        ),
       ],
     );
   }
