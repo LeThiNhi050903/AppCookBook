@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/ai/ai_screen.dart';
+import '../../features/plan/plan_screen.dart';
 
 class AiPlantButton extends StatelessWidget {
   const AiPlantButton({super.key});
@@ -60,7 +61,12 @@ class AiPlantButton extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   GestureDetector(
-                    onTap: () => _showMessage(context, "Calendar icon is clicked"),
+                   onTap: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => const PlanScreen())
+                    );
+                  },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 15),
                       child: Icon(Icons.calendar_today_outlined, color: Colors.black87),

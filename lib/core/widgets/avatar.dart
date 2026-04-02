@@ -6,6 +6,7 @@ class UserAvatar extends StatelessWidget {
   final VoidCallback? onTap;
   final Color backgroundColor;
   final Color textColor;
+  final double radius; 
 
   const UserAvatar({
     super.key,
@@ -13,13 +14,13 @@ class UserAvatar extends StatelessWidget {
     required this.isLoading,
     this.onTap,
     this.backgroundColor = Colors.orange,
-    this.textColor = Colors.white,      
+    this.textColor = Colors.white,
+    this.radius = 22, 
   });
 
   @override
   Widget build(BuildContext context) {
-    String displayLetter = "U";
-
+    String displayLetter = "";
     if (username.trim().isNotEmpty) {
       displayLetter = username.trim()[0].toUpperCase();
     }
@@ -27,25 +28,30 @@ class UserAvatar extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: CircleAvatar(
-        radius: 22,
+        radius: radius,
         backgroundColor: backgroundColor,
-        child: isLoading
-            ? SizedBox(
-                width: 18,
-                height: 18,
-                child: CircularProgressIndicator(
-                  color: textColor, // đồng bộ màu
-                  strokeWidth: 2,
-                ),
-              )
-            : Text(
-                displayLetter,
-                style: TextStyle(
-                  color: textColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-              ),
+        child: _buildChild(displayLetter),
+      ),
+    );
+  }
+
+  Widget _buildChild(String displayLetter) {
+    if (isLoading && displayLetter.isEmpty) {
+      return SizedBox(
+        width: radius * 0.8,
+        height: radius * 0.8,
+        child: CircularProgressIndicator(
+          color: textColor,
+          strokeWidth: 2,
+        ),
+      );
+    }
+    return Text(
+      displayLetter.isEmpty ? "?" : displayLetter, 
+      style: TextStyle(
+        color: textColor,
+        fontWeight: FontWeight.bold,
+        fontSize: radius * 0.8, 
       ),
     );
   }

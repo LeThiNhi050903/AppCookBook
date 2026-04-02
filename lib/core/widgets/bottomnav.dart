@@ -68,5 +68,5 @@ class AppBottomNav extends StatelessWidget {
         ),
       ],
     );
-  } // Kết thúc hàm build
-} // Kết thúc class AppBottomNav
+  }
+}
