@@ -11,6 +11,7 @@ class PlanMonth extends StatefulWidget {
 class _PlanMonthState extends State<PlanMonth> {
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay = DateTime.now();
+
   String _getVietnameseWeekday(DateTime date) {
     switch (date.weekday) {
       case 1: return "Thứ hai";
@@ -26,65 +27,65 @@ class _PlanMonthState extends State<PlanMonth> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        TableCalendar(
-          locale: 'en_US', 
-          focusedDay: _focusedDay,
-          firstDay: DateTime.utc(2020, 1, 1),
-          lastDay: DateTime.utc(2030, 12, 31),
-          headerStyle: const HeaderStyle(
-            formatButtonVisible: false,
-            titleCentered: true,
+        SingleChildScrollView(
+          physics: const BouncingScrollPhysics(), 
+          child: Column(
+            children: [
+              TableCalendar(
+                locale: 'en_US',
+                focusedDay: _focusedDay,
+                firstDay: DateTime.utc(2020, 1, 1),
+                lastDay: DateTime.utc(2030, 12, 31),
+                headerStyle: const HeaderStyle(
+                  formatButtonVisible: false,
+                  titleCentered: true,
+                ),
+                calendarStyle: CalendarStyle(
+                  selectedDecoration: const BoxDecoration(
+                      color: Colors.orange, shape: BoxShape.circle),
+                  todayDecoration: BoxDecoration(
+                      color: Colors.orange.withValues(alpha: 0.3),
+                      shape: BoxShape.circle),
+                  markerDecoration: const BoxDecoration(
+                      color: Colors.orange, shape: BoxShape.circle),
+                ),
+                selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+                onDaySelected: (selectedDay, focusedDay) {
+                  setState(() {
+                    _selectedDay = selectedDay;
+                    _focusedDay = focusedDay;
+                  });
+                },
+              ),
+              const Divider(),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "${_getVietnameseWeekday(_selectedDay!)} - ${DateFormat('dd/MM/yyyy').format(_selectedDay!)}",
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              _buildEmptyState(),
+              const SizedBox(height: 100), 
+            ],
           ),
-          calendarStyle: CalendarStyle(
-            selectedDecoration: const BoxDecoration(
-              color: Colors.orange, 
-              shape: BoxShape.circle
-            ),
-            todayDecoration: BoxDecoration(
-              color: Colors.orange.withValues(alpha: 0.3), 
-              shape: BoxShape.circle
-            ),
-            markerDecoration: const BoxDecoration(
-              color: Colors.orange, 
-              shape: BoxShape.circle
-            ),
-          ),
-          selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
-          onDaySelected: (selectedDay, focusedDay) {
-            setState(() {
-              _selectedDay = selectedDay;
-              _focusedDay = focusedDay; 
-            });
-          },
         ),
-        const Divider(),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "${_getVietnameseWeekday(_selectedDay!)} - ${DateFormat('dd/MM/yyyy').format(_selectedDay!)}",
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+
+        Positioned(
+          bottom: 20,
+          right: 20,
+          child: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: Colors.orange,
+            elevation: 4,
+            child: const Icon(Icons.add, color: Colors.white),
           ),
         ),
-        _buildEmptyState(),       
-        const Spacer(),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20, right: 20),
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: FloatingActionButton(
-              onPressed: () {
-                
-              },
-              backgroundColor: Colors.orange,
-              child: const Icon(Icons.add, color: Colors.white),
-            ),
-          ),
-        )
       ],
     );
   }

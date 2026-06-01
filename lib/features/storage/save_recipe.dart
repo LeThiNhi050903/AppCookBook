@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class SaveRecipeTab extends StatelessWidget { 
   const SaveRecipeTab({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const EmptyStateWidget();
@@ -11,10 +10,8 @@ class SaveRecipeTab extends StatelessWidget {
 
 class EmptyStateWidget extends StatelessWidget {
   const EmptyStateWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
-    // Dùng SingleChildScrollView để chống tràn tuyệt đối
     return SingleChildScrollView(
       child: Center(
         child: Column(

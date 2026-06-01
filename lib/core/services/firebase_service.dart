@@ -6,7 +6,6 @@ import '../../data/models/recipe.dart';
 class FirebaseService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
   FirebaseFirestore get firestore => _db;
   FirebaseAuth get auth => _auth;
 
@@ -28,7 +27,6 @@ class FirebaseService {
     }
     return null;
   }
-
   int getCurrentWeek() {
     final now = DateTime.now();
     return int.parse("${now.year}${now.weekday}");

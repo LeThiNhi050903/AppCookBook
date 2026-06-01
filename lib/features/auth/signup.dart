@@ -8,7 +8,6 @@ import 'googlelogin.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
-
   @override
   State<SignupPage> createState() => _SignupPageState();
 }
@@ -47,9 +46,9 @@ class _SignupPageState extends State<SignupPage> {
       );
       return;
     }
-    if (password.length < 6) {
+    if (password.length < 8) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Mật khẩu phải ít nhất 6 ký tự")),
+        const SnackBar(content: Text("Mật khẩu phải ít nhất 8 ký tự")),
       );
       return;
     }

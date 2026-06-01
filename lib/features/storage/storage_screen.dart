@@ -8,14 +8,12 @@ import '../home/home.dart';
 
 class StorageScreen extends StatefulWidget {
   const StorageScreen({super.key});
-
   @override
   State<StorageScreen> createState() => _StorageScreenState();
 }
 
 class _StorageScreenState extends State<StorageScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
   @override
   void initState() {
     super.initState();
@@ -36,24 +34,20 @@ class _StorageScreenState extends State<StorageScreen> with SingleTickerProvider
         child: Column(
           children: [
             _buildTopBar(context),
-            
-            // 1. SỬA LỖI TREO: Dùng isScrollable: false để 3 tab tự chia đều màn hình
-            // Bọc trong SizedBox để cố định chiều cao thanh Tab, tránh đẩy layout gây tràn
             SizedBox(
               height: 45,
               child: TabBar(
                 controller: _tabController,
-                isScrollable: false, // Tắt cuộn để 3 tab tự dàn hàng ngang cân đối
+                isScrollable: false, 
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.orange,
                 indicatorWeight: 3,
-                // indicatorSize: TabBarIndicatorSize.tab giúp thanh cam dài bằng ô tab, trông sẽ cân hơn
                 indicatorSize: TabBarIndicatorSize.tab, 
                 labelPadding: EdgeInsets.zero,
                 labelStyle: const TextStyle(
                   fontWeight: FontWeight.bold, 
-                  fontSize: 13, // Giảm nhẹ size chữ để "Món của bạn" không bị tràn
+                  fontSize: 13, 
                 ),
                 tabs: const [
                   Tab(text: "Món của bạn"),
@@ -62,8 +56,6 @@ class _StorageScreenState extends State<StorageScreen> with SingleTickerProvider
                 ],
               ),
             ),
-
-            // 2. Nội dung Tab
             Expanded(
               child: TabBarView(
                 controller: _tabController,
@@ -74,9 +66,6 @@ class _StorageScreenState extends State<StorageScreen> with SingleTickerProvider
                 ],
               ),
             ),
-
-            // 3. CHỐNG TRÀN: Nút AI cố định
-            // Nếu vẫn tràn, Nhi hãy kiểm tra chiều cao bên trong file AiPlantButton
             const AiPlantButton(),
           ],
         ),
@@ -87,7 +76,7 @@ class _StorageScreenState extends State<StorageScreen> with SingleTickerProvider
 
   Widget _buildTopBar(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(4, 4, 16, 4), // Thu gọn padding để tiết kiệm diện tích
+      padding: const EdgeInsets.fromLTRB(4, 4, 16, 4), 
       child: Row(
         children: [
           IconButton(
@@ -98,7 +87,7 @@ class _StorageScreenState extends State<StorageScreen> with SingleTickerProvider
           ),
           Expanded(
             child: Container(
-              height: 38, // Giảm nhẹ chiều cao search bar
+              height: 38, 
               decoration: BoxDecoration(
                 color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(20),

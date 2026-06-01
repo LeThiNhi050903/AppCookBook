@@ -3,7 +3,6 @@ import '../../core/widgets/ai_plant_button.dart';
 import '../../core/widgets/bottomnav.dart';
 import 'tab_notification.dart';
 import 'tab_friend.dart';
-import '../home/home.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -22,10 +21,7 @@ class NotificationScreen extends StatelessWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.black),
             onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (_) => const HomeScreen()),
-              );
+              Navigator.pop(context);
             },
           ),
           title: const Text(

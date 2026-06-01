@@ -31,16 +31,11 @@ class PlanWeek extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.chevron_left)),
-              Text(
-                "Tuần này ($currentMonthYear)", 
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
-              ),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.chevron_right)),
-            ],
+          child: Center(
+            child: Text(
+              "Tuần này ($currentMonthYear)",
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
           ),
         ),
         Expanded(

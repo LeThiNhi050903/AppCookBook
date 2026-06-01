@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class ChatInput extends StatelessWidget {
   final TextEditingController controller;
   final VoidCallback onSend;
-
   const ChatInput({
     super.key,
     required this.controller,

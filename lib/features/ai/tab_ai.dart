@@ -5,7 +5,6 @@ class Sidebar extends StatelessWidget {
   final List<List<Map<String, String>>> chatHistory;
   final Function(int) onSelectChat;
   final Function(int) onDeleteChat;
-
   const Sidebar({
     super.key,
     required this.onNewChat,

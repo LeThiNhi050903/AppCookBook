@@ -5,10 +5,11 @@ import '../../core/widgets/avatar.dart';
 import 'package:dantn_app_cookbook/features/create_recipe/create_recipe.dart';
 import '../../features/plan/plan_screen.dart';
 import '../../features/storage/storage_screen.dart';
+import '../../features/setting/setting_screen.dart';
+import '../support/support.dart';
 
 class TabHome extends StatefulWidget {
   const TabHome({super.key});
-
   @override
   State<TabHome> createState() => _TabHomeState();
 }
@@ -16,7 +17,6 @@ class TabHome extends StatefulWidget {
 class _TabHomeState extends State<TabHome> {
   String username = ""; 
   bool isLoading = true;
-
   @override
   void initState() {
     super.initState();
@@ -54,21 +54,9 @@ class _TabHomeState extends State<TabHome> {
     }
   }
 
-  void _logout(BuildContext context) async {
-    try {
-      await FirebaseAuth.instance.signOut();
-      if (!context.mounted) return;
-      Navigator.pop(context); 
-      Navigator.pushReplacementNamed(context, '/login');
-    } catch (e) {
-      debugPrint("Lỗi đăng xuất: $e");
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    double drawerWidth = MediaQuery.of(context).size.width * 0.75;
-    
+    double drawerWidth = MediaQuery.of(context).size.width * 0.75;  
     return Drawer(
       width: drawerWidth,
       child: Column(
@@ -100,9 +88,14 @@ class _TabHomeState extends State<TabHome> {
                   }),
                   _drawerItem(context, Icons.people_outline, "Bạn bếp", () {}),
                   _drawerItem(context, Icons.person_outline, "Hồ sơ", () {}),
-                  _drawerItem(context, Icons.help_outline, "Hỗ trợ", () {}),
-                  _drawerItem(context, Icons.settings, "Cài đặt", () {}),
-                  _drawerItem(context, Icons.logout, "Đăng xuất", () => _logout(context)),
+                  _drawerItem(context, Icons.help_outline, "Hỗ trợ", () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SupportScreen()));
+                  }),
+                  _drawerItem(context, Icons.settings, "Cài đặt", () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+                  }),
                 ],
               ),
             ),

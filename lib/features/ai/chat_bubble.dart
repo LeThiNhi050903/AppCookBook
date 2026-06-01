@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class ChatBubble extends StatelessWidget {
   final String text;
   final bool isUser;
-
   const ChatBubble({
     super.key,
     required this.text,
@@ -21,8 +20,7 @@ class ChatBubble extends StatelessWidget {
         constraints: const BoxConstraints(maxWidth: 300),
         decoration: BoxDecoration(
           color: isUser ? Colors.orange : const Color(0xFFF1F1F1),
-          borderRadius: BorderRadius.circular(16),
-          
+          borderRadius: BorderRadius.circular(16),       
         ),
         child: Text(
           text,

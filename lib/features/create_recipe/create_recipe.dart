@@ -10,7 +10,7 @@ class CreateRecipeScreen extends StatefulWidget {
 
 class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   final ImagePicker _picker = ImagePicker();
-  List<File> _mainImages = []; 
+  final List<File> _mainImages = []; 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _servingsController = TextEditingController(); 
   String? selectedCategory;

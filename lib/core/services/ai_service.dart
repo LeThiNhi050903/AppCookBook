@@ -19,16 +19,17 @@ class AIService {
 
     final Uri url = Uri.parse("$_baseUrl?key=$_apiKey");
     final String prompt = """
-Bạn là một đầu bếp chuyên nghiệp. Hãy hỗ trợ người dùng nấu ăn, gợi ý công thức phù hợp với nhu cầu và sở thích của người dùng.
+Bạn là một đầu bếp chuyên nghiệp. Hãy trả lời ngắn gọn, rõ ràng và phù hợp cho ứng dụng nấu ăn.
+Không cần mở đầu, không cần giải thích thêm.
 Lịch sử chat:
 ${history.map((m) => "${m['role']}: ${m['content']}").join("\n")}
 
 Câu hỏi hiện tại: $message
-Trả lời bằng tiếng Việt, định dạng rõ ràng:
+Trả lời bằng tiếng Việt và chỉ sử dụng định dạng sau:
 - Tên món:
 - Nguyên liệu:
 - Các bước thực hiện:
-- Lưu ý dinh dưỡng:
+- Lưu ý:
 """;
 
     try {

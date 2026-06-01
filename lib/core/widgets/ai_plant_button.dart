@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import '../../features/ai/ai_screen.dart';
 import '../../features/plan/plan_screen.dart';
+import '../../features/ai/ai_screen.dart';
 
 class AiPlantButton extends StatelessWidget {
   const AiPlantButton({super.key});
-  void _showMessage(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(milliseconds: 800),
-      ),
-    );
+  String _getTodayWeekday() {
+    int weekday = DateTime.now().weekday;
+    switch (weekday) {
+      case 1: return "Thứ hai";
+      case 2: return "Thứ ba";
+      case 3: return "Thứ tư";
+      case 4: return "Thứ năm";
+      case 5: return "Thứ sáu";
+      case 6: return "Thứ bảy";
+      case 7: return "Chủ nhật";
+      default: return "";
+    }
   }
 
   @override
@@ -19,63 +24,55 @@ class AiPlantButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
         children: [
-          Expanded(
-            child: Container(
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(color: Colors.grey.shade300),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
+          const Spacer(),
+          Container(
+            height: 50,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30),
+              border: Border.all(color: Colors.grey.shade300),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min, 
+              children: [
+                const SizedBox(width: 14),
+                const Icon(Icons.push_pin_outlined, size: 20, color: Colors.black87),
+                const SizedBox(width: 8),
+                Text(
+                  _getTodayWeekday(), 
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black87,
                   ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  const SizedBox(width: 15),
-                  GestureDetector(
-                    onTap: () => _showMessage(context, "Pin icon is clicked"),
-                    child: const Icon(Icons.push_pin_outlined, color: Colors.black87),
-                  ),
-                  const SizedBox(width: 8),
-                  GestureDetector(
-                    onTap: () => _showMessage(context, "Hôm nay is clicked"),
-                    child: const Text(
-                      'Hôm nay',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black87,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  const VerticalDivider(
-                    indent: 12,
-                    endIndent: 12,
-                    thickness: 1,
-                    color: Colors.grey,
-                  ),
-                  GestureDetector(
-                   onTap: () {
+                ),
+                const SizedBox(width: 4), 
+                const VerticalDivider(
+                  indent: 14,
+                  endIndent: 14,
+                  thickness: 1,
+                  width: 24, 
+                  color: Colors.grey,
+                ),
+                GestureDetector(
+                  onTap: () {
                     Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => const PlanScreen())
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PlanScreen(),
+                      ),
                     );
                   },
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: Icon(Icons.calendar_today_outlined, color: Colors.black87),
-                    ),
+                  child: const Icon(
+                    Icons.calendar_today_outlined,
+                    size: 19,
+                    color: Colors.black87,
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(width: 14), 
+              ],
             ),
-          ),
+          ),         
           const SizedBox(width: 12),
           GestureDetector(
             onTap: () {
@@ -87,18 +84,11 @@ class AiPlantButton extends StatelessWidget {
               );
             },
             child: Container(
-              width: 50,
-              height: 50,
+              width: 52,
+              height: 52,
               decoration: const BoxDecoration(
                 color: Colors.orange,
                 shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 4,
-                    offset: Offset(0, 2),
-                  ),
-                ],
               ),
               child: const Center(
                 child: Text(

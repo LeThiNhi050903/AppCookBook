@@ -7,7 +7,6 @@ class UserAvatar extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final double radius; 
-
   const UserAvatar({
     super.key,
     required this.username,

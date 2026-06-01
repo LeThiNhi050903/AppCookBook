@@ -9,7 +9,6 @@ import 'tabhome.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -244,8 +243,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style:
                   const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           if (showUpdate)
-            const Text("Cập nhật 04:30",
-                style: TextStyle(fontSize: 12, color: Colors.black)),
+            const Text("Cập nhật 04:30", style: TextStyle(fontSize: 12, color: Colors.black)),
         ],
       ),
     );
