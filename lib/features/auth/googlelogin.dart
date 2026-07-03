@@ -4,21 +4,19 @@ import 'package:logger/logger.dart';
 
 class GoogleAuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
   final Logger _logger = Logger();
 
   Future<User?> signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser =
-          await _googleSignIn.signIn();
-      if (googleUser == null) {
-        _logger.w("Google login cancelled by user");
+      final GoogleSignInAccount googleUser =
+          await GoogleSignIn.instance.authenticate();
+      final GoogleSignInAuthentication googleAuth =
+          googleUser.authentication;
+      if (googleAuth.idToken == null) {
+        _logger.w("Google login failed: missing ID token");
         return null;
       }
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
       final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
       UserCredential userCredential =
@@ -33,7 +31,7 @@ class GoogleAuthService {
 
   Future<void> signOut() async {
     try {
-      await _googleSignIn.signOut();
+      await GoogleSignIn.instance.signOut();
       _logger.i("Google sign out success");
     } catch (e) {
       _logger.e("Google sign out error", error: e);

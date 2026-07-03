@@ -64,9 +64,14 @@ class _SignupPageState extends State<SignupPage> {
       String uid = userCredential.user!.uid;
       await userCredential.user!.updateDisplayName(username);
       await FirebaseFirestore.instance.collection('users').doc(uid).set({
+        'uid': uid,
         'username': username,
         'email': email,
-        'uid': uid,
+        'bio': '',
+        'location': '',
+        'avatarUrl': '',
+        'followersCount': 0,
+        'followingCount': 0,
         'createdAt': Timestamp.now(),
       });
       if (!mounted) return;
@@ -424,7 +429,7 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   Widget _buildSocialIconButton({
-    required IconData icon,
+    required FaIconData icon,
     required Color backgroundColor,
     required VoidCallback onTap,
   }) {
@@ -445,7 +450,7 @@ class _SignupPageState extends State<SignupPage> {
           ],
         ),
         child: Center(
-          child: Icon(
+          child: FaIcon(
             icon,
             color: Colors.white,
             size: 32,

@@ -214,7 +214,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   }
 
   Widget _buildSocialIconButton({
-    required IconData icon,
+    required FaIconData icon,
     required Color backgroundColor,
     required VoidCallback onTap,
   }) {
@@ -235,7 +235,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ],
         ),
         child: Center(
-          child: Icon(
+          child: FaIcon(
             icon,
             color: Colors.white,
             size: 32,

@@ -349,7 +349,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
   Widget _buildSocialIconButton({
-    required IconData icon,
+    required FaIconData icon,
     required Color backgroundColor,
     required VoidCallback onTap,
   }) {
@@ -370,7 +370,7 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
         child: Center(
-          child: Icon(
+          child: FaIcon(
             icon,
             color: Colors.white,
             size: 32,

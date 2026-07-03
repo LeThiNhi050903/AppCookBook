@@ -7,6 +7,7 @@ import '../../features/plan/plan_screen.dart';
 import '../../features/storage/storage_screen.dart';
 import '../../features/setting/setting_screen.dart';
 import '../support/support.dart';
+import '../../features/profile/profile_screen.dart';
 
 class TabHome extends StatefulWidget {
   const TabHome({super.key});
@@ -87,7 +88,10 @@ class _TabHomeState extends State<TabHome> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateRecipeScreen()));
                   }),
                   _drawerItem(context, Icons.people_outline, "Bạn bếp", () {}),
-                  _drawerItem(context, Icons.person_outline, "Hồ sơ", () {}),
+                  _drawerItem(context, Icons.person_outline, "Hồ sơ", () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+                  }),
                   _drawerItem(context, Icons.help_outline, "Hỗ trợ", () {
                     Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const SupportScreen()));
