@@ -68,8 +68,8 @@ class ProfileScreen extends StatelessWidget {
           final followers =
               data['followersCount'] ?? 0;
 
-          final following =
-              data['followingCount'] ?? 0;
+          final friendsCount =
+              (data['friends'] as List? ?? []).length;
 
           return SingleChildScrollView(
             padding: const EdgeInsets.symmetric(
@@ -144,7 +144,7 @@ class ProfileScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "$following",
+                      "$friendsCount",
                       style: const TextStyle(
                         fontWeight:
                             FontWeight.bold,
@@ -171,7 +171,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 4),
                     const Text(
-                      "Người quan tâm",
+                      "Người theo dõi",
                       style: TextStyle(
                         color: Colors.grey,
                       ),

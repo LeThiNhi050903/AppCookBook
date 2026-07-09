@@ -129,10 +129,20 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () => _scaffoldKey.currentState?.openDrawer(),
           ),
           const SizedBox(width: 10),
-          const Expanded(
-            child: Text(
-              "TÌM KIẾM",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  username,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
           ),
           IconButton(

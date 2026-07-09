@@ -71,6 +71,7 @@ class _EditProfileScreenState
 
     await FirebaseFirestore.instance.collection('users').doc(uid).update({
       'username': updatedName,
+      'usernameLower': updatedName.toLowerCase(),
       'email': updatedEmail,
       'location': locationController.text.trim(),
       'bio': bioController.text.trim(),

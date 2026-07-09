@@ -8,6 +8,7 @@ class TermsPolicyScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text("Điều khoản & Chính sách"),
         centerTitle: true,
       ),
@@ -21,9 +22,7 @@ class TermsPolicyScreen extends StatelessWidget {
             subtitle: "Quy định khi sử dụng ứng dụng",
             content: _termsContent,
           ),
-
           const SizedBox(height: 12),
-
           _buildCard(
             context,
             icon: Icons.privacy_tip_outlined,
@@ -31,9 +30,7 @@ class TermsPolicyScreen extends StatelessWidget {
             subtitle: "Thông tin về dữ liệu người dùng",
             content: _privacyContent,
           ),
-
           const SizedBox(height: 12),
-
           _buildCard(
             context,
             icon: Icons.smart_toy_outlined,
@@ -41,10 +38,10 @@ class TermsPolicyScreen extends StatelessWidget {
             subtitle: "Thông tin về tính năng AI",
             content: _aiContent,
           ),
-
           const SizedBox(height: 24),
-
           Card(
+            color: Colors.white,
+            elevation: 2,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -55,7 +52,7 @@ class TermsPolicyScreen extends StatelessWidget {
                   ListTile(
                     leading: Icon(Icons.email_outlined),
                     title: Text("Liên hệ hỗ trợ"),
-                    subtitle: Text("support@cookbookai.com"),
+                    subtitle: Text("support@cookbook.com"),
                   ),
                   Divider(),
                   Text(
@@ -88,6 +85,8 @@ class TermsPolicyScreen extends StatelessWidget {
     required String content,
   }) {
     return Card(
+      color: Colors.white,
+      elevation: 2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -100,6 +99,7 @@ class TermsPolicyScreen extends StatelessWidget {
           showDialog(
             context: context,
             builder: (_) => AlertDialog(
+              backgroundColor: Colors.white,
               title: Text(title),
               content: SingleChildScrollView(
                 child: Text(content),

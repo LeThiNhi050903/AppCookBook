@@ -16,8 +16,8 @@ class Recipe {
   factory Recipe.fromFirestore(Map<String, dynamic> data, String id) {
     return Recipe(
       id: id,
-      name: data['name'] ?? '',
-      image: data['image'] ?? '',
+      name: data['name'] ?? data['title'] ?? '',
+      image: data['imageUrl'] ?? data['image'] ?? '',
       category: data['category'] ?? '',
       week: data['week'] ?? 0,
     );

@@ -69,9 +69,15 @@ class _SignupPageState extends State<SignupPage> {
         'email': email,
         'bio': '',
         'location': '',
+        'usernameLower': username.toLowerCase(),
         'avatarUrl': '',
         'followersCount': 0,
         'followingCount': 0,
+        'followers': [],
+        'following': [],
+        'friends': [],
+        'friendRequests': [],
+        'outgoingRequests': [],
         'createdAt': Timestamp.now(),
       });
       if (!mounted) return;

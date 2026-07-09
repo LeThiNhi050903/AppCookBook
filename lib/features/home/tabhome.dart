@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:async';
 import '../../core/widgets/avatar.dart'; 
 import 'package:dantn_app_cookbook/features/create_recipe/create_recipe.dart';
 import '../../features/plan/plan_screen.dart';
@@ -8,6 +9,7 @@ import '../../features/storage/storage_screen.dart';
 import '../../features/setting/setting_screen.dart';
 import '../support/support.dart';
 import '../../features/profile/profile_screen.dart';
+import '../../features/friends/friends_screen.dart';
 
 class TabHome extends StatefulWidget {
   const TabHome({super.key});
@@ -18,6 +20,8 @@ class TabHome extends StatefulWidget {
 class _TabHomeState extends State<TabHome> {
   String username = ""; 
   bool isLoading = true;
+  int followersCount = 0;
+  StreamSubscription<DocumentSnapshot>? _userSub;
   @override
   void initState() {
     super.initState();
@@ -27,32 +31,33 @@ class _TabHomeState extends State<TabHome> {
   Future<void> _loadUser() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      if (mounted) {
-        setState(() {
-          username = user.displayName ?? "";
-          isLoading = username.isEmpty; 
-        });
-      }
-      try {
-        final doc = await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user.uid)
-            .get();
+      // listen to user document to update header live (username and followers)
+      _userSub?.cancel();
+      _userSub = FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .snapshots()
+          .listen((doc) {
         if (!mounted) return;
-        if (doc.exists) {
-          final firestoreName = doc.data()?['username'] ?? "";
-          setState(() {
-            username = firestoreName;
-            isLoading = false; 
-          });
-        }
-      } catch (e) {
+        final data = doc.data();
+        setState(() {
+          username = (data?['username']) ?? (user.displayName ?? '');
+          followersCount = (data?['followersCount']) ?? 0;
+          isLoading = false;
+        });
+      }, onError: (e) {
         debugPrint("Lỗi cập nhật dữ liệu Firestore: $e");
         if (mounted) setState(() => isLoading = false);
-      }
+      });
     } else {
       if (mounted) setState(() => isLoading = false);
     }
+  }
+
+  @override
+  void dispose() {
+    _userSub?.cancel();
+    super.dispose();
   }
 
   @override
@@ -87,7 +92,10 @@ class _TabHomeState extends State<TabHome> {
                     Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateRecipeScreen()));
                   }),
-                  _drawerItem(context, Icons.people_outline, "Bạn bếp", () {}),
+                  _drawerItem(context, Icons.people_outline, "Bạn bếp", () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const FriendsScreen()));
+                  }),
                   _drawerItem(context, Icons.person_outline, "Hồ sơ", () {
                     Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
@@ -139,9 +147,9 @@ class _TabHomeState extends State<TabHome> {
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                const Text(
-                  "0 Người theo dõi",
-                  style: TextStyle(color: Colors.white70, fontSize: 12),
+                Text(
+                  "$followersCount Người theo dõi",
+                  style: const TextStyle(color: Colors.white70, fontSize: 12),
                 ),
               ],
             ),
