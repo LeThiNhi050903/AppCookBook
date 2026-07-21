@@ -5,7 +5,9 @@ import 'package:logger/logger.dart';
 import 'features/auth/login.dart';
 import 'features/auth/signup.dart';
 import 'features/home/home.dart';
+import 'features/home/admin_home_screen.dart';
 import 'features/auth/forgotpass.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 final logger = Logger(
   printer: PrettyPrinter(
@@ -29,6 +31,10 @@ void main() async {
 
   try {
     await Firebase.initializeApp();
+    await GoogleSignIn.instance.initialize(
+      serverClientId:
+          '701455481856-ioi9i1n44vnogtnv3761cfqhks29i1b0.apps.googleusercontent.com',
+    );
     logger.i("Firebase initialized");
   } catch (e) {
     logger.e("Firebase init error: $e");
@@ -59,6 +65,7 @@ class MyApp extends StatelessWidget {
         "/login": (context) => const LoginPage(),
         "/signup": (context) => const SignupPage(),
         "/home": (context) => const HomeScreen(),
+        "/admin_home": (context) => const AdminHomeScreen(),
         "/forgot": (context) => const ForgotPasswordPage(),
       },
     );

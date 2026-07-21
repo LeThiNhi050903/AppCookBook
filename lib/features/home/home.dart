@@ -8,7 +8,10 @@ import '../notification/notification_screen.dart';
 import 'tabhome.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final bool isAdmin;
+
+  const HomeScreen({super.key, this.isAdmin = false});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -21,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String username = "User";
   bool isLoading = true;
   int selectedIndex = -1;
+  String? selectedCategory;
   final List<Map<String, String>> categories = [
     {'name': 'Món chiên', 'image': 'images/Mon_chien.jpg'},
     {'name': 'Món xào', 'image': 'images/Mon_xao.jpg'},
@@ -41,14 +45,30 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    if (widget.isAdmin) {
+      username = "Admin";
+      isLoading = false;
+    }
     loadData();
   }
 
   Future<void> loadData() async {
+    final currentUser = firebaseService.auth.currentUser;
+
+    if (widget.isAdmin || currentUser?.email == 'adminCookBook@gmail.com') {
+      username = 'Admin';
+      if (mounted) setState(() => isLoading = false);
+      return;
+    }
+
     final userData = await firebaseService.getUserProfile();
     if (userData != null && userData['username'] != null) {
-      username = userData['username'];
+      username = userData['username'].toString();
       await localService.saveUsername(username);
+    } else if (currentUser != null) {
+      username = currentUser.displayName?.trim().isNotEmpty == true
+          ? currentUser.displayName!
+          : (currentUser.email?.split('@').first ?? 'User');
     }
     if (mounted) setState(() => isLoading = false);
   }
@@ -64,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,
-      drawer: const TabHome(),
+      drawer: TabHome(isAdmin: widget.isAdmin),
       bottomNavigationBar: const AppBottomNav(currentIndex: 0),
       body: SafeArea(
         child: Stack(
@@ -73,20 +93,9 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 _buildFixedTopSection(),
                 Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _buildSectionTitle("Thịnh hành", showUpdate: true),
-                        _buildTrending(),
-                        _buildSectionTitle("Tìm kiếm gần đây"),
-                        _buildRecentSearch(),
-                        _buildSectionTitle("Các món đã xem gần đây"),
-                        _buildRecentViewed(),
-                        const SizedBox(height: 100),
-                      ],
-                    ),
-                  ),
+                  child: selectedCategory == null
+                      ? _buildHomeContent()
+                      : _buildCategoryContent(),
                 ),
               ],
             ),
@@ -112,54 +121,82 @@ class _HomeScreenState extends State<HomeScreen> {
           _buildSearchBar(),
           const SizedBox(height: 15),
           _buildCategories(),
-          const Divider(thickness: 1, height: 1),
+          const Divider(
+            thickness: 1,
+            height: 1,
+          ),
         ],
       ),
     );
   }
 
   Widget _buildHeader() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      child: Row(
-        children: [
-          UserAvatar(
-            username: username,
-            isLoading: isLoading,
-            onTap: () => _scaffoldKey.currentState?.openDrawer(),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  username,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+    child: Row(
+      children: [
+        UserAvatar(
+          username: username,
+          isLoading: isLoading,
+          onTap: () => _scaffoldKey.currentState?.openDrawer(),
+        ),
+
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              Text(
+                username,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
+              ),
+
+              Text(
+                widget.isAdmin ? "Quản trị viên" : "Xin chào!",
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.grey.shade600,
+                ),
+              ),
+            ],
           ),
+        ),
+
+        if (!widget.isAdmin)
           IconButton(
-            icon: const Icon(Icons.notifications_none, size: 28),
+            icon: const Icon(
+              Icons.notifications_none,
+              size: 28,
+            ),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const NotificationScreen(),
+                  builder: (_) => const NotificationScreen(),
                 ),
               );
-            }
+            },
           ),
-        ],
-      ),
-    );
-  }
+        if (widget.isAdmin)
+          IconButton(
+            icon: const Icon(
+              Icons.admin_panel_settings_outlined,
+              size: 28,
+            ),
+            onPressed: () {
+
+            },
+          ),
+      ],
+    ),
+  );
+}
 
   Widget _buildSearchBar() {
     return Padding(
@@ -193,10 +230,19 @@ class _HomeScreenState extends State<HomeScreen> {
           return GestureDetector(
             onTap: () {
               setState(() {
+                if (selectedIndex == index) {
+                  selectedIndex = -1;
+                  selectedCategory = null;
+                  return;
+                }
+
                 final selectedItem = categories.removeAt(index);
                 categories.insert(0, selectedItem);
+
                 selectedIndex = 0;
+                selectedCategory = categories[0]['name'];
               });
+
               _scrollController.animateTo(
                 0,
                 duration: const Duration(milliseconds: 300),
@@ -274,4 +320,63 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: Text("Bạn chưa xem món nào",
           style: TextStyle(color: Colors.grey)));
+
+  Widget _buildHomeContent() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildSectionTitle("Thịnh hành", showUpdate: true),
+          _buildTrending(),
+
+          _buildSectionTitle("Tìm kiếm gần đây"),
+          _buildRecentSearch(),
+
+          _buildSectionTitle("Các món đã xem gần đây"),
+          _buildRecentViewed(),
+
+          const SizedBox(height: 100),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCategoryContent() {
+    List recipes = [];
+
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+
+          _buildSectionTitle(selectedCategory!),
+
+          recipes.isEmpty
+              ? const Padding(
+                  padding: EdgeInsets.only(top: 120),
+                  child: Center(
+                    child: Text(
+                      "Chưa có món nào",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                )
+              : ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: recipes.length,
+                  itemBuilder: (_, index) {
+                    return ListTile(
+                      title: Text(recipes[index].name),
+                    );
+                  },
+                ),
+
+          const SizedBox(height: 100),
+        ],
+      ),
+    );
+  }
 }

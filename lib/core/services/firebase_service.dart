@@ -1,9 +1,9 @@
-// ignore_for_file: dead_code, unnecessary_null_comparison, unnecessary_cast
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import '../../core/utils/auth_utils.dart';
 import '../../data/models/recipe.dart';
 
 class FirebaseService {
@@ -11,7 +11,14 @@ class FirebaseService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseFirestore get firestore => _db;
   FirebaseAuth get auth => _auth;
+  CollectionReference<Map<String, dynamic>> get _recipes => _db.collection('recipes');
+  CollectionReference<Map<String, dynamic>> get _drafts => _db.collection('draft_recipes');
   String? lastError;
+
+  bool get isAdminUser {
+    final email = _auth.currentUser?.email;
+    return email != null && isAdminEmail(email);
+  }
 
   Future<Map<String, dynamic>?> getUserProfile() async {
     try {
@@ -39,9 +46,9 @@ class FirebaseService {
   Future<List<Recipe>> getTrendingRecipes() async {
     try {
       int week = getCurrentWeek();
-      final snapshot = await _db
-          .collection('recipes')
+      final snapshot = await _recipes
           .where('week', isEqualTo: week)
+          .where('status', isEqualTo: 'published')
           .get();
 
       return snapshot.docs
@@ -53,9 +60,76 @@ class FirebaseService {
     }
   }
 
+  Stream<QuerySnapshot<Map<String, dynamic>>> getPublishedRecipesByCategory(String category) {
+    return _recipes
+        .where('category', isEqualTo: category)
+        .where('status', isEqualTo: 'published')
+        .orderBy('createdAt', descending: true)
+        .snapshots();
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getUserRecipes(String uid) {
+    return _recipes
+        .where('userId', isEqualTo: uid)
+        .orderBy('updatedAt', descending: true)
+        .snapshots();
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getPendingRecipes() {
+    return _recipes
+        .where('status', isEqualTo: 'pending')
+        .orderBy('createdAt', descending: true)
+        .snapshots();
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getPublishedRecipes() {
+    return _recipes
+        .where('status', isEqualTo: 'published')
+        .orderBy('createdAt', descending: true)
+        .snapshots();
+  }
+
+  /*Future<bool> importRecipesFromAsset(String assetPath) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return false;
+       final dataString = await rootBundle.loadString(assetPath);
+       final recipesData = jsonDecode(dataString) as List<dynamic>;
+       final batch = _db.batch();
+      for (final item in recipesData) {
+        final recipe = Map<String, dynamic>.from(item as Map);
+        final doc = _recipes.doc();
+        batch.set(doc, {
+          'id': doc.id,
+          'title': recipe['name'] ?? recipe['title'] ?? '',
+          'name': recipe['name'] ?? recipe['title'] ?? '',
+          'userId': current.uid,
+          'userName': current.displayName ?? current.email ?? 'Admin',
+          'imageUrl': recipe['thumbnail'] ?? '',
+          'image': recipe['thumbnail'] ?? '',
+          'category': recipe['category'] ?? '',
+          'servings': recipe['servings'] ?? '',
+          'ingredients': List<String>.from(recipe['ingredients'] ?? []),
+          'steps': List<String>.from(recipe['steps'] ?? []),
+          'status': 'published',
+          'mainMediaType': 'image',
+          'createdAt': Timestamp.now(),
+          'updatedAt': Timestamp.now(),
+          'week': getCurrentWeek(),
+        });
+      }
+      await batch.commit();
+      return true;
+    } catch (e) {
+      debugPrint('Lỗi importRecipesFromAsset: $e');
+      lastError = e.toString();
+      return false;
+    }
+  }*/
+
   Future<List<Recipe>> getAllRecipes() async {
     try {
-      final snapshot = await _db.collection('recipes').get();
+      final snapshot = await _recipes.get();
       return snapshot.docs
           .map((doc) => Recipe.fromFirestore(doc.data(), doc.id))
           .toList();
@@ -65,12 +139,10 @@ class FirebaseService {
     }
   }
 
-  // Search users by username (case-insensitive, prefix match)
   Future<List<Map<String, dynamic>>> searchUsersByUsername(String query) async {
     try {
       if (query.trim().isEmpty) return [];
       final q = query.trim().toLowerCase();
-      // Try range query on usernameLower (if present)
       final snapshot = await _db
           .collection('users')
           .where('usernameLower', isGreaterThanOrEqualTo: q)
@@ -80,20 +152,16 @@ class FirebaseService {
 
       var results = snapshot.docs
           .map((doc) {
-            final raw = doc.data();
-            final data = raw != null ? Map<String, dynamic>.from(raw) : <String, dynamic>{};
+            final data = Map<String, dynamic>.from(doc.data());
             return {...data, 'uid': doc.id};
           })
           .toList();
 
       if (results.isNotEmpty) return results;
-
-      // Fallback: fetch a small set and filter client-side (handles cases where usernameLower not set)
       final fallback = await _db.collection('users').limit(50).get();
       return fallback.docs
           .map((doc) {
-            final raw = doc.data();
-            final data = raw != null ? Map<String, dynamic>.from(raw) : <String, dynamic>{};
+            final data = Map<String, dynamic>.from(doc.data());
             return {...data, 'uid': doc.id};
           })
           .where((u) {
@@ -325,12 +393,13 @@ class FirebaseService {
     required List<String> mainMediaTypes,
     required List<List<File>> stepMediaFiles,
     required List<List<String>> stepMediaTypes,
+    String status = 'published',
   }) async {
     try {
       final current = _auth.currentUser;
       if (current == null) return null;
 
-      final recipeRef = _db.collection('recipes').doc();
+      final recipeRef = _recipes.doc();
       final recipeId = recipeRef.id;
       String? mainMediaUrl;
       String? mainMediaType;
@@ -367,11 +436,12 @@ class FirebaseService {
         });
       }
 
-      await recipeRef.set({
+      await _recipes.doc(recipeId).set({
         'id': recipeId,
         'title': title,
         'name': title,
         'userId': current.uid,
+        'userName': current.displayName ?? current.email ?? '',
         'imageUrl': mainMediaUrl ?? '',
         'image': mainMediaUrl ?? '',
         'category': category,
@@ -380,8 +450,11 @@ class FirebaseService {
         'steps': steps,
         'stepMedia': stepMediaData,
         'mainMediaType': mainMediaType ?? '',
+        'status': status,
         'createdAt': Timestamp.now(),
-        'week': getCurrentWeek(),
+        'updatedAt': Timestamp.now(),
+        'submittedAt': Timestamp.now(),
+        'week': status == 'published' ? getCurrentWeek() : 0,
       });
       return recipeId;
     } catch (e) {
@@ -389,6 +462,134 @@ class FirebaseService {
       lastError = e.toString();
       return null;
     }
+  }
+
+  Future<bool> updateRecipeStatus(
+    String recipeId,
+    String status, {
+    String? reviewReason,
+  }) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return false;
+      final data = <String, dynamic>{
+        'status': status,
+        'reviewedBy': current.uid,
+        'reviewedAt': Timestamp.now(),
+        'reviewReason': reviewReason ?? '',
+        'updatedAt': Timestamp.now(),
+      };
+      if (status == 'published') {
+        data['week'] = getCurrentWeek();
+      }
+      await _recipes.doc(recipeId).update(data);
+      return true;
+    } catch (e) {
+      debugPrint('Lỗi updateRecipeStatus: $e');
+      lastError = e.toString();
+      return false;
+    }
+  }
+
+  Future<String?> saveDraft({
+    String? draftId,
+    required String title,
+    required String category,
+    required String servings,
+    required List<String> ingredients,
+    required List<String> steps,
+    required List<File> mainMediaFiles,
+    required List<String> mainMediaTypes,
+    required List<List<File>> stepMediaFiles,
+    required List<List<String>> stepMediaTypes,
+  }) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return null;
+      final draftRef = draftId == null
+          ? _db.collection('draft_recipes').doc()
+          : _db.collection('draft_recipes').doc(draftId);
+
+      final id = draftRef.id;
+      String? mainMediaUrl;
+      String? mainMediaType;
+      if (mainMediaFiles.isNotEmpty) {
+        final uploaded = await _uploadMediaFiles(
+          files: mainMediaFiles,
+          types: mainMediaTypes,
+          recipeId: id,
+          userId: current.uid,
+          folder: 'draft_main',
+        );
+        if (uploaded.isNotEmpty) {
+          mainMediaUrl = uploaded.first['url'];
+          mainMediaType = uploaded.first['type'];
+        }
+      }
+      final stepMediaData = <Map<String, dynamic>>[];
+      for (int i = 0; i < stepMediaFiles.length; i++) {
+        if (stepMediaFiles[i].isEmpty) continue;
+        final uploaded = await _uploadMediaFiles(
+          files: stepMediaFiles[i],
+          types: stepMediaTypes[i],
+          recipeId: id,
+          userId: current.uid,
+          folder: 'draft_step_$i',
+        );
+        stepMediaData.add({
+          'stepIndex': i,
+          'media': uploaded,
+        });
+      }
+      await draftRef.set(
+        {
+          'id': id,
+          'userId': current.uid,
+          'title': title,
+          'name': title,
+          'category': category,
+          'servings': servings,
+          'ingredients': ingredients,
+          'steps': steps,
+          'imageUrl': mainMediaUrl ?? '',
+          'image': mainMediaUrl ?? '',
+          'mainMediaType': mainMediaType ?? '',
+          'stepMedia': stepMediaData,
+          'createdAt': FieldValue.serverTimestamp(),
+          'updatedAt': Timestamp.now(),
+      },
+      SetOptions(merge: true),
+      );
+      return id;
+    } catch (e) {
+      debugPrint("Lỗi saveDraft: $e");
+      lastError = e.toString();
+      return null;
+    }
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getDraftRecipes() {
+    final current = _auth.currentUser;
+    return _db
+        .collection('draft_recipes')
+        //.where('userId', isEqualTo: current!.uid)
+        //.orderBy('updatedAt', descending: true)
+        .snapshots();
+  }
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> getDraft(
+      String draftId) async {
+    return await _db
+        .collection('draft_recipes')
+        .doc(draftId)
+        .get();
+  }
+
+  Future<void> deleteDraft(String draftId) async {
+    await _db
+        .collection('draft_recipes')
+        .doc(draftId)
+        .delete();
   }
 
   Future<List<Map<String, dynamic>>> _uploadMediaFiles({

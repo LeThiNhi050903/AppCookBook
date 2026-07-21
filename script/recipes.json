@@ -1,0 +1,805 @@
+[
+  {
+    "id": "món_xào_001",
+    "name": "Miến xào mộc nhĩ",
+    "category": "Món xào",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20m%C3%B3n%20an%20t1%20%281200%20x%20676%20px%29%20%2816%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 2 người:",
+    "ingredients": [
+      "Miến dong 100 gr",
+      "Cà rốt 1/2 củ",
+      "Tai mộc nhĩ lớn 2 cái, nấm hương 5 cái",
+      "Rau mùi và hành lá 50 gr, hành khô 5 củ",
+      "Gia vị thông dụng 1 ít (dầu ăn/ nước tương/ bột ngọt/ dầu hào)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_xào_002",
+    "name": "Sườn xào chua ngọt ",
+    "category": "Món xào",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20m%C3%B3n%20an%20t12%20%281200%20x%20676%20px%29%20%2888%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 2-3 người:",
+    "ingredients": [
+      "Sườn non 0.5 kg",
+      "Hành 1 củ, tỏi 1 củ, chanh 1 quả",
+      "Gia vị thông dụng 1 ít (nước mắm/ đường/ bột canh/ muối hạt/ nước lọc)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_xào_003",
+    "name": "Vịt rang gừng sả",
+    "category": "Món xào",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/Hinh%20thumb%20t01%201200676%20%2863%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 2-3 người",
+    "ingredients": [
+      "Vịt 1/2 con",
+      "Sả 2 nhánh",
+      "Gừng nhỏ 1 củ, hành tím 1 củ, tỏi 3 tép",
+      "Gia vị thông dụng 1 ít (đường/ hạt nêm/ muối/ nước mắm/ bột ngọt/ sa tế/ tiêu xay)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_xào_004",
+    "name": "Thịt bò xào rau củ",
+    "category": "Món xào",
+    "thumbnail": "https://i.ytimg.com/vi/srAB7chNNi4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCa9gKJdZtJ5lYU3pJf55DKRXrlUw",
+    "ingredientTitle": "Nguyên liệu cho 2-3 người ăn",
+    "ingredients": [
+      "Thịt Bò 350 gr",
+      "Bông cải trắng 100 gr, bông cải xanh 80 gr",
+      "Cà rốt 80 gr, đậu hà lan/đậu ván/đậu cô ve 80 gr",
+      "Hành tây 80 gr, bắp cải 100 gr, gốc hành lá 1 ít, tỏi 2 tép, hành tím 15 gr",
+      "Nước tương 1/2 muỗng canh, hắc xì dầu 3 muỗng cà phê, dầu hào 1 muỗng cà phê",
+      "Bột nêm gà 1/4 muỗng cà phê, tinh bột bắp 1 muỗng canh",
+      "Dầu ăn 1 ít, muối nở 1/4 muỗng cà phê, Gia vị thông dụng 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_xào_005",
+    "name": "Ốc bươu xào chuối xanh",
+    "category": "Món xào",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/oc-buou-xao-chuoi.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3-4 người",
+    "ingredients": [
+      "Ốc bươu 500 gr",
+      "Chuối xanh 4 quả",
+      "Lá lốt 10 lá, tỏi 4 tép",
+      "Mắm tôm 1 muỗng canh, chanh 1/2 quả (hoặc giấm)",
+      "Gia vị thông dụng 1 ít (đường/muối/tiêu/nước mắm/bột ngọt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_xào_006",
+    "name": "Bê xào lăn",
+    "category": "Món xào",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/cach-lam-be-xao-lan.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3-4 người ăn",
+    "ingredients": [
+      "Thịt bê 1.2 kg",
+      "Bột cà ri 1 gói",
+      "Hành tây 1 củ",
+      "Nước cốt dừa 1 chén",
+      "Ớt 1 ít, sả 1 ít, tỏi 1 ít, Hành tím 1 ít",
+      "Dầu ăn 1 ít, gia vị thông dụng 1 ít (muối/ bột ngọt/ hạt nêm/ đường)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chiênrán_001",
+    "name": "Chả giò miền Bắc",
+    "category": "Món chiên",
+    "thumbnail": "https://cdn.tgdd.vn/2021/09/CookDish/cach-lam-cha-gio-mien-bac-ngon-gion-chuan-vi-nha-hang-avt-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 2 - 3 người",
+    "ingredients": [
+      "Thịt ba rọi 300 gr",
+      "Cà rốt 1 củ, bắp cải 1/2 trái, hành tím 100 gr, mộc nhĩ 100 gr",
+      "Bún tàu 100 gr",
+      "Trứng vịt 3 quả",
+      "Bánh tráng cuốn chả giò 1 gói",
+      "Dầu ăn 250 ml, gia vị thông dụng 1 ít (Muối/ hạt nêm/ bột ngọt/ tiêu hạt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chiênrán_002",
+    "name": "Bánh chuối chiên",
+    "category": "Món chiên",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20m%C3%B3n%20an%20t12%20%281200%20x%20676%20px%29%20%2879%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 16 - 17 cái",
+    "ingredients": [
+      "Bột gạo thường 650 gr",
+      "Đường 200 gr",
+      "Màu hạt điều 1 muỗng canh,  mè đen chưa rang 1 muỗng canh",
+      "Dầu ăn 1 muỗng canh",
+      "Chanh 1 quả (lấy nước cốt), muối 1/3 muỗng cà phê",
+      "Nải chuối sứ 1 cái (khoảng 16 - 17 quả)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chiênrán_003",
+    "name": "Sụn gà rang muối Hồng Kông",
+    "category": "Món chiên",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20m%C3%B3n%20an%20t12%20%281200%20x%20676%20px%29%20%2864%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 6 người",
+    "ingredients": [
+      "Sụn gối gà 1 kg (Sụn gà)",
+      "Bột rang muối Hồng Kông 1 chén (có thể mua sẵn hoặc tự làm)",
+      "Trứng gà 1 quả",
+      "Bột năng 50 gr",
+      "Sả 6 cây, gừng tươi 1 củ, hành tím 15 gr (Hành khô)",
+      "Tỏi 4 tép, lá chanh 1 ít, nghệ tươi 1 củ (để lấy màu đẹp)",
+      "Gia vị thông dụng 1 ít (Hạt nêm/ đường/ nước mắm/ tiêu xay/ mì chính rượu trắng...)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chiênrán_004",
+    "name": "Má đùi gà chiên mắm",
+    "category": "Món chiên",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/m%C3%A1%20%C4%91%C3%B9i%20g%C3%A0%20chi%C3%AAn%201200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 2 người",
+    "ingredients": [
+      "Thịt Má đùi gà 4 miếng (còn da và xương)",
+      "Tỏi 1 củ, hành tím 1 củ, ớt 3 trái (tùy khẩu vị)",
+      "Bột ớt 1 muỗng cà phê (có thể thay bằng tương ớt/ tương cà)",
+      "Nước dừa tươi hoặc nước lạnh 200 ml",
+      "Dầu ăn 1 ít, Gia vị thông dụng 1 ít (hạt nêm/ đường/ dầu hào/ tương ớt/ nước mắm/ bột ngọt/ tiêu)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chiênrán_005",
+    "name": "Cua rang lá lốt",
+    "category": "Món chiên",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/cua%20rang%20l%C3%A1%20l%E1%BB%91t%201200x676.jpg",
+    "ingredientTitle": "Nguyên liệu",
+    "ingredients": [
+      "Cua đồng 500 gr",
+      "Lá lốt 1 ít, lá gừng non 1 ít",
+      "Trứng gà 1 quả",
+      "Hành tím 1 củ",
+      "Bột chiên giòn 1 ít",
+      "Dầu ăn 1 ít, gia vị thông dụng 1 ít (bột ngọt/nước mắm)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chiênrán_006",
+    "name": "Cá tầm rang muối",
+    "category": "Món chiên",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/ca-tam-rang-muoi-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu",
+    "ingredients": [
+      "Cá tầm 400 gr (Đã lọc xương)",
+      "Bột rang muối hải sản 1 ít, bột tổng hợp 1 thìa canh",
+      "Trứng gà 1 quả (lấy lòng đỏ)",
+      "Sả 3 cây, lá nốt 1 ít",
+      "Gia vị thông dụng 1 ít (hạt nêm/ nước mắm/ bột ngọt/ hạt tiêu)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_hấp_001",
+    "name": "Ốc hấp lá gừng",
+    "category": "Món hấp",
+    "thumbnail": "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/thanh-pham-261.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Thịt ốc băm 500 gr",
+      "Nạc vai xay 200 gr",
+      "Giò sống 200 gr",
+      "Mỡ thăn xay 100 gr",
+      "Mộc nhĩ băm 15 gr, Nấm hương băm 15 gr",
+      "Hành khô băm 2 củ, Tỏi băm 2 nhánh, Gừng băm 2 lát",
+      "Dầu ăn 3 thìa, Gia vị thông dụng 1 ít (đường/ mì chính/ hạt nêm/ tiêu đen)",
+      "Lá gừng/ lá chanh/ gừng 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_hấp_002",
+    "name": "Gà hấp muối",
+    "category": "Món hấp",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/cach-lam-ga-hap-muoi-da-gion-thom-ngon-ngot-nuoc-khong-hu-noii.jpg",
+    "ingredientTitle": "Nguyên liệu :",
+    "ingredients": [
+      "Gà 1 con (khoảng 2-2.5 kg)",
+      "Muối hạt 2 chén (đủ lót đáy nồi),  muối tiêu 2 muỗng (hoặc tự pha muối/tiêu rang)",
+      "Rau răm 30 gr",
+      "Hành tây 2 củ, sả 6 cây, hành lá 1 ít, hành tím 6 củ, tỏi 6 tép",
+      "Lá chanh 1 ít, ớt khô 1 ít, bột nghệ 1 ít",
+      "Mỡ gà 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_hấp_003",
+    "name": "Cá chép hấp sả",
+    "category": "Món hấp",
+    "thumbnail": "https://cdn.tgdd.vn/2022/01/CookDish/cach-lam-mon-ca-chep-hap-sa-thom-ngon-dam-da-khong-kem-canh-avt-1200x676.jpeg",
+    "ingredientTitle": "Nguyên liệu cho 2 người",
+    "ingredients": [
+      "Cá chép tươi 200 gr",
+      "Sả 2 cây, hành lá 1 nhánh",
+      "Rau mùi gai 1 ít",
+      "Ớt 2 quả, súp lơ 2 cây, cà rốt 1 củ",
+      "Xì dầu 2 muỗng canh, gia vị thông dụng 1 ít (muối/ bột ngọt/ tiêu xay)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_hấp_004",
+    "name": " Tai heo cuộn bắp bò",
+    "category": "Món hấp",
+    "thumbnail": "https://cdn.tgdd.vn/2021/03/CookProduct/1200-1200x676-27.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Tai heo 2 cái",
+      "Thịt bắp bò 300 gr",
+      "Giấm 50 ml",
+      "Gừng 1 miếng, chanh 1 quả, hành tím 2 củ",
+      "Gia vị thông dụng 1 ít (muối/tiêu/bột ngọt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_hấp_005",
+    "name": "Xôi gấc",
+    "category": "Món hấp",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/ksahds.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4-6 người",
+    "ingredients": [
+      "Gạo nếp 1 kg",
+      "Gấc nếp 1 quả (to)",
+      "Mỡ gà ta 2 muỗng canh (hoặc dầu ăn)",
+      "Lá nếp 1 ít, vừng 1 ít",
+      "Gia vị thông dụng 1 ít (muối/ đường)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_hấp_006",
+    "name": "Há cảo",
+    "category": "Món hấp",
+    "thumbnail": "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/thanh-pham-208.jpg",
+    "ingredientTitle": "Nguyên liệu cho 2 - 3 người",
+    "ingredients": [
+      "Bột mì 220 gr",
+      "Bột năng 60 gr",
+      "Hoa đậu đậu biếc khô 5 gr",
+      "Thịt nạc xay 200 gr",
+      "Muối 1 ít, gia vị thông dụng 1 ít (hắc xì dầu/ hạt nêm/ tiêu)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_canh_001",
+    "name": "Canh mọc thập cẩm",
+    "category": "Món canh",
+    "thumbnail": "https://cdn.tgdd.vn/2021/02/CookProduct/thumbcmscn-1200x676-2.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 người",
+    "ingredients": [
+      "Xương gà 200 gr",
+      "Tôm khô 50 gr",
+      "Nấm hương 7 cái (nấm đông cô),  nấm kim châm 50 gr",
+      "Mọc 150 gr (giò sống)",
+      "Cà rốt 1 củ, bông cải xanh 50 gr, bông cải trắng 50 gr",
+      "Bắp non 50 gr, đậu Hà Lan 50 gr",
+      "Trứng cút 10 quả",
+      "Hạt nêm 2 muỗng canh, Muối 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_canh_002",
+    "name": "Canh chua hàu sữa",
+    "category": "Món canh",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/canh-chua-hau-sua-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 người",
+    "ingredients": [
+      "Dứa 200 gr (thơm/khóm)",
+      "Cà chua 150 gr, hành tím 10 gr, gừng 10 gr, me vắt 30 gr",
+      "Hành lá 1 ít, rau răm 1 ít",
+      "Dầu ăn 2 muỗng canh",
+      "Gia vị thông dụng 1 ít (hạt nêm/ muối/ nước mắm/ bột ngọt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_canh_003",
+    "name": "Canh xương bò",
+    "category": "Món canh",
+    "thumbnail": "https://cdn.tgdd.vn/2021/11/CookDish/3-cach-nau-canh-xuong-bo-ngot-thom-hap-dan-don-gian-bo-duong-avt-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Xương bò 500 gr",
+      "Khoai tây 800 gr",
+      "Cà rốt 1 củ, hành tím 2 củ",
+      "Rau thì là 50 gr, gừng 10 gr",
+      "Nước mắm 1 muỗng cà phê",
+      "Gia vị thông dụng 1 ít (Hạt nêm/ muối/ bột ngọt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_canh_004",
+    "name": "Canh măng sườn",
+    "category": "Món canh",
+    "thumbnail": "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/ngam-nam-huong-va-tom-kho-2.jpg",
+    "ingredientTitle": "Nguyên liệu phần cho 3 người",
+    "ingredients": [
+      "Sườn heo 500 gr",
+      "Măng tươi 300 gr (măng tre búp)",
+      "Hành tỏi khô băm 1 ít, bột nghệ 1 ít",
+      "Hành lá cắt khúc 1 ít, ớt tươi 1 ít",
+      "Dầu ăn 1 ít, gia vị thông dụng 1 ít (hạt nêm/ bột ngọt/ bột canh/ muối ăn)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_canh_005",
+    "name": "Canh cá lăng nấu măng chua",
+    "category": "Món canh",
+    "thumbnail": "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/thanh-pham-186.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Cá lăng 1 kg (1 con)",
+      "Cà chua 3 trái, khế 3 trái, Ớt sừng 1 trái",
+      "Măng chua 300 gr",
+      "Hành tím băm 1 muỗng canh",
+      "Rau om/ rau ngò gai 1 ít",
+      "Dầu ăn 5 muỗng canh, nước mắm 2 muỗng canh",
+      "Muối hạt 1 ít, gia vị thông dụng 1 ít (muối/ đường/ bột ngọt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_canh_006",
+    "name": "Canh cua",
+    "category": "Món canh",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20m%C3%B3n%20an%20t9%20%281200%20x%20676%20px%29%20%2819%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 - 4 người",
+    "ingredients": [
+      "Cua đồng 300 gr",
+      "Cà chua 3 quả, hành tây 1 củ (hoặc hành khô)",
+      "Lá lốt 1 ít, tương hột 1 ít (có thể bỏ qua)",
+      "Gia vị thông dụng 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_nước_001",
+    "name": "Bánh canh cua",
+    "category": "Món nước",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/Hinh%20thumb%20t01%201200676%20%2842%29.jpg",
+    "ingredientTitle": "",
+    "ingredients": [
+      "Nghuyên liệu cho 6 - 8 tô",
+      "Cua đồng 1.2 kg",
+      "Giò khoanh 1 kg",
+      "Thịt băm 300 gr",
+      "Giò sống 300 gr",
+      "Thịt mỡ 200 gr",
+      "Trứng cút 30 cái",
+      "Cà chua 450 gr, nấm rơm 200 gr, củ cải trắng 210 gr",
+      "Hành tây 190 gr, hành tím 40 gr, tỏi 40 gr",
+      "Hành lá 20 gr, hành lá/ ngò 1 ít",
+      "Dầu màu điều 3 muỗng canh",
+      "Gia vị thông dụng 1 ít (nước mắm/ muối/ đường/ hạt nêm/ tiêu)",
+      "Món ăn kèm 1 ít (Bánh canh/ giá/ xà lách/ húng quế/ húng bạc hà/ chanh/ ớt/ nước mắm chanh tỏi ớt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_nước_002",
+    "name": "phở gà Hà Nội",
+    "category": "Món nước",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20m%C3%B3n%20an%20t01%20%281200%20x%20676%20px%29%20%2828%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 - 6 người ăn",
+    "ingredients": [
+      "Gà 1.8 kg, xương gà 1.6 kg",
+      "Bánh phở 1 kg",
+      "Nước 3.1 lít",
+      "Hành khô 50 gr, gừng 50 gr, hạt mùi 10 gr",
+      "Hành tây 1 củ",
+      "Gia vị thông dụng 1 ít (muối/ bột canh/ đường/ nước mắm)",
+      "Gia vị ăn kèm 1 ít (Hành lá/ rau mùi/ lá chanh/ ớt/ chanh)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_nước_003",
+    "name": " Bún riêu miền Nam ",
+    "category": "Món nước",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/bun-rieu-mien-namm.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4-6 người",
+    "ingredients": [
+      "Cua đồng 800 gr,  gạch cua còn nguyên 1 ít (từ cua đồng)",
+      "Cà chua 4 trái (400 gr)",
+      "Trứng gà 2 quả",
+      "Huyết heo 400 gr",
+      "Đậu hũ 5 miếng (400 gr)",
+      "Xương heo 600 gr (xương sườn), thịt heo xay 400 gr",
+      "Tỏi băm 30 gr, hành băm 20 gr",
+      "Hạt cà ri 1 ít",
+      "Nước 2 lít",
+      "Gia vị thông dụng 1 ít (hạt nêm/đường/tiêu/nước mắm/bột ngọt/muối)",
+      "Gia vị ăn kèm 1 ít (hành ngò/ rau xà lách/ lá chanh/ ớt/ chanh)",
+      "Bún sợi nhỏ 1 ít, mắm tôm 1 ít, chả lụa 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_nước_004",
+    "name": "Phở sườn bò",
+    "category": "Món nước",
+    "thumbnail": "https://cdn.tgdd.vn/2021/07/CookProduct/Cach-nau-PHO-SUON-BO-SAI-GON-NUOC-NGON-DAM-DA-12-10-screenshot-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Sườn bò 1 kg",
+      "Bánh phở 1 kg",
+      "Gia vị nấu phở 1 gói (2 lít nước)",
+      "Hành tây lớn 1 củ, gừng 2 củ",
+      "Táo đỏ 50 gr, hành lá 5 nhánh, ngò rí 3 nhánh",
+      "Rau ăn kèm 1 ít (húng quế/ ngò gai/ giá)",
+      "Gia vị thông dụng 1 ít (đường/ hạt nêm/ muối/ tiêu/ bột ngọt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chay_001",
+    "name": "Chả chay chiên",
+    "category": "Món chay",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/Hinh%20thumb%20t02%201200676%20%2872%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 - 4 người",
+    "ingredients": [
+      "Đậu hũ trắng 400 gr",
+      "Bột mì căn 40 gr",
+      "Dầu màu điều 1 muỗng canh, dầu ăn 1 ít",
+      "Gia vị thông dụng 1 ít (muối/ bột nêm/ đường/ bột ngọt/ bột tỏi/ tiêu xay)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chay_002",
+    "name": "Bún chay Huế",
+    "category": "Món chay",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/cach-nau-bun-chay-hue..jpg",
+    "ingredientTitle": "Nguyên liệu cho 2 tô",
+    "ingredients": [
+      "Củ sắn 500 gr, cà rốt 350 gr, củ cải trắng 350 gr",
+      "Bắp Mỹ 2 trái, Củ su hào 350 gr",
+      "Củ hành tây 200 gr, sả cây 350 gr",
+      "Bông hồi 3 cái, trái thơm 1/2 trái (dứa)",
+      "Bò lát chay 60 gr",
+      "Nấm đông cô 50 gr, đậu hũ bi 400 gr, đậu hũ ky chiên 2 cây",
+      "Chả nấm bào ngư 1 cây",
+      "Sả băm 50 gr, tỏi băm 20 gr, hành tím băm 40 gr",
+      "Ớt khô 30 gr, bột ớt Hàn Quốc 15 gr",
+      "Dầu ăn 200 ml",
+      "Ngò gai 1 ít, rau quế 1 ít, rau răm 1 ít",
+      "Bún 4 kg",
+      "Gia vị thông dụng 1 ít (muối hột/ đường/ đường phèn/ hạt nêm chay/ bột ngọt)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chay_003",
+    "name": "Chả giò khoai lang chay",
+    "category": "Món chay",
+    "thumbnail": "https://cdn.tgdd.vn/2021/05/CookProduct/chagiokhoailangchay-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu làm cho 4 người",
+    "ingredients": [
+      "Khoai lang 250 gr",
+      "Nấm mèo khô 200 gr",
+      "Bánh tráng tươi 1 gói (bánh tráng bò bía đậu xanh)",
+      "Dầu ăn 600 ml",
+      "Hạt nêm chay 1 muỗng canh, bột ngọt/ tiêu 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_chay_004",
+    "name": "Chả cốm chay",
+    "category": "Món chay",
+    "thumbnail": "https://cdn.tgdd.vn/2021/04/CookProduct/t-1200x676-6(1)-1200x579-(1)-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu làm cho 4 người",
+    "ingredients": [
+      "Cốm dẹp 60 gr",
+      "Đậu hủ trắng 1 miếng, đậu xanh 100 gr",
+      "Bột năng 15 gr",
+      "Bột nêm chay 1 muỗng cà phê,  Muối/ tiêu 1 ít",
+      "Dầu ăn 100 ml",
+      "Ngò rí 3 nhánh"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kho_001",
+    "name": "Cá tầm kho",
+    "category": "Món kho",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/Hinh%20thumb%20t02%201200676%20%2860%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 - 4 người ăn",
+    "ingredients": [
+      "Cá tầm 1 kg (cắt khoanh)",
+      "Hành lá 3 nhánh",
+      "Ớt 2 trái, tỏi băm/ hành tím băm 1 ít",
+      "Gia vị thông dụng 1 ít (nước mắm ngon/ hạt nêm/ tiêu xay/ nước màu/ đường/ dầu ăn)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kho_002",
+    "name": "Mực rim mặn ngọt",
+    "category": "Món kho",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/m%E1%BB%B1c%20rim%20m%E1%BA%B7n%20ng%E1%BB%8Dt%201200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 người",
+    "ingredients": [
+      "Mực sữa 500 gr",
+      "Gừng 1 nhánh (nhỏ), hành tím 5 củ, hành lá 1 ít",
+      "Ớt sừng hoặc ớt hiểm (tùy chọn) 1 trái (không cay)",
+      "Gia vị thông dụng 1 ít (nước mắm/ nước màu đường/ tương ớt/ đường/ bột ngọt/ muối/ tiêu xay)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kho_003",
+    "name": "Giò heo phá lấu",
+    "category": "Món kho",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/Hinh%20thumb%20t02%201200676%20%2854%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 - 6 người ăn",
+    "ingredients": [
+      "Giò heo 2 kg (khoảng 4 bắp giò)",
+      "Nước dừa 1 lít",
+      "Hành tím 60 gr, tỏi 40 gr, ngò 15 gr",
+      "Thảo quả 3 gr (1 quả), quế 5 gr (2 thanh), sao hồi 5 gr",
+      "Ớt khô 5 gr,  Ớt bột 1 muỗng cà phê (loại cay), ớt bột 1 muỗng canh (loại không cay tạo màu)",
+      "Tương cà 1 muỗng canh, bột và lá cà ri 1 muỗng cà phê",
+      "Rượu gạo 5 muỗng canh",
+      "Chanh và một ít muối hột 1 quả (để sơ chế)",
+      "Gia vị thông dụng 1 ít (nước tương/ dầu hào/ hạt nêm/ muối/ đường/ dầu ăn)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kho_004",
+    "name": "Thịt kho tàu",
+    "category": "Món kho",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20m%C3%B3n%20an%20t12%20%281200%20x%20676%20px%29%20%2894%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 - 5 người ăn",
+    "ingredients": [
+      "Thịt ba rọi 1 kg",
+      "Trứng vịt 5 quả",
+      "Nước dừa tươi 1.5 lít",
+      "Tỏi lớn 2 củ, hành tím 10 củ, ớt đỏ 5 trái (loại lớn)",
+      "Chanh 1/2 trái",
+      "Lá mít tươi 1 ít (5 - 7 lá)",
+      "Gia vị thông dụng 1 ít (nước mắm/ đường/ muối/ bột ngọt/...)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kem_001",
+    "name": "Kem bơ",
+    "category": "Món kem",
+    "thumbnail": "https://cdn.tgdd.vn/2021/10/CookDish/2-cach-lam-kem-bo-tui-deo-mem-beo-ngay-thom-ngon-cuc-don-gian-avt-1200x676.jpeg",
+    "ingredientTitle": "Nguyên liệu làm Kem bơ túiCho 20 túi",
+    "ingredients": [
+      "Bơ 1 kg",
+      "Sữa đặc 380 gr (1 lon lớn)",
+      "Sữa tươi không đường 880 ml (4 bịch)",
+      "Đường 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kem_002",
+    "name": "Kem phủ socola",
+    "category": "Món kem",
+    "thumbnail": "https://cdn.tgdd.vn/2021/04/CookProduct/t-1200x676-1.jpg",
+    "ingredientTitle": "Nguyên liệu cho 6 que kem",
+    "ingredients": [
+      "Sữa tươi không đường 540 ml,  sữa bột 95 gr",
+      "Socola đen 200 gr (10 thanh)",
+      "Đường 100 gr",
+      "Bột bắp 18 gr",
+      "Chiết xuất vani 5 gr"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kem_003",
+    "name": "Kem lá dứa (lá nếp)",
+    "category": "Món kem",
+    "thumbnail": "https://cdn.tgdd.vn/2021/07/CookProduct/kem1200-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Lá dứa 50 gr (1 bó)",
+      "Sữa tươi có đường 250 ml",
+      "Whipping cream 300 ml",
+      "Trứng gà 3 quả",
+      "Hương vani 1/2 muỗng cà phê",
+      "Corn syrup 2 muỗng canh (Nước đường ngô), đường 70 gr (4.5 muỗng canh)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "món_kem_004",
+    "name": "Kem đậu xanh",
+    "category": "Món kem",
+    "thumbnail": "https://cdn.tgdd.vn/Files/2018/04/14/1082074/cach-lam-kem-dau-xanh-tuoi-ngon-mat-lanh-tai-nha-an-la-me-ava-760x367.jpg",
+    "ingredientTitle": "Nguyên liệu làm Kem đậu xanhCho 4 người",
+    "ingredients": [
+      "Đậu xanh 100 gr",
+      "Đường trắng 100 gr",
+      "Sữa 150 gr",
+      "Kem tươi 200 gr"
+    ],
+    "steps": []
+  },
+  {
+    "id": "gỏinộm_001",
+    "name": "Gân bò sốt Thái",
+    "category": "Gỏi/nộm",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/Hinh%20thumb%20t03%201200676%20%2862%29.jpg",
+    "ingredientTitle": "Nguyên liệu làm Gân bò sốt TháiCho 4 - 5 người ăn",
+    "ingredients": [
+      "Gân bò 0.5 kg (nên chọn loại gân chữ Y)",
+      "Cóc bao tử 10 quả",
+      "Gừng/ riềng 1 ít",
+      "Đường vàng 200 gr",
+      "Nước cốt me 120 ml, nước cốt tắc 100 ml, nước mắm ngon 100 ml",
+      "Tương ớt lên men 3 muỗng canh",
+      "Dầu ăn 2 muỗng canh",
+      "Rễ và gốc rau mùi băm 1 muỗng canh",
+      "Tỏi/ hành tím 1 ít, ớt sừng 3 quả"
+    ],
+    "steps": []
+  },
+  {
+    "id": "gỏinộm_002",
+    "name": "Nộm tai heo",
+    "category": "Gỏi/nộm",
+    "thumbnail": "https://cdn.tgdd.vn/2021/12/CookDish/cach-lam-goi-hoa-chuoi-tai-heo-man-ngot-gion-ngon-doi-vi-avt-800x450.jpg",
+    "ingredientTitle": "Nguyên liệu làm Nộm tai heo hoa chuốiCho 04",
+    "ingredients": [
+      "Tai heo 500 gr (1 cái)",
+      "Hoa chuối 1 kg",
+      "Lạc rang 100 gr, giá đỗ 50 gr",
+      "Cà rốt 1 củ, tỏi 2 củ, hành tím 3 củ (4 nhánh)",
+      "Húng bạc hà 1 ít, rau mùi 1 ít",
+      "Ớt 1 quả",
+      "Nước mắm 2 muỗng canh",
+      "Giấm 1 ít, gia vị thông dụng 1 ít (Muối/ Đường/ Tiêu xay)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "gỏinộm_003",
+    "name": "Nộm sứa đu đủ",
+    "category": "Gỏi/nộm",
+    "thumbnail": "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/thanh-pham-515.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Thịt sứa 350 gr",
+      "Đu đủ 1/2 trái, cà rốt 1 củ",
+      "Ớt sừng 1 trái, chanh 1 trái, tỏi 3 tép",
+      "Rau răm 1 ít (khoảng 1 nắm tay)",
+      "Đậu phộng rang 1 muỗng canh",
+      "Dầu ăn 2 muỗng cà phê",
+      "Nước mắm 3 muỗng cà phê, đường 5 muỗng cà phê"
+    ],
+    "steps": []
+  },
+  {
+    "id": "gỏinộm_004",
+    "name": "Gỏi gà hành tây cà rốt",
+    "category": "Gỏi/nộm",
+    "thumbnail": "https://cdn.tgdd.vn/2021/11/CookDish/cach-lam-goi-ga-hanh-tay-ca-rot-thom-ngon-hap-dan-cuc-bat-vi-avt-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 người ăn",
+    "ingredients": [
+      "Ức gà 300 gr",
+      "Củ sắn 1 củ, cà rốt 1/2 củ, hành tây 1 củ",
+      "Chanh 1 trái",
+      "Rau húng 50 gr, đậu phộng rang 50 gr",
+      "Ớt 1 trái (băm nhuyễn), tỏi 3 tép (băm nhuyễn)",
+      "Muối 1 muỗng canh, đường 1 muỗng canh",
+      "Giấm 1 ít"
+    ],
+    "steps": []
+  },
+  {
+    "id": "cháosúp_001",
+    "name": "Cháo tổ yến ",
+    "category": "Cháo/súp",
+    "thumbnail": "https://cdn.tgdd.vn/2021/04/CookProduct/YENSAONAUCHAOGANGONKHONGTUONGHUYPHUBEP9-23screenshot1200-1200x676-1.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Gạo 1/2 cốc (khoảng 80gr)",
+      "Yến sào 10 gr",
+      "Xương ức gà 500 gr, thịt đùi gà 500 gr",
+      "Cà rốt 1 củ",
+      "Hành lá 10 nhánh, ngò rí 2 nhánh",
+      "Nấm đông cô khô 5 cái",
+      "Bột tỏi 1/4 muỗng cà phê, nước mắm 1 muỗng canh",
+      "Gia vị thông dụng 1 ít (muối/ tiêu/ đường/ hạt nêm)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "cháosúp_002",
+    "name": "Cháo sen bát bảo",
+    "category": "Cháo/súp",
+    "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/common/Common/H%C3%ACnh%20thumb%20to%20t8%20%2861%29.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 - 4 người",
+    "ingredients": [
+      "Gạo 1/2 cốc (trộn gạo tẻ và gạo nếp hoặc chỉ dùng 1 loại)",
+      "Hạt ngũ cốc 1/3 cốc (hạt bo bo/ diêm mạch/ yến mạch/ nếp than...)",
+      "Các loại đậu 2/3 cốc (đậu cúc/ đậu đỏ/ đậu xanh/ đậu phộng/ hạt sen)",
+      "Long nhãn khô 50 gr, táo tàu 50 gr (táo đỏ 6 - 8 trái)",
+      "Đường 150 gr (đường phèn/ đường tán/ đường nâu/ đường cát/...)",
+      "Mộc quế hoa khô 1 ít (để tăng hương vị - có thể bỏ qua)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "cháosúp_003",
+    "name": "Súp gà",
+    "category": "Cháo/súp",
+    "thumbnail": "https://cdn.tgdd.vn/2021/10/CookDish/huong-dan-chi-tiet-cach-nau-sup-ga-tai-nha-ngon-avt-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Thịt gà 200 gr (lựa phần đùi và phần thịt nạc)",
+      "Bắp vàng 1/2 trái",
+      "Nấm kim châm 200 gr, nấm hương 100 gr",
+      "Rau mùi 2 nhánh",
+      "Bột năng 2 muỗng canh",
+      "Nước mắm 1 muỗng canh",
+      "Gia vị thông dụng 1 ít (muối/ hạt nêm/ tiêu xay)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "cháosúp_004",
+    "name": "Súp cua tóc tiên thập cẩm",
+    "category": "Cháo/súp",
+    "thumbnail": "https://cdn.tgdd.vn/2021/12/CookDish/cach-nau-sup-cua-toc-tien-thap-cam-thom-ngon-dinh-duong-cho-avt-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 4 người",
+    "ingredients": [
+      "Thịt cua 200 gr (hoặc ghẹ)",
+      "Tóc tiên 15 gr (1 nhúm nhỏ)",
+      "Trứng 1 quả",
+      "Nước dùng gà 1.5 lít",
+      "Bắp Mỹ 50 gr (ngô ngọt)",
+      "Nấm đông cô tươi 3 cái (nấm hương), nấm tuyết khô 10 gr",
+      "Bột năng 100 gr, Đường phèn 1 ít",
+      "Dầu mè 1 muỗng cà phê",
+      "Ngò rí 1 ít (cắt nhỏ)",
+      "Gia vị thông dụng 1 ít (Muối/ bột ngọt/ tiêu xay)"
+    ],
+    "steps": []
+  },
+  {
+    "id": "salat_001",
+    "name": "Salad tôm cần tây ",
+    "category": "Salad",
+    "thumbnail": "https://cdn.tgdd.vn/2021/11/CookDish/cach-lam-salad-tron-tom-can-tay-vi-ngon-ngat-ngay-avt-1200x676.jpg",
+    "ingredientTitle": "Nguyên liệu cho 3 người",
+    "ingredients": [
+      "Tôm tươi 500 gr",
+      "Cần tây 130 gr, thì là 15 gr",
+      "Sốt mayonnaise 4 muỗng canh",
+      "Chanh vàng 1 trái, hành tím 5 củ, tỏi 2 tép",
+      "Nước cốt chanh 2 muỗng cà phê",
+      "Mù tạt Dijon 1 muỗng cà phê",
+      "Muối/ tiêu xay 1 ít"
+    ],
+    "steps": []
+  }
+]

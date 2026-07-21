@@ -9,10 +9,15 @@ import '../../features/storage/storage_screen.dart';
 import '../../features/setting/setting_screen.dart';
 import '../support/support.dart';
 import '../../features/profile/profile_screen.dart';
+import '../../features/profile/admin_profile_screen.dart';
 import '../../features/friends/friends_screen.dart';
+import 'admin_home_screen.dart';
 
 class TabHome extends StatefulWidget {
-  const TabHome({super.key});
+  final bool isAdmin;
+
+  const TabHome({super.key, this.isAdmin = false});
+
   @override
   State<TabHome> createState() => _TabHomeState();
 }
@@ -29,9 +34,17 @@ class _TabHomeState extends State<TabHome> {
   }
 
   Future<void> _loadUser() async {
+    if (widget.isAdmin) {
+      setState(() {
+        username = 'Admin';
+        followersCount = 0;
+        isLoading = false;
+      });
+      return;
+    }
+
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      // listen to user document to update header live (username and followers)
       _userSub?.cancel();
       _userSub = FirebaseFirestore.instance
           .collection('users')
@@ -41,7 +54,7 @@ class _TabHomeState extends State<TabHome> {
         if (!mounted) return;
         final data = doc.data();
         setState(() {
-          username = (data?['username']) ?? (user.displayName ?? '');
+          username = (data?['username'] ?? user.displayName ?? '').toString();
           followersCount = (data?['followersCount']) ?? 0;
           isLoading = false;
         });
@@ -62,7 +75,70 @@ class _TabHomeState extends State<TabHome> {
 
   @override
   Widget build(BuildContext context) {
-    double drawerWidth = MediaQuery.of(context).size.width * 0.75;  
+    final drawerItems = widget.isAdmin
+        ? [
+            _drawerItem(context, Icons.home, "Trang chủ", () {
+              Navigator.pop(context);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AdminHomeScreen()));
+            }),
+            _drawerItem(context, Icons.event_note, "Kế hoạch", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const PlanScreen()));
+            }),
+            _drawerItem(context, Icons.create, "Tạo công thức", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateRecipeScreen()));
+            }),
+            _drawerItem(context, Icons.fact_check, "Xét duyệt công thức", () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Màn hình xét duyệt sẽ được tích hợp ở bước tiếp theo')),
+              );
+            }),
+            _drawerItem(context, Icons.person_outline, "Hồ sơ", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminProfileScreen()));
+            }),
+            _drawerItem(context, Icons.settings, "Cài đặt", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+            }),
+          ]
+        : [
+            _drawerItem(context, Icons.home, "Trang chủ", () {
+              Navigator.pop(context);
+            }),
+            _drawerItem(context, Icons.storage, "Kho của bạn", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const StorageScreen()));
+            }),
+            _drawerItem(context, Icons.event_note, "Kế hoạch", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const PlanScreen()));
+            }),
+            _drawerItem(context, Icons.create, "Tạo công thức", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateRecipeScreen()));
+            }),
+            _drawerItem(context, Icons.people_outline, "Bạn bếp", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const FriendsScreen()));
+            }),
+            _drawerItem(context, Icons.person_outline, "Hồ sơ", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+            }),
+            _drawerItem(context, Icons.help_outline, "Hỗ trợ", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SupportScreen()));
+            }),
+            _drawerItem(context, Icons.settings, "Cài đặt", () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+            }),
+          ];
+
+    double drawerWidth = MediaQuery.of(context).size.width * 0.75;
     return Drawer(
       width: drawerWidth,
       child: Column(
@@ -73,42 +149,7 @@ class _TabHomeState extends State<TabHome> {
               color: Colors.white,
               child: ListView(
                 padding: EdgeInsets.zero,
-                children: [
-                  _drawerItem(context, Icons.home, "Trang chủ", () {
-                    Navigator.pop(context);
-                  }),
-                  _drawerItem(context, Icons.storage, "Kho của bạn", () {
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const StorageScreen()));
-                  }),
-                  _drawerItem(context, Icons.event_note, "Kế hoạch", () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => const PlanScreen())
-                    );
-                  }),
-                  _drawerItem(context, Icons.create, "Tạo công thức", () {
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateRecipeScreen()));
-                  }),
-                  _drawerItem(context, Icons.people_outline, "Bạn bếp", () {
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const FriendsScreen()));
-                  }),
-                  _drawerItem(context, Icons.person_outline, "Hồ sơ", () {
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
-                  }),
-                  _drawerItem(context, Icons.help_outline, "Hỗ trợ", () {
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SupportScreen()));
-                  }),
-                  _drawerItem(context, Icons.settings, "Cài đặt", () {
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
-                  }),
-                ],
+                children: drawerItems,
               ),
             ),
           ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../../core/utils/auth_utils.dart';
 import 'googlelogin.dart';
 import 'signup.dart';
 import '../home/home.dart';
+import '../home/admin_home_screen.dart';
 import 'forgotpass.dart';
 
 class LoginPage extends StatefulWidget {
@@ -45,7 +47,19 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = true;
     });
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final isAdmin = isAdminCredentials(email, password);
+      if (isAdmin) {
+        await FirebaseAuth.instance.signOut();
+        if (!mounted) return;
+        setState(() => _isLoading = false);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const AdminHomeScreen()),
+        );
+        return;
+      }
+
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -53,6 +67,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         _isLoading = false;
       });
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -320,10 +335,11 @@ class _LoginPageState extends State<LoginPage> {
             if (!mounted) return; 
             setState(() => _isLoading = false);
             if (user != null) {
+              final isAdmin = isAdminCredentials(user.email ?? '', '');
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const HomeScreen(),
+                  builder: (context) => isAdmin ? const AdminHomeScreen() : const HomeScreen(),
                 ),
               );
             } else {

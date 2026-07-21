@@ -2,24 +2,35 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../core/services/firebase_service.dart';
+import 'save_recipe.dart';
+import 'status_recipe.dart';
 
 class CreateRecipeScreen extends StatefulWidget {
-  const CreateRecipeScreen({super.key});
-
+  final String? draftId;
+  const CreateRecipeScreen({
+    super.key,
+    this.draftId,
+  });
   @override
   State<CreateRecipeScreen> createState() => _CreateRecipeScreenState();
 }
 
 class _RecipeMedia {
-  final File file;
+  final File? file;
+  final String? url;
   final String type;
 
-  const _RecipeMedia({required this.file, required this.type});
+  const _RecipeMedia({
+    this.file,
+    this.url,
+    required this.type,
+  });
 }
 
 class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   final ImagePicker _picker = ImagePicker();
   final FirebaseService _svc = FirebaseService();
+  String? _draftId;
   final List<_RecipeMedia> _mainMedia = [];
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _servingsController = TextEditingController();
@@ -58,6 +69,7 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
 
     final media = _RecipeMedia(
       file: File(picked.path),
+      url: null,
       type: isVideo ? 'video' : 'image',
     );
     setState(() {
@@ -243,6 +255,17 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+
+    _draftId = widget.draftId;
+
+    if (_draftId != null) {
+      _loadDraft();
+    }
+  }
+
+  @override
   void dispose() {
     _removeDropdown();
     _nameController.dispose();
@@ -254,6 +277,156 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
       c.dispose();
     }
     super.dispose();
+  }
+
+  Future<void> _loadDraft() async {
+    if (_draftId == null) return;
+    final doc = await _svc.getDraft(_draftId!);
+    if (!doc.exists) return;
+    final data = doc.data()!;
+    _nameController.text = data["title"] ?? "";
+    _servingsController.text = data["servings"] ?? "";
+    selectedCategory = data["category"];
+    _mainMedia.clear();
+
+    if ((data["imageUrl"] ?? "").toString().isNotEmpty) {
+      _mainMedia.add(
+        _RecipeMedia(
+          url: data["imageUrl"],
+          type: data["mainMediaType"] ?? "image",
+        ),
+      );
+    }
+
+    for (final c in ingredientControllers) {
+      c.dispose();
+    }
+    ingredientControllers.clear();
+
+    final ingredients = List<String>.from(
+      data["ingredients"] ?? [],
+    );
+
+    if (ingredients.isEmpty) {
+      ingredientControllers.add(TextEditingController());
+    } else {
+      for (final ingredient in ingredients) {
+        ingredientControllers.add(
+          TextEditingController(text: ingredient),
+        );
+      }
+    }
+    for (final c in stepControllers) {
+      c.dispose();
+    }
+    stepControllers.clear();
+    stepMedia.clear();
+
+    final steps = List<String>.from(
+      data["steps"] ?? [],
+    );
+
+    final medias = List<Map<String, dynamic>>.from(
+      data["stepMedia"] ?? [],
+    );
+
+    if (steps.isEmpty) {
+      stepControllers.add(TextEditingController());
+      stepMedia.add([]);
+    } else {
+      for (int i = 0; i < steps.length; i++) {
+        stepControllers.add(
+          TextEditingController(text: steps[i]),
+        );
+
+        final List<_RecipeMedia> mediaList = [];
+
+        final mediaData = medias.where(
+          (e) => e["stepIndex"] == i,
+        );
+
+        for (final item in mediaData) {
+          final media = List<Map<String, dynamic>>.from(
+            item["media"] ?? [],
+          );
+
+          for (final m in media) {
+            mediaList.add(
+              _RecipeMedia(
+                url: m["url"],
+                type: m["type"] ?? "image",
+              ),
+            );
+          }
+        }
+
+        stepMedia.add(mediaList);
+      }
+    }
+    setState(() {});
+  }
+  Future<void> _saveDraft() async {
+    final title = _nameController.text.trim();
+    final servings = _servingsController.text.trim();
+    final ingredientTexts = ingredientControllers
+        .map((e) => e.text.trim())
+        .where((e) => e.isNotEmpty)
+        .toList();
+
+    final stepTexts = stepControllers
+        .map((e) => e.text.trim())
+        .where((e) => e.isNotEmpty)
+        .toList();
+
+    final draftId = await _svc.saveDraft(
+      draftId: _draftId,
+      title: title.isEmpty ? "Chưa đặt tên" : title,
+      category: selectedCategory ?? "",
+      servings: servings.isEmpty ? "1 phần" : servings,
+      ingredients: ingredientTexts,
+      steps: stepTexts,
+      mainMediaFiles: _mainMedia
+          .where((m) => m.file != null)
+          .map((m) => m.file!)
+          .toList(),
+      mainMediaTypes: _mainMedia.map((m) => m.type).toList(),
+      stepMediaFiles: stepMedia
+          .map(
+            (list) => list
+                .where((m) => m.file != null)
+                .map((m) => m.file!)
+                .toList(),
+          )
+          .toList(),
+      stepMediaTypes: stepMedia
+          .map((list) => list.map((m) => m.type).toList())
+          .toList(),
+    );
+
+    if (!mounted) return;
+    if (draftId != null) {
+      _draftId = draftId;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Đã lưu bản nháp"),
+        ),
+      );
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const SaveRecipeScreen(),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            _svc.lastError ?? "Không thể lưu bản nháp",
+          ),
+        ),
+      );
+    }
   }
 
   Future<void> _submitRecipe() async {
@@ -281,10 +454,18 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
       servings: servings.isEmpty ? '1 phần' : servings,
       ingredients: ingredientTexts,
       steps: stepTexts,
-      mainMediaFiles: _mainMedia.map((m) => m.file).toList(),
+      mainMediaFiles: _mainMedia
+          .where((m) => m.file != null)
+          .map((m) => m.file!)
+          .toList(),
       mainMediaTypes: _mainMedia.map((m) => m.type).toList(),
       stepMediaFiles: stepMedia
-          .map((list) => list.map((m) => m.file).toList())
+          .map(
+            (list) => list
+                .where((m) => m.file != null)
+                .map((m) => m.file!)
+                .toList(),
+          )
           .toList(),
       stepMediaTypes: stepMedia
           .map((list) => list.map((m) => m.type).toList())
@@ -293,6 +474,9 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
 
     if (!mounted) return;
     if (recipeId != null) {
+      if (_draftId != null) {
+        await _svc.deleteDraft(_draftId!);
+      }
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Đã đăng món thành công')),
       );
@@ -328,7 +512,7 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
               const SizedBox(height: 12),
               _buildRowItem(
                 label: "Khẩu phần",
-                child: _buildTextField(_servingsController, "200 gr bột"),
+                child: _buildTextField(_servingsController, "Cho 4 người"),
               ),
               const SizedBox(height: 24),
               _buildIngredientSection(),
@@ -352,14 +536,52 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
       ),
       actions: [
         TextButton(
-          onPressed: () {},
+          onPressed: _saveDraft,
           child: const Text(
             "Lưu",
-            style: TextStyle(color: Colors.grey, fontSize: 16),
+            style: TextStyle(
+              color: Colors.orange,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         _buildCreateButton(),
-        const Icon(Icons.more_vert, color: Colors.black),
+        PopupMenuButton<String>(
+          icon: const Icon(Icons.more_vert, color: Colors.black),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          onSelected: (value) {
+            if (value == 'draft') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const SaveRecipeScreen(),
+                ),
+              );
+            }
+
+            if (value == 'status') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const StatusRecipeScreen(),
+                ),
+              );
+            }
+          },
+          itemBuilder: (context) => const [
+            PopupMenuItem(
+              value: 'draft',
+              child: Text("Bản nháp"),
+            ),
+            PopupMenuItem(
+              value: 'status',
+              child: Text("Đơn đã tạo"),
+            ),
+          ],
+        ),
         const SizedBox(width: 8),
       ],
     );
@@ -606,12 +828,19 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                               color: Colors.orange,
                             ),
                           )
-                        : Image.file(
-                            e.value.file,
-                            width: size,
-                            height: size * 0.75,
-                            fit: BoxFit.cover,
-                          ),
+                        : e.value.file != null
+                            ? Image.file(
+                                e.value.file!,
+                                width: size,
+                                height: size * 0.75,
+                                fit: BoxFit.cover,
+                              )
+                            : Image.network(
+                                e.value.url!,
+                                width: size,
+                                height: size * 0.75,
+                                fit: BoxFit.cover,
+                              ),
                   ),
                   Positioned(
                     top: 5,
@@ -674,12 +903,19 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                                 color: Colors.orange,
                               ),
                             )
-                          : Image.file(
-                              _mainMedia[index].file,
-                              width: 160,
-                              height: 160,
-                              fit: BoxFit.cover,
-                            ),
+                          : _mainMedia[index].file != null
+                              ? Image.file(
+                                  _mainMedia[index].file!,
+                                  width: 160,
+                                  height: 160,
+                                  fit: BoxFit.cover,
+                                )
+                              : Image.network(
+                                  _mainMedia[index].url!,
+                                  width: 160,
+                                  height: 160,
+                                  fit: BoxFit.cover,
+                                ),
                     ),
                     Positioned(
                       top: 5,
