@@ -8,6 +8,7 @@ import 'features/home/home.dart';
 import 'features/home/admin_home_screen.dart';
 import 'features/auth/forgotpass.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'core/services/recipe_import_service.dart';
 
 final logger = Logger(
   printer: PrettyPrinter(
@@ -31,11 +32,15 @@ void main() async {
 
   try {
     await Firebase.initializeApp();
+
     await GoogleSignIn.instance.initialize(
       serverClientId:
           '701455481856-ioi9i1n44vnogtnv3761cfqhks29i1b0.apps.googleusercontent.com',
     );
+
     logger.i("Firebase initialized");
+    await RecipeImportService.instance.initializeRecipes();
+    logger.i("Recipes initialized");
   } catch (e) {
     logger.e("Firebase init error: $e");
   }

@@ -43,23 +43,6 @@ class FirebaseService {
     return int.parse("${now.year}${now.weekday}");
   }
 
-  Future<List<Recipe>> getTrendingRecipes() async {
-    try {
-      int week = getCurrentWeek();
-      final snapshot = await _recipes
-          .where('week', isEqualTo: week)
-          .where('status', isEqualTo: 'published')
-          .get();
-
-      return snapshot.docs
-          .map((doc) => Recipe.fromFirestore(doc.data(), doc.id))
-          .toList();
-    } catch (e) {
-      debugPrint("Lỗi lấy món thịnh hành: $e");
-      return [];
-    }
-  }
-
   Stream<QuerySnapshot<Map<String, dynamic>>> getPublishedRecipesByCategory(String category) {
     return _recipes
         .where('category', isEqualTo: category)
@@ -82,60 +65,132 @@ class FirebaseService {
         .snapshots();
   }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> getPublishedRecipes() {
+  Stream<List<Recipe>> streamPublishedRecipes() {
     return _recipes
         .where('status', isEqualTo: 'published')
         .orderBy('createdAt', descending: true)
-        .snapshots();
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs
+              .map((doc) => Recipe.fromFirestore(doc))
+              .toList(),
+        );
   }
 
-  /*Future<bool> importRecipesFromAsset(String assetPath) async {
-    try {
-      final current = _auth.currentUser;
-      if (current == null) return false;
-       final dataString = await rootBundle.loadString(assetPath);
-       final recipesData = jsonDecode(dataString) as List<dynamic>;
-       final batch = _db.batch();
-      for (final item in recipesData) {
-        final recipe = Map<String, dynamic>.from(item as Map);
-        final doc = _recipes.doc();
-        batch.set(doc, {
-          'id': doc.id,
-          'title': recipe['name'] ?? recipe['title'] ?? '',
-          'name': recipe['name'] ?? recipe['title'] ?? '',
-          'userId': current.uid,
-          'userName': current.displayName ?? current.email ?? 'Admin',
-          'imageUrl': recipe['thumbnail'] ?? '',
-          'image': recipe['thumbnail'] ?? '',
-          'category': recipe['category'] ?? '',
-          'servings': recipe['servings'] ?? '',
-          'ingredients': List<String>.from(recipe['ingredients'] ?? []),
-          'steps': List<String>.from(recipe['steps'] ?? []),
-          'status': 'published',
-          'mainMediaType': 'image',
-          'createdAt': Timestamp.now(),
-          'updatedAt': Timestamp.now(),
-          'week': getCurrentWeek(),
+  Stream<List<Recipe>> streamRecipesByCategory(String category) {
+    return _recipes
+        .where('status', isEqualTo: 'published')
+        .snapshots()
+        .map((snapshot) {
+          final recipes = snapshot.docs
+              .map((e) => Recipe.fromFirestore(e))
+              .where(
+                (recipe) =>
+                    recipe.category.trim().toLowerCase() ==
+                    category.trim().toLowerCase(),
+              )
+              .toList();
+          recipes.sort(
+            (a, b) => b.createdAt.compareTo(a.createdAt),
+          );
+          return recipes;
         });
-      }
-      await batch.commit();
-      return true;
-    } catch (e) {
-      debugPrint('Lỗi importRecipesFromAsset: $e');
-      lastError = e.toString();
-      return false;
-    }
-  }*/
+  }
 
-  Future<List<Recipe>> getAllRecipes() async {
+  Stream<List<Recipe>> streamMyRecipes() {
+    final current = _auth.currentUser;
+    if (current == null) {
+      return const Stream.empty();
+    }
+    return _recipes
+        .where('userId', isEqualTo: current.uid)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs
+              .map((doc) => Recipe.fromFirestore(doc))
+              .toList(),
+        );
+  }
+
+  Stream<List<Recipe>> streamDraftRecipes() {
+    final current = _auth.currentUser;
+    if (current == null) {
+      return const Stream.empty();
+    }
+    return _db
+        .collection('draft_recipes')
+        .where('userId', isEqualTo: current.uid)
+        .orderBy('updatedAt', descending: true)
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs
+              .map((doc) => Recipe.fromFirestore(doc))
+              .toList(),
+        );
+  }
+
+  Future<void> deleteRecipe(String recipeId) async {
     try {
-      final snapshot = await _recipes.get();
+      await _recipes.doc(recipeId).delete();
+    } catch (e) {
+      debugPrint("Lỗi deleteRecipe: $e");
+    }
+  }
+
+  Future<void> updateRecipe(Recipe recipe) async {
+    try {
+      await _recipes.doc(recipe.id).update({
+        ...recipe.toFirestore(),
+        'updatedAt': Timestamp.now(),
+      });
+    } catch (e) {
+      debugPrint("Lỗi updateRecipe: $e");
+    }
+  }
+
+  Future<List<Recipe>> getPublishedRecipes() async {
+    try {
+      final snapshot = await _recipes
+          .where('status', isEqualTo: 'published')
+          .orderBy('createdAt', descending: true)
+          .get();
+
       return snapshot.docs
-          .map((doc) => Recipe.fromFirestore(doc.data(), doc.id))
+          .map((doc) => Recipe.fromFirestore(doc))
           .toList();
     } catch (e) {
-      debugPrint("Lỗi lấy tất cả món ăn: $e");
+      debugPrint("Lỗi getPublishedRecipes: $e");
       return [];
+    }
+  }
+  Future<List<Recipe>> getRecipesByCategory(String category) async {
+    try {
+      final snapshot = await _recipes
+          .where('status', isEqualTo: 'published')
+          .where('category', isEqualTo: category)
+          .orderBy('createdAt', descending: true)
+          .get();
+
+      return snapshot.docs
+          .map((doc) => Recipe.fromFirestore(doc))
+          .toList();
+    } catch (e) {
+      debugPrint("Lỗi getRecipesByCategory: $e");
+      return [];
+    }
+  }
+
+  Future<Recipe?> getRecipeById(String recipeId) async {
+    try {
+      final doc = await _recipes.doc(recipeId).get();
+
+      if (!doc.exists) return null;
+
+      return Recipe.fromFirestore(doc);
+    } catch (e) {
+      debugPrint("Lỗi getRecipeById: $e");
+      return null;
     }
   }
 
@@ -384,86 +439,112 @@ class FirebaseService {
   }
 
   Future<String?> createRecipe({
-    required String title,
-    required String category,
-    required String servings,
-    required List<String> ingredients,
-    required List<String> steps,
-    required List<File> mainMediaFiles,
-    required List<String> mainMediaTypes,
-    required List<List<File>> stepMediaFiles,
-    required List<List<String>> stepMediaTypes,
-    String status = 'published',
-  }) async {
-    try {
-      final current = _auth.currentUser;
-      if (current == null) return null;
+  required String title,
+  required String category,
+  required String servings,
+  required List<String> ingredients,
+  required List<RecipeStep> steps,
+  required List<File> mainMediaFiles,
+  required List<String> mainMediaTypes,
+  required List<List<File>> stepMediaFiles,
+  required List<List<String>> stepMediaTypes,
+  String status = 'published',
+}) async {
+  try {
+    final current = _auth.currentUser;
+    if (current == null) return null;
+    final recipeRef = _recipes.doc();
+    final recipeId = recipeRef.id;
 
-      final recipeRef = _recipes.doc();
-      final recipeId = recipeRef.id;
-      String? mainMediaUrl;
-      String? mainMediaType;
+    String? mainMediaUrl;
+    String? mainMediaType;
 
-      if (mainMediaFiles.isNotEmpty) {
-        final uploaded = await _uploadMediaFiles(
-          files: mainMediaFiles,
-          types: mainMediaTypes,
-          recipeId: recipeId,
-          userId: current.uid,
-          folder: 'main',
-        );
-        if (uploaded.isNotEmpty) {
-          mainMediaUrl = uploaded.first['url'] as String?;
-          mainMediaType = uploaded.first['type'] as String?;
-        }
+    // Upload ảnh/video đại diện
+    if (mainMediaFiles.isNotEmpty) {
+      final uploaded = await _uploadMediaFiles(
+        files: mainMediaFiles,
+        types: mainMediaTypes,
+        recipeId: recipeId,
+        userId: current.uid,
+        folder: 'main',
+      );
+
+      if (uploaded.isNotEmpty) {
+        mainMediaUrl = uploaded.first['url'] as String?;
+        mainMediaType = uploaded.first['type'] as String?;
       }
-
-      final stepMediaData = <Map<String, dynamic>>[];
-      for (var i = 0; i < stepMediaFiles.length; i++) {
-        final mediaFiles = stepMediaFiles[i];
-        final mediaTypes = stepMediaTypes[i];
-        if (mediaFiles.isEmpty) continue;
-        final uploaded = await _uploadMediaFiles(
-          files: mediaFiles,
-          types: mediaTypes,
-          recipeId: recipeId,
-          userId: current.uid,
-          folder: 'step_$i',
-        );
-        stepMediaData.add({
-          'stepIndex': i,
-          'media': uploaded,
-        });
-      }
-
-      await _recipes.doc(recipeId).set({
-        'id': recipeId,
-        'title': title,
-        'name': title,
-        'userId': current.uid,
-        'userName': current.displayName ?? current.email ?? '',
-        'imageUrl': mainMediaUrl ?? '',
-        'image': mainMediaUrl ?? '',
-        'category': category,
-        'servings': servings,
-        'ingredients': ingredients,
-        'steps': steps,
-        'stepMedia': stepMediaData,
-        'mainMediaType': mainMediaType ?? '',
-        'status': status,
-        'createdAt': Timestamp.now(),
-        'updatedAt': Timestamp.now(),
-        'submittedAt': Timestamp.now(),
-        'week': status == 'published' ? getCurrentWeek() : 0,
-      });
-      return recipeId;
-    } catch (e) {
-      debugPrint('Lỗi createRecipe: $e');
-      lastError = e.toString();
-      return null;
     }
-  }
 
+    // Upload media từng bước
+    final stepMediaData = <Map<String, dynamic>>[];
+
+    for (int i = 0; i < stepMediaFiles.length; i++) {
+      if (stepMediaFiles[i].isEmpty) continue;
+
+      final uploaded = await _uploadMediaFiles(
+        files: stepMediaFiles[i],
+        types: stepMediaTypes[i],
+        recipeId: recipeId,
+        userId: current.uid,
+        folder: 'step_$i',
+      );
+
+      stepMediaData.add({
+        "stepIndex": i,
+        "media": uploaded,
+      });
+    }
+
+    // Chuyển các bước thành đúng cấu trúc RecipeStep
+    final recipeSteps = <Map<String, dynamic>>[];
+
+    for (int i = 0; i < steps.length; i++) {
+      recipeSteps.add({
+        "stepNumber": i + 1,
+        "title": "Bước ${i + 1}",
+        "description": steps[i],
+        "images": stepMediaData
+            .where((e) => e["stepIndex"] == i)
+            .expand((e) => (e["media"] as List))
+            .map((e) => e["url"])
+            .toList(),
+      });
+    }
+
+    await recipeRef.set({
+      "id": recipeId,
+      "name": title,
+      "title": title,
+      "category": category,
+      "thumbnail": mainMediaUrl ?? "",
+      "image": mainMediaUrl ?? "",
+      "imageUrl": mainMediaUrl ?? "",
+      "ingredientTitle": "Nguyên liệu",
+      "ingredients": ingredients,
+      "steps": recipeSteps,
+      "servings": servings,
+      "authorId": current.uid,
+      "authorName": current.displayName ?? "Người dùng",
+      "authorLocation": "Việt Nam",
+      "userId": current.uid,
+      "userName": current.displayName ?? current.email ?? "",
+      "isAdmin": false,
+      "status": status,
+      "mainMediaType": mainMediaType ?? "",
+      "stepMedia": stepMediaData,
+      "createdAt": Timestamp.now(),
+      "updatedAt": Timestamp.now(),
+      "submittedAt": Timestamp.now(),
+      "week": status == "published" ? getCurrentWeek() : 0,
+    });
+
+    return recipeId;
+  } catch (e) {
+    debugPrint("Lỗi createRecipe: $e");
+    lastError = e.toString();
+    return null;
+  }
+}
   Future<bool> updateRecipeStatus(
     String recipeId,
     String status, {
@@ -497,7 +578,7 @@ class FirebaseService {
     required String category,
     required String servings,
     required List<String> ingredients,
-    required List<String> steps,
+    required List<RecipeStep> steps,
     required List<File> mainMediaFiles,
     required List<String> mainMediaTypes,
     required List<List<File>> stepMediaFiles,
@@ -550,7 +631,9 @@ class FirebaseService {
           'category': category,
           'servings': servings,
           'ingredients': ingredients,
-          'steps': steps,
+          'steps': steps
+            .map((e) => e.toJson())
+            .toList(),
           'imageUrl': mainMediaUrl ?? '',
           'image': mainMediaUrl ?? '',
           'mainMediaType': mainMediaType ?? '',

@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../core/services/firebase_service.dart';
 import 'save_recipe.dart';
 import 'status_recipe.dart';
+import '../../data/models/recipe.dart';
 
 class CreateRecipeScreen extends StatefulWidget {
   final String? draftId;
@@ -373,18 +374,26 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         .where((e) => e.isNotEmpty)
         .toList();
 
-    final stepTexts = stepControllers
-        .map((e) => e.text.trim())
-        .where((e) => e.isNotEmpty)
-        .toList();
-
+    final recipeSteps = <RecipeStep>[];
+      for (int i = 0; i < stepControllers.length; i++) {
+        final description = stepControllers[i].text.trim();
+        if (description.isEmpty) continue;
+        recipeSteps.add(
+          RecipeStep(
+            stepNumber: recipeSteps.length + 1,
+            title: '',
+            description: description,
+            images: const [],
+          ),
+        );
+      }
     final draftId = await _svc.saveDraft(
       draftId: _draftId,
       title: title.isEmpty ? "Chưa đặt tên" : title,
       category: selectedCategory ?? "",
       servings: servings.isEmpty ? "1 phần" : servings,
       ingredients: ingredientTexts,
-      steps: stepTexts,
+      steps: recipeSteps,
       mainMediaFiles: _mainMedia
           .where((m) => m.file != null)
           .map((m) => m.file!)
@@ -443,17 +452,26 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         .map((c) => c.text.trim())
         .where((t) => t.isNotEmpty)
         .toList();
-    final stepTexts = stepControllers
-        .map((c) => c.text.trim())
-        .where((t) => t.isNotEmpty)
-        .toList();
+    final recipeSteps = <RecipeStep>[];
+      for (int i = 0; i < stepControllers.length; i++) {
+        final description = stepControllers[i].text.trim();
+        if (description.isEmpty) continue;
+        recipeSteps.add(
+          RecipeStep(
+            stepNumber: recipeSteps.length + 1,
+            title: '',
+            description: description,
+            images: const [],
+          ),
+        );
+      }
 
     final recipeId = await _svc.createRecipe(
       title: title,
       category: selectedCategory!,
       servings: servings.isEmpty ? '1 phần' : servings,
       ingredients: ingredientTexts,
-      steps: stepTexts,
+      steps: recipeSteps,
       mainMediaFiles: _mainMedia
           .where((m) => m.file != null)
           .map((m) => m.file!)

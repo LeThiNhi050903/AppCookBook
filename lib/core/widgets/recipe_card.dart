@@ -3,33 +3,60 @@ import '../../data/models/recipe.dart';
 
 class RecipeCard extends StatelessWidget {
   final Recipe recipe;
-  const RecipeCard({super.key, required this.recipe});
+  final VoidCallback? onTap;
+
+  const RecipeCard({
+    super.key,
+    required this.recipe,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 10),
-      width: 150,
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              recipe.image,
-              height: 100,
-              width: 150,
-              fit: BoxFit.cover,
+    return InkWell(
+      borderRadius: BorderRadius.circular(10),
+      onTap: onTap,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.network(
+                recipe.thumbnail,
+                fit: BoxFit.cover,
+                errorBuilder: (_, _, _) => Container(
+                  color: Colors.grey.shade300,
+                  child: const Icon(Icons.image_not_supported),
+                ),
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 5,
-            left: 5,
-            child: Text(
-              recipe.name,
-              style: const TextStyle(color: Colors.white),
+
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.55),
+                ),
+                child: Text(
+                  recipe.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

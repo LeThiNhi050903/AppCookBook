@@ -6,6 +6,8 @@ import '../../core/widgets/bottomnav.dart';
 import '../../core/widgets/ai_plant_button.dart';
 import '../notification/notification_screen.dart';
 import 'tabhome.dart';
+import '../../data/models/recipe.dart';
+import '../../core/widgets/recipe_card.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isAdmin;
@@ -94,8 +96,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 _buildFixedTopSection(),
                 Expanded(
                   child: selectedCategory == null
-                      ? _buildHomeContent()
-                      : _buildCategoryContent(),
+                    ? _buildHomeContent()
+                    : _buildCategoryContent(selectedCategory!),
                 ),
               ],
             ),
@@ -305,11 +307,46 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildTrending() => const SizedBox(
-      height: 120,
-      child: Center(
-          child: Text("Không có dữ liệu",
-              style: TextStyle(color: Colors.grey))));
+  Widget _buildTrending() {
+    return SizedBox(
+      height: 220,
+      child: StreamBuilder<List<Recipe>>(
+        stream: firebaseService.streamPublishedRecipes(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text("Không thể tải dữ liệu"),
+            );
+          }
+
+          final recipes = snapshot.data ?? [];
+
+          if (recipes.isEmpty) {
+            return const Center(
+              child: Text("Chưa có công thức"),
+            );
+          }
+
+          return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            itemCount: recipes.length,
+            itemBuilder: (context, index) {
+              return RecipeCard(
+                recipe: recipes[index],
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
 
   Widget _buildRecentSearch() => const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
@@ -341,42 +378,51 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildCategoryContent() {
-    List recipes = [];
-
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-
-          _buildSectionTitle(selectedCategory!),
-
-          recipes.isEmpty
-              ? const Padding(
-                  padding: EdgeInsets.only(top: 120),
-                  child: Center(
-                    child: Text(
-                      "Chưa có món nào",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                )
-              : ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: recipes.length,
-                  itemBuilder: (_, index) {
-                    return ListTile(
-                      title: Text(recipes[index].name),
-                    );
-                  },
-                ),
-
-          const SizedBox(height: 100),
-        ],
-      ),
+  Widget _buildCategoryContent(String category) {
+    return StreamBuilder<List<Recipe>>(
+      stream: firebaseService.streamRecipesByCategory(category),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+        if (snapshot.hasError) {
+          return Center(
+            child: Text(snapshot.error.toString()),
+          );
+        }
+        final recipes = snapshot.data ?? [];
+        if (recipes.isEmpty) {
+          return const Center(
+            child: Text("Chưa có công thức"),
+          );
+        }
+        return GridView.builder(
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 12,
+            bottom: 130,
+          ),
+          itemCount: recipes.length,
+          gridDelegate:
+              const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 1.45,
+          ),
+          itemBuilder: (context, index) {
+            return RecipeCard(
+              recipe: recipes[index],
+              onTap: () {
+             
+              },
+            );
+          },
+        );
+      },
     );
   }
 }

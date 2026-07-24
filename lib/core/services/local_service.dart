@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart';
+import '../../data/models/recipe.dart';
 
 class LocalService {
   static const String _keyUsername = 'username';
@@ -7,7 +9,16 @@ class LocalService {
   static const String _keyRecentViewed = 'recentViewed';
   static const String _keyAiNotes = 'aiNotes';
   static const String _keyAiChatHistory = 'aiChatHistory';
-
+  static Future<List<Recipe>> loadRecipesFromJson() async {
+    try {
+      final String response = await rootBundle.loadString('assets/json/recipe.json');
+      final List<dynamic> data = jsonDecode(response);
+      return data.map((json) => Recipe.fromJson(json)).toList();
+    } catch (e) {
+      print('Lỗi đọc file recipe.json: $e');
+      return [];
+    }
+  }
   Future<void> saveUsername(String name) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_keyUsername, name);
