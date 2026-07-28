@@ -21,12 +21,15 @@ class RecipeCard extends StatelessWidget {
         child: Stack(
           children: [
             Positioned.fill(
-              child: Image.network(
-                recipe.thumbnail,
-                fit: BoxFit.cover,
-                errorBuilder: (_, _, _) => Container(
-                  color: Colors.grey.shade300,
-                  child: const Icon(Icons.image_not_supported),
+              child: Hero(
+                tag: recipe.id,
+                child: Image.network(
+                  recipe.thumbnail,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, _, _) => Container(
+                    color: Colors.grey.shade300,
+                    child: const Icon(Icons.image_not_supported),
+                  ),
                 ),
               ),
             ),

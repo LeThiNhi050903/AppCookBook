@@ -8,6 +8,7 @@ import '../notification/notification_screen.dart';
 import 'tabhome.dart';
 import '../../data/models/recipe.dart';
 import '../../core/widgets/recipe_card.dart';
+import '../recipe/recipe_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isAdmin;
@@ -308,43 +309,27 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildTrending() {
-    return SizedBox(
-      height: 220,
-      child: StreamBuilder<List<Recipe>>(
-        stream: firebaseService.streamPublishedRecipes(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
+    return StreamBuilder<List<Recipe>>(
+      stream: firebaseService.streamPublishedRecipes(),
+      builder: (context, snapshot) {
 
-          if (snapshot.hasError) {
-            return const Center(
-              child: Text("Không thể tải dữ liệu"),
-            );
-          }
+        print(snapshot.connectionState);
+        print(snapshot.hasData);
+        print(snapshot.hasError);
 
-          final recipes = snapshot.data ?? [];
+        if (snapshot.hasError) {
+          print(snapshot.error);
+          return Text(snapshot.error.toString());
+        }
 
-          if (recipes.isEmpty) {
-            return const Center(
-              child: Text("Chưa có công thức"),
-            );
-          }
+        if (!snapshot.hasData) {
+          return const CircularProgressIndicator();
+        }
 
-          return ListView.builder(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            itemCount: recipes.length,
-            itemBuilder: (context, index) {
-              return RecipeCard(
-                recipe: recipes[index],
-              );
-            },
-          );
-        },
-      ),
+        print("Recipe count = ${snapshot.data!.length}");
+
+        return const Text("OK");
+      },
     );
   }
 
@@ -417,7 +402,14 @@ class _HomeScreenState extends State<HomeScreen> {
             return RecipeCard(
               recipe: recipes[index],
               onTap: () {
-             
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => RecipeDetailScreen(
+                      recipe: recipes[index],
+                    ),
+                  ),
+                );
               },
             );
           },

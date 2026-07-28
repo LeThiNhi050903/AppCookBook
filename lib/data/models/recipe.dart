@@ -8,16 +8,11 @@ class Recipe {
   final String ingredientTitle;
   final List<String> ingredients;
   final List<RecipeStep> steps;
-
-  // Thông tin người tạo
   final String authorId;
   final String authorName;
   final String authorLocation;
-
-  // Phân biệt Admin/User
+  final String authorAvatar;
   final bool isAdmin;
-
-  // Thời gian tạo
   final DateTime createdAt;
 
   Recipe({
@@ -31,11 +26,11 @@ class Recipe {
     this.authorId = "admin",
     this.authorName = "Admin",
     this.authorLocation = "Hà Nội - Việt Nam",
+    this.authorAvatar = "",
     this.isAdmin = true,
     DateTime? createdAt,
   }) : createdAt = createdAt ?? DateTime.now();
 
-  /// Đọc từ JSON (recipes.json)
   factory Recipe.fromJson(Map<String, dynamic> json) {
     return Recipe(
       id: json['id'] ?? '',
@@ -45,14 +40,16 @@ class Recipe {
       ingredientTitle: json['ingredientTitle'] ?? '',
       ingredients: List<String>.from(json['ingredients'] ?? []),
       steps: (json['steps'] as List<dynamic>?)
-              ?.map((step) =>
-                  RecipeStep.fromJson(Map<String, dynamic>.from(step)))
+              ?.map(
+                (step) =>
+                    RecipeStep.fromJson(Map<String, dynamic>.from(step)),
+              )
               .toList() ??
           [],
       authorId: json['authorId'] ?? "admin",
       authorName: json['authorName'] ?? "Admin",
-      authorLocation:
-          json['authorLocation'] ?? "Hà Nội - Việt Nam",
+      authorLocation: json['authorLocation'] ?? "Hà Nội - Việt Nam",
+      authorAvatar: json['authorAvatar'] ?? "",
       isAdmin: json['isAdmin'] ?? true,
       createdAt: json['createdAt'] != null
           ? DateTime.tryParse(json['createdAt'].toString()) ??
@@ -61,10 +58,8 @@ class Recipe {
     );
   }
 
-  /// Đọc từ Firestore
   factory Recipe.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
-
     return Recipe(
       id: data['id'] ?? doc.id,
       name: data['name'] ?? '',
@@ -73,15 +68,16 @@ class Recipe {
       ingredientTitle: data['ingredientTitle'] ?? 'Nguyên liệu',
       ingredients: List<String>.from(data['ingredients'] ?? []),
       steps: (data['steps'] as List<dynamic>?)
-              ?.map((step) =>
-                  RecipeStep.fromJson(Map<String, dynamic>.from(step)))
+              ?.map(
+                (step) =>
+                    RecipeStep.fromJson(Map<String, dynamic>.from(step)),
+              )
               .toList() ??
           [],
       authorId: data['authorId'] ?? data['userId'] ?? 'admin',
-      authorName:
-          data['authorName'] ?? data['userName'] ?? 'Admin',
-      authorLocation:
-          data['authorLocation'] ?? 'Việt Nam',
+      authorName: data['authorName'] ?? data['userName'] ?? 'Admin',
+      authorLocation: data['authorLocation'] ?? 'Việt Nam',
+      authorAvatar: data['authorAvatar'] ?? data['userAvatar'] ?? "",
       isAdmin: data['isAdmin'] ?? false,
       createdAt: data['createdAt'] is Timestamp
           ? (data['createdAt'] as Timestamp).toDate()
@@ -89,7 +85,6 @@ class Recipe {
     );
   }
 
-  /// Xuất ra JSON
   Map<String, dynamic> toJson() {
     return {
       "id": id,
@@ -102,12 +97,12 @@ class Recipe {
       "authorId": authorId,
       "authorName": authorName,
       "authorLocation": authorLocation,
+      "authorAvatar": authorAvatar,
       "isAdmin": isAdmin,
       "createdAt": createdAt.toIso8601String(),
     };
   }
 
-  /// Ghi lên Firestore
   Map<String, dynamic> toFirestore() {
     return {
       "id": id,
@@ -123,8 +118,10 @@ class Recipe {
       "authorId": authorId,
       "authorName": authorName,
       "authorLocation": authorLocation,
+      "authorAvatar": authorAvatar,
       "userId": authorId,
       "userName": authorName,
+      "userAvatar": authorAvatar,
       "isAdmin": isAdmin,
       "createdAt": Timestamp.fromDate(createdAt),
     };
@@ -136,7 +133,6 @@ class RecipeStep {
   final String title;
   final String description;
   final List<String> images;
-
   RecipeStep({
     required this.stepNumber,
     required this.title,

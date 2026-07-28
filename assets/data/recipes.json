@@ -12,7 +12,37 @@
       "Rau mùi và hành lá 50 gr, hành khô 5 củ",
       "Gia vị thông dụng 1 ít (dầu ăn/ nước tương/ bột ngọt/ dầu hào)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Cho 100gr miến dong vào chậu nước lạnh ngâm khoảng 10 phút. Sau đó, vớt miến ra rổ cho ráo nước rồi dùng kéo cắt thành những đoạn dài khoảng 7 - 8cm cho dễ ăn.\nĐối với mộc nhĩ và nấm hương, bạn ngâm nước nóng khoảng 15 - 20 phút cho nở hoàn toàn. Kế đến, cắt bỏ chân và thái thành sợi nhỏ vừa ăn.\n1/2 củ cà rốt bạn đem bào sợi dài; hành lá cắt khúc 4 - 5cm; rau mùi cắt đoạn 1cm và hành khô thái lát mỏng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-6.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-4.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-7.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-5.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp miến để sợi miến không dính",
+        "description": "Bạn cho phần miến đã cắt vào tô lớn, thêm vào 1 muỗng canh dầu ăn, 1 muỗng cà phê nước tương và 1 muỗng cà phê bột ngọt. Dùng đũa trộn thật đều để gia vị thấm vào từng sợi miến.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-mien-de-soi-mien-khong-dinh-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Xào miến",
+        "description": "Bạn bắc chảo lên bếp, cho một chút dầu ăn vào đun nóng rồi cho hành khô thái lát vào phi thơm vàng. Tiếp theo, bạn cho nấm hương vào xào trước khoảng 1 - 2 phút vì nấm hương lâu chín hơn. Sau đó, mới cho mộc nhĩ và cà rốt bào sợi vào đảo chung.\nĐể rau củ đậm đà hơn, bạn nêm thêm 1 muỗng canh dầu hào và 1/2 muỗng cà phê bột ngọt, đảo đều tay cho đến khi cà rốt bắt đầu tái.\nKhi rau củ đã chín tới, bạn cho phần miến đã ướp vào chảo. Dùng đũa đảo liên tục ở lửa vừa để miến chín đều và thấm vị. Trong quá trình xào, nếu thấy miến hơi khô, bạn có thể thêm một chút xíu nước lọc để miến nhanh chín và trong hơn. Lưu ý cho nước từ từ để tránh làm miến bị nát nhé!\nKhi thấy sợi miến đã trong hoàn toàn và dai mềm vừa ý, bạn cho hành lá vào đảo thêm 1 phút. Cuối cùng thêm rau mùi vào rồi tắt bếp ngay để rau giữ được màu xanh tươi và mùi thơm đặc trưng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-mien-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-mien.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-mien-3.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_xào_002",
@@ -25,7 +55,56 @@
       "Hành 1 củ, tỏi 1 củ, chanh 1 quả",
       "Gia vị thông dụng 1 ít (nước mắm/ đường/ bột canh/ muối hạt/ nước lọc)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Đầu tiên, bạn chuẩn bị một nồi nước nóng, cho vào đó một ít muối hạt rồi hòa tan. Cho sườn non vào rửa sơ, sau đó đun thêm khoảng 2 - 3 phút cho nước sôi để sườn bớt mùi hôi.\nTắt bếp, vớt sườn ra và rửa sạch lại dưới vòi nước chảy đến khi thấy nước rửa trong là sườn đã sạch.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-suon-non-dung-cach-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-suon-non-dung-cach.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp và hầm sườn non mềm ngon",
+        "description": "Cho sườn đã sơ chế vào nồi, thêm 1/4 thìa phở bột canh, 1/2 thìa phở đường và một ít nước lọc (vừa đủ ngập sườn).\nĐun lửa to cho sườn sôi, sau đó đảo đều để gia vị ngấm.\nĐậy vung, chỉnh lửa nhỏ và đun khoảng 15 phút. Thỉnh thoảng đảo đều để sườn ngấm gia vị và mềm đều. Việc đun nhỏ lửa sẽ giúp sườn mềm mại, không bị dai khi xào.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/uop-va-ham-suon-non-mem-ngon-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/uop-va-ham-suon-non-mem-ngon.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Pha nước sốt chua ngọt bằng chanh tươi",
+        "description": "Trong lúc chờ sườn mềm, bạn chuẩn bị nước sốt. Cho vào bát 1 thìa phở nước mắm, 1 thìa phở đường, 1 thìa phở nước cốt chanh tươi và 2 thìa phở nước lọc.\nKhuấy đều hỗn hợp cho đường tan hoàn toàn. Đây chính là linh hồn của món sườn chua ngọt bằng chanh.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/pha-nuoc-sot-chua-ngot-bang-chanh-tuoi-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/pha-nuoc-sot-chua-ngot-bang-chanh-tuoi.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Làm nước màu và hoàn thiện sốt chua ngọt",
+        "description": "Để món sườn có màu sắc đẹp mắt, bạn làm nước màu. Cho vào một chiếc chảo nhỏ 2/3 thìa đường và một ít nước. Đun nhỏ lửa đến khi đường tan chảy và chuyển sang màu vàng cánh gián đẹp mắt.\nSau đó, đổ bát nước sốt chua ngọt đã pha vào chảo nước màu, khuấy đều cho hòa quyện. Tắt bếp và đổ ra bát.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/lam-nuoc-mau-va-hoan-thien-sot-chua-ngot-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/lam-nuoc-mau-va-hoan-thien-sot-chua-ngot-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/lam-nuoc-mau-va-hoan-thien-sot-chua-ngot.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Xào sườn với nước sốt chua ngọt đậm đà",
+        "description": "Khi sườn đã hầm mềm và nước cạn, bạn mở vung và tiếp tục đun thêm một lúc nữa để sườn hơi vàng và ra bớt mỡ.\nCho hành tỏi băm vào chảo sườn, đảo đều cho thơm.\nĐổ bát nước sốt chua ngọt đã chuẩn bị vào chảo sườn, đảo đều. Đun nhỏ lửa khoảng 5 phút để sườn ngấm đều nước sốt. Khi nước sốt sánh lại, bám đều vào từng miếng sườn là đạt yêu cầu.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xao-suon-voi-nuoc-sot-chua-ngot-dam-da-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xao-suon-voi-nuoc-sot-chua-ngot-dam-da-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xao-suon-voi-nuoc-sot-chua-ngot-dam-da-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xao-suon-voi-nuoc-sot-chua-ngot-dam-da.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_xào_003",
@@ -39,7 +118,43 @@
       "Gừng nhỏ 1 củ, hành tím 1 củ, tỏi 3 tép",
       "Gia vị thông dụng 1 ít (đường/ hạt nêm/ muối/ nước mắm/ bột ngọt/ sa tế/ tiêu xay)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế thịt vịt và các nguyên liệu",
+        "description": "Đầu tiên, để khử mùi hôi đặc trưng của thịt vịt, bạn hãy dùng muối hạt và gừng đập dập chà xát kỹ khắp mình vịt, sau đó rửa sạch lại với nước và để ráo. Chặt vịt thành miếng vừa ăn.\nHành tím, sả và tỏi băm nhỏ. Gừng tươi thì thái sợi.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-thit-vit-va-cac-nguyen-lieu.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-thit-vit-va-cac-nguyen-lieu-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Rang săn vịt trên chảo",
+        "description": "Bắc chảo lên bếp, cho vịt đã chặt vào chảo. Vì vịt có mỡ nên bạn không cần thêm dầu ăn.\nRang vịt trên lửa vừa cho đến khi thịt săn lại, mỡ từ thịt vịt chảy ra và có màu vàng đẹp mắt.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rang-san-vit-tren-chao-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Phi thơm hành tỏi và nêm gia vị ướp",
+        "description": "Khi vịt đã săn, bạn cho hành tím và tỏi băm nhỏ vào chảo, đảo đều cho dậy mùi thơm.\nTiếp đến, nêm gia vị ướp gồm: 1 muỗng canh đường, 1 muỗng cà phê hạt nêm, 1 muỗng cà phê muối, 1 muỗng cà phê bột ngọt, 1 muỗng cà phê xà tế và 2 muỗng canh nước mắm.\nĐảo đều để các gia vị thấm vào từng miếng thịt vịt, tạo nên đậm đà hương vị.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/phi-thom-hanh-toi-va-nem-gia-vi-uop-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/phi-thom-hanh-toi-va-nem-gia-vi-uop.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Thêm sả và om vịt rang gừng sả",
+        "description": "Sau khi gia vị đã quyện đều, cho toàn bộ sả đã thái vào chảo. Đảo đều tay. Đun thêm khoảng 5 phút trên lửa vừa cho thịt chín kĩ.\nCuối cùng, cho gừng thái sợi vào chảo, đảo thêm vài lượt.\nHạ nhỏ lửa và đun thêm khoảng 3 phút nữa để gừng dậy mùi thơm và thịt vịt chín mềm, thấm vị.\nRắc thêm một ít tiêu bột lên trên, đảo nhẹ rồi tắt bếp.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/them-sa-va-om-vit-rang-gung-sa.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/them-sa-va-om-vit-rang-gung-sa-2.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_xào_004",
@@ -56,7 +171,46 @@
       "Bột nêm gà 1/4 muỗng cà phê, tinh bột bắp 1 muỗng canh",
       "Dầu ăn 1 ít, muối nở 1/4 muỗng cà phê, Gia vị thông dụng 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế và ướp thịt bò mềm để xào",
+        "description": "Thịt bò bạn rửa sạch, để ráo rồi thái lát mỏng vừa ăn. Nếu bạn muốn thịt mềm mọng như nhà hàng, có thể cho thêm 1/4 muỗng cà phê muối nở (baking soda) và thái miếng dày khoảng 2mm.\nƯớp thịt với 1/2 muỗng canh nước tương, 1 muỗng cà phê hắc xì dầu (giúp thịt lên màu đẹp), 1 muỗng cà phê dầu hào, 1 muỗng cà phê đường, 1/4 muỗng cà phê bột nêm gà, 1 muỗng canh tinh bột bắp và 1 muỗng canh nước. Trộn đều các gia vị này trước.\nSau đó, thêm 1 muỗng canh dầu ăn và một ít tiêu xay. Cuối cùng, cho 2 tép tỏi đã ép hoặc băm nhuyễn vào, trộn đều lần nữa.\nĐể thịt nghỉ khoảng 10-15 phút (hoặc lâu hơn trong tủ lạnh nếu có thời gian), bạn nhớ đậy kín nhé.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-uop-thit-bo-mem-de-xao-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-uop-thit-bo-mem-de-xao-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-uop-thit-bo-mem-de-xao-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Sơ chế rau củ tươi ngon",
+        "description": "Bông cải trắng và bông cải xanh rửa sạch, cắt miếng vừa ăn. Cà rốt gọt vỏ, tỉa hoa hoặc thái lát mỏng khoảng 2.5-3mm. Đậu Hà Lan/Đậu Ván/Đậu cô ve bạn tước bỏ hai đầu và chỉ xơ.\nGốc hành lá trắng cắt nhỏ. Hành tây bóc vỏ, cắt múi cau dày khoảng 5mm rồi tơi ra. Bắp cải rửa sạch, thái nhỏ.\nBạn có thể linh hoạt thay đổi các loại rau củ tùy theo sở thích và những gì có sẵn trong bếp nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-rau-cu-tuoi-ngon-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Xào nhanh rau củ giữ độ giòn",
+        "description": "Bắc chảo lên bếp, cho 1 muỗng canh dầu ăn vào. Khi dầu nóng, thêm 1/8 muỗng cà phê muối, rồi cho hành tây cắt múi cau và gốc hành lá cắt nhỏ vào xào. Đảo thật nhanh tay trên lửa lớn.\nTiếp theo, cho bắp cải vào xào cùng. Đảo nhanh khoảng vài phút, không cần xào chín hẳn vì chúng ta sẽ xào lại lần nữa.\nSau đó, cho hỗn hợp rau củ này ra đĩa riêng. Việc xào sơ và tách riêng giúp rau củ giữ được độ giòn ngon, không bị mềm nhũn khi xào chung với thịt bò.\nVẫn dùng chảo đó, thêm 1 muỗng canh dầu ăn và 15gr hành tím cắt nhỏ vào phi thơm. Sau đó, cho bông cải trắng và bông cải xanh vào đảo đều.\nThêm 1/8 muỗng cà phê muối và một chút nước vào, xào đến khi rau bắt đầu trong.\nTiếp tục cho cà rốt và đậu vào, đảo đều trên lửa lớn cho đến khi rau củ trong và chín giòn.\nNếu thấy khô, có thể thêm chút nước. Khi rau củ đạt độ giòn mong muốn, cho ra tô hoặc đĩa riêng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-nhanh-rau-cu-giu-do-gion-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-nhanh-rau-cu-giu-do-gion-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-nhanh-rau-cu-giu-do-gion-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Bí quyết xào thịt bò mềm mọng, không dai",
+        "description": "Làm nóng chảo thật kỹ, không cho thêm dầu.\nCho trực tiếp thịt bò đã ướp vào chảo và áp chảo. Trải đều thịt ra chảo, tránh đảo ngay để thịt có thời gian rám vàng một mặt.\nKhi thịt bò đã rám nâu nhẹ ở mặt dưới, lật mặt và tiếp tục áp chảo. Cách này giúp miếng thịt bò mềm mọng, không bị khô hay cứng.\nKhi thịt đã rám đều, nêm thêm 2 muỗng cà phê hắc xì dầu vào, đảo nhanh để thịt lên màu nâu đẹp mắt.\nTiếp theo, cho 1 muỗng cà phê dầu hào vào, đảo nhẹ nhàng.\nCuối cùng, thêm 1/3 chén nước vào chảo, vẫn giữ lửa lớn. Đảo đều cho thịt chín tới, thịt bò rất nhanh chín nên bạn đừng xào quá lâu nhé.\nKhi thịt bò đã chín tới và sốt hơi sánh lại, cho tất cả phần rau củ đã xào vào chảo. Tắt bếp và đảo đều để sốt thịt xào thấm vào rau củ.\nCho món thịt bò xào rau củ ra đĩa, rắc thêm chút tiêu xay lên trên để tăng thêm hương vị",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/bi-quyet-xao-thit-bo-mem-mong-khong-dai-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/bi-quyet-xao-thit-bo-mem-mong-khong-dai-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/bi-quyet-xao-thit-bo-mem-mong-khong-dai-3.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_xào_005",
@@ -71,7 +225,36 @@
       "Mắm tôm 1 muỗng canh, chanh 1/2 quả (hoặc giấm)",
       "Gia vị thông dụng 1 ít (đường/muối/tiêu/nước mắm/bột ngọt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế ốc bươu và chuối xanh",
+        "description": "Rửa sạch ốc, sau đó cho vào nồi luộc sơ qua khoảng 5-7 phút.\nVớt ốc ra, tách lấy phần thịt ốc. Dùng muối hạt hoặc chanh/giấm bóp kỹ thịt ốc để khử mùi tanh và làm sạch nhớt. Rửa lại ốc nhiều lần với nước sạch cho đến khi hết nhớt.\nGọt vỏ chuối xanh, thái lát vừa ăn. Ngâm chuối ngay vào tô nước có pha chút muối hoặc nước cốt chanh để chuối không bị thâm đen và giảm độ chát",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/so-che-oc-buou-va-chuoi-xanh-3.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/so-che-oc-buou-va-chuoi-xanh-4.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/so-che-oc-buou-va-chuoi-xanh-5.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/so-che-oc-buou-va-chuoi-xanh-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp ốc bươu đậm đà",
+        "description": "Cho thịt ốc đã sơ chế vào tô. Ướp ốc với 1 muỗng cà phê muối, 1 muỗng canh nước mắm, 1 muỗng canh mắm tôm, 1/2 muỗng cà phê tiêu, 1 muỗng cà phê đường và 1/2 muỗng cà phê bột ngọt.\nTrộn đều và ướp trong khoảng 15-20 phút để ốc ngấm gia vị.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/uop-oc-buou-dam-da.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Xào ốc bươu với chuối và lá lốt",
+        "description": "Bắc chảo lên bếp, cho một ít dầu ăn vào. Khi dầu nóng, cho tỏi băm vào phi thơm.\nTrút phần ốc bươu đã ướp vào chảo và xào cho ốc săn lại, điều này giúp ốc đậm đà hơn. Tiếp tục cho chuối vào, đảo đều tay trên lửa vừa cho ốc và chuối quyện vào nhau.\nNêm nếm lại gia vị cho vừa ăn. Nếu muốn món ăn có chút nước sốt sệt, bạn có thể thêm một ít nước lọc vào.\nCuối cùng, cho lá lốt thái nhỏ vào đảo đều rồi tắt bếp.\nRửa lại ốc nhiều lần với nước sạch cho đến khi hết nhớt.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xao-oc-buou-voi-chuoi-va-la-lot.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xao-oc-buou-voi-chuoi-va-la-lot-2.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_xào_006",
@@ -87,7 +270,37 @@
       "Ớt 1 ít, sả 1 ít, tỏi 1 ít, Hành tím 1 ít",
       "Dầu ăn 1 ít, gia vị thông dụng 1 ít (muối/ bột ngọt/ hạt nêm/ đường)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Thịt bê đã rửa sạch qua nước nóng, bạn thái thành những lát mỏng vừa ăn. Cố gắng thái mỏng để thịt nhanh chín và mềm hơn khi xào.\nLưu ý: Thịt bê hơi cứng, bạn nên dùng dao sắc và thái dứt khoát để có những lát thịt đẹp.\nSả cây một phần băm nhuyễn, một phần cắt khúc và đập dập. Tỏi, hành tím, ớt băm nhỏ. Hành tây thái múi cau.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp thịt bê đậm đà",
+        "description": "Cho thịt bê đã thái vào tô lớn. Thêm một ít muối, hạt nêm, bột ngọt, đường, bột cà ri, sả băm, và sả cây đập dập.\nTrộn đều và ướp khoảng 10-15 phút cho thịt thấm gia vị.\nMách nhỏ: Nếu có thời gian, bạn có thể ướp thịt lâu hơn (khoảng 30 phút) để thịt bê xào lăn càng thấm vị và thơm ngon hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-thit-be-dam-da-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-thit-be-dam-da-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Xào thịt bê săn chắc",
+        "description": "Bắc chảo lên bếp, cho ít dầu ăn vào. Khi dầu nóng, cho tỏi băm vào phi thơm.\nSau đó, cho thịt bê đã ướp vào xào nhanh tay trên lửa lớn cho đến khi thịt săn lại.\nKhi thịt đã săn, đổ hết chén nước cốt dừa vào chảo.\nĐun sôi, nêm nếm lại gia vị cho vừa ăn. Nếu thấy thịt còn khô hoặc chưa đủ chín, có thể thêm một ít nước dừa nữa.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-thit-be-san-chac-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-thit-be-san-chac-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-thit-be-san-chac-3.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chiênrán_001",
@@ -103,7 +316,55 @@
       "Bánh tráng cuốn chả giò 1 gói",
       "Dầu ăn 250 ml, gia vị thông dụng 1 ít (Muối/ hạt nêm/ bột ngọt/ tiêu hạt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Thịt ba rọi mua về, bạn sẽ rửa qua với nước, sau đó dùng khoảng 1 muỗng canh muối chà xát toàn bộ bề mặt thịt để khử mùi hôi và bụi bẩn. Tiếp theo sẽ lấy thịt ra để ráo và tiến hành băm nhuyễn.\nCà rốt gọt vỏ, thái thành lát mỏng và cắt sợi. Bắp cải cắt làm đôi và bạn chỉ cần sử dụng một nửa quả, tiếp đó cũng thái thành các sợi mỏng như cà rốt.\nSau khi cắt xong cà rốt và củ cải thì bạn cho vào 1 thau lớn, rửa sạch lại với nước và cho ra rổ, để ráo.\nMộc nhĩ cho vào tô ngâm với nước lạnh trong khoảng 2 - 3 tiếng. Khi mộc nhĩ đã nở mềm, bạn dùng dao cắt bỏ phần chân, phần bọc rồi rửa lại với nước sạch, để ráo và mang đi thái sợi.\nHành tím bóc vỏ và băm nhuyễn.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/so-che-tai-heo-va-luoi-heo-4.jpg",
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/so-che-tai-heo-va-luoi-heo-3.jpg",
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/so-che-tai-heo-va-luoi-heo-2.jpg",
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/so-che-tai-heo-va-luoi-heo-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Trộn nhân chả",
+        "description": "Bạn sẽ cho toàn bộ phần nguyên liệu đã sơ chế bao gồm thịt ba rọi băm nhuyễn, cà rốt, bắp cải và mộc nhĩ thái sợi vào 1 cái thau lớn.\nĐối với 2 cuộn bún tàu thì bạn sẽ không cần ngâm với nước mà sẽ dùng tay bóp cho bún tơi ra và cho trực tiếp vào thau nhân chả.\nTiếp đó sẽ cho vào thau 1 muỗng cà phê tiêu hạt, 1 muỗng canh hạt nêm, 1/2 muỗng cà phê muối và 1 muỗng cà phê bột ngọt. Dùng đũa trộn thật đều tay để gia vị được thấm đều.\nSau đó, bạn sẽ đập vào thau nhân chả 3 quả trứng vịt. Đeo bao tay vào và trộn thật đều hỗn hợp.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/uop-tai-heo-va-luoi-heo-2.jpg",
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/uop-tai-heo-va-luoi-heo-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Phi hành",
+        "description": "Bắc chảo lên bếp, thêm vào khoảng 5 muỗng canh dầu ăn và cho toàn bộ phần tỏi đã băm nhuyễn vào phi thơm trong khoảng 5 phút.\nSau khi tỏi đã vàng đều thì nhấc xuống và cho vào thau nhân chả để trộn chung.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/so-che-nguyen-lieu-khac-51.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Cuốn chả",
+        "description": "Bạn cho miếng bánh tráng lên tấm thớt hoặc trên một mặt phẳng khác để thực hiện thao tác cuốn chả dễ dàng hơn nhé!\nSau đó, cho vào giữa bánh khoảng 1 muỗng canh nhân chả và khéo léo dùng tay cuốn 2 bên mép lại và cuộn tròn lại thật chắc, đều tay và nhẹ nhàng để khi chiên không bị rơi nhân ra ngoài.\nBạn cứ tiếp tục thực hiện như vậy cho đến khi hết phần nhân.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/xao-nguyen-lieu-29.jpg",
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/xao-nguyen-lieu-30.jpg",
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/xao-nguyen-lieu-31.jpg",
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/xao-nguyen-lieu-32.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Chiên chả",
+        "description": "Bạn bắc chảo lên bếp và đợi đến khi chảo nóng thì cho vào chảo khoảng 200 ml dầu ăn, đợi dầu vừa nóng thì bạn cho lần lượt từng cuốn chả vào và chiên với lửa vừa để tránh bị cháy và phần nhân bên trong được chín đều.\nSau khi bạn thấy 1 bên của cuốn chả vừa vàng tới thì bạn lật sang mặt còn lại cho cuốn chả được chín vàng đều.\nKhi thấy cuốn chả đã vàng đều 2 mặt thì bạn vớt ra, cho vào dĩa và cũng có thể cho ra 1 cái rổ inox lót trên 1 cái tô để chảy bớt dầu.\nBạn sẽ tiếp tục chiên cho đến khi hết chả là đã có thể thưởng thức ngay được rồi nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/goi-gio-thu-1.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chiênrán_002",
@@ -119,7 +380,45 @@
       "Chanh 1 quả (lấy nước cốt), muối 1/3 muỗng cà phê",
       "Nải chuối sứ 1 cái (khoảng 16 - 17 quả)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế chuối sứ",
+        "description": "Chuối sứ lột vỏ, dùng chai thủy tinh hoặc chai nước ngọt đập dẹt nhẹ nhàng. Đập chuối mỏng đều nhưng không quá nát để khi chiên chuối không bị vỡ. Sơ chế chuối xong để riêng.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-chuoi-su.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Pha bột chuối chiên giòn lâu",
+        "description": "Cho 650gr bột gạo thường vào thau lớn. Từ từ thêm 550gr nước lọc vào, dùng cây đánh trứng (hoặc đũa) khuấy đều cho bột tan sơ. Lúc này bột sẽ khá sệt.\nTiếp theo, cho 200gr đường, 1 muỗng canh màu hạt điều, 1 muỗng canh dầu ăn và 1/3 muỗng cà phê muối vào thau bột. Vắt lấy nước cốt của 1 quả chanh và cho vào hỗn hợp.\nKhuấy đều tay cho đường tan hoàn toàn. Khi đường tan, bột sẽ lỏng và mịn hơn. Nước cốt chanh là bí quyết giúp bánh giòn lâu và có màu vàng đẹp mà không hề bị chua khi chiên.\nCuối cùng, cho 1 muỗng canh mè đen chưa rang vào, khuấy nhẹ cho mè phân bố đều trong bột. Hỗn hợp bột lúc này đã sẵn sàng để chiên bánh chuối.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/pha-bot-chuoi-chien-gion-lau-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/pha-bot-chuoi-chien-gion-lau-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/pha-bot-chuoi-chien-gion-lau-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/pha-bot-chuoi-chien-gion-lau.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Chiên chuối lần 1 (Tạo lớp vỏ sơ bộ)",
+        "description": "Đặt chảo lên bếp, cho lượng dầu ăn đủ ngập chuối vào và đun nóng. Khi dầu nóng vừa (khoảng 160 - 170 độ C), nhúng từng miếng chuối đã đập dẹt vào thau bột sao cho bột bám đều một lớp mỏng.\nCẩn thận thả khoảng 3 miếng chuối vào chảo dầu nóng. Chiên sơ khoảng 1 - 2 phút cho lớp bột bên ngoài hơi vàng và se lại. Vớt chuối ra khỏi chảo, để ráo dầu và nguội bớt.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-chuoi-lan-1-tao-lop-vo-so-bo.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-chuoi-lan-1-tao-lop-vo-so-bo-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Chiên chuối lần 2 (Chiên ngập dầu giòn rụm)",
+        "description": "Khi chuối đã nguội và xẹp lại (đây là mẹo giúp bánh giòn lâu), tiếp tục nhúng từng miếng chuối vào thau bột một lần nữa để tạo thêm một lớp vỏ.\nThả chuối đã nhúng bột lần 2 vào chảo dầu đang nóng. Chiên ngập dầu ở lửa vừa cho đến khi bánh chuối phồng lên, vàng ươm và giòn rụm. Lật đều hai mặt để bánh chín vàng đều.\nVớt bánh ra, để ráo dầu trên giấy thấm dầu. Lặp lại cho đến hết số chuối đã chuẩn bị.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-chuoi-lan-2-chien-ngap-dau-gion-rum-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-chuoi-lan-2-chien-ngap-dau-gion-rum.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chiênrán_003",
@@ -136,7 +435,65 @@
       "Tỏi 4 tép, lá chanh 1 ít, nghệ tươi 1 củ (để lấy màu đẹp)",
       "Gia vị thông dụng 1 ít (Hạt nêm/ đường/ nước mắm/ tiêu xay/ mì chính rượu trắng...)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế các nguyên liệu phụ",
+        "description": "Đầu tiên, bạn đập dập và băm nhỏ một ít hành tím và gừng, cho vào máy xay sinh tố cùng một chút nước lọc, xay nhuyễn rồi vắt lấy nước cốt để ướp gà\nSả cây bạn rửa sạch, cắt khúc dài rồi chẻ sợi hoặc đập dập. Lá chanh rửa sạch, chia làm hai phần: một phần thái sợi chỉ nhỏ, một phần thái rối (để nguyên lá hoặc cắt to) để chiên giòn. Tỏi bóc vỏ, thái lát mỏng.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-phu-2.jpg.",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-phu-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-phu.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Chần sụn gà khử mùi",
+        "description": "Bạn đặt một nồi nước lên bếp đun sôi, cho vào một ít rượu trắng để khử mùi tanh. Khi nước sôi, bạn cho sụn gà vào cùng với một vài lát nghệ tươi và phần sả đập dập.\nChần sơ sụn gà khoảng 1 phút cho ra hết chất bẩn và sụn săn lại, sau đó vớt ra rửa sạch với nước lạnh và để ráo nước.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chan-sun-ga-khu-mui-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chan-sun-ga-khu-mui.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Tẩm ướp sụn gà",
+        "description": "Bạn cho sụn gà đã ráo nước vào tô lớn. Nêm vào tô: 1/4 thìa cà phê mì chính, 1/2 thìa cà phê hạt nêm, 1 thìa cà phê đường, 1 thìa cà phê nước mắm ngon và 1 thìa cà phê tiêu xay.\nTiếp theo, bạn đổ phần nước cốt hành gừng đã xay ở bước 1 vào. Đập thêm 1 quả trứng gà vào tô, dùng tay trộn và bóp đều để sụn gà thấm gia vị và trứng giúp tạo độ xốp.\nCuối cùng, bạn cho từ từ bột năng vào, vừa cho vừa trộn đều sao cho bột bám một lớp mỏng nhẹ bao quanh sụn gà là được (không nên cho quá nhiều bột sẽ giống tẩm bột chiên). Ướp khoảng 10 - 15 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/tam-uop-sun-ga-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/tam-uop-sun-ga-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/tam-uop-sun-ga.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Chiên giòn các gia vị",
+        "description": "Bạn bắc chảo sâu lòng lên bếp, cho nhiều dầu ăn vào đun nóng. Lần lượt cho sả sợi, lá chanh (phần thái to) và tỏi thái lát vào chiên vàng thơm.\nKhi các nguyên liệu đã vàng giòn, bạn vớt ra đĩa có lót giấy thấm dầu. Lưu ý không chiên quá lửa để tránh bị cháy đắng.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-gion-cac-gia-vi-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Chiên sụn gà 2 lần",
+        "description": "Vẫn sử dụng chảo dầu đó, bạn giữ lửa vừa và cho sụn gà đã tẩm ướp vào chiên. Trong quá trình chiên, bạn nhớ đảo đều để sụn gà chín đều và không bị dính vào nhau. Khi lớp bột bên ngoài hơi se lại và sụn gà chín tới (khoảng 70%), bạn vớt ra để nguội bớt.\nTiếp tục đun nóng dầu trở lại, cho sụn gà vào chiên lần 2 (lửa lớn hơn) để sụn gà vàng ruộm, giòn tan và lên màu đẹp mắt rồi vớt ra để ráo dầu.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-sun-ga-2-lan-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-sun-ga-2-lan-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-sun-ga-2-lan-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-sun-ga-2-lan.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Xóc muối và hoàn thiện",
+        "description": "Cho sụn gà ra đĩa, trang trí thêm hoa tỉa hoặc rau thơm cho đẹp mắt. Món sụn gà rang muối hoàn thành có màu vàng ươm hấp dẫn, lớp vỏ ngoài giòn rụm, đậm đà vị muối, bên trong sụn giòn sần sật, dậy mùi thơm lừng của sả, lá chanh và tỏi chiên.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xoc-muoi-va-hoan-thien-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xoc-muoi-va-hoan-thien.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chiênrán_004",
@@ -151,7 +508,52 @@
       "Nước dừa tươi hoặc nước lạnh 200 ml",
       "Dầu ăn 1 ít, Gia vị thông dụng 1 ít (hạt nêm/ đường/ dầu hào/ tương ớt/ nước mắm/ bột ngọt/ tiêu)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế má đùi gà và nguyên liệu khác",
+        "description": "Rửa sạch má đùi gà với muối và giấm pha loãng, sau đó để thật ráo nước.\nTỏi và hành tím bóc vỏ, cắt nhỏ rồi cho vào cối giã nhuyễn.\nỚt cắt nhỏ, cho vào cối giã nhuyễn cùng tỏi và hành. Nếu không ăn cay được, bạn có thể thay thế bằng ớt sừng hoặc bỏ qua.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-ma-dui-ga-va-nguyen-lieu-khac.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-ma-dui-ga-va-nguyen-lieu-khac-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp má đùi gà thấm vị",
+        "description": "Cho hết phần hành tỏi ớt giã nhuyễn vào thố đựng gà.\nThêm 1 muỗng cà phê hạt nêm, 1 muỗng cà phê đường, 2 muỗng cà phê dầu hào, 1 muỗng canh tương ớt, 1 muỗng canh nước mắm và một chút xíu bột ngọt (bạn nào không ăn được bột ngọt thì mình bỏ qua nhé). Rắc thêm 1/4 muỗng cà phê tiêu.\nTrộn đều cho thịt gà ngấm đều gia vị, sau đó ướp khoảng 30 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-ma-dui-ga-tham-vi.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-ma-dui-ga-tham-vi-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Chiên sơ má đùi gà vàng giòn",
+        "description": "Bắc chảo lên bếp, cho dầu ăn vừa đủ để chiên áp chảo.\nKhi dầu nóng, cho từng miếng gà đã ướp vào chiên. Chiên đến khi da gà vàng đều và săn lại là được. Gắp gà ra đĩa.\nMách nhỏ: Chiên áp chảo giúp má đùi gà có lớp da giòn bên ngoài mà thịt bên trong vẫn mềm mọng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chien-so-ma-dui-ga-vang-gion.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chien-so-ma-dui-ga-vang-gion-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Pha nước sốt rim gà đậm đà",
+        "description": "Trong một chén nhỏ, pha 1.5 muỗng canh nước mắm và 1 muỗng canh đường. Khuấy đều cho đường tan.\nThêm 1 muỗng cà phê bột ớt Paprika để tạo màu đẹp mắt cho món ăn. Nếu không có, bạn có thể thay thế bằng 1 muỗng canh tương ớt hoặc tương cà.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/pha-nuoc-sot-rim-ga-dam-da-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Rim má đùi gà nước mắm",
+        "description": "Dùng một cái chảo sâu lòng, cho gà đã chiên sơ vào. Đổ hết phần gia vị ướp gà còn lại trong thố vào chảo.\nThêm phần nước sốt đã pha sẵn và 200 ml nước dừa tươi (hoặc nước lạnh).\nĐun lửa nhỏ vừa, đậy nắp và rim gà trong khoảng 10 phút đầu. Trong quá trình rim, nhớ trở đều các mặt thịt gà để nước sốt được thấm đều.\nSau 10 phút, gà đã mềm, mở nắp và tiếp tục rim cho nước sốt cạn bớt, sánh lại.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rim-ma-dui-ga-nuoc-mam-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rim-ma-dui-ga-nuoc-mam.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chiênrán_005",
@@ -167,7 +569,52 @@
       "Bột chiên giòn 1 ít",
       "Dầu ăn 1 ít, gia vị thông dụng 1 ít (bột ngọt/nước mắm)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế cua đồng",
+        "description": "Cua đồng sau khi mua về, bạn rửa đi rửa lại vài lần dưới vòi nước sạch cho thật kỹ.\nTiếp theo, loại bỏ phần yếm và phần mai cua.\nMách nhỏ: Loại bỏ yếm cua giúp món cua rang lá lốt không bị hôi. Đối với mai cua, bạn có thể giữ lại để rang nhưng ăn sẽ nhanh ngán hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-cua-dong-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-cua-dong-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp cua đồng",
+        "description": "Cho cua đã sơ chế vào một chiếc bát lớn. Thêm vào đó 1 quả trứng gà, 1 thìa bột ngọt và 1 thìa nước mắm.\nĐảo đều để cua ngấm gia vị. Sau đó, áo nhẹ một lớp bột chiên giòn bên ngoài, tiếp tục đảo đều để bột bám đều vào từng con cua.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-cua-dong-dam-da-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Chuẩn bị lá lốt",
+        "description": "Lá lốt và lá gừng non rửa sạch. Sau đó, bạn dùng dao thái nhỏ các loại lá này.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chuan-bi-la-lot.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chuan-bi-la-lot-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Chiên cua giòn rụm",
+        "description": "Đổ dầu ăn vào chảo, đun đến khi dầu nóng già. Cho hành tím vào phi thơm.\nKhi hành đã dậy mùi, cho cua đã ướp vào chiên. Đảo đều tay để cua được chín vàng giòn đều hai mặt.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chien-cua-gion-rum-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chien-cua-gion-rum.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Rang cua với lá lốt và lá gừng",
+        "description": "Khi cua đã chín vàng giòn, cho toàn bộ lá lốt và lá gừng đã thái vào chảo.\nTiếp tục đảo đều để hương vị đặc trưng của lá gừng và lá lốt được quyện đều vào từng con cua.\nSau đó vớt cua ra để ráo dầu rồi cho ra đĩa.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rang-cua-voi-la-lot-va-la-gung.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/thanh-pham-165.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chiênrán_006",
@@ -182,7 +629,60 @@
       "Sả 3 cây, lá nốt 1 ít",
       "Gia vị thông dụng 1 ít (hạt nêm/ nước mắm/ bột ngọt/ hạt tiêu)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế và thái cá tầm",
+        "description": "Đầu tiên, bạn hãy rửa sạch khúc cá tầm 4 lạng. Nếu cá còn nguyên con, bạn cần sơ chế cá sạch sẽ, loại bỏ nội tạng và mang.\nThái cá thành những miếng quân cờ vừa ăn, kích thước trung bình. Với 4 lạng cá, bạn có thể thái được khoảng 16 miếng.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-va-thai-ca-tam-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Tẩm ướp cá tầm rang muối",
+        "description": "Cho cá đã thái vào âu lớn. Thêm 1 thìa cà phê hạt nêm, một chút nước mắm, 1 thìa cà phê bột ngọt (tùy thích) và một chút hạt tiêu.\nTrộn đều để gia vị ngấm vào cá. Lưu ý không ướp quá đậm vì tí nữa còn xóc với bột rang muối.\nTiếp theo, cho lòng đỏ của 1 quả trứng gà vào, trộn đều lần nữa.\nCuối cùng, cho khoảng 1 lưng thìa ăn phở bột tổng hợp vào. Trộn nhẹ nhàng để bột bám đều, giúp cá có màu đẹp khi chiên và gia vị bám tốt hơn, không phải tẩm bột dày.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/tam-uop-ca-tam-rang-muoi-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/tam-uop-ca-tam-rang-muoi-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Chiên cá tầm",
+        "description": "Bắc chảo lên bếp, cho lượng dầu ăn đủ để chiên ngập cá. Đợi dầu nóng già.\nNhẹ nhàng thả từng miếng cá đã tẩm ướp vào chảo. Để tránh cá bị dính vào nhau và nát, hãy thả từ từ và giữ khoảng cách giữa các miếng.\nĐể yên khoảng nửa phút cho lớp bột bên ngoài cá se lại rồi mới bắt đầu đảo. Điều này giúp cá không bị dính chảo và giữ được miếng cá nguyên vẹn.\nChiên cá trên lửa vừa đến khi cá vàng đều, khô ráo và giòn. Chiên hơi già một chút sẽ ngon hơn. Khi cá chín vàng, vớt ra để ráo dầu.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-ca-tam-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-ca-tam-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Thái sả và lá nốt",
+        "description": "Trong lúc đợi cá chín, bạn hãy chuẩn bị sả và lá nốt.\nSả thái lát chéo mỏng. Bạn cũng có thể thái độc lập và tước sợi nếu muốn.\nLá nốt rửa sạch, thái sợi nhỏ.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/thai-sa-va-la-not.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/thai-sa-va-la-not-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Chiên sả và lá nốt",
+        "description": "Sử dụng chảo dầu vừa chiên cá (hoặc chảo mới nếu muốn).\nCho sả đã thái vào chiên trước. Khi sả gần được (hơi vàng và thơm), cho lá nốt đã thái vào chiên cùng.\nLá nốt rất nhanh chín, bạn chỉ cần thả vào là vớt ra ngay để tránh bị cháy. Vớt sả và lá nốt ra để ráo dầu.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chien-sa-va-la-not-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Xóc cá tầm rang muối",
+        "description": "Đổ cá đã chiên, sả và lá nốt đã chiên vào một âu lớn.\nCho khoảng 1 thìa ăn phở bột rang muối hải sản vào.\nĐậy nắp âu hoặc dùng tay xóc đều cho bột muối bám đều vào từng miếng cá, sả và lá nốt.\nĐể món ăn thêm đẹp mắt, bạn có thể rắc thêm một chút bột rang muối lên trên đĩa cá thành phẩm.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xoc-ca-tam-rang-muoi.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xoc-ca-tam-rang-muoi-2.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_hấp_001",
@@ -200,7 +700,45 @@
       "Dầu ăn 3 thìa, Gia vị thông dụng 1 ít (đường/ mì chính/ hạt nêm/ tiêu đen)",
       "Lá gừng/ lá chanh/ gừng 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế ốc và các nguyên liệu khác",
+        "description": "Đầu tiên, bạn mua ốc to, hấp chín rồi lể lấy thịt. Rửa sạch nhớt bằng giấm và muối để khử mùi tanh hiệu quả.\nBăm nhỏ thịt ốc, lưu ý không xay vì xay sẽ làm ốc mất độ giòn sần sật đặc trưng khi ăn. Đây là bí quyết quan trọng để món ốc nhồi hấp lá gừng của bạn ngon đúng điệu!\nTiếp theo, băm nhỏ mộc nhĩ, nấm hương, hành khô, tỏi và gừng.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/so-che-oc-va-cac-nguyen-lieu-khac-1.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/so-che-oc-va-cac-nguyen-lieu-khac-2.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/so-che-oc-va-cac-nguyen-lieu-khac.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Trộn nhân ốc nhồi hấp lá gừng",
+        "description": "Cho 500gr thịt ốc băm, 200gr nạc vai xay, 200gr giò sống và 100gr mỡ thăn xay vào một tô lớn.\nThêm 15gr mộc nhĩ băm, 15gr nấm hương băm, 2 củ hành khô băm, 2 nhánh tỏi băm và 2 lát gừng băm vào tô.\nNêm gia vị gồm 1 thìa cà phê đường, 1/2 thìa cà phê mì chính, 1 thìa cà phê hạt nêm, 1/4 thìa cà phê tiêu đen và 3 thìa dầu ăn. Trộn đều tất cả các nguyên liệu cho đến khi hòa quyện và có độ kết dính.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/tron-nhan-oc-nhoi-hap-la-gung-1.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/tron-nhan-oc-nhoi-hap-la-gung.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Nhồi ốc",
+        "description": "Nhét một lá gừng nhỏ vào sâu bên trong vỏ ốc. Bôi một chút dầu ăn xung quanh thành vỏ ốc để khi hấp nhân không bị dính.\nNặn một viên nhân cỡ vừa, vừa đủ lấp đầy vỏ ốc. Lưu ý, không cho quá nhiều nhân vì lúc hấp nhân sẽ hơi nở ra, dễ bị tràn ra ngoài.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/nhoi-oc-1.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/nhoi-oc.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Hấp ốc nhồi lá gừng thơm lừng",
+        "description": "Bắc nồi lên bếp, cho nước vào. Thêm vài lá chanh, 2 nhánh sả đập dập và 2 nhánh gừng nhỏ đập dập vào nước hấp để tạo hương thơm quyến rũ cho món ăn.\nĐặt vỉ hấp lên, xếp các dĩa ốc đã nhồi vào nồi.\nHấp cách thủy khoảng 12 phút, tính từ lúc nước bắt đầu sôi. Đảm bảo ốc chín tới, giữ được độ giòn ngon.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/hap-oc-nhoi-la-gung-thom-lung.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/hap-oc-nhoi-la-gung-thom-lung-1.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_hấp_002",
@@ -216,7 +754,54 @@
       "Lá chanh 1 ít, ớt khô 1 ít, bột nghệ 1 ít",
       "Mỡ gà 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế gà và ướp gia vị gà hấp muối",
+        "description": "Gà mua về rửa thật sạch sẽ. Ướp vào trong và ngoài con gà khoảng 2 muỗng muối tiêu.\nSau đó, dùng màng bọc thực phẩm bọc kín lại và ướp khoảng 30 phút đến 1 tiếng cho gà thấm vị.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/so-che-ga-va-uop-gia-vi-ga-hap-muoi-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Sơ chế các loại rau thơm và gia vị",
+        "description": "Sả cắt khúc, đập dập. Hành tây xắt lát.\nTỏi và hành tím đập dập. Lá chanh vò nát để khi hấp dậy mùi thơm hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/so-che-cac-loai-rau-thom-va-gia-vi-1.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/so-che-cac-loai-rau-thom-va-gia-vi-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Thắng mỡ gà và pha hỗn hợp quét gà",
+        "description": "Lấy cục mỡ gà có sẵn trong con gà đem thắng trên chảo cho ra hết mỡ vàng thơm.\nKhi mỡ nóng, cho ớt khô, bột nghệ và tiêu vào, khuấy đều cho dậy mùi thơm hấp dẫn.\nLấy gà đã ướp ra. Quét đều hỗn hợp mỡ nghệ ớt vừa thắng lên khắp mình gà để gà có màu vàng đẹp và bóng hơn.\nĐể gà nghỉ khoảng 5-10 phút cho thấm gia vị trước khi hấp.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/thang-mo-ga-va-pha-hon-hop-quet-ga.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/thang-mo-ga-va-pha-hon-hop-quet-ga-1.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/thang-mo-ga-va-pha-hon-hop-quet-ga-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Hấp gà hấp muối sả thơm lừng",
+        "description": "Lót khoảng hai tờ giấy bạc gấp đôi vào đáy nồi. Việc này giúp ngăn muối ăn mòn và làm hỏng nồi.\nRải một lớp muối hạt mỏng và đều lên trên giấy bạc.\nXếp một lớp sả đập dập và ít hành tây lên trên lớp muối.\nNhét toàn bộ phần lòng gà (nếu có), lá chanh vò nát, tỏi đập dập, hành tím đập dập, rau răm và khoảng hai cây sả vào bụng gà.\nĐặt gà lên trên lớp sả và hành tây đã xếp. Rải thêm rau răm và hành lá xung quanh gà.\nĐậy nắp nồi thật kín. Nếu nắp có lỗ thoát hơi, bạn có thể dùng cọng sả hoặc vật khác nhét kín lại để hơi không thoát ra ngoài, giúp gà chín đều và ngon hơn.\nĐặt nồi lên bếp và hấp trên lửa nhỏ nhất.\nThời gian hấp: Với gà dưới 2kg, hấp khoảng 40-50 phút. Với gà trên 2kg, cần hấp ít nhất 1 tiếng để gà chín hoàn toàn.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/hap-ga-hap-muoi-sa-thom-lung.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/hap-ga-hap-muoi-sa-thom-lung-1.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/hap-ga-hap-muoi-sa-thom-lung-2.jpg",
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/hap-ga-hap-muoi-sa-thom-lung-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Pha nước chấm gà hấp muối",
+        "description": "Để món gà hấp muối thêm phần trọn vị, bạn có thể chuẩn bị hai loại nước chấm sau:\n+ Muối tiêu chanh: Cho chanh hoặc tắc, lá chanh thái nhuyễn và vài lát ớt vào hũ muối tiêu đã có.\n+ Muối ớt đỏ: Nếu có sẵn muối ớt đỏ, bạn chỉ cần thêm lá chanh thái nhuyễn và vài lát ớt vào là có ngay chén nước chấm chua ngọt béo béo hấp dẫn.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/11/CookRecipe/GalleryStep/pha-nuoc-cham-ga-hap-muoi.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_hấp_003",
@@ -231,7 +816,27 @@
       "Ớt 2 quả, súp lơ 2 cây, cà rốt 1 củ",
       "Xì dầu 2 muỗng canh, gia vị thông dụng 1 ít (muối/ bột ngọt/ tiêu xay)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Sau khi mua về bạn đem rửa sạch miếng cá với nước muối và đánh sạch vảy. Sau đó dùng dao cắt đôi miếng cá để khi hấp cá nhanh chín và gia vị ngấm dễ hơn.\nVới sả thì bạn chọn cây tươi rồi rửa sạch với nước. Kế đến dùng dao chẻ đôi cây sả thành từng khúc mỏng. Hành và rau mùi thì rửa sạch rồi thái thành từng khúc vừa ăn.",
+        "images": [
+          "https://cdn.tgdd.vn/2022/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-10.jpeg",
+          "https://cdn.tgdd.vn/2022/01/CookRecipe/GalleryStep/so-che-nguyen-lieu-11.jpeg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Hấp cá chép",
+        "description": "Đầu tiên, bạn chuẩn bị 1 cái dĩa sứ rồi cho miếng cá đã rửa sạch vào. Cho lên trên 1 muỗng canh xì dầu, tiếp theo là một lớp sả rồi thêm 1 muỗng canh xì dầu nữa.\nSau đó, bạn rắc lên thêm 1 muỗng cà phê bột ngọt và 1 muỗng cà phê tiêu. Tiếp theo, bạn cho dĩa cá vào xửng hấp rồi bắc lên bếp. Đun với lửa vừa và tiến hành hấp cá trong khoảng 20 phút.\nKế đến, bạn mở nắp nồi rồi cho thêm hành lá và rau mùi vào. Tiếp tục hấp trong khoảng 5 phút nữa thì tắt bếp.\nĐể món ăn được ngon hơn thì bạn nên thưởng thức ngay khi còn nóng. Có thể cho thêm rau như súp lơ, cà rốt vào xửng hấp để ăn cùng cá sẽ giúp bạn giảm bớt cảm giác ngấy đó.",
+        "images": [
+          "https://cdn.tgdd.vn/2022/01/CookRecipe/GalleryStep/hap-ca-chep-1.jpeg",
+          "https://cdn.tgdd.vn/2022/01/CookRecipe/GalleryStep/hap-ca-chep-2.jpeg",
+          "https://cdn.tgdd.vn/2022/01/CookRecipe/GalleryStep/hap-ca-chep-3.jpeg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_hấp_004",
@@ -246,7 +851,44 @@
       "Gừng 1 miếng, chanh 1 quả, hành tím 2 củ",
       "Gia vị thông dụng 1 ít (muối/tiêu/bột ngọt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế bắp bò và tai heo",
+        "description": "Sơ chế bắp bò:\n+ Rửa sạch bắp bò với nước muối loãng, sau đó rửa lại với nước sạch.\n+ Tiếp theo, xoa bóp đều miếng bắp bò với muối và bột ngọt rồi ướp 15 phút cho thấm gia vị.\nSơ chế tai heo:\n+ Dùng dao cạo sạch lông của tai heo, sau đó cắt bỏ phần dơ bên trong tai.\n+ Tiếp theo, rửa sạch tai heo với hỗn hợp nước muối và giấm trong 5 - 10 phút. Sau đó, rửa lại với nước sạch, để ráo.\n+ Bắc nồi lên bếp, cho vào 1 lít nước, 1 muỗng cà phê muối, 1 củ hành tím đập dập, 50ml giấm. Khi nước sôi, cho tai heo vào chần          sơ từ 2 - 3 phút.\n+ Chuẩn bị 1 tô nước pha cùng nước cốt chanh, sau đó cho tai heo vào ngâm trong 15 phút cho nguội hoàn toàn.\n+ Cuối cùng, vớt tai heo ra để ráo nước rồi lau cho khô.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/so-che-bap-bo-va-tai-heo-2.jpg",
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/so-che-bap-bo-va-tai-heo.jpg",
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/so-che-bap-bo-va-tai-heo-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Cuộn tai heo",
+        "description": "Xếp 2 tai heo nối tiếp nhau, sau đó đặt miếng bắp bò lên, rắc đều tiêu lên bắp bò.\nTiếp theo, cuộn tròn tai heo lại rồi dùng dây buộc thật chặt.\nCuối cùng, gói kín tai heo bằng 1 lớp giấy bạc và dùng dây buộc chặt lại.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/cuon-tai-heo-1.jpg",
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/cuon-tai-heo-3.jpg",
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/cuon-tai-heo-4.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Luộc tai heo",
+        "description": "Bắc nồi nước lên bếp, cho vào tai heo, 1 củ hành tím đập dập, 1 miếng gừng đập dập.\nLuộc tai heo trên lửa trung bình khoảng 30 phút, sau đó bạn tắt bếp và ủ tai heo trong nồi thêm 10 phút nữa.\nTiếp theo, vớt ra để nguội rồi cho vào ngăn mát tủ lạnh từ 5 - 6 tiếng cho tai heo cứng lại.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/luoc-tai-heo.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Hoàn thành",
+        "description": "Khi tai heo cứng lại, bạn dùng dao cắt thành nhiều miếng có độ dày khoảng 1/2 lóng tay nhỏ là có thể thưởng thức.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/hoan-thanh-66.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_hấp_005",
@@ -261,7 +903,53 @@
       "Lá nếp 1 ít, vừng 1 ít",
       "Gia vị thông dụng 1 ít (muối/ đường)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế gạo nếp và gấc",
+        "description": "Gạo nếp vo thật sạch rồi để ráo.\nGấc bổ đôi, lấy phần thịt gấc và hạt cho vào bát. Thêm 2 muỗng canh mỡ gà ta (hoặc dầu ăn nếu làm xôi chay) vào và đánh đều cho gấc tơi ra.\nCho 1 thìa cà phê muối tinh vào gạo nếp đã ráo nước, trộn đều.\nĐổ toàn bộ phần thịt gấc đã đánh tơi vào gạo, dùng tay bóp nhẹ nhàng để thịt gấc quyện đều vào từng hạt gạo. Để cả hạt gấc vào trộn cùng để màu xôi được đẹp hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-gao-nep-va-gac-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-gao-nep-va-gac-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Đồ xôi lần 1 với mỡ gà",
+        "description": "Đun sôi nước trong chõ đồ xôi hoặc nồi hấp. Cho một cuộn lá nếp vào nồi nước để tạo mùi thơm đặc trưng cho món xôi gấc miền Bắc.\nĐặt một cái rổ hoặc giá lên trên, cho gạo đã trộn gấc vào. Lưu ý không đổ đầy quá, vun gạo ở giữa và cách thành nồi khoảng 2cm để xôi không bị ướt.\nĐặt một bát mỡ gà nhỏ lên trên mặt xôi để hấp cùng. Rưới thêm một ít mỡ gà trực tiếp lên mặt xôi cho béo. Đậy vung và đồ xôi vừa lửa khoảng 30 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/do-xoi-lan-1-voi-mo-ga-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/do-xoi-lan-1-voi-mo-ga-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Rang vừng",
+        "description": "Trong lúc chờ xôi chín, bạn hãy rang vừng trên chảo nóng. Rang đến khi vừng vàng tới, dậy mùi thơm thì tắt bếp.\nĐổ vừng ra giấy lịch hoặc giấy sạch để ủ, tránh dùng giấy báo. Không rang vừng quá vàng sẽ bị cháy và đắng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rang-vung-thom-lung.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Đánh đều xôi và trộn gia vị",
+        "description": "Sau 30 phút, mở vung, lấy bát mỡ gà ra. Dùng đũa hoặc muỗng lớn đánh tơi xôi lên, đặc biệt là phần xôi phía dưới để đảm bảo xôi chín đều và không bị nát.\nKhi xôi đã chín mềm (khoảng 45 phút đồ lần 1), lấy xôi ra một cái mâm hoặc bát lớn.\nCho 3 thìa canh đường (tùy khẩu vị) và 1-2 thìa mỡ gà đã hấp chảy vào xôi. Trộn đều cho đường và mỡ gà thấm vào từng hạt xôi. (Nếu làm xôi chay, thay mỡ gà bằng dầu ăn ở bước này).",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/danh-deu-xoi-va-tron-gia-vi-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/danh-deu-xoi-va-tron-gia-vi-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Đồ xôi lần 2",
+        "description": "Cho xôi đã trộn gia vị vào lại chõ đồ xôi. Đồ thêm lần 2 khoảng 10-15 phút nữa. Việc đồ xôi 2 lần giúp xôi dẻo mềm hơn, để lâu không bị cứng.\nTạo hình xôi gấc đỏ cam đẹp mắt\nTrong lúc đồ xôi lần 2, rửa sạch và lau khô khuôn xôi. Có thể dùng máy sấy để làm khô khuôn nhanh hơn.\nKhi xôi đã chín, lấy xôi ra và đóng khuôn ngay khi còn nóng. Rắc một ít vừng rang vào các họa tiết trang trí của khuôn, sau đó cho xôi vào, nén chặt.\nẤn xôi ra đĩa. Nếu không có khuôn, bạn có thể dùng tay vo tròn hoặc tạo hình theo ý thích để có đĩa xôi cúng đẹp mắt.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/do-xoi-lan-2-cho-deo-mem.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/do-xoi-lan-2-cho-deo-mem-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/do-xoi-lan-2-cho-deo-mem-3.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_hấp_006",
@@ -276,7 +964,64 @@
       "Thịt nạc xay 200 gr",
       "Muối 1 ít, gia vị thông dụng 1 ít (hắc xì dầu/ hạt nêm/ tiêu)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Chuẩn bị màu tự nhiên",
+        "description": "Để có màu xanh dương đẹp mắt cho vỏ há cảo, bạn ngâm một nắm hoa đậu biếc khô với nước ấm qua đêm.\nNgâm khoảng 5 - 10 phút cho đến khi nước chuyển sang màu xanh đậm đặc thì bạn lọc nước, vớt bỏ xác hoa.\nMách nhỏ: Nước càng sôi già thì bột càng dễ kết dính và tạo độ trong cho vỏ bánh. Trước khi trộn vào bột, nếu nước đã nguội, bạn phải đun sôi lại vì nước phải thật nóng thì vỏ bánh mới dẻo và trong.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/cach-lam-ha-cao-bang-bot-mi-va-bot-nang-dai-ngon-cuc-de-cho--1-.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Làm vỏ há cảo bằng bột mì và bột năng",
+        "description": "Vỏ bánh màu xanh: Bạn cho lần lượt 110 gr bột mì, 30 gr bột năng và 1 ít muối vào tô lớn.\nĐổ từ từ nước hoa đậu biếc đang sôi vào tô bột, vừa đổ vừa dùng đũa hoặc muỗng để trộn đều.\nĐợi bột hơi nguột thì bạn dùng tay nhào từ từ đến khi bột mềm dẻo, mịn màng và không còn dính tay.\nVỏ bánh màu trắng: Bạn chuẩn bị một tô lớn thứ 2, trộn đều 110gr bột tàn mì và 30gr bột năng cùng với một tí xíu muối.\nTừ từ chế nước sôi già vào tô bột, vừa chế vừa dùng đũa hoặc muỗng trộn đều.\nTương tự khi bột nguội bớt, nhào bột liên tục đến khi khối bột không còn dính tay.\nMách nhỏ: Tuyệt đối không đổ nước sôi vào quá nhiều một lần, bột sẽ bị nhão và khó tạo hình. Cứ nhào từ từ, cảm nhận độ dẻo của bột. Nếu bột hơi khô, thêm từng chút nước. Nếu hơi nhão, thêm chút bột năng.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/cach-lam-ha-cao-bang-bot-mi-va-bot-nang-dai-ngon-cuc-de-cho--2-.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/cach-lam-ha-cao-bang-bot-mi-va-bot-nang-dai-ngon-cuc-de-cho--3-.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/cach-lam-ha-cao-bang-bot-mi-va-bot-nang-dai-ngon-cuc-de-cho--4-.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/cach-lam-ha-cao-bang-bot-mi-va-bot-nang-dai-ngon-cuc-de-cho--5-.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3; Chuẩn bị nhân há cảo",
+        "description": "Cho khoảng 200 gr thịt nạc xay vào tô. Nêm vào đó một ít hắc xì dầu, hạt nêm và tiêu xay.\nTrộn đều hỗn hợp nhân cho thấm gia vị. Bạn có thể ướp nhân khoảng 15 - 20 phút để nhân thêm đậm đà.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/cach-lam-ha-cao-bang-bot-mi-va-bot-nang-dai-ngon-cuc-de-cho--7-.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Cán vỏ há cảo",
+        "description": "Bạn cán dẹt khối bột màu xanh bằng ly. Sau đó, đặt bột màu trắng đã được nặn thành hình trụ dài lên trên và cuộn tròn lại thật chặt tay lên trên.\nBạn tiếp tục lăn bột để đều và chặt hơn. Tiếp theo, cắt ngang cuộn bột này thành từng khoanh nhỏ.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/can-vo-ha-cao-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/can-vo-ha-cao-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Gói bánh hả cảo",
+        "description": "Lấy từng khoanh bột đã cắt, bạn dùng ly cán khéo léo sao cho phần rìa ngoài thật mỏng để dễ xếp nếp, nhưng vẫn giữ phần tâm ở giữa hơi dày một chút.\nĐặt một lượng nhân vừa đủ vào giữa bột hơi dày đã cán.\nGói há cảo theo các kiểu bạn yêu thích:\nKiểu truyền thống: Gấp đôi vỏ bánh và tạo đường viền sóng.\nKiểu cây cải: Giữ nguyên hình dáng đã cán, đặt nhân vào và gấp lại.\nKiểu bánh bao: Gói tròn và túm phần miệng bánh lại.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/goi-banh-ha-cao.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/goi-banh-ha-cao-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/goi-banh-ha-cao-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/goi-banh-ha-cao-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Hấp hoặc chiên há cảo",
+        "description": "Đối với há cảo hấp: bạn chỉ cần xếp há cảo vào xửng hấp và hấp khoảng 8 - 10 phút cho đến khi vỏ bánh trong và nhân chín tới.\nĐối với há cảo chiên: Đặt chảo chống dính lên bếp. Xếp há cảo đã gói vào chảo.\nĐổ một ít nước vào chảo (khoảng 1/3 chiều cao há cảo), đậy nắp lại. Hơi nước sẽ giúp há cảo chín đều và vỏ bánh mềm dẻo.\nKhi thấy vỏ há cảo đã chuyển trong và chín, mở nắp, thêm một chút dầu ăn vào. Chiên cho đến khi phần đế há cảo vàng giòn đẹp mắt là được.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/hap-hoac-chien-ha-cao-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/hap-hoac-chien-ha-cao-2.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_canh_001",
@@ -294,7 +1039,83 @@
       "Trứng cút 10 quả",
       "Hạt nêm 2 muỗng canh, Muối 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Ngâm nấm hương và tôm khô",
+        "description": "Nấm hương mua về các bạn xả sạch qua nước lạnh cho nấm sạch bụi bẩn, sau đó mang ngâm nấm với nước khoảng 30 phút - 1 tiếng cho nấm nở mềm. Vớt nấm ra ngoài, vắt ráo nước. Để loại sạch bụi bẩn, tôm khô mua về các bạn mang xả sơ với nước lạnh, sau đó ngâm trong nước khoảng 10 phút cho tôm mềm rồi rửa lại với nước sạch, để ráo.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/ngam-nam-huong-va-tom-kho.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/ngam-nam-huong-va-tom-kho-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Nấu nước dùng từ xương gà",
+        "description": "Để loại sạch bụi bẩn, xương gà sau khi mua về các bạn mang chà với muối rồi xả sạch lại với nước.\nBắc một nồi nước lên bếp và đun sôi, cho xương gà vào chần sơ khoảng 2 - 3 phút sau đó vớt xương ra và xả lại với nước.\nĐặt một chiếc nồi khác lên bếp, cho tiếp 2 lít nước lọc và phần xương gà vào rồi tiến hành đun sôi.\nKhi nước đã sôi, các bạn hạ nhỏ lửa và ninh khoảng 30 phút - 40 phút để xương gà ra hết chất ngọt, sau đó vớt xương gà ra.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-nuoc-dung-tu-xuong-ga-2.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-nuoc-dung-tu-xuong-ga-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Sơ chế các nguyên liệu khác",
+        "description": "Cà rốt bạn gọt vỏ, rửa sạch. Sau đó tỉa hoa rồi cắt cà rốt thành các lát mỏng vừa ăn.\nBông cải xanh, bông cải trắng ngâm nước muối pha loãng khoảng 15 phút, sau đó xả sạch lại với nước, cắt thành các miếng nhỏ vừa ăn.\nĐậu Hà Lan đem tước bỏ phần xơ cứng, sau đó rửa sạch. Bắp non mua về các bạn gỡ sạch râu bắp, mang ngâm với nước muối loãng khoảng 15 phút sau đó xả lại với nước nhiều lần.\nNấm kim châm ngâm với nước muối pha loãng tầm 15 phút rồi rửa lại cho sạch và để ráo rồi xé nhỏ nấm ra.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-42.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-43.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-44.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-45.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Luộc trứng cút",
+        "description": "Trứng cút khi mua về bạn đem rửa sơ với nước sạch, sau đó cho vào nồi nước và đun sôi trong khoảng 4 - 5 phút thì vớt ra để nguội và tiến hành bóc vỏ trứng.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/luoc-trung-cut-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Nấu tôm khô, nấm hương, mọc",
+        "description": "Cho tiếp phần nấm hương và tôm khô đã sơ chế vào nồi nước luộc gà. Kế đến, dùng muỗng lấy một lượng mọc (giò sống) vừa đủ cho vào nồi, lặp lại bước này cho đến khi hết phần giò sống đã chuẩn bị.\nVặn lửa vừa và tiếp tục nấu cho đến khi các nguyên liệu chín đều, mọc nổi lên mặt và nước dùng sôi trở lại thì dùng giá (muôi) múc nấm hương, tôm khô và giò sống ra ngoài.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-tom-kho-nam-huong-moc-1.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-tom-kho-nam-huong-moc-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Nấu rau củ",
+        "description": "Cho cà rốt, bông cải, bắp non và đậu Hà Lan vào nồi nước dùng và tiếp tục nấu ở lửa vừa đến khi nước dùng sôi trở lại thì vớt ra ngoài.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-rau-cu.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-rau-cu-1.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-rau-cu-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 7,
+        "title": "Bước 7: Nấu nấm kim châm và trứng cút",
+        "description": "Kế đến, cho trứng cút và nấm kim châm vào nồi và tiến hành nấu cho 2 nguyên liệu này chín đều thì vớt ra ngoài\nSau khi đã vớt các nguyên liệu ra ngoài, các bạn nêm tiếp vào nồi nước dùng 2 muỗng canh hạt nêm, sau đó nêm nếm lại cho vừa ăn rồi tắt bếp.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-nam-kim-cham-va-trung-cut.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/nau-nam-kim-cham-va-trung-cut-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 8,
+        "title": "Bước 8: Hoàn thành",
+        "description": "Xếp mọc, nấm hương, nấm kim châm, tôm khô và các loại ra củ ra tô, chan nước dùng lên trên, sau đó trang trí lại cho đẹp mắt là hoàn thành.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/hoan-thanh-11.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/hoan-thanh-12.jpg",
+          "https://cdn.tgdd.vn/2021/02/CookRecipe/GalleryStep/hoan-thanh-13.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_canh_002",
@@ -309,7 +1130,47 @@
       "Dầu ăn 2 muỗng canh",
       "Gia vị thông dụng 1 ít (hạt nêm/ muối/ nước mắm/ bột ngọt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1",
+        "description": "Bớc 1: Sơ chế hàu sữa và các nguyên liệu khác\nRuột hàu đã làm sẵn, bạn chỉ cần rửa thật sạch và để ráo nước. Dứa (thơm/khóm) thái lát mỏng, bỏ phần cùi giữa. Cà chua bổ múi cau. Hành tím và gừng đập dập, băm nhỏ. Hành lá thái khúc, rau răm thái khúc.\nCho 30 gr me vắt vào tô cùng 60 ml nước sôi, ngâm khoảng 10 phút để me mềm ra. Sau đó, dằm đều và lọc qua rây để thu lấy phần nước cốt me chua.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-hau-sua-va-cac-nguyen-lieu-khac-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-hau-sua-va-cac-nguyen-lieu-khac-1.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-hau-sua-va-cac-nguyen-lieu-khac-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-hau-sua-va-cac-nguyen-lieu-khac.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Xào hàu sữa",
+        "description": "Đặt nồi lên bếp, cho 2 muỗng canh dầu ăn vào. Khi dầu nóng, cho phần hành tím và gừng băm nhỏ vào phi thơm.\nKhi hành gừng đã dậy mùi, cho ruột hàu vào xào cùng 1/2 thìa cà phê hạt nêm. Xào khoảng 3 phút đến khi hàu săn lại.\nMách nhỏ: Hàu đã mặn sẵn nên không cần cho quá nhiều gia vị lúc này. Việc xào hàu giúp giữ độ ngọt tự nhiên và giảm mùi tanh.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xao-hau-sua-thom-lung-3.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/xao-hau-sua-thom-lung-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Thêm cà chua, dứa và đun canh chua",
+        "description": "Khi hàu đã săn, cho cà chua và dứa vào xào thêm khoảng 2 phút để cà chua và dứa chín tái.\nTiếp theo, cho 500 - 600 ml nước lọc vào nồi. Nêm thêm 1 thìa cà phê hạt nêm và 1 thìa cà phê muối.\nĐổ phần nước cốt me đã lọc vào cùng, đun cho nồi canh sôi lên.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/them-ca-chua-dua-va-dun-canh-chua.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/them-ca-chua-dua-va-dun-canh-chua-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/them-ca-chua-dua-va-dun-canh-chua-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Nêm nếm và hoàn thiện món canh",
+        "description": "Khi canh đã sôi, bạn nêm nếm lại gia vị sao cho phù hợp với khẩu vị gia đình. Mình thường cho thêm 1/2 thìa canh nước mắm và 1/2 thìa cà phê bột ngọt để canh thêm đậm đà, chua ngọt hài hòa.\nMách nhỏ: Mỗi gia đình có khẩu vị khác nhau, hãy điều chỉnh độ chua, mặn, ngọt cho vừa ý nhé. Nếu thích ăn cay, bạn có thể cho thêm 1 trái ớt tươi thái lát vào.\nCuối cùng, cho hành lá và rau răm đã thái khúc vào, tắt bếp ngay để rau giữ được màu xanh tươi và mùi thơm.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/nem-nem-va-hoan-thien-mon-canh.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/nem-nem-va-hoan-thien-mon-canh-1.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_canh_003",
@@ -325,7 +1186,44 @@
       "Nước mắm 1 muỗng cà phê",
       "Gia vị thông dụng 1 ít (Hạt nêm/ muối/ bột ngọt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế xương bò",
+        "description": "Đầu tiên, với 500gr xương bò mua về bạn đem rửa 1 - 2 lần với nước cho sạch, để ráo. Sau đó, bắc nồi lên bếp cùng 500ml nước và toàn bộ phần xương bò đã ráo vào, tiến hành chần sơ khoảng 5 - 7 phút.\nThấy bọt nổi trên bề mặt thì bạn tắt bếp, đem xương bò đi rửa lại vài lần với nước sạch, để ráo.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-xuong-bo-7.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-xuong-bo-6.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Sơ chế các nguyên liệu còn lại",
+        "description": "Khoai tây, cà rốt bạn lấy dao bào bào vỏ, dùng dao cắt thành các khúc vừa ăn. Đồng thời, bạn cho số khoai tây, cà rốt vừa cắt ngâm vào thau nước muối pha loãng khoảng 3 - 5 phút, rồi đem rửa lại với nước sạch, để ráo.\nRau thì là bạn bỏ rễ và các phần héo úa, dập úng đi rồi rửa trực tiếp dưới vòi nước cho sạch, để ráo, dùng dao cắt khúc.\nGừng bạn cạo vỏ, rửa sạch, để ráo, rồi cùng hành tím lột vỏ đem đập dập là được.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-con-lai-10.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-con-lai-11.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Hầm xương",
+        "description": "Bạn lấy nồi cơm điện rồi cho toàn bộ phần xương bò đã chần sơ, gừng, hành tím đập dập, 1 muỗng cà phê hạt nêm, 1/2 muỗng cà phê bột ngọt, 1/2 muỗng cà phê muối và 1 lít nước vào, nhấn nút nấu rồi hầm khoảng 30 - 45 phút.\nĐến khi xương bò đã chín mềm thì bạn tắt nồi cơm điện, cho phần nước dùng và xương bò ra nồi mới.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/ham-xuong-3.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/ham-xuong.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Nấu canh",
+        "description": "Bạn bắc nồi xương bò vừa hầm lên bếp đun với lửa vừa khoảng 7 - 10 phút. Thấy nước sôi trở lại thì bạn cho toàn bộ phần khoai tây, cà rốt đã cắt vào, tiếp tục nấu trong vòng 15 - 20 phút.\nKế đến, bạn tiến hành nêm 1/2 muỗng cà phê muối, 1/2 muỗng cà phê hạt nêm và 1 muỗng cà phê nước mắm vào, dùng vá đảo đều nhẹ nhàng.\nThấy các nguyên liệu đã chín mềm thì bạn nêm nếm gia vị vừa ăn, thêm nốt phần rau thì là cắt khúc vào rồi tắt bếp, cho ra tô thưởng thức thôi nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/nau-canh-14.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/nau-canh-15.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_canh_004",
@@ -340,7 +1238,36 @@
       "Hành lá cắt khúc 1 ít, ớt tươi 1 ít",
       "Dầu ăn 1 ít, gia vị thông dụng 1 ít (hạt nêm/ bột ngọt/ bột canh/ muối ăn)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế sườn heo và măng tươi",
+        "description": "Sườn heo mua về rửa sạch, chặt miếng vừa ăn. Trụng sườn qua nước sôi khoảng 2-3 phút để loại bỏ tạp chất và mùi hôi, sau đó rửa lại thật sạch với nước lạnh, để ráo.\nMăng tươi (măng tre búp) sơ chế bằng cách luộc qua với nước muối loãng khoảng 10-15 phút. Sau đó vớt ra, rửa lại thật kỹ dưới vòi nước sạch vài lần cho hết vị đắng và độc tố, để ráo.\nHành lá rửa sạch cắt khúc, hàng tím rửa lột vỏ cắt mỏng, ớt cắt lát mỏng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-suon-heo-va-mang-tuoi.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-suon-heo-va-mang-tuoi-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-suon-heo-va-mang-tuoi-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Xào săn sườn heo",
+        "description": "Đặt nồi lên bếp, cho một ít dầu ăn vào. Khi dầu nóng, cho hành tỏi khô băm vào phi thơm vàng.\nTiếp theo, cho phần sườn heo đã sơ chế vào nồi. Đảo đều tay khoảng 3-5 phút cho sườn săn lại, dậy mùi thơm. Bước này giúp món canh măng sườn của bạn thêm đậm đà và ngọt nước.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/xao-san-suon-heo.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Hầm canh măng sườn",
+        "description": "Khi sườn đã săn, đổ nước sôi vào nồi, lượng nước vừa đủ ăn.\nNgay lập tức, cho phần măng tươi đã sơ chế vào. Nêm nếm gia vị với 1 ít bột nghệ (để tạo màu đẹp), 1 ít hạt nêm, 1 ít bột ngọt và 1 ít bột canh/muối ăn.\nĐậy vung và hầm canh khoảng 10 phút trên lửa vừa cho măng ngấm đều gia vị và sườn mềm tới.\nBuốc 4: Hầm canh măng sườn\nSau khi hầm đủ thời gian, nêm nếm lại gia vị cho vừa ăn.\nCho hành lá cắt khúc và vài lát ớt tươi (nếu thích ăn cay) vào nồi. Đun sôi lại nhẹ rồi tắt bếp.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/ham-canh-mang-suon.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/ham-canh-mang-suon-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/hoan-thanh-mon-canh-mang-2.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_canh_005",
@@ -357,7 +1284,47 @@
       "Dầu ăn 5 muỗng canh, nước mắm 2 muỗng canh",
       "Muối hạt 1 ít, gia vị thông dụng 1 ít (muối/ đường/ bột ngọt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Cá lăng mua về bạn bỏ ruột, bỏ mang, cắt thành những khúc dày khoảng 1 - 2 đốt ngón tay.\nĐể cá lăng sạch nhớt và bớt mùi hôi, bạn ngâm cá với nước muối loãng trong vòng 10 phút. Sau đó lấy ra, rửa lại với nước thêm vài lần nữa cho sạch rồi để ráo.\nKhế chua, cà chua, rau ngò gai, rau om rửa sạch rồi đem khế cắt lát, cà chua bổ múi cau còn rau om, rau ngò gai cắt nhỏ vừa ăn. Ớt sừng cắt khoanh mỏng.\nVì măng chua có vị chua khá gắt, để loại bỏ vị chua của măng chua, bạn rửa măng chua với nước rồi vắt nhẹ măng qua vài lần rồi để măng ráo.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/so-che-nguyen-lieu-76.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/so-che-nguyen-lieu-74.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/so-che-nguyen-lieu-75.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/so-che-nguyen-lieu-73.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Xào cá lăng",
+        "description": "Bắc 1 cái chảo lên bếp, cho vào 3 muỗng canh dầu ăn rồi đun nóng. Khi dầu đã nóng, cho 1 muỗng canh hành băm vào, phi thơm.\nKế tiếp, bạn cho cá lăng vào xào sơ trong khoảng 5 - 10 phút cho cá săn lại.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/xao-ca-lang-2.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/xao-ca-lang.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Nấu nước canh",
+        "description": "Bắc 1 cái nồi lên bếp, cho vào 2 muỗng canh dầu ăn rồi đun nóng. Cho cà chua vào xào trong 3 - 4 phút để cà chua chín và lấy nước màu.\nKhi cà chua đã chín mềm, cho vào 2 lít nước rồi đun sôi. Khi nước sôi, lần lượt cho măng chua và khế vào, đun trong 3 - 5 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/nau-nuoc-canh-5.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/nau-nuoc-canh.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/nau-nuoc-canh-5.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Cho cá lăng vào nấu cùng canh",
+        "description": "Khi canh đã chín, cho cá lăng đã xào sơ vào. Cho vào nồi 1 muỗng canh đường, 1 muỗng cà phê muối, 1/2 muỗng cà phê bột ngọt, 2 muỗng canh nước mắm, khuấy đều trong 30 giây cho gia vị tan.\nSau cùng, bạn nêm nếm lại cho vừa ăn, cho ngò gai, rau om và ớt sừng cắt khoanh vào, khuấy đều rồi cho canh cá lăng ra tô là có thể thưởng thức.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/cho-ca-lang-vao-nau-cung-canh-2.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/cho-ca-lang-vao-nau-cung-canh-4.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_canh_006",
@@ -371,7 +1338,56 @@
       "Lá lốt 1 ít, tương hột 1 ít (có thể bỏ qua)",
       "Gia vị thông dụng 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế cua đồng",
+        "description": "Đầu tiên, bạn cho cua đồng vào nước sạch để ngâm khoảng 1 - 2 tiếng, giúp cua xả hết chất bẩn. Sau đó, bạn xé bỏ mai cua, dùng xiên hoặc tăm khều hết phần gạch cua vàng óng ra bát riêng. Lọc bỏ phần đen trong gạch, chỉ giữ lại phần gạch vàng để xào sau này.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/so-che-cua-dong.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/so-che-cua-dong-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Chuẩn bị rau củ",
+        "description": "Hành tây (hoặc hành khô) và cà chua bạn rửa sạch, thái múi cau hoặc hạt lựu tùy thích. Lá lốt cũng rửa sạch, thái nhỏ.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/chuan-bi-rau-cu-1.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/chuan-bi-rau-cu-2.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/chuan-bi-rau-cu.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Xay và lọc cua lấy nước cốt",
+        "description": "Cho phần thịt cua đã tách mai vào cối xay, thêm nước vừa đủ (khoảng 1 lít cho 300gr cua). Xay nhuyễn rồi lọc qua rây lần thứ nhất để lấy nước cốt.\nPhần xương cua còn lại trên rây, bạn cho vào cối xay lại lần nữa với một ít nước, xay nhuyễn và lọc thêm một lần nữa. Lọc kỹ sẽ giúp canh cua đồng của bạn ngọt và đậm đà hơn. Bỏ phần cặn xương cua không dùng đến.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xay-va-loc-cua-lay-nuoc-cot-1.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xay-va-loc-cua-lay-nuoc-cot-2.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xay-va-loc-cua-lay-nuoc-cot.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Xào gạch cua và cà chua tạo riêu",
+        "description": "Đặt chảo lên bếp, cho một ít dầu ăn vào phi thơm hành đã thái. Khi hành vàng thơm, cho phần gạch cua đã lọc vào xào nhanh tay. Thêm một ít muối (và ớt nếu bạn thích ăn cay) để gạch cua thêm đậm đà và có màu vàng đẹp mắt.\nTiếp đến, cho cà chua đã thái vào, thêm một thìa hạt tiêu. Xào khoảng 5 phút cho cà chua mềm và gạch cua dậy mùi thơm. Đây là bí quyết nấu canh cua nhiều gạch và tạo màu sắc hấp dẫn cho món canh.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xao-gach-cua-va-ca-chua-tao-rieu.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xao-gach-cua-va-ca-chua-tao-rieu-2.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/xao-gach-cua-va-ca-chua-tao-rieu-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Nấu canh cua đồng thanh mát",
+        "description": "Cho nước cua đã lọc vào nồi, thêm 1 thìa cà phê muối và 1 ít tương hột (khoảng 1/2 thìa cà phê) để tăng hương vị.\nĐặt nồi lên bếp, đun lửa vừa. Khi nước canh gần sôi, bạn dùng đũa hoặc thìa nhẹ nhàng vén phần riêu cua nổi lên vào giữa nồi để riêu không bị nát và trào ra ngoài.\nSau đó, từ từ cho phần gạch cua và cà chua đã xào vào giữa nồi riêu cua.\nĐun sôi thêm khoảng 15 - 20 phút để cua và các nguyên liệu chín kỹ. Cua là loại không có máu nên cần nấu chín kỹ để đảm bảo an toàn và hương vị.\nNêm nếm lại canh cho vừa ăn. Nếu chưa vừa, bạn có thể thêm một ít nước mắm hoặc bột ngọt (tùy chọn) cho tròn vị.\nCuối cùng, cho lá lốt và hành lá đã thái nhỏ vào nồi, đảo nhẹ rồi tắt bếp.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/nau-canh-cua-dong-thanh-mat-1.jpg",
+          "https://cdn.tgdd.vn/2025/10/CookRecipe/GalleryStep/nau-canh-cua-dong-thanh-mat-2.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_nước_001",
@@ -394,7 +1410,66 @@
       "Gia vị thông dụng 1 ít (nước mắm/ muối/ đường/ hạt nêm/ tiêu)",
       "Món ăn kèm 1 ít (Bánh canh/ giá/ xà lách/ húng quế/ húng bạc hà/ chanh/ ớt/ nước mắm chanh tỏi ớt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế giò khoanh và cua đồng",
+        "description": "Chuẩn bị một nồi nước khoảng 2 lít, đập dập 1 củ hành tím lớn và cho vào 1 muỗng cà phê muối. Đun sôi nước, cho giò khoanh vào trụng khoảng 3 phút. Vớt giò ra thau nước nguội, rửa sạch dưới vòi nước để loại bỏ bọt bẩn, giúp nước dùng thơm ngon hơn.\nCho 1 muỗng muối vào thau cua, xả nước xâm xấp rồi trộn và xoa đều khoảng 1 phút để làm sạch lớp bám bên ngoài vỏ cua.\nTiếp tục xả nước, tách bỏ yếm cua, dùng bàn chải chà sạch bùn bám ở mai và các khe kẽ chân cua. Rửa lại 2 nước hoặc đến khi nước trong. Tách mai cua để riêng, gỡ bỏ hết lớp màng bên trong. Cạo gạch cua ra chén.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Xay và lọc cua lấy riêu",
+        "description": "Cho phần cua đã tách vào cối hoặc máy xay. Vì lượng cua nhiều, chia thành 2 mẻ để xay nhanh và nhuyễn hơn. Xay khoảng 1 phút đến khi cua nát.\nTrút cua đã xay vào tô lớn, thêm khoảng 1 tô nước lọc (hoặc nước xâm xấp mặt cua). Nêm 1/2 muỗng cà phê muối để riêu cua đóng tảng lớn, không bị tan khi nấu. Khuấy đều rồi lọc qua rây lưới nhỏ để loại bỏ bã cua. Giữ lại phần bã cua, thêm khoảng 600gr nước nữa để lọc lấy hết thịt cua còn sót lại. Tổng lượng nước cua lọc được khoảng 1.5 lít.\nĐặt nồi nước cua đã lọc lên bếp, đun lửa vừa. Khi nước bắt đầu nổi bọt, dùng vá khuấy nhẹ vài lượt. Nước sôi khoảng 1 phút, thịt riêu cua sẽ nổi lên thành tảng. Dùng vợt vớt hết riêu ra, ép nhẹ để chắt nước trong riêu cua trở lại nồi.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-5.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-4.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-3.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Hầm giò và ướp thịt riêu cua",
+        "description": "Cho giò khoanh đã sơ chế vào nồi lớn, thêm 1 củ hành tím, 1 củ hành tây cắt lát và khoảng 3 lít nước lọc. Đun sôi, sau đó hạ lửa vừa, hầm khoảng 45-50 phút cho giò chín mềm.\nCho thịt băm, giò sống vào tô lớn. Thêm 400gr riêu cua đã để nguội. Lấy hành tím, gốc hành lá băm nhỏ (khoảng 35gr), tỏi băm nhỏ (1 muỗng canh) cho vào tô. Nêm 1 muỗng cà phê hạt nêm, 1 muỗng canh nước mắm, 1/2 muỗng canh đường, 1 muỗng cà phê tiêu.\nDùng tay bóp trộn đều, nhào mạnh để hỗn hợp thịt, giò sống và riêu cua hòa quyện, dẻo và có độ kết dính cao. Để hỗn hợp ướp khoảng 15 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-8.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-7.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-6.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Thắng tóp mỡ, xào gạch cua, cà chua, nấm",
+        "description": "Cắt thịt mỡ thành lát dài khoảng 1cm rồi cắt nhỏ. Cho vào chảo, thêm 1/3 muỗng cà phê muối và một chén nhỏ nước lọc. Bật lửa lớn, đảo đều liên tục cho đến khi thịt mỡ teo lại, chuyển vàng và thơm. Tắt lửa, cho tỏi băm vào, khuấy nhanh khoảng 30 giây cho tỏi vàng thơm. Vớt tóp mỡ và tỏi phi ra tô riêng.\nDùng khoảng 1 vá tóp mỡ phi tỏi vừa thắng, thêm 3 muỗng canh dầu màu điều vào chảo. Cho gạch cua, cà chua cắt nhỏ và nấm rơm cắt đôi vào. Xào nhanh trên lửa lớn khoảng 3 phút cho hỗn hợp hòa quyện, cà chua bắt đầu mềm và ra nước.\nTắt bếp, nêm 1 muỗng canh hạt nêm, 1/2 muỗng cà phê muối, 1 muỗng canh đường. Bật lửa lớn trở lại, đảo nhanh tay liên tục khoảng 1 phút cho gia vị tan và thấm đều. Tắt bếp, để riêng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-12.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-11.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-9.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Nấu nước dùng bánh canh riêu cua đồng",
+        "description": "Sau khi hầm giò được 50 phút, vớt hành tây ra. Cho phần nước riêu cua đã ép, củ cải trắng cắt nhỏ và hỗn hợp nấm, cà chua, gạch cua đã xào vào nồi. Thêm trứng cút đã luộc và bóc vỏ.\nDùng muỗng múc hỗn hợp riêu cua và thịt đã ướp, tán thành viên dẹt hoặc vo tròn vừa ăn rồi thả nhẹ nhàng vào nồi nước dùng đang sôi.\nNồi nước dùng lúc này khoảng hơn 3 lít. Nêm 2 muỗng canh hạt nêm, 1 muỗng canh muối, 2 muỗng canh đường, 3 muỗng canh nước mắm để tăng vị đậm đà. Đun sôi thêm khoảng 2 phút cho giò và viên riêu cua chín tới. Nếm lại và điều chỉnh gia vị cho vừa khẩu vị gia đình.",
+        "images": [
+          "https://cdn.tgdd.vn/206/01/CookRecipe/GalleryStep/banh-canh-cua-dong-14.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Thành phẩm",
+        "description": "Chuẩn bị một nồi nước sôi, cho khoảng 1.5kg bánh canh gạo vào, đảo nhanh vài lượt. Sau đó, cho trực tiếp bánh canh đã trụng vào nồi nước lèo đang sôi lăn tăn. Đun thêm khoảng 2 phút nữa để sợi bánh canh thấm đều gia vị, dai ngon mà không bị bở.\nMúc bánh canh ra tô, xếp giò khoanh, viên riêu cua lên trên. Chan nước dùng ngập tô. Rắc thêm hành ngò cắt nhỏ, tóp mỡ giòn và một ít tiêu xay để tăng hương vị. Dọn kèm với giá, sà lách, húng quế, húng bạc hà, chanh, ớt và nước mắm chanh tỏi ớt.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-20.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-19.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/banh-canh-cua-dong-17.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_nước_002",
@@ -411,7 +1486,54 @@
       "Gia vị thông dụng 1 ít (muối/ bột canh/ đường/ nước mắm)",
       "Gia vị ăn kèm 1 ít (Hành lá/ rau mùi/ lá chanh/ ớt/ chanh)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1:Sơ chế xương gà và chuẩn bị nước dùng phở gà",
+        "description": "Đầu tiên, bạn đun sôi một nồi nước lớn. Cho 1.6 kg xương gà và 1.8 kg gà vào chần sơ khoảng 5-7 phút cho sủi hết bọt bẩn và loại bỏ tạp chất.\nSau đó, vớt xương và gà ra, rửa sạch lại dưới vòi nước lạnh. Cho xương gà đã rửa sạch vào nồi cùng 3.1 lít nước để bắt đầu ninh lấy nước dùng.\nMách nhỏ: Bạn nên ninh xương trong khoảng 3 đến 4 tiếng trên lửa nhỏ để xương tiết hết chất ngọt, tạo nên nước dùng phở gà thơm ngon, đậm đà.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-xuong-ga-va-chuan-bi-nuoc-dung-pho-ga-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-xuong-ga-va-chuan-bi-nuoc-dung-pho-ga.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Chuẩn bị gia vị phở và các nguyên liệu tạo mùi",
+        "description": "Bạn cho 50 gr hành khô, 1 củ hành tây và 50 gr gừng vào nồi chiên không dầu nướng trong khoảng 20 phút cho thơm lừng. Nếu có bếp than, nướng trực tiếp sẽ giúp các gia vị này có mùi thơm đặc trưng và hấp dẫn hơn nhiều.\nTiếp theo, bạn rang thơm 10 gr hạt mùi trên chảo nóng cho đến khi dậy mùi.\nSau khi nướng và rang xong, cho toàn bộ hành khô, gừng, hành tây đã nướng và hạt mùi vào một túi vải lọc sạch.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chuan-bi-gia-vi-pho-va-cac-nguyen-lieu-tao-mui.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/chuan-bi-gia-vi-pho-va-cac-nguyen-lieu-tao-mui-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Luộc gà và nấu nước dùng phở gà",
+        "description": "Khi nồi nước dùng xương đã ninh được khoảng 2-3 tiếng, bạn thả túi vải chứa các nguyên liệu tạo mùi vào.\nTiếp đó, cho con gà đã chần sơ vào luộc chính trong nồi nước dùng này. Việc luộc gà trực tiếp trong nước dùng ninh xương giúp thịt gà đậm đà hơn và nước dùng thêm thơm ngon, chuẩn vị phở gà Hà Nội.\nSau khoảng 1 tiếng luộc gà, bạn lưu ý phải vớt củ hành tây ra ngay để tránh làm nước dùng bị chua, ảnh hưởng đến hương vị món ăn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/luoc-ga-va-nau-nuoc-dung-pho-ga-ha-noi-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/luoc-ga-va-nau-nuoc-dung-pho-ga-ha-noi.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Sơ chế thịt gà và rau thơm ăn kèm",
+        "description": "Khi gà chín, bạn vớt ra để thật nguội hoàn toàn. Đây là bí quyết nấu phở giúp thịt gà không bị khô khi lọc.\nTiến hành lọc thịt gà khỏi xương, cắt thịt gà thành các miếng vừa ăn. Phần da gà có thể thái chỉ để tăng thêm độ hấp dẫn cho bát phở.\nLá chanh bạn rửa sạch, thái chỉ thật nhỏ. Hành lá và rau mùi cũng rửa sạch, thái nhỏ. Riêng phần đầu hành trắng bạn có thể để nguyên hoặc chẻ dọc tùy thích.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-thit-ga-va-rau-thom-an-kem-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-thit-ga-va-rau-thom-an-kem-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-thit-ga-va-rau-thom-an-kem.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Thành phẩm",
+        "description": "Nêm vào nồi nước dùng 25 gr muối (hoặc bột canh), 20 gr đường và 50 gr nước mắm. Điều chỉnh gia vị sao cho vừa miệng, nước dùng có vị ngọt thanh tự nhiên.\nChần bánh phở qua nước sôi cho mềm rồi cho vào bát. Xếp thịt gà đã thái lên trên, rắc đều hành lá, rau mùi và lá chanh thái chỉ.\nCuối cùng, chan nước dùng thật sôi vào bát. Thêm vài lát ớt tươi và vắt chanh theo khẩu vị cá nhân là bạn đã hoàn thành món phở gà Hà Nội thơm ngon, hấp dẫn.\nMón phở gà Hà Nội hoàn thành có nước dùng trong veo, vị ngọt thanh tự nhiên từ xương và thịt gà. Hương thơm lừng của hành nướng và hạt mùi quyện vào nhau tạo nên sự hấp dẫn khó cưỡng.\nThịt gà dai ngon, da gà giòn sần sật kết hợp cùng mùi lá chanh vô cùng tinh tế. Đây chắc chắn là món ăn truyền thống tuyệt vời để thưởng thức ngay khi còn nóng hổi.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/thanh-pham-213.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/thanh-pham-212.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_nước_003",
@@ -433,7 +1555,91 @@
       "Gia vị ăn kèm 1 ít (hành ngò/ rau xà lách/ lá chanh/ ớt/ chanh)",
       "Bún sợi nhỏ 1 ít, mắm tôm 1 ít, chả lụa 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế cua đồng",
+        "description": "Rửa sạch 800gr cua đồng. Cho cua vào tô lớn, thêm ít muối và ngâm tầm 1 tiếng để cua nhả bớt chất dơ.\nSau khi ngâm, cho đá vào ngâm cùng để cua tự chết, giúp bạn dễ dàng sơ chế hơn.\nBỏ yếm cua, tách phần mai cua ra khỏi thân. Lấy phần gạch vàng trong thân và mai cua ra để riêng. Bỏ phần mai cua đi.\nCho thân cua vào máy xay sinh tố, xay một ít trước cho hơi mịn. Sau đó cho phần cua còn lại vào và tiếp tục xay cho nhỏ mịn hoàn toàn.\nTráng cối xay với ít nước rồi cho nước đó vào phần cua xay.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-cua-dong-5.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-cua-dong-6.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-cua-dong-7.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-cua-dong-8.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Lấy nước cốt cua đồng",
+        "description": "Cho phần cua xay đã sơ chế vào một tô lớn. Thêm 1 lít nước vào, quấy đều để thịt cua tan ra.\nDùng rây lọc phần nước cua này vào một nồi lớn. Phần xác cua còn lại trong rây, bạn lại cho vào tô, thêm 1 lít nước nữa và lặp lại quá trình quấy đều, rây lọc.\nLặp lại khoảng 3 lần cho đến khi nước cua trong lại và bạn đã có đủ 2 lít nước cua.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/lay-nuoc-cot-cua-dong.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/lay-nuoc-cot-cua-dong-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Sơ chế xương heo và các nguyên liệu khác",
+        "description": "Trụng sơ 600gr xương heo (xương sườn) trong nước sôi để loại bỏ máu và mùi hôi. Rửa sạch lại.\nƯớp xương với ít hành tím băm, ít tỏi băm, 1 muỗng canh hạt nêm, 1/2 muỗng đường, 1/2 muỗng tiêu, 2 muỗng nước mắm. Trộn đều và để thấm gia vị khoảng 15 phút.\nĐậu hũ cắt làm đôi, sau đó cắt thành những miếng tam giác nhỏ vừa ăn.\nCà chua cắt làm tư hoặc làm sáu tùy kích thước.\nHuyết heo cắt thành những miếng vuông nhỏ.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-xuong-heo-va-cac-nguyen-lieu-khac.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-xuong-heo-va-cac-nguyen-lieu-khac-1.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-xuong-heo-va-cac-nguyen-lieu-khac-3.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-xuong-heo-va-cac-nguyen-lieu-khac-4.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Nấu nước lèo",
+        "description": "Đặt nồi nước cua đã rây lên bếp, đun lửa to cho nước nóng lên.\nKhi cua bắt đầu nổi nhẹ lên mặt, bạn quấy nhẹ nhàng để thịt cua nổi đều và không bị bám dưới đáy nồi.\nMách nhỏ: Quấy nhẹ tay để tránh làm nát riêu cua và giúp riêu kết thành mảng đẹp.\nSau đó, giảm lửa nhỏ và để cua tự tạo thành váng, nổi lên từ từ. Nếu để lửa to, thịt cua sẽ sôi bùng và không tạo thành mảng.\nKhi thịt cua đã tạo thành mảng và nổi lên trên mặt, nước trong lại, dùng vợt vớt hết phần riêu cua ra tô. Lọc bỏ phần nước đọng trong vợt xuống nồi.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/nau-nuoc-leo.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Hầm xương heo",
+        "description": "Cho một ít dầu ăn vào chảo, cho xương heo đã ướp vào xào săn lại khoảng 3-5 phút.\nCho xương đã xào vào nồi nước cua vừa vớt riêu. Thêm 1 lít nước nữa vào nồi (tổng cộng khoảng 2.7 - 2.8 lít nước).\nKhi nước sôi, hớt bỏ bọt. Sau đó, chỉnh lửa nhỏ và hầm xương khoảng 30 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/ham-xuong-heo.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/ham-xuong-heo-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Làm riêu cua",
+        "description": "Cho 400gr thịt heo xay vào tô riêu cua đã vớt. Thêm ít tỏi băm, ít hành tím băm (chừa lại một ít để phi thơm sau), 1 muỗng canh hạt nêm, 1 muỗng đường, tí xíu bột ngọt, 1/2 muỗng tiêu, 1/3 muỗng muối. Đập 2 quả trứng gà vào.\nTrộn đều hỗn hợp cho các nguyên liệu hòa quyện vào nhau.\nCho hỗn hợp riêu vào khuôn nhôm, dàn đều cho đẹp mắt. Đem hấp trong vòng 20-30 phút cho riêu chín.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/lam-rieu-cua.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/lam-rieu-cua-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 7,
+        "title": "Bước 7: Chuẩn bị gạch cua và đậu hũ",
+        "description": "Cắt chả lụa thành những miếng mỏng. Chanh cắt lát, hành ngò cắt nhỏ.\nLàm màu cà ri: Cho nhiều dầu ăn vào chảo, cho hạt cà ri vào. Khi dầu nóng, hạt cà ri sẽ ra màu. Vớt bỏ hạt cà ri, lấy bớt dầu ra, giữ lại một ít dầu trong chảo.\nCho phần gạch cua còn nguyên vào chảo dầu cà ri vừa làm, xào khoảng 30 giây cho gạch cua sôi lên rồi tắt bếp, vớt gạch cua ra.\nKhi riêu cua hấp được 30 phút, lấy ra. Cho khoảng 2/3 lượng gạch cua đã xào lên bề mặt riêu cua để tạo màu vàng đẹp. Đậy nắp và hấp thêm 5 phút nữa.\nTrong khi đó, cho dầu vào chảo và chiên đậu hũ vàng đều hai mặt. Vớt đậu hũ ra.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/chuan-bi-gach-cua-va-dau-hu.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/chuan-bi-gach-cua-va-dau-hu-1.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/chuan-bi-gach-cua-va-dau-hu-2.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/chuan-bi-gach-cua-va-dau-hu-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 8,
+        "title": "Bước 8: Hoàn thiện nước lèo",
+        "description": "Quay lại chảo dầu cà ri còn lại. Cho hết phần hành tỏi băm đã chừa lại vào phi thơm.\nCho đậu hũ chiên và cà chua vào đảo sơ vài cái rồi tắt bếp.\nKhi nồi nước dùng hầm xương đã được hơn 45 phút, cho hết phần đậu hũ, cà chua đã xào và huyết heo vào nồi.\nĐợi nước sôi lại, hớt bỏ bọt nếu có. Cho phần gạch cua còn lại vào nồi.\nNêm nếm gia vị: 2.5 muỗng hạt nêm, 1/2 muỗng bột ngọt, 2 muỗng đường, 1/2 vá nước mắm, 1/2 muỗng muối. Khuấy đều cho tan gia vị và nêm nếm lại cho vừa khẩu vị gia đình.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/hoan-thien-nuoc-leo.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/hoan-thien-nuoc-leo-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 9,
+        "title": "Bước 9: Thành phẩm",
+        "description": "Cho bún sợi nhỏ vào tô. Xếp các topping gồm chả lụa, riêu cua hấp, đậu hũ, cà chua, huyết, xương heo lên trên.\nChăm nước lèo nóng hổi vào tô. Rắc thêm chút hành ngò cắt nhỏ.\nBày biện bún riêu ra bàn cùng với các loại rau sống ăn kèm (xà lách, bắp chuối bào, rau thơm, giá), mắm tôm, chanh và ớt. Thưởng thức tô bún riêu cua đồng đậm đà, hấp dẫn!",
+        "images": []
+      }
+    ]
   },
   {
     "id": "món_nước_004",
@@ -450,7 +1656,42 @@
       "Rau ăn kèm 1 ít (húng quế/ ngò gai/ giá)",
       "Gia vị thông dụng 1 ít (đường/ hạt nêm/ muối/ tiêu/ bột ngọt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế sườn bò",
+        "description": "Khi mua sườn bò về, bạn ngâm sườn với nước muối từ 3 - 5 phút, sau đó rửa lại bằng nước sạch để sườn nhanh mềm hơn khi nấu và giúp khử được mùi hôi.\nChặt sườn thành từng khúc vừa ăn, khoảng 2 - 3 đốt tay tùy theo sở thích của bạn nhé!\nCách chế biến sườn bò không bị hôi:\nCách 1: Sử dụng 1 củ gừng nướng qua cho cháy vỏ, sau đó cạo sạch vỏ và giã nhỏ ra và xát trực tiếp gừng lên bề mặt miếng thịt bò thật đều. Mùi thơm của gừng sẽ giúp cho thịt bò đậm đà hơn, không còn mùi hôi nữa.\nCách 2: Cho sườn bò vào tô rượu ngâm trong vòng 10 - 15 phút sau đó mang thịt đi rửa lại với nước sạch. Có thể để như vậy nấu trực tiếp cũng sẽ giúp cho thịt ngon hơn.",
+        "images": []
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Sơ chế nguyên liệu",
+        "description": "Cho hành tây, gừng để nguyên vỏ lên bếp nướng sơ qua. Bạn nướng sao cho lớp vỏ hơi cháy xém, không để hành và gừng bị cháy quá.\nSau khi nướng xong, cạo sạch vỏ hành tây, gừng. Đối với hành tây, bạn xẻ nhẹ dưới đáy hai đường, gừng để nguyên củ.\nHành lá, ngò rí cùng các loại rau ăn kèm bạn nhặt bỏ các lá hư đem rửa sạch rồi để ráo nước. Hành lá, ngò rí bạn đem cắt nhỏ.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/uop-suon-4.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Nấu nước dùng",
+        "description": "Cho gói các loại hạt gia vị nấu phở vào chảo rang đều, đến khi có mùi thơm thì tắt lửa.\nDùng một túi nhỏ bằng vải mùng sạch hoặc túi lưới để cho gia vị vào. Bạn túm các mép túi lại bọc kín nguyên liệu sau đó cột túm bằng một sợi dây chỉ.\nNấu một nồi khoảng 2 lít nước, cho 1 củ hành tây, 2 củ gừng, 50gr táo đỏ, túi gia vị nấu phở vào để nấu nước dùng.\nKhi nước bắt đầu sôi thì bỏ sườn bò vào hầm, nếu thấy nước dùng xuất hiện bọt khí, bạn dùng muỗng canh vớt bọt ra ngoài cho đến khi hết bọt thì thôi.\nĐể lửa nhỏ ninh từ 1,5 - 2 giờ đồng hồ. Khi thịt bò mềm thì nêm vào nồi nước dùng 2 muỗng cà phê muối, 2 muỗng cà phê bột ngọt, 4 muỗng canh hạt nêm và 1 ít đường và tiêu.\nMách nhỏ:Bạn có thể tiết kiệm thời gian hơn nếu ninh nước dùng bằng nồi áp suất. Để sườn bò không bị đỏ, chúng ta không nên chờ nước quá sôi mới cho sườn vào. Trong lúc đun bạn liên tục vớt bọt để nước dùng được trong và thơm ngon hơn nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/che-bien-suon-kho-11.jpg",
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/che-bien-suon-kho-12.jpg",
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/nau-nuoc-dung-6.jpg",
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/nau-nuoc-dung-7.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Hoàn thành",
+        "description": "Trước tiên, bạn chần sơ bánh phở qua nước sôi để sợi bánh được tơi và mềm.\nTiếp đó bạn xếp bánh phở vào tô, thêm vào 1 ít hành lá, ngò rí cắt nhỏ lên rồi gắp vài miếng sườn bò vào và chan nước dùng ngập mặt bánh phở.\nKhi ăn bạn thêm rau ngò gai, rau quế, giá vào để tăng thêm độ ngon, hơn nữa để thêm phần kích thích vị giác thì bạn cho vào 1 ít ớt và vắt thêm chanh nữa nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/hoan-thanh-70.jpg",
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/hoan-thanh-192.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chay_001",
@@ -464,7 +1705,47 @@
       "Dầu màu điều 1 muỗng canh, dầu ăn 1 ít",
       "Gia vị thông dụng 1 ít (muối/ bột nêm/ đường/ bột ngọt/ bột tỏi/ tiêu xay)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế và luộc đậu hũ",
+        "description": "Bạn bắt nồi nước khoảng 1 lít lên bếp, cho vào 1 muỗng canh muối (khoảng 12gr). Khi nước sôi, bạn cho 400gr đậu hũ vào luộc khoảng 5 phút ở lửa trung bình. Việc luộc đậu với nước muối giúp đậu chắc hơn và khử được mùi hôi. Sau 5 phút, bạn vớt đậu hũ ra để ráo.\nBạn đặt đậu hũ lên một cái rây, sau đó dùng một cái nồi hoặc vật nặng đè lên trên để ép hết nước trong đậu ra ngoài. Bạn thực hiện ép trong khoảng 2 tiếng.\nĐây là bước quan trọng vì đậu hũ càng ráo nước thì đòn chả thành phẩm sẽ càng có độ dai ngon và không bị bở.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/so-che-va-luoc-dau-hu-3.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/so-che-va-luoc-dau-hu-1.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/so-che-va-luoc-dau-hu.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Xay và trộn bột chả chay đậm đà",
+        "description": "Đậu hũ sau khi ép sẽ còn khoảng 300gr. Bạn bẻ nhỏ đậu cho vào máy xay sinh tố. Trong một bát nhỏ, trộn đều hỗn hợp gia vị khô gồm: 40gr bột mì căn, 1/4 muỗng cà phê bột nêm, 1/4 muỗng cà phê muối, 3/4 muỗng cà phê đường, 1/8 muỗng cà phê bột ngọt (tùy chọn), tiêu xay và 1/8 muỗng cà phê bột tỏi.\nBật máy xay đậu ở tốc độ chậm, từ từ đổ hỗn hợp gia vị vào. Xay cho đến khi đậu kết lại thành một khối dẻo mịn, đồng nhất là đạt yêu cầu của cách làm chả chen chay chuẩn vị.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/xay-va-tron-bot-cha-chay-dam-da-2.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/xay-va-tron-bot-cha-chay-dam-da-1.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/xay-va-tron-bot-cha-chay-dam-da.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Gói và hấp chả lụa chay chiên",
+        "description": "Lấy khối chả ra, nặn thành hình trụ tròn đều. Sau đó, quấn chặt bằng màng bọc thực phẩm chịu nhiệt hoặc lá chuối truyền thống. Dùng tăm xăm nhiều lỗ nhỏ xung quanh đòn chả để hơi nước thoát ra, giúp chả không bị phồng và giữ được độ chắc.\nĐặt chả vào nồi hấp đã có nước sôi, hấp ở lửa trung bình khoảng 35 phút. Sau khi hấp, lấy chả ra và để nguội hoàn toàn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/goi-va-hap-cha-lua-chay-chien-2.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/goi-va-hap-cha-lua-chay-chien-1.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/goi-va-hap-cha-lua-chay-chien.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Cách chiên chả chay",
+        "description": "Dùng khăn giấy thấm thật khô bề mặt ngoài của đòn chả đã nguội. Việc này giúp tránh dầu bắn khi chiên. Cho dầu ăn vào chảo sao cho dầu ngập khoảng 1cm, thêm 1 muỗng canh dầu màu điều để tạo màu sắc vàng cam bắt mắt. Khi dầu nóng già, nhẹ nhàng cho đòn chả vào chiên.\nLăn đều tay để chả chín vàng ruộm đều các mặt, lớp vỏ ngoài hơi cứng lại, trông giống như chả nướng là đạt. Vớt chả ra giấy thấm dầu trước khi cắt lát để loại bỏ dầu thừa, giúp món chả chay chiên giòn hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/cach-chien-cha-chay-vang-gion-rum-2.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/cach-chien-cha-chay-vang-gion-rum.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chay_002",
@@ -487,7 +1768,69 @@
       "Bún 4 kg",
       "Gia vị thông dụng 1 ít (muối hột/ đường/ đường phèn/ hạt nêm chay/ bột ngọt)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế và chuẩn bị nguyên liệu",
+        "description": "Ngâm các loại topping: Ngâm 50gr nấm đông cô trong nước ấm khoảng 30 phút đến 1 tiếng cho mềm. Tương tự, ngâm 60gr bò lát chay (khoảng 20 miếng) trong nước cho nở mềm.\nSơ chế rau củ nấu nước dùng chay:\nCủ sắn: Gọt vỏ, rửa sạch, cắt đôi rồi thái lát mỏng.\nCà rốt: Gọt vỏ, rửa sạch, dùng dao răng cưa thái khoanh dày/mỏng tùy thích.\nCủ cải trắng: Gọt vỏ, rửa sạch, thái khoanh tương tự cà rốt.\nCủ su hào: Cắt ra, bỏ hạt, thái lát xéo. Để riêng vì củ su hào rất nhanh mềm, sẽ cho vào sau cùng.\nBắp Mỹ: Cắt khoanh tròn. Đây là \"xí quách chay\" giúp nước lèo ngọt thơm.\nHành tây: Gọt vỏ, rửa sạch, cắt miếng để xào. Nếu ăn thuần chay, thay hành tây bằng hành baro.\nThơm: Cắt đôi, thái miếng nhỏ. Chọn trái thơm ngọt để nước lèo không bị chua.\nSơ chế sả cây: Sả rửa sạch, lột bỏ 2 lớp vỏ ngoài rồi dùng chày đập dập. Phần lá sả cũng đập dập để ra tinh dầu rồi cắt làm đôi.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-chuan-bi-nguyen-lieu.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-chuan-bi-nguyen-lieu-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-chuan-bi-nguyen-lieu-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-chuan-bi-nguyen-lieu-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Nấu nước dùng bún Huế chay",
+        "description": "Chuẩn bị một cái nồi. Cho 3 muỗng canh dầu ăn vào làm nóng. Khi dầu nóng, cho phần sả đập dập vào xào cho thật thơm. Tiếp theo, cho 3 bông hồi và hành tây đã cắt vào xào cùng.\nSau khi các nguyên liệu đã thơm, cho 1 muỗng canh bột ớt Hàn Quốc vào, xào sơ rồi tắt bếp ngay. Nếu không dùng bột ớt Hàn Quốc, bạn có thể dùng bột màu điều.\nĐã chuẩn bị sẵn một nồi nước sôi 7 lít. Múc một ít nước sôi tráng chảo vừa xào rồi đổ vào nồi nước lèo. Cho bắp Mỹ, củ sắn, thơm và phần sả đập dập còn lại vào nồi.\nMách nhỏ: Nếu nấu kinh doanh, cà rốt và củ cải trắng nên cho vào cuối cùng để giữ độ giòn và màu sắc đẹp mắt khi phục vụ khách. Với món bún chay Huế tại nhà, bạn có thể cho vào nấu cùng để nước lèo ngọt hơn.\nKhi nồi nước sôi trở lại, hạ lửa nhỏ nhất, đậy nắp và hầm khoảng 1 tiếng.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/nau-nuoc-dung-bun-hue-chay.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/nau-nuoc-dung-bun-hue-chay-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/nau-nuoc-dung-bun-hue-chay-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Làm dầu sa tế thơm lừng",
+        "description": "Cho 200ml dầu ăn vào một nồi nhỏ. Khi dầu hơi nóng, cho 30gr sả băm vào phi trước. Sau khoảng 1 phút, cho tiếp 20gr hành tím băm và 20gr tỏi băm vào phi cùng.\nMách nhỏ: Để sa tế giữ được lâu, hãy phi sả, hành tím, tỏi cho đến khi hơi khô và vàng đều. Tránh phi quá lửa sẽ bị khét và đắng. Nếu ăn thuần chay, thay tỏi và hành tím bằng hành baro.\nKhi sả, hành tím, tỏi đã vàng, cho 30gr ớt khô và 15gr bột ớt Hàn Quốc vào. Khuấy đều khoảng một chút xíu rồi tắt bếp ngay vì dầu vẫn còn rất nóng. Sa tế làm từ ớt bột khô sẽ giữ được lâu hơn ớt tươi.\nSau khi tắt lửa, cho 1/4 muỗng cà phê muối vào khuấy đều. Muối giúp sa tế bảo quản được lâu hơn. Sa tế này rất thơm, có thể dùng ăn mì, hoành thánh, sủi cảo đều ngon.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/lam-dau-sa-te-thom-lung-4.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/lam-dau-sa-te-thom-lung-5.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Sơ chế và xào topping ăn kèm",
+        "description": "Bò lát chay và nấm đông cô sau khi ngâm đã mềm, rửa sạch lại. Cắt bỏ chân nấm đông cô. Đậu hũ ky chiên cắt khúc vừa ăn.\nSơ chế rau ăn kèm:\nCủ hành tây: Cắt đôi, thái thật mỏng.\nRau răm: Thái thật nhuyễn.\nNgò gai: Thái kích cỡ như hành lá, trộn chung với rau răm.\nChả nấm bào ngư: Cắt đôi, thái lát mỏng.\nBắc chảo lên bếp, cho 2 muỗng canh dầu ăn vào làm nóng. Cho 20gr sả băm vào xào thơm. Tiếp theo, cho 20gr hành tím băm vào xào cùng cho thơm (nếu ăn thuần chay dùng hành baro).\nKhi sả và hành tím thơm, cho 1 muỗng canh bột ớt Hàn Quốc vào. Hạ lửa thấp nhất (bột ớt dễ cháy). Xào sơ rồi cho bò lát chay và nấm đông cô vào.\nCho tiếp đậu hũ bi và đậu hũ ky chiên vào xào. Khi bột ớt thấm đều, cho khoảng 100ml nước vào.\nNêm 1 muỗng canh đường, 1 muỗng canh hạt nêm chay và 1/2 muỗng cà phê muối. (Nếu nấu kinh doanh, có thể thêm 1 muỗng canh bột ngọt).\nXào đến khi nước rút gần hết thì tắt bếp. Topping xào thơm và nấu lại trong nước lèo sẽ rất thấm vị.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-xao-topping-an-kem.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-xao-topping-an-kem-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-xao-topping-an-kem-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-va-xao-topping-an-kem-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Hoàn thiện nước lèo và trụng bún",
+        "description": "Sau 1 tiếng hầm, nước lèo sẽ rất thơm. Châm thêm nước vào nồi sao cho đủ 7 lít nước như ban đầu. Vớt hết các loại rau củ đã hầm ra. Vớt luôn phần topping đã xào ra khỏi nồi để giữ được độ đẹp mắt khi bán.\nNêm 70gr muối hột, 105gr đường phèn, 35gr hạt nêm chay và 1 muỗng canh bột ngọt. Nêm nếm lại theo khẩu vị gia đình, đảm bảo nước lèo đậm đà để chan bún không bị nhạt.\nCuối cùng, cho củ su hào đã cắt vào nồi, nấu thêm khoảng 10 phút cho mềm. Chuẩn bị một nồi 3 lít nước để trụng bún.\nMách nhỏ: Để sợi bún ăn không bị nhạt khi chan nước lèo, bạn có thể cho một ít muối hột và bột ngọt vào nước trụng. Muối hột có độ mặn dịu hơn các loại muối khác. Nếu không nêm nước trụng, hãy nêm nước lèo đậm đà hơn một chút.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/hoan-thien-nuoc-leo-va-trung-bun.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/hoan-thien-nuoc-leo-va-trung-bun-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/hoan-thien-nuoc-leo-va-trung-bun-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/hoan-thien-nuoc-leo-va-trung-bun-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Thành phẩm",
+        "description": "Cho bún đã trụng vào tô. Xếp các loại topping đã xào lên trên. Chan nước lèo thơm lừng, đậm đà vào tô. Cuối cùng, thêm hành tây thái mỏng, rau răm, ngò gai và một muỗng dầu sa tế cay nồng. Vậy là bạn đã có một tô bún chay Huế chuẩn vị rồi.\nBún chay Huế có vị thanh nhẹ, hài hòa, nổi bật là nước dùng ngọt tự nhiên từ rau củ và nấm. Khi ăn cảm nhận được hương sả thoang thoảng, vị cay nhẹ đặc trưng của Huế nhưng không gắt. Các nguyên liệu chay như đậu hũ, nấm, chả chay tạo cảm giác thanh đạm mà vẫn đậm đà, ăn nhẹ bụng và dễ chịu.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/thanh-pham-3.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/thanh-pham-4.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chay_003",
@@ -502,7 +1845,44 @@
       "Dầu ăn 600 ml",
       "Hạt nêm chay 1 muỗng canh, bột ngọt/ tiêu 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế và phơi khoai lang",
+        "description": "Khoai lang mua về bạn rửa sạch, gọt sạch vỏ và dùng dao bào đa năng bào thành các sợi mỏng vừa ăn. Sau đó cho vào mâm cùng 1/2 muỗng canh bột ngọt, 1/2 muỗng canh tiêu và 1 muỗng canh hạt nêm chay vào.\nTrộn đều và trải đều khoai lang lên mâm rồi đem đi phơi nắng khoảng 1 tiếng cho sợi khoai lang héo và giòn.\nMách nhỏ: Nếu không phơi nắng bạn có thể đem sấy trong lò sấy với nhiệt độ là 60 độ C trong 30 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/so-che-va-phoi-khoai-lang.jpg",
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/so-che-va-phoi-khoai-lang-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Sơ chế nấm mèo và trộn với khoai lang",
+        "description": "Nấm mèo mua về bạn cắt bỏ phần gốc nấm, sau đó ngâm với nước khoảng 3 tiếng rồi cắt thành các sợi mỏng rộng 1/2 lóng tay.\nTiếp theo bạn cho nấm mèo vừa sắc vào mâm khoai lang đã phơi héo sau đó xóc và trộn đều tay cho khoai lang và nấm mèo lẫn vào nhau.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/so-che-nam-meo-va-tron-voi-khoai-lang.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Gói chả giò khoai lang",
+        "description": "Để cuốn chả giò trước tiên bạn trải 1 miếng bánh tráng tươi lên dĩa sau đó cho hỗn hợp khoai lang và nấm mèo lên trên.\nGấp 2 mép bánh tráng lại, dùng tay lấy 1 ít nước lọc thấm lên trên phần đuôi của bánh tráng và cuốn tròn lại. Làm tương tự đến hết phần nhân khoai lang.\nMách nhỏ:Khi cuốn chả giò bạn nên cuốn chặt tay để chả giò được đẹp mắt và khi chiên không bị vô quá nhiều dầu. Để chả giòn khi chiên được giòn lâu bạn nên cho chả giò vô hộp và bảo quản trong tủ lạnh khoảng 2 tiếng sau đó hãy đem ra chiên.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/goi-cha-gio-khoai-lang.jpg",
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/goi-cha-gio-khoai-lang-1.jpg",
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/goi-cha-gio-khoai-lang-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Chiên chả giò khoai lang",
+        "description": "Bắc chảo lên bếp, cho vào chảo 600ml dầu ăn, đợi đến khi dầu sôi tăm bạn cho lần lượt từng cuốn chả giò vào.\nChiên với lửa vừa khoảng 2 phút đến khi chả giò chín vàng thì gắp ra cho lên khay hoặc cho vào dĩa có lót giấy để thấm dầu.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/chien-cha-gio-khoai-lang-1.jpg",
+          "https://cdn.tgdd.vn/2021/05/CookRecipe/GalleryStep/chien-cha-gio-khoai-lang-3.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_chay_004",
@@ -518,7 +1898,46 @@
       "Dầu ăn 100 ml",
       "Ngò rí 3 nhánh"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Vo sạch và nấu đậu sạch",
+        "description": "Đậu xanh mua về, bạn đãi sạch vỏ và ngâm từ 1 - 3 tiếng. Sau đó, bạn vớt đậu xanh và để ra rổ cho ráo nước.\nBạn bắc lên bếp một cái nồi, cho hết số đậu xanh đã được ngâm vào, đổ nước sâm sấp mặt đậu rồi thêm 1/2 muỗng cà phê muối và nấu đậu ở lửa nhỏ đến khi đậu mềm.\nKhi đậu xanh được nấu xong, bạn cho ra tô và tán nhuyễn bằng muỗng hoặc nĩa nhé.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/vo-sach-va-nau-dau-sach-3.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/vo-sach-va-nau-dau-sach-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Trộn hỗn hợp cốm dẹp",
+        "description": "Bạn cho đậu hũ ra tô và bóp nhuyễn. Sau đó, bạn cho đậu xanh đã được tán nhuyễn vào cùng 50gr cốm dẹp rồi bóp đều.\nThêm ngò rí băm nhuyễn cùng 1 muỗng cà phê bột nêm chay, 1/2 muỗng cà phê tiêu, 15gr bột năng và trộn đều cho các nguyên liệu hòa quyện vào nhau.\nMách nhỏ: Bạn nên dùng tay trộn cốm từ dưới và ép xuống từ phía trên để cốm được dẻo hơn nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/tron-hon-hop-com-dep-3.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/tron-hon-hop-com-dep-1.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/tron-hon-hop-com-dep-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Tạo hình chả cốm",
+        "description": "Bạn cho một ít hỗn hợp chả cốm ra tay và vo thành từng viên tròn rồi ấn dẹt nhẹ.\nTiếp đến áo đều viên chả qua phần cốm hạt còn nguyên và chuẩn bị mang đi chiên.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/tao-hinh-cha-com-2.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/tao-hinh-cha-com.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Chiên chả cốm",
+        "description": "Bạn cho 100ml dầu ăn vào chảo và đun ở lửa vừa lớn cho dầu sôi đều.\nKhi dầu đã sôi bạn giảm xuống lửa vừa rồi cho từ từ lần lượt từng viên cốm vào chiên vàng đều hai mặt từ 5 - 7 phút rồi gắp ra đĩa.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/chien-cha-com.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/chien-cha-com-3.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/thanh-pham-1019.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kho_001",
@@ -532,7 +1951,43 @@
       "Ớt 2 trái, tỏi băm/ hành tím băm 1 ít",
       "Gia vị thông dụng 1 ít (nước mắm ngon/ hạt nêm/ tiêu xay/ nước màu/ đường/ dầu ăn)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Ướp cá tầm đậm đà",
+        "description": "Bạn cho 1kg cá tầm đã làm sạch, cắt khoanh vào tô lớn. Sau đó, thêm 1 muỗng canh tỏi băm, 1 muỗng canh hành tím băm, 1 muỗng cà phê hạt nêm, 1 muỗng cà phê tiêu xay, 1 muỗng cà phê nước màu và khoảng 2 muỗng canh nước mắm ngon vào.\nTrộn đều để gia vị bám vào cá và để thấm trong 10 phút. Không cho đường ở bước này để tránh cá bị cháy khi chiên sơ.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/uop-ca-tam-dam-da-1.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/uop-ca-tam-dam-da.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Chiên sơ cá để khử mùi tanh",
+        "description": "Bạn bắc chảo lên bếp với 2 muỗng canh dầu ăn, khi dầu nóng, cho một ít tỏi băm vào phi thơm. Tiếp theo, gắp từng khoanh cá vào chiên sơ hai mặt cho thịt cá săn lại. Việc chiên sơ giúp thịt cá không bị nát, thơm ngon hơn và khử mùi tanh cá hiệu quả.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/chien-so-ca-de-khu-mui-tanh-1.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/chien-so-ca-de-khu-mui-tanh.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Kho cá tầm",
+        "description": "Sau khi cá đã săn chắc, đổ toàn bộ phần nước ướp cá còn lại trong tô vào chảo. Đun cho đến khi nước kho sôi, dùng muỗng vớt bỏ lớp bọt phía trên để nước kho được trong hơn.\nHạ lửa riu riu để gia vị thấm từ từ vào từng thớ thịt cá. Khi cá gần chín, thêm 1 muỗng cà phê đường vào để vị cá dịu lại và có màu sắc hồng đẹp mắt hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/kho-ca-tam-chuan-vi-2.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/kho-ca-tam-chuan-vi.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Thành phẩm",
+        "description": "Bạn kho cho đến khi nước kho bắt đầu sền sệt lại (lưu ý nên chừa lại một ít nước để chấm rau sẽ rất ngon). Cuối cùng, cho 2 trái ớt để nguyên trái và hành lá cắt nhỏ vào để tăng thêm mùi thơm và màu sắc cho món ăn rồi tắt bếp.\nMón cá tầm kho sau khi hoàn thành có màu nâu cánh gián bắt mắt. Thịt cá tầm có đặc điểm rất đặc biệt là thịt dai như thớ thịt, ngọt thanh và béo ngậy. Nước kho đậm đà, cay nhẹ vị tiêu ớt, rất thích hợp để ăn cùng cơm trắng và các loại rau luộc.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/thanh-pham-163.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kho_002",
@@ -546,7 +2001,47 @@
       "Ớt sừng hoặc ớt hiểm (tùy chọn) 1 trái (không cay)",
       "Gia vị thông dụng 1 ít (nước mắm/ nước màu đường/ tương ớt/ đường/ bột ngọt/ muối/ tiêu xay)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế mực sữa và các loại gia vị",
+        "description": "Đầu tiên, rửa sạch 500gr mực sữa dưới vòi nước.\nGừng gọt vỏ, 2 củ hành tím xắt lát mỏng, phần còn lại băm nhỏ. Hành lá xắt nhỏ, tách riêng phần đầu hành và lá hành. Ớt sừng (nếu dùng) xắt lát hoặc băm nhỏ tùy thích.\nBắc một nồi nước lên bếp, cho vào 1 muỗng cà phê muối, gừng xắt lát và một ít hành tím xắt lát. Đun sôi thật già.\nKhi nước đã sôi bùng, cho toàn bộ mực vào chần nhanh trong khoảng 1 phút. Lưu ý, chỉ cần thấy nước hơi sôi sủi tăm là vớt ra ngay, không chần quá lâu mực sẽ dai và mất đi độ giòn.\nVớt mực ra và ngâm ngay vào một thau nước đá lạnh khoảng 15-20 phút. Đây là bí quyết giúp mực săn giòn, không bị tanh và giữ được màu sắc đẹp mắt. Sau đó, đổ mực ra rổ cho thật ráo nước.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-muc-sua-va-cac-loai-gia-vi.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-muc-sua-va-cac-loai-gia-vi-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-muc-sua-va-cac-loai-gia-vi-3.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/so-che-muc-sua-va-cac-loai-gia-vi-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp mực đậm đà, thấm vị",
+        "description": "Cho mực đã ráo nước vào một cái thau sạch.\nThêm vào 1 muỗng cà phê đường, 1/2 muỗng cà phê bột ngọt, 1 muỗng canh nước màu đường (hoặc dầu điều để tạo màu đẹp và hấp dẫn).\nTiếp theo, cho một nửa phần hành tím băm, đầu hành lá băm và ớt băm (nếu dùng) vào.\nCuối cùng, cho 1 muỗng canh nước mắm vào.\nTrộn đều tất cả các nguyên liệu để mực thấm gia vị. Để ướp khoảng 5-10 phút cho mực ngấm đều hương vị.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-muc-dam-da-tham-vi.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-muc-dam-da-tham-vi-1.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/uop-muc-dam-da-tham-vi-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Rim mực mặn ngọt",
+        "description": "Đặt chảo lên bếp, cho một ít dầu ăn vào. Khi dầu nóng, cho phần hành tím băm, đầu hành lá băm và ớt băm còn lại vào phi thơm cho vàng đều.\nSau đó, cho toàn bộ phần mực đã ướp cùng với nước ướp vào chảo. Hạ nhỏ lửa và rim từ từ để mực chín đều và thấm gia vị từ từ. Cho thêm 1 muỗng canh tương ớt vào để món mực rim có màu sắc hấp dẫn và hương vị cay nhẹ, kích thích vị giác.\nTrong quá trình rim, thỉnh thoảng dùng đũa đảo đều để mực không bị cháy và gia vị bám đều vào từng con mực. Lưu ý không cần thêm nước vì mực sẽ tự ra nước trong quá trình nấu.\nNêm nếm lại cho vừa khẩu vị gia đình. Nếu cảm thấy nhạt, có thể thêm một chút nước mắm. Rim cho đến khi nước sốt cạn sệt, bám đều vào từng con mực, tạo thành lớp áo bóng bẩy.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rim-muc-man-ngot-chuan-vi-2.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rim-muc-man-ngot-chuan-vi.jpg",
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/rim-muc-man-ngot-chuan-vi-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Thành phẩm",
+        "description": "Cho hành lá xắt nhỏ và ớt sợi (nếu dùng) lên trên bề mặt mực. Rắc thêm một ít tiêu xay để tăng thêm mùi thơm hấp dẫn. Món mực rim mặn ngọt đã hoàn thành, những con mực săn chắc, thấm đẫm vị mặn, ngọt, cay nhẹ, thơm lừng. Thưởng thức ngay cùng cơm nóng hoặc làm món nhậu lai rai đều tuyệt vời. Bạn có thể ăn kèm với rau sống như xà lách, dưa leo để tăng thêm hương vị nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2026/01/CookRecipe/GalleryStep/thanh-pham-324.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kho_003",
@@ -565,7 +2060,55 @@
       "Chanh và một ít muối hột 1 quả (để sơ chế)",
       "Gia vị thông dụng 1 ít (nước tương/ dầu hào/ hạt nêm/ muối/ đường/ dầu ăn)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế giò heo",
+        "description": "Bạn cho 2kg giò heo vào thau, thêm một ít muối hột và nước cốt 1 quả chanh. Bạn dùng vỏ chanh chà xát kỹ lên phần da heo để khử mùi hôi, sau đó xả lại với nước sạch nhiều lần cho đến khi nước trong thì vớt ra để ráo. Hành tím và tỏi bạn đem cắt lát rồi băm nhỏ.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/so-che-gio-heo-6.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/so-che-gio-heo-5.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ướp giò heo",
+        "description": "Bạn lấy một nửa lượng hành tím và tỏi băm cho vào tô thịt giò heo.\nSau đó, bạn thêm vào 4 muỗng canh nước tương, 1.5 muỗng canh dầu hào, 1 muỗng canh hạt nêm, 1/2 muỗng cà phê muối, 2 muỗng canh đường, 1 muỗng canh tương cà và 1 muỗng cà phê ớt bột cay.\nBạn dùng tay xoa bóp và trộn đều cho gia vị bám vào thịt. Bạn để thịt nghỉ và ướp ít nhất trong 1 giờ, hoặc từ 3 - 5 giờ trong ngăn mát tủ lạnh để thịt thấm sâu hương vị hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/uop-gio-heo-2.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/uop-gio-heo.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Thắng màu và xào săn thịt",
+        "description": "Bạn bắt chảo hoặc nồi lớn lên bếp, cho 4 muỗng canh dầu ăn và 1 muỗng canh đường vào. Bạn bật lửa lớn, đảo đều tay cho đến khi đường tan và chuyển sang màu nâu cánh gián thì cho phần hành tím và tỏi băm còn lại vào phi thơm.\nTiếp theo, bạn cho 1 muỗng canh ớt bột không cay (để tạo màu), 1 muỗng cà phê bột và lá cà ri cùng 5gr ớt khô vào đảo đều. Sau khoảng 30 giây, bạn cho giò heo đã ướp vào, để lửa lớn và chiên áp chảo khoảng 8 phút, trở đều các mặt cho thịt săn lại và có lớp màu nâu đỏ đẹp mắt.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/thang-mau-va-xao-san-thit-3.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/thang-mau-va-xao-san-thit-1.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/thang-mau-va-xao-san-thit.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Nấu giò heo phá lấu",
+        "description": "Khi nước sốt trong chảo đã cạn bớt và thịt đã thấm màu, bạn đổ 1 lít nước dừa và 1.5 lít nước lọc vào (sao cho nước vừa ngập mặt thịt).\nKhi nước bắt đầu sôi, bạn vớt sạch bọt rồi cho 5gr quế, 5gr sao hồi, 1 quả thảo quả đập dập, một ít gốc ngò và 5 muỗng canh rượu gạo vào. Bạn dùng lá chuối hoặc nắp nồi đậy kín chảo lại, chỉnh lửa trung bình và nấu trong khoảng 1 giờ 30 phút.\nSau khi nấu được khoảng 1 giờ, bạn mở nắp ra trở mặt thịt để giò heo chín đều và thấm nước sốt. Bạn tiếp tục đậy nắp và nấu thêm 15 phút nữa cho đến khi nước trong chảo cạn sền sệt, giò heo mềm dẻo là đạt.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/nau-gio-heo-pha-lau-3.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/nau-gio-heo-pha-lau-2.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/nau-gio-heo-pha-lau-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Thành phẩm",
+        "description": "Bạn lấy thịt ra, để hơi nguội bớt rồi tiến hành tách bỏ xương và cắt thịt thành từng lát vừa ăn.\nGiò heo phá lấu sau khi hoàn thành có màu nâu đỏ óng ả cực kỳ bắt mắt. Thịt giò heo mềm dẻo, phần da và gân giòn sần sật, thấm đẫm hương vị thảo mộc từ quế, hồi và vị béo ngậy của nước dừa. Bạn xếp thịt ra đĩa, chan thêm nước sốt kho lên trên, ăn kèm với bánh mì, cơm nóng hoặc dưa chua đều rất tuyệt vời.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/thanh-pham-151.jpg",
+          "https://cdn.tgdd.vn/2026/02/CookRecipe/GalleryStep/thanh-pham-153.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kho_004",
@@ -582,7 +2125,60 @@
       "Lá mít tươi 1 ít (5 - 7 lá)",
       "Gia vị thông dụng 1 ít (nước mắm/ đường/ muối/ bột ngọt/...)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế thịt heo",
+        "description": "Đầu tiên, bạn rửa thịt ba rọi với muối và chanh để khử mùi hôi. Sau đó, bạn cắt thịt thành từng miếng vuông lớn (khoảng 4 - 5cm) để khi kho lâu thịt không bị nát. Bạn bắc một nồi nước sôi, cho vào 1 muỗng canh muối hạt và vắt 1/2 trái chanh vào, sau đó cho thịt vào trụng khoảng 5 phút.\nViệc này giúp loại bỏ tạp chất và làm phần mỡ sau khi kho được trong hơn. Cuối cùng, bạn vớt thịt ra và rửa lại với nước lạnh cho thật sạch.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-thit-heo.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/so-che-thit-heo-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Chuẩn bị gia vị và ướp thịt",
+        "description": "Bạn tách bỏ hạt ớt, sau đó cho tỏi, ớt và hành tím vào cối giã cùng với 1 muỗng canh đường cát. Bạn giã cho đến khi hỗn hợp nhuyễn mịn. Tiếp theo, bạn cho thịt heo đã để ráo vào thau lớn, thêm hỗn hợp hành tỏi đã giã cùng 1 muỗng canh đường còn lại, 1 muỗng cà phê muối và 1 muỗng cà phê bột ngọt. Bạn trộn đều để thịt thấm gia vị.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chuan-bi-gia-vi-va-uop-thit-2.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chuan-bi-gia-vi-va-uop-thit.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/chuan-bi-gia-vi-va-uop-thit-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Phơi nắng thịt",
+        "description": "Sau khi trộn gia vị, bạn mang thau thịt ra phơi nắng trong khoảng 3 - 4 tiếng đồng hồ. Nếu không có nắng, bạn có thể ướp ít nhất 1 tiếng. Việc phơi nắng giúp gia vị rút sâu vào thịt và làm phần mỡ heo trở nên trong veo sau khi kho, đồng thời giúp miếng thịt săn chắc và lên màu cực đẹp mà không cần dùng nước màu.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/phoi-nang-thit-bi-quyet-mau-dep-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Luộc trứng vịt",
+        "description": "Bạn cho trứng vịt vào nồi, thêm nước và 1 muỗng cà phê muối. Trong lúc luộc, bạn dùng đũa khuấy tròn nhẹ nhàng để lòng đỏ trứng xoay vào giữa. Khi nước sôi, bạn đun thêm khoảng 5 - 7 phút rồi tắt bếp.\nBạn vớt trứng ra cho vào bát nước lạnh, bóc vỏ sạch sẽ. Bạn có thể dùng tăm xăm nhẹ xung quanh quả trứng để khi kho gia vị thấm vào lòng trắng tốt hơn.",
+        "images": []
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Kho thịt",
+        "description": "Bạn cho phần thịt đã phơi nắng vào nồi, đun với lửa vừa và đảo nhẹ cho đến khi gia vị bám đều và thịt săn lại. Tiếp theo, bạn đổ 1.5 lít nước dừa tươi và 300ml nước lọc vào nồi.\nKhi nước bắt đầu sôi mạnh, bạn vớt bỏ bọt thật kỹ để nước kho được trong. Sau đó, bạn cho 3 muỗng canh nước mắm và trứng vịt vào. Cuối cùng, bạn dùng lá mít tươi phủ kín mặt thịt.\nLá mít giúp hút bọt li ti và giữ cho thịt nhanh mềm, nước trong và có mùi thơm đặc trưng. Bạn hạ lửa nhỏ và kho riu riu trong khoảng 1 giờ.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/kho-thit-4.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/kho-thit-5.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/kho-thit-6.jpg"
+        ]
+      },
+      {
+        "stepNumber": 6,
+        "title": "Bước 6: Thành phẩm",
+        "description": "Món thịt kho tàu sau khi hoàn thành sẽ có màu vàng cánh gián óng ả. Miếng thịt ba rọi mềm tan, phần mỡ trong veo béo ngậy mà không ngán, lòng trắng trứng dai sần sật thấm đẫm vị mặn ngọt hài hòa của nước dừa. Nước kho có độ trong, vị thanh, rất đưa cơm khi ăn kèm với dưa cải muối hoặc rau sống.\nThịt kho tàu sau khi nguội hoàn toàn, bạn có thể chia nhỏ vào các hộp kín và bảo quản trong ngăn mát tủ lạnh từ 3 - 5 ngày. Mỗi lần ăn, bạn chỉ cần lấy một lượng vừa đủ ra hâm nóng lại để tránh việc hâm đi hâm lại nhiều lần làm thịt bị mặn và nát.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/thanh-pham-312.jpg",
+          "https://cdn.tgdd.vn/2025/12/CookRecipe/GalleryStep/thanh-pham-314.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kem_001",
@@ -596,7 +2192,44 @@
       "Sữa tươi không đường 880 ml (4 bịch)",
       "Đường 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế bơ",
+        "description": "Đầu tiên bạn hãy cắt đôi quả bơ, lột bỏ phần vỏ và hột bơ ra nhé!\nTiếp theo bạn cắt phần thịt bơ thành nhiều miếng nhỏ để xay dễ dàng hơn.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/kem-bo-tui.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/kem-bo-tui-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Xay bơ với sữa",
+        "description": "Bạn hãy cho phần bơ vừa cắt nhỏ, 380gr sữa đặc, 880ml sữa tươi không đường cùng 1 ít đường (tùy thuộc vào khẩu vị) vào máy xay sinh tố và xay mịn.\nNếu máy xay của bạn có dung tích nhỏ, bạn hãy chia các nguyên liệu ra làm 2 phần và xay 2 lần.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/xay-bo-voi-sua-4.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/xay-bo-voi-sua-5.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/xay-bo-voi-sua-6.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Đong vào túi và làm đông",
+        "description": "Bạn dùng 1 chiếc ca có miệng hoặc dùng phễu để đong hỗn hợp bơ sữa vào túi. Bạn đong hỗn hợp vào 2/3 túi rồi dùng dây thun buộc chặt miệng túi lại.\nCuối cùng bạn cho những túi kem bơ vào ngăn đông tủ lạnh trong khoảng 6 - 8 tiếng là có thể thưởng thức được rồi đấy!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/dong-vao-tui-va-lam-dong-4.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/dong-vao-tui-va-lam-dong-5.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Thành phẩm",
+        "description": "Kem bơ túi thành phẩm sẽ có màu xanh mát của bơ chín, vị ngọt béo, dẻo mềm hấp dẫn mà bất cứ thành viên nào trong gia đình cũng sẽ thích đấy!\nVào giờ giải lao giữa ca học hoặc làm việc mà có một túi kem béo thơm, mát lạnh thế nào thì còn gì tuyệt hơn, đúng không nào!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/thanh-pham-35.jpeg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kem_002",
@@ -611,7 +2244,46 @@
       "Bột bắp 18 gr",
       "Chiết xuất vani 5 gr"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Đun sữa",
+        "description": "Đầu tiên, bạn cho 480ml sữa tươi không đường, 100gr đường và 95gr sữa bột vào nồi. Dùng phới khuấy đều cho sữa bột tan bớt.\nTiếp theo, bạn bắc nồi lên bếp và đun hỗn hợp sữa ở lửa nhỏ.\nTrong quá trình đun, bạn liên tục dùng phới khuấy đều để các nguyên liệu không đọng lại dưới đáy nồi.\nBạn hòa tan 18gr bột bắp với 60ml sữa tươi không đường.\nKhi sữa sôi lăn tăn, bạn dùng phới khuấy đều sữa, vừa khuấy vừa đổ từ từ nước bột bắp vào nồi cho đến khi hết.\nKhuấy liên tục khoảng 3 - 5 phút cho đến khi hỗn hợp hơi sánh lại thì tắt bếp.\nSau đó, bạn đổ ngay hỗn hợp sữa ra một cái ly để lát nữa dễ dàng cho ra khuôn nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/dun-sua-4.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/dun-sua-1.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/dun-sua-5.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Hòa tan vani",
+        "description": "Bạn cho 5gr chiết xuất vani vào ly sữa vừa đun ở bước 1. Khuấy đều cho sữa và vani tan vào nhau. Để hỗn hợp sữa vani bên ngoài đến khi nguội hoàn toàn.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/hoa-tan-vani-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Đổ khuôn, đông lạnh",
+        "description": "Khi sữa nguội, bạn rót sữa lần lượt vào khuôn, đậy nắp lại và cấp đông từ 4 - 6 tiếng.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/do-khuon-dong-lanh-1.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/do-khuon-dong-lanh-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Làm lớp socola phủ",
+        "description": "Bạn đun sôi một nồi nước nhỏ. Sau đó, cắt nhỏ socola đen rồi cho vào một cái tô thủy tinh. Tiếp đến, đặt tô socola vào trong nồi nước sôi vừa đun và khuấy đều cho socola tan chảy.\nĐổ socola tan chảy ra ly có chiều cao cao hơn que kem của bạn để dễ nhúng socola nhé!\nSau khi kem đã được cấp đông, bạn lấy kem ra khỏi khuôn và tiến hành nhúng ngập từng que kem vào socola.\nSau khi phần socola đã áo đều kem thì bạn lắc nhẹ que kem vani phủ socola đã hoàn thành. Gác que kem lên miệng ly để phần socola còn thừa rơi xuống ly.\nĐể kem ở nhiệt độ bên ngoài tầm 30 giây là lớp socola sẽ tự đông lại. Sau khi phủ hết socola cho que kem thì cho hết số kem vào tủ lạnh để bảo quản và ăn dần nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/lam-lop-socola-phu.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/lam-lop-socola-phu-2.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/lam-lop-socola-phu-4.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/lam-lop-socola-phu-5.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kem_003",
@@ -627,7 +2299,53 @@
       "Hương vani 1/2 muỗng cà phê",
       "Corn syrup 2 muỗng canh (Nước đường ngô), đường 70 gr (4.5 muỗng canh)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Xay và lọc nước lá dứa",
+        "description": "Đầu tiên, lá dứa mua về dùng dao cắt bỏ gốc, rửa sạch rồi cắt nhuyễn. Sau đó, cho vào cối xay sinh tố cùng 250ml sữa tươi có đường tiến hành xay nhuyễn ở mức vừa trong khoảng 3 - 5 phút.\nKhi thấy hỗn hợp đã sánh mịn thì tắt máy, tiến hành lược lấy nước cốt bằng khăn sạch hoặc rây đều được cả nhé!\nMách nhỏ: Muốn màu lá dứa được đẹp mà còn giảm được vị đắng thì dùng nước ấm ngâm khoảng 5 - 10 phút rồi mới xay. Nếu không có máy xay bạn có thể giã nhuyễn lá dứa cho nát rồi trộn và bóp với nước sau đó đem lược lại là được.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/xay-va-loc-nuoc-la-dua-1.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/xay-va-loc-nuoc-la-dua.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Trộn hỗn hợp trứng với đường",
+        "description": "Kế đến, chuẩn bị 1 cái tô rồi cho 3 quả trứng gà, 4.5 muỗng canh đường, 1/2 muỗng cà phê hương vani và 2 muỗng canh corn syrup (nước đường ngô) vào.\nBạn dùng cây đánh trứng đánh cho hỗn hợp được hòa tan tạo thành hỗn hợp màu vàng nhạt, sánh mịn khi nhấc cây đánh trứng hỗn hợp chảy sợi xuống là đạt",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/tron-hon-hop-trung-voi-duong.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/tron-hon-hop-trung-voi-duong-2.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/tron-hon-hop-trung-voi-duong-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Nấu hỗn hợp lá dứa với trứng",
+        "description": "Kế đến, bắc cái nồi lên bếp cùng hỗn hợp lá dứa vừa lược, nấu với lửa nhỏ trong khoảng 5 - 7 phút.\nKhi thấy hỗn hợp bắt đầu nóng thì bạn tắt bếp, cho từ từ vào tô trứng vừa đánh, dùng cây đánh trứng khuấy nhẹ tay theo 1 chiều nhất định để cả 2 được hòa tan với nhau.\nTiếp đến, bạn dùng rây lược lại hỗn hợp này 1 lần nữa để tránh trứng gà và cặn lá dứa còn sót lại sẽ làm cho kem bị lợn cợn.\nCuối cùng, lấy 1 cái nồi mới rồi cho hỗn hợp lá dứa và trứng vào, bắc lên bếp nấu với lửa nhỏ khoảng 7 - 10 phút đến khi sôi lại thì tắt bếp, cho ra tô, để nguội 15 phút.\nMách nhỏ: Tránh làm kem bị cháy và vón cục thì bạn không nên nấu với lửa quá lớn và phải liên tục khuấy đều.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/nau-hon-hop-la-dua-voi-trung-1.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/nau-hon-hop-la-dua-voi-trung.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Trộn hỗn hợp lá dứa với whipping cream",
+        "description": "Khi thấy hỗn hợp lá dứa đã nguội, bạn cho vào giữ lạnh từ 1 - 2 tiếng trong tủ lạnh để hỗn hợp lá dứa hơi sánh lại.\nKế đến, lấy tô lá dứa ra rồi cho 300ml whipping cream vào hỗn hợp này xong trộn đều tay lên để hỗn hợp được đồng nhất và bông nhẹ tạo được vân là được.\nSau đó cho hỗn hợp này vào ngăn đông tủ lạnh 4 - 5 tiếng là có thể đem ra thưởng thức được rồi nhé!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/tron-hon-hop-la-dua-voi-whipping-cream-tron-xong-dem-lam-dong-la-hoan-thanh-nhe-mn-1.jpg",
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/tron-hon-hop-la-dua-voi-whipping-cream-tron-xong-dem-lam-dong-la-hoan-thanh-nhe-mn.jpg"
+        ]
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Thành phẩm",
+        "description": "Kem lá dứa (lá nếp) có một màu xanh tươi mát thật đẹp mắt, khiến mọi người không thể rời mắt khỏi nó được luôn đấy!\nĐiểm thú vị của món kem này đó chính là hương thơm dịu nhẹ lá dứa cùng chất kem mềm mịn, vừa béo vừa ngọt nhưng lại không hề bị gắt.\nMón kem này mà làm món tráng miệng sau mỗi bữa cơm hay để nhâm nhi thưởng thức 1 bộ phim hay thì đúng là \"tuyệt vời ông mặt trời\" luôn!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/thanh-pham-1153.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "món_kem_004",
@@ -641,7 +2359,39 @@
       "Sữa 150 gr",
       "Kem tươi 200 gr"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Đậu xanh rửa sạch, ngâm đậu trong nước ấm khoảng 2 giờ cho đậu nở ra. Khi đậu đã nở, dùng tay chà sát đậu để loại bỏ vỏ đậu.",
+        "images": [
+          "https://cdn.tgdd.vn/Files/2018/04/14/1082074/cach-lam-kem-dau-xanh-tuoi-ngon-mat-lanh-tai-nha-an-la-me-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Hấp và xay đậu",
+        "description": "Cho đậu vào nồi hấp để đậu được chín mềm. Đậu đã nấu, sữa, đường, kem tươi cho vào máy xay sinh tố.",
+        "images": [
+          "https://cdn.tgdd.vn/Files/2018/04/14/1082074/cach-lam-kem-dau-xanh-tuoi-ngon-mat-lanh-tai-nha-an-la-me-2.jpg",
+          "https://cdn.tgdd.vn/Files/2018/04/14/1082074/cach-lam-kem-dau-xanh-tuoi-ngon-mat-lanh-tai-nha-an-la-me-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Làm kem đậu xanh",
+        "description": "Xay mịn hỗn hợp trên rồi rót ra khuôn làm kem.\nĐậy nắp khuôn làm kem và cắm que kem vào, cho vào tủ đông qua đêm. Sáng mai bạn có ngay những que kem để thưởng thức.",
+        "images": [
+          "https://cdn.tgdd.vn/Files/2018/04/14/1082074/cach-lam-kem-dau-xanh-tuoi-ngon-mat-lanh-tai-nha-an-la-me-6.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Thành phẩm",
+        "description": "Vị bùi bùi của đậu xanh, vị béo ngậy của kem tươi và sữa, vị ngọt thanh của đường, tất cả hòa quyện lại cùng với nhau trong một que kem mát lạnh. Bạn chẳng cần phải tốn tiền ra ngoài hàng mua những que kem đắt đỏ, ít ỏi không đủ ăn.",
+        "images": []
+      }
+    ]
   },
   {
     "id": "gỏinộm_001",
@@ -660,7 +2410,39 @@
       "Rễ và gốc rau mùi băm 1 muỗng canh",
       "Tỏi/ hành tím 1 ít, ớt sừng 3 quả"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế gân bò và luộc gân bò dai giòn",
+        "description": "Đầu tiên, bạn chần gân bò qua nước sôi khoảng 2 - 3 phút rồi rửa lại thật sạch dưới vòi nước lạnh để loại bỏ tạp chất và mùi hôi.\nCho 0.5kg gân bò đã sơ chế vào nồi áp suất cùng 1 lít nước, 1 củ gừng thái lát, 1 củ riềng thái lát và 1 muỗng canh muối hạt. Bạn cài đặt nồi ở chế độ luộc thịt trong khoảng 30 phút cho đến khi gân bò chín mềm nhừ.\nKhi gân chín, bạn vớt ra và thả ngay vào tô nước đá lạnh. Đây là cách sơ chế gân bò để gân săn lại, giữ được độ giòn sần sật đặc trưng. Sau đó, bạn cắt gân bò thành những miếng vừa ăn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/so-che-gan-bo-va-luoc-gan-bo-dai-gion-3.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/so-che-gan-bo-va-luoc-gan-bo-dai-gion-2.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/so-che-gan-bo-va-luoc-gan-bo-dai-gion.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/so-che-gan-bo-va-luoc-gan-bo-dai-gion-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Nấu công thức nước sốt Thái",
+        "description": "Bạn làm nóng chảo trên bếp với 2 muỗng canh dầu ăn. Sau đó, cho 5 tép tỏi xay, 2 quả ớt sừng xay, 5 củ hành tím xay, 3 củ sả xay và 1 muỗng canh rễ gốc rau mùi băm vào phi thơm.\nMách nhỏ: Chỉ phi cho dậy mùi thơm, không phi xém vàng để các gia vị không bị đắng và giữ được màu sắc đẹp.\nTiếp theo, bạn cho lần lượt 120ml nước cốt me, 100ml nước cốt tắc, 100ml nước mắm ngon, 3 muỗng canh tương ớt lên men và 200gr đường vàng vào.\nBạn khuấy đều và nấu sôi nhẹ trong khoảng 5 phút để các gia vị hoà quyện, bay bớt mùi nồng của mắm và hơi giấm. Sau đó tắt bếp và để sốt nguội hoàn toàn.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/nau-cong-thuc-nuoc-sot-thai.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/nau-cong-thuc-nuoc-sot-thai-3.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/nau-cong-thuc-nuoc-sot-thai-1.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/nau-cong-thuc-nuoc-sot-thai-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Trộn gỏi gân bò sốt Thái bùng vị",
+        "description": "Bạn cho phần gân bò đã cắt vào tô lớn. Thêm 10 quả cóc bao tử bổ đôi, 5 củ hành tím thái lát, 5 tép tỏi thái lát và 1 quả ớt sừng thái lát vào.\nCuối cùng, bạn đổ toàn bộ phần nước sốt mắm Thái đã nguội vào tô. Đeo bao tay và trộn thật đều để gân bò cùng các nguyên liệu thấm đẫm nước sốt là có thể thưởng thức ngay.",
+        "images": [
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/tron-goi-gan-bo-sot-thai-bung-vi-1.jpg",
+          "https://cdn.tgdd.vn/2026/03/CookRecipe/GalleryStep/tron-goi-gan-bo-sot-thai-bung-vi.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "gỏinộm_002",
@@ -678,7 +2460,34 @@
       "Nước mắm 2 muỗng canh",
       "Giấm 1 ít, gia vị thông dụng 1 ít (Muối/ Đường/ Tiêu xay)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế tai heo",
+        "description": "Tai heo sau khi mua về thì bạn rửa qua với 1 ít muối trắng trộn 1 muỗng canh giấm để khử mùi hôi, sau đó rửa lại lần nữa bằng nước sạch rồi để ráo.\nBắc một nồi nước lên bếp, cho vào nồi ít muối cùng một ít hành tím. Cho phần tai heo đã sơ chế sạch vào luộc trong 10 phút để tai heo chín đều.\nSau khi nước sôi thì cho vào 1 muỗng canh giấm để loại bỏ được hoàn toàn mùi hôi, lưu ý vớt bọt liên tục trong suốt quá trình luộc.\nTai heo chín, bạn vớt tai heo ra và cho ngay vào một thau nước đá lạnh và rửa sạch lại một lần nữa. Nước đá sẽ giúp tai heo giòn hơn, ăn sẽ ngon hơn.\nMách nhỏ: Để khử mùi hôi của tai heo, bạn có thể sử dụng nước cốt chanh hoặc giấm pha với rượu rồi ngâm ngập miếng tai heo trong 15 phút rồi xả sạch lại với nước lạnh.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-tai-heo-1.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-tai-heo-4.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Chuẩn bị nguyên liệu",
+        "description": "Tai heo sau khi ngâm với nước đá thì vớt ra, để ráo rồi tiến hành cắt thành từng lát thật mỏng.\nTỏi bóc vỏ, băm nhuyễn. Ớt rửa sạch, để ráo rồi băm nhuyễn. Cà rốt rửa sạch, bào vỏ rồi bào sợi. Rau thơm, giá đỗ rửa sạch, để ráo.\nHoa chuối mua về thì rửa sạch, bào bỏ vỏ rồi sau đó cắt lát. Chuẩn bị 1 thau nước to rồi lần lượt cho 1/2 muỗng canh muối, 1 muỗng canh giấm vào, khuấy đều cho hòa tan. Thái ngang hoa chuối sau đó ngâm vào thau nước muối, giấm đã chuẩn bị khoảng 20 phút rồi rửa sạch lại với nước lạnh, để ráo.\nMẹo sơ chế hoa chuối không bị thâm đen: Trước khi thái, bạn dùng tay tước bỏ phần bẹ già già phía ngoài, gỡ từng lớp khi tới phần non khó gỡ của hoa chuối thì ngừng và bắt đầu cắt hoặc bào. Thái mỏng sợi hoặc bào hoa chuối theo chiều ngang. Thái tới đâu, bạn ngâm hoa chuối vào thau nước giấm, muối ngay tới đó, để ở ngoài quá lâu sẽ làm hoa chuối bị thâm đen, không bắt mắt. Ngâm hoa chuối trong nước giấm muối đã pha ít nhất 30 phút. Sau đó, vớt ra xả lại nhiều lần với nước cho sạch rồi để ráo. Nước ngâm hoa chuối bạn có thể dùng chanh, phèn chua hoặc mẻ pha vào nước thay cho giấm. Bạn không nên cho quá nhiều muối khi pha nước ngâm, làm hoa chuối bị mặn, không ngon.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/chuan-bi-nguyen-lieu.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/chuan-bi-nguyen-lieu-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Làm nộm tai heo hoa chuối",
+        "description": "Cho vào chén 2 muỗng canh nước mắm, 1 muỗng canh đường, 1 muỗng canh tỏi băm, 1 muỗng canh ớt băm, 1 muỗng canh giấm rồi khuấy đều cho hỗn hợp tan hết.\nCho các nguyên liệu gồm tai heo đã cắt lát, hoa chuối, giá đỗ, cà rốt bào sợi, rau thơm vào tô lớn, sau đó rưới nước mắm đã pha rồi trộn đều tay để các nguyên liệu được thấm vị. Cho gỏi ra đĩa và bắt đầu thưởng thức.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/lam-nom-tai-heo-hoa-chuoi.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "gỏinộm_003",
@@ -695,7 +2504,32 @@
       "Dầu ăn 2 muỗng cà phê",
       "Nước mắm 3 muỗng cà phê, đường 5 muỗng cà phê"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Thịt sứa bạn mang đi rửa nhiều lần với nước sạch. Sau đó bạn trụng thịt sứa với nước nóng khoảng 80 độ C trong 2 phút, vớt ra để ráo, rồi cắt nhỏ thịt sứa nhỏ vừa ăn.\nĐu đủ bạn bỏ hạt, mang đu đu với cà rốt đi gọt vỏ, bào sợi, rửa sạch, vớt ra cho vào thau nước đá. Ớt sừng bạn rửa kỹ vỏ ớt, bỏ cuống và hạt rồi cũng cắt sợi rồi ngâm vào nước đá chung với đu đủ và cà rốt.\nMách bạn: Đu đủ, cà rốt, ớt sừng nên bỏ vào thau nước đá ngâm trong 10 phút cho chúng giòn và ngon hơn.\nVới rau răm, bạn nhặt lấy lá còn non, mang đi rửa và cắt nhỏ. Tỏi bóc vỏ rồi băm nhuyễn.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/so-che-nguyen-lieu-192.jpg",
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/so-che-nguyen-lieu-161.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Làm nước trộn nộm",
+        "description": "Cho tỏi băm vào chén, vắt thêm nước cốt 1 trái chanh, 5 muỗng cà phê đường, 3 muỗng cà phê nước mắm và khuấy đều để hỗn hợp hòa tan vào nhau.",
+        "images": []
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Trộn các nguyên liệu",
+        "description": "Cho đu đủ, cà rốt, ớt, thịt sứa vào thau và đổ hết phần nước trộn nộm vào, trộn đều lên.\nSau đó bạn cho thêm khoảng 2 muỗng cà phê dầu ăn vào, trộn lên và để trong 5 phút cho các nguyên liệu thấm gia vị.\nCuối cùng bạn cho thêm rau răm đã cắt nhỏ vào, trộn đều tay. Cho nộm ra dĩa và rắc thêm 1 muỗng canh đậu phộng rang nữa là có thể thưởng thức rồi!",
+        "images": [
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/tron-cac-nguyen-lieu.jpg",
+          "https://cdn.tgdd.vn/2021/06/CookRecipe/GalleryStep/tron-cac-nguyen-lieu-2.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "gỏinộm_004",
@@ -712,7 +2546,30 @@
       "Muối 1 muỗng canh, đường 1 muỗng canh",
       "Giấm 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế các nguyên liệu",
+        "description": "Để giảm bớt đi mùi hăng của hành tây, khi mua hành tây về bạn lột vỏ rồi cắt múi cau miếng mỏng, sau đó đem đi ngâm với nước có pha 1 ít giấm.\nCà rốt và củ sắn mua về bào bỏ vỏ, rửa sơ qua nước rồi cắt thành sợi nhỏ. Rau húng nhặt lấy phần lá, rửa qua nước rồi cắt nhỏ.\nĐậu phộng rang sẵn bạn bóc sạch vỏ, sau đó đem đi giã sơ rồi cho ra chén nhỏ.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-2.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Sơ chế ức gà",
+        "description": "Để khử đi mùi hôi của ức gà sau khi mua về bạn rửa với nước, rồi dùng muối chà xát xung quanh ức gà sau đó rửa lại với nước từ 2 - 3 lần, để ráo.\nTiếp theo bạn bắc nồi lên bếp rồi cho thịt ức gà đã sơ chế cùng với 300ml nước, luộc với lửa lớn. Sau khoảng 15 phút, bạn kiểm tra thử nếu thịt gà đã chín thì cho ra dĩa để nguội rồi xé thành những sợi nhỏ vừa ăn.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-uc-ga-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Trộn gỏi gà hành tây cà rốt",
+        "description": "Bạn cho cà rốt, củ sắn, hành tây đã được cắt sợi với thịt ức gà vào một tô lớn rồi trộn đều cùng tỏi băm, ớt băm và 2 muỗng canh nước cốt chanh.\nSau đó cho vào thêm 1 muỗng canh muối, 1 muỗng canh đường rồi để yên trong 15 - 20 phút cho ngấm gia vị.\nTiếp đến bạn cho phần đậu phộng rang đã giã và rau húng đã cắt nhỏ vào tô trộn đều thêm 1 lần nữa, nêm nếm lại gia vị cho phù hợp là hoàn thành.",
+        "images": []
+      }
+    ]
   },
   {
     "id": "cháosúp_001",
@@ -730,7 +2587,54 @@
       "Bột tỏi 1/4 muỗng cà phê, nước mắm 1 muỗng canh",
       "Gia vị thông dụng 1 ít (muối/ tiêu/ đường/ hạt nêm)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế gà",
+        "description": "Thịt đùi gà mua về, bạn dùng dao lạng bỏ phần da bên ngoài.\nSau đó cho thịt đùi gà ngâm với nước muối loãng trong 15 phút rồi rửa qua 2 - 3 lần nước nữa rồi để ráo.\nCách sơ chế và khử mùi hôi thịt gà\nĐể gà không hôi, bạn cần làm sạch hết lông, kể cả lông măng (lông tơ) để gà trắng, sạch và bớt hôi.\nPha giấm và muối theo tỉ lệ: 2 muối 1 giấm rồi thoa khắp mình gà chà xát nhiều lần sau đó rửa lại thật kỹ bằng nước sạch hoặc xát chanh, muối lên da gà hay dùng một ít gừng và rượu trắng xát lên gà để khử mùi hôi.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/so-che-ga-9.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/so-che-ga-10.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Ninh nước dùng gà",
+        "description": "Phần xương ức gà, bạn rửa sạch với nước, sau đó cho vào nồi thêm 1 muỗng cà phê muối, 1.5 lít nước, 5 nhánh hành lá buộc lại.\nBắc nồi lên bếp nấu với lửa lớn cho nước sôi lên, bạn dùng vá vớt bỏ bọt rồi hạ nhỏ lửa lại, tiếp tục ninh khoảng 15 phút cho thịt gà ra chất.\nTiếp đến, bạn cho thịt đùi gà đã lọc da cho vào ninh chung thêm 30 phút.\nSau đó, bạn vớt thịt đùi gà ra để nguội và xé nhỏ phần thịt, phần nước dùng lược lại qua rây để loại bỏ xương và hành lá còn sót lại.\nMách bạn: Để tiết kiệm thời gian ninh nước dùng, bạn có thể sử dụng loại nước dùng gà đóng lon bán tại các siêu thị, cửa hàng thực phẩm,...",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/ninh-nuoc-dung-ga.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/ninh-nuoc-dung-ga-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Sơ chế các nguyên liệu khác",
+        "description": "Nấm đông cô bạn cho vào tô, ngâm trong nước ấm khoảng 7 - 10 phút để nấm nở ra rồi cắt bỏ phần chân nấm và rửa sạch lại với nước, cắt nhỏ.\nHành lá, ngò rí cắt gốc, rửa sạch rồi cắt nhuyễn. Cà rốt bào vỏ, rửa sạch, cắt hạt lựu nhỏ.\nTổ yến bạn cho vào chén ngâm với lạnh trong 20 phút cho mềm. Sau đó, dùng tay hoặc nĩa tách rời thành nhiều sợi, rồi lọc qua rây và để ráo nước.\nCách ngâm nấm đông cô khô mau mềm\nCách 1 (ngâm nở): Bạn có thể ngâm nấm trong nước 1 - 2 tiếng rồi rửa lại với nước sạch. Để nấm nhanh nở, bạn ngâm với nước ấm 60 - 80 độ C trong 7 - 10 phút.\nCách 2 (luộc nấm): Bạn rửa nấm với nước sạch rồi cho vào nước sôi đun trong 3 - 5 phút.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-636.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-638.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-637.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-639.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Xay các nguyên liệu",
+        "description": "Cho nấm đông cô, cà rốt cắt hạt lựu vào cối máy xay, đậy nắp lại, bật công tắc xay khoảng 10 giây cho nguyên liệu được nhỏ hơn.\nSau đó, bạn mở nắp nêm nguyên liệu đã xay với 1/2 muỗng cà phê tiêu, 1/4 muỗng cà phê bột tỏi, 1 muỗng cà phê hạt nêm, 1 muỗng cà phê đường, 1/2 muỗng cà phê muối.\nĐậy nắp lại rồi bật công tắc xay thêm 5 giây nữa cho nguyên liệu được trộn đều với gia vị là được.",
+        "images": []
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bước 5: Nấu cháo",
+        "description": "Cho 1/2 cốc gạo vào thau vo với 2 lần nước cho sạch. Sau đó cho gạo vào 1 cái nồi đất, cho nước luộc gà vào, đậy nắp lại.\nBắc nồi lên bếp đun với lửa lớn cho cháo sôi lên, bạn mở nắp cho nấm đông cô và cà rốt xay nhỏ vào.\nNêm thêm 1 muỗng canh nước mắm vào khuấy đều, rồi tiếp tục nấu với lửa vừa cho đến khi cháo chín mềm, nêm nếm cho vừa ăn, tắt bếp.\nBạn bắc nồi cháo xuống, cho thêm thịt gà xé nhỏ, hành lá, ngò rí cắt nhuyễn vào, thêm tổ yến lên trên nữa là hoàn thành rồi.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/nau-chao-162.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/nau-chao-163.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/nau-chao-164.jpg",
+          "https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/nau-chao-165.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "cháosúp_002",
@@ -746,7 +2650,34 @@
       "Đường 150 gr (đường phèn/ đường tán/ đường nâu/ đường cát/...)",
       "Mộc quế hoa khô 1 ít (để tăng hương vị - có thể bỏ qua)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế nguyên liệu",
+        "description": "Gạo và ngũ cốc thì bạn sẽ đem đi vo cho sạch rồi để ráo nước.\nBạn cũng đem các loại đậu đi vo rồi rửa qua 2 - 3 lần nước để loại bỏ sạch bụi bẩn. Đối với đậu phộng thì bạn cần tách bỏ phần vỏ lụa, chỉ dùng phần nhân bên trong.\nTáo đỏ thì bạn rửa sạch, có thể tách bỏ hạt hoặc không. Long nhãn khô thì bạn rửa sơ cho sạch bụi bẩn.\nMách nhỏ: Với nồi áp suất, bạn không cần ngâm trước các loại hạt. Ngược lại, nếu bạn nấu bằng nồi đất, nồi gang hay nồi thông thường thì bạn nên ngâm các loại đậu và hạt ngũ cốc (không ngâm gạo) trong 8 - 12 giờ để tiết kiệm thời gian nấu.\nNếu long nhãn quá khô thì bạn hãy ngâm nước trong khoảng 2 giờ trước khi nấu để long nhãn mềm hơn nhé.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-nguyen-lieu-31.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/so-che-nguyen-lieu-28.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Nấu cháo",
+        "description": "Bạn cho tất cả các loại ngũ cốc, đậu, táo đỏ và gạo đã rửa sạch vào nồi áp suất, thêm 9 - 10 chén nước lọc vào nồi. Đậy nắp nồi áp suất, cài đặt mức áp suất cao nhất (High Pressure) và nấu trong khoảng 30 - 32 phút.\nMách nhỏ: Nếu bạn dùng nồi thường để nấu cháo bát bửu thì sau khi đun sôi, bạn hãy hạ nhỏ lửa và hầm ít nhất 1.3 - 2 tiếng để các loại hạt mềm nhừ.\nSau khi hết thời gian nấu và để nồi áp suất tự xả hết áp suất, bạn mở nắp nồi, kiểm tra độ mềm của các loại hạt. Bạn sẽ thấy các loại đậu, hạt sen, đậu phộng đều mềm nhừ nhưng vẫn giữ nguyên hình dáng đẹp mắt, ngay cả táo đỏ cũng không bị nát.\nTiếp theo, bạn sẽ cho long nhãn và đường vào nồi, nấu thêm 10 phút nữa cho long nhãn chín, đường tan là xong.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/nau-chao.jpg",
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/nau-chao-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Thành phẩm",
+        "description": "Món cháo sen bát bảo nóng hổi, sánh mịn, thơm lừng mùi long nhãn và các loại hạt đã sẵn sàng để thưởng thức. Bạn có thể rắc thêm 1 ít mộc quế hoa để món ăn dậy hương thơm hơn.\nKhi ăn, bạn sẽ cảm nhận được từng hạt đậu, hạt sen mềm tan trong miệng, mang lại cảm giác ấm lòng và bổ dưỡng. Đây chắc hẳn chính là thực phẩm bổ dưỡng tuyệt vời cho cả gia đình.",
+        "images": [
+          "https://cdn.tgdd.vn/2025/08/CookRecipe/GalleryStep/thanh-pham-115.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "cháosúp_003",
@@ -763,7 +2694,37 @@
       "Nước mắm 1 muỗng canh",
       "Gia vị thông dụng 1 ít (muối/ hạt nêm/ tiêu xay)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế và luộc thịt gà",
+        "description": "Thịt gà bạn mua về làm sạch lông còn sót rồi rửa sạch, chà xát với 1 ít muối rồi sau đó rửa sạch lại với nước, để ráo.\nMẹo khử mùi hôi của thịt gà hiệu quả\nCách 1: Để khử mùi gà hiệu quả thì bạn cần làm thật sạch lông và rửa kỹ phần tuyến nhờn ở đuôi rồi dùng hỗn hợp muối và giấm để rửa gà sạch lại với nước.\nCách 2: Chà xát vài lát chanh lên thịt gà vịt với 1 ít muối, sau đó rửa lại thật sạch bằng nước lạnh.\nCách 3: Đập dập 1 củ gừng rồi pha với một ít rượu trắng, xoa bóp lên thịt gà và để yên trong khoảng 30 phút trước khi nấu sẽ giúp át đi mùi hôi khó chịu.\nBắc nồi lên bếp với 300ml nước lọc, cho gà vào luộc với lửa lớn khoảng 10 phút. Sau đó lấy gà ra dĩa, để nguội rồi xé nhỏ, nước luộc gà bạn cho ra tô.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/so-che-ga-9.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/so-che-ga-10.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Sơ chế các nguyên liệu khác",
+        "description": "Bắp mua về bạn nhặt bỏ các phần râu, tách hạt rồi tiến hành rửa sạch, để ráo nước. Sau đó bạn bắc nồi lên bếp và cho 200ml nước lọc vào nồi rồi cho hạt bắp vào luộc ở lửa lớn khoảng 10 phút.\nKhi luộc xong thì bạn lấy phần hạt bắp ra để ráo, phần nước luộc đổ chung vào tô luộc nước gà.\nMách nhỏ: Để nước được ngọt vị thì bạn nên bỏ cà phần lõi bắp vào luộc cùng hạt bắp nhé! Khi luộc xong thì bạn bỏ phần lõi là được!\nNấm kim châm mua về bạn cắt bỏ gốc, rửa nhiều lần với nước, xé nhỏ rồi cắt từng khúc khoảng 2 lóng tay. Rau mùi nhặt bỏ lá héo, úa, rửa sạch, để ráo.\nNấm hương bạn ngâm với nước ấm khoảng 15 phút, sau đó rửa sạch rồi cắt thành các sợi nhỏ dài khoảng 2 lóng tay.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-258.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-259.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-260.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-khac-261.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Nấu súp gà",
+        "description": "Bắc nồi lên bếp, cho tô nước luộc gà và ngô vào và đun với lửa lớn. Khi nước đã sôi bạn cho lần lượt nấm hương, nấm kim châm và hạt bắp vào và đảo đều khoảng 2 phút.\nPha vào chén (chén ăn cơm) 2 muỗng canh bột năng và 3 muỗng canh nước lọc rồi trộn đều cho đến khi bột tan. Sau đó bạn đổ từ từ hỗn hợp này vào nồi, để cho nước không bị vón cục, bạn khuấy đều tay trong vòng 2 - 3 phút.\nNêm vào nồi hỗn hợp gia vị gồm 1 muỗng canh nước mắm, 1 muỗng canh muối, 1 muỗng cà phê hạt nêm rồi khuấy đều, hạ lửa nhỏ và để thêm khoảng 10 phút.\nCuối cùng, cho vào 1 muỗng cà phê hạt tiêu xay và gà đã xé vào nồi, nêm nếm lại gia vị cho vừa ăn rồi cho rau mùi vào, đảo sơ và tắt bếp là hoàn thành.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/nau-sup-ga.jpg",
+          "https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/nau-sup-ga-1.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "cháosúp_004",
@@ -783,7 +2744,38 @@
       "Ngò rí 1 ít (cắt nhỏ)",
       "Gia vị thông dụng 1 ít (Muối/ bột ngọt/ tiêu xay)"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế các nguyên liệu",
+        "description": "Thịt cua sau khi mua về bạn nên chần sơ qua nước sôi trong khoảng 1 phút rồi vớt ra để ráo. Nếu bạn hấp thịt cua rồi gở ngay thì có thể bỏ qua công đoạn chần thịt cua nhé.\nNấm đông cô cắt bỏ phần chân nấm bị bám bùn đất, rửa sạch rồi thái lát mỏng.\nBắp Mỹ lột vỏ, rửa sạch rồi bào nhỏ, tóc tiên bạn cắt nhỏ.\nMang nấm tuyết đi ngâm với nước trong khoảng 20 - 30 phút cho nấm nở mềm rồi bạn rửa lại với nước cho sạch, sau đó cắt nhỏ.\nĐập trứng gà vào chén và đánh tan.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-119.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-120.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-121.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Nấu súp cua",
+        "description": "Cho vào nồi 1.3 lít nước và đun sôi với lửa lớn, khi nước sôi thì bạn cho nấm đông cô và bắp vào, nấu trong 5 - 7 phút.\nTiếp đến, bạn nêm thêm vào nồi 3 muỗng cà phê muối, 1 viên đường phèn và hạ lửa vừa rồi cho thêm thịt cua vào.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/nau-sup-cua-1.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/nau-sup-cua-2.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/nau-sup-cua-4.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/nau-sup-cua-3.jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Hoàn thành",
+        "description": "Khuấy nhẹ nồi súp rồi cho phần trứng đã đánh qua rây để tạo sợi đẹp mắt, sau đó bạn nêm thêm 1/4 muỗng cà phê bột ngọt vào.\nĐể súp có độ sệt nhất định bạn hòa tan 100gr bột năng với 200ml nước rồi đổ từ từ vào nồi súp đến khi súp có độ sánh sệt như mong muốn là được.\nMách bạn: Muốn biết súp có độ sánh đạt hay chưa thì để yên, nếu thịt cua nổi đều trong phần nước nước súp là đạt.\nCuối cùng cho nấm tuyết và tóc tiên vào, khuấy đều, nêm nếm lại gia bị cho vừa ăn và tắt bếp. Bạn lưu ý nên cho nấm tuyết vào cuối cùng để giữ độ giòn của nấm. Tránh cho sớm làm nhão nấm mất ngon.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/hoan-thanh-98.jpg",
+          "https://cdn.tgdd.vn/2021/12/CookRecipe/GalleryStep/hoan-thanh-99.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": "salat_001",
@@ -800,6 +2792,45 @@
       "Mù tạt Dijon 1 muỗng cà phê",
       "Muối/ tiêu xay 1 ít"
     ],
-    "steps": []
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bước 1: Sơ chế tôm",
+        "description": "Trước hết, tôm mua về bạn đem rửa trực tiếp dưới vòi nước cho sạch, để ráo, dùng tay lột vỏ, đầu và đuôi đi.\nĐồng thời, bạn bắc nồi lên bếp cùng 700ml nước và 1 trái chanh vàng rửa sạch, cắt làm 4 vào, tiến hành đun với lửa lớn khoảng 7 phút.\nThấy nước lăn tăn sôi bạn cho toàn bộ phần tôm đã sơ chế vào, luộc trong vòng 5 - 7 phút, đến khi tôm chín thì bạn vớt ra tô nước lạnh ngâm thêm 3 - 5 phút, rồi vớt ra, để ráo.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/1(10)-1.jpg",
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/1(12)-1.jpg"
+        ]
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bước 2: Làm sốt trộn",
+        "description": "Bạn lấy chén rồi cho 2 muỗng cà phê nước cốt chanh, 1/2 muỗng cà phê muối, 1/2 muỗng cà phê tiêu xay, 2 tép tỏi băm nhuyễn, 4 muỗng canh sốt mayonnaise, 1 muỗng cà phê mù tạt Dijon và 15gr thì là băm nhuyễn vào.\nDùng muỗng trộn đều để cho các gia vị được hòa tan cùng nhau.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/2(16).jpg",
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/2(19).jpg",
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/2(17).jpg",
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/2(18).jpg"
+        ]
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bước 3: Sơ chế các nguyên liệu còn lại",
+        "description": "Cần tây bạn bỏ cuống, đem rửa 1 - 2 lần với nước cho sạch, để ráo, dùng dao cắt nhuyễn.\nCuối cùng, củ hành tím bạn lột vỏ, rồi cũng dùng dao cắt nhuyễn.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-con-lai-36.jpg",
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/so-che-cac-nguyen-lieu-con-lai-35.jpg"
+        ]
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bước 4: Trộn salad",
+        "description": "Kế đến, bạn lấy tô lớn rồi cho toàn bộ phần tôm đã luộc, cần tây, củ hành tím và chén sốt vừa trộn vào, dùng sạn dẹt đảo đều.\nCuối cùng, khi tất cả nguyên liệu đã được trộn đều thì bạn nêm nếm gia vị vừa ăn rồi cho ra dĩa thưởng thức.",
+        "images": [
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/4(7)-1.jpg",
+          "https://cdn.tgdd.vn/2021/11/CookRecipe/GalleryStep/4(8)-2.jpg"
+        ]
+      }
+    ]
   }
 ]

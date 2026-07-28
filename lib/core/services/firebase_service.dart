@@ -9,6 +9,7 @@ import '../../data/models/recipe.dart';
 class FirebaseService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final CollectionReference<Map<String, dynamic>> _users = FirebaseFirestore.instance.collection('users');
   FirebaseFirestore get firestore => _db;
   FirebaseAuth get auth => _auth;
   CollectionReference<Map<String, dynamic>> get _recipes => _db.collection('recipes');
@@ -65,17 +66,27 @@ class FirebaseService {
         .snapshots();
   }
 
-  Stream<List<Recipe>> streamPublishedRecipes() {
-    return _recipes
-        .where('status', isEqualTo: 'published')
-        .orderBy('createdAt', descending: true)
-        .snapshots()
-        .map(
-          (snapshot) => snapshot.docs
-              .map((doc) => Recipe.fromFirestore(doc))
-              .toList(),
-        );
-  }
+Stream<List<Recipe>> streamPublishedRecipes() {
+  return _recipes
+      .where('status', isEqualTo: 'published')
+      .orderBy('createdAt', descending: true)
+      .snapshots()
+      .map((snapshot) {
+
+        debugPrint(
+            "========== Published Recipes ==========");
+        debugPrint(
+            "Docs: ${snapshot.docs.length}");
+
+        for (final doc in snapshot.docs) {
+          debugPrint(doc.data().toString());
+        }
+
+        return snapshot.docs
+            .map((doc) => Recipe.fromFirestore(doc))
+            .toList();
+      });
+}
 
   Stream<List<Recipe>> streamRecipesByCategory(String category) {
     return _recipes
@@ -480,7 +491,6 @@ class FirebaseService {
 
     for (int i = 0; i < stepMediaFiles.length; i++) {
       if (stepMediaFiles[i].isEmpty) continue;
-
       final uploaded = await _uploadMediaFiles(
         files: stepMediaFiles[i],
         types: stepMediaTypes[i],
@@ -488,7 +498,6 @@ class FirebaseService {
         userId: current.uid,
         folder: 'step_$i',
       );
-
       stepMediaData.add({
         "stepIndex": i,
         "media": uploaded,
@@ -497,7 +506,6 @@ class FirebaseService {
 
     // Chuyển các bước thành đúng cấu trúc RecipeStep
     final recipeSteps = <Map<String, dynamic>>[];
-
     for (int i = 0; i < steps.length; i++) {
       recipeSteps.add({
         "stepNumber": i + 1,
@@ -510,6 +518,23 @@ class FirebaseService {
             .toList(),
       });
     }
+
+    final userDoc = await _users.doc(current.uid).get();
+    final userData = userDoc.data() ?? {};
+    final String authorName =
+        (userData["username"] as String?)?.trim().isNotEmpty == true
+            ? userData["username"]
+            : (current.displayName ?? "Người dùng");
+
+    final String authorAvatar =
+        (userData["avatarUrl"] as String?)?.trim().isNotEmpty == true
+            ? userData["avatarUrl"]
+            : (current.photoURL ?? "");
+
+    final String authorLocation =
+        (userData["location"] as String?)?.trim().isNotEmpty == true
+            ? userData["location"]
+            : "Việt Nam";
 
     await recipeRef.set({
       "id": recipeId,
@@ -524,10 +549,12 @@ class FirebaseService {
       "steps": recipeSteps,
       "servings": servings,
       "authorId": current.uid,
-      "authorName": current.displayName ?? "Người dùng",
-      "authorLocation": "Việt Nam",
+      "authorName": authorName,
+      "authorLocation": authorLocation,
+      "authorAvatar": authorAvatar,
       "userId": current.uid,
-      "userName": current.displayName ?? current.email ?? "",
+      "userName": authorName,
+      "userAvatar": authorAvatar,
       "isAdmin": false,
       "status": status,
       "mainMediaType": mainMediaType ?? "",
@@ -535,9 +562,10 @@ class FirebaseService {
       "createdAt": Timestamp.now(),
       "updatedAt": Timestamp.now(),
       "submittedAt": Timestamp.now(),
-      "week": status == "published" ? getCurrentWeek() : 0,
+      "week": status == "published"
+          ? getCurrentWeek()
+          : 0,
     });
-
     return recipeId;
   } catch (e) {
     debugPrint("Lỗi createRecipe: $e");
