@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../../../data/models/recipe.dart';
 import 'recipe_header_delegate.dart';
 import '../profile/public_profile_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../../core/widgets/avatar.dart';
+import '../comments/comment_screen.dart';
 
 class RecipeDetailScreen extends StatefulWidget {
   final Recipe recipe;
@@ -66,6 +70,8 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                   const SizedBox(height: 35),
                   _buildStepSection(),
                   const SizedBox(height: 50),
+                  _buildCommentSection(),
+                  const SizedBox(height: 40),
                 ],
               ),
             ),
@@ -399,6 +405,144 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           ]
         ],
       ),
+    );
+  }
+  Widget _buildCommentSection() {
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    return StreamBuilder<DocumentSnapshot>(
+      stream: FirebaseFirestore.instance
+          .collection("users")
+          .doc(uid)
+          .snapshots(),
+      builder: (context, userSnapshot) {
+        final data = userSnapshot.data?.data() as Map<String, dynamic>? ?? {};
+        final username = data["username"] ?? "Người dùng";
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Text(
+                  "Bình luận",
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection("recipes")
+                      .doc(recipe.id)
+                      .collection("comments")
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    final count = snapshot.data?.size ?? 0;
+                    return Text(
+                      "$count",
+                      style: TextStyle(
+                        color: Colors.grey.shade600,
+                        fontSize: 22,
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            TextButton(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                minimumSize: Size.zero,
+                tapTargetSize:
+                    MaterialTapTargetSize.shrinkWrap,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CommentScreen(
+                      recipe: recipe,
+                    ),
+                  ),
+                );
+
+              },
+              child: const Text(
+                "Xem tất cả bình luận",
+                style: TextStyle(
+                  color: Colors.deepOrange,
+                  fontWeight: FontWeight.w600,
+                )
+              ),
+            ),
+            const SizedBox(height: 18),
+            InkWell(
+              borderRadius: BorderRadius.circular(40),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CommentScreen(
+                      recipe: recipe,
+                      autoFocus: true,
+                    ),
+                  ),
+                );
+
+              },
+
+              child: Row(
+
+                children: [
+
+                  UserAvatar(
+                    username: username,
+                    isLoading: false,
+                    radius: 23,
+                  ),
+
+                  const SizedBox(width: 12),
+
+                  Expanded(
+
+                    child: Container(
+
+                      height: 46,
+
+                      decoration: BoxDecoration(
+
+                        borderRadius:
+                            BorderRadius.circular(30),
+
+                        border: Border.all(
+                          color: Colors.grey.shade400,
+                        ),
+
+                      ),
+
+                      alignment: Alignment.centerLeft,
+
+                      padding:
+                          const EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
+
+                      child: Text(
+                        "Thêm bình luận",
+                        style: TextStyle(
+                          color: Colors.grey.shade500,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

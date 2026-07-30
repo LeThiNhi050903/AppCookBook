@@ -13,6 +13,10 @@ class FirebaseService {
   FirebaseFirestore get firestore => _db;
   FirebaseAuth get auth => _auth;
   CollectionReference<Map<String, dynamic>> get _recipes => _db.collection('recipes');
+  CollectionReference<Map<String, dynamic>> get _usersCollection => _db.collection('users');
+  CollectionReference<Map<String, dynamic>> _savedRecipesRef(String uid) {
+    return _usersCollection.doc(uid).collection('savedRecipes');
+  }
   CollectionReference<Map<String, dynamic>> get _drafts => _db.collection('draft_recipes');
   String? lastError;
 
@@ -195,14 +199,117 @@ Stream<List<Recipe>> streamPublishedRecipes() {
   Future<Recipe?> getRecipeById(String recipeId) async {
     try {
       final doc = await _recipes.doc(recipeId).get();
-
       if (!doc.exists) return null;
-
       return Recipe.fromFirestore(doc);
     } catch (e) {
       debugPrint("Lỗi getRecipeById: $e");
       return null;
     }
+  }
+
+  Future<bool> toggleSaveRecipe(String recipeId) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) {
+        return false;
+      }
+      final doc = _savedRecipesRef(current.uid).doc(recipeId);
+      final snapshot = await doc.get();
+      if (snapshot.exists) {
+        await doc.delete();
+        return false;
+      }
+      await doc.set({
+        "recipeId": recipeId,
+        "savedAt": FieldValue.serverTimestamp(),
+      });
+      return true;
+    } catch (e) {
+      debugPrint("toggleSaveRecipe: $e");
+      lastError = e.toString();
+      return false;
+    }
+  }
+
+  Future<bool> isRecipeSaved(String recipeId) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) {
+        return false;
+      }
+      final doc = await _savedRecipesRef(current.uid)
+          .doc(recipeId)
+          .get();
+      return doc.exists;
+    } catch (e) {
+      debugPrint("isRecipeSaved: $e");
+      return false;
+    }
+  }
+
+  Stream<bool> streamIsRecipeSaved(String recipeId) {
+    final current = _auth.currentUser;
+    if (current == null) {
+      return const Stream.empty();
+    }
+    return _savedRecipesRef(current.uid)
+        .doc(recipeId)
+        .snapshots()
+        .map((doc) => doc.exists);
+  }
+
+  Stream<List<Recipe>> streamSavedRecipes() {
+    final current = _auth.currentUser;
+    if (current == null) {
+      return const Stream.empty();
+    }
+    return _savedRecipesRef(current.uid)
+        .orderBy(
+          "savedAt",
+          descending: true,
+        )
+        .snapshots()
+        .asyncMap((snapshot) async {
+          final List<Recipe> recipes = [];
+          for (final saved in snapshot.docs) {
+            final recipeId = saved.data()["recipeId"] as String;
+            final recipeDoc = await _recipes.doc(recipeId).get();
+            if (recipeDoc.exists) {
+              recipes.add(
+                Recipe.fromFirestore(recipeDoc),
+              );
+            }
+          }
+          return recipes;
+        });
+  }
+
+  Future<void> removeSavedRecipe(
+    String recipeId,
+  ) async {
+    final current = _auth.currentUser;
+    if (current == null) {
+      return;
+    }
+    await _savedRecipesRef(current.uid)
+        .doc(recipeId)
+        .delete();
+  }
+
+  Future<void> saveRecipe(
+    String recipeId,
+  ) async {
+    final current = _auth.currentUser;
+    if (current == null) {
+      return;
+    }
+    await _savedRecipesRef(current.uid)
+        .doc(recipeId)
+        .set({
+      "recipeId": recipeId,
+      "savedAt":
+          FieldValue.serverTimestamp(),
+    });
   }
 
   Future<List<Map<String, dynamic>>> searchUsersByUsername(String query) async {
@@ -215,14 +322,12 @@ Stream<List<Recipe>> streamPublishedRecipes() {
           .where('usernameLower', isLessThanOrEqualTo: '$q\uf8ff')
           .limit(50)
           .get();
-
       var results = snapshot.docs
           .map((doc) {
             final data = Map<String, dynamic>.from(doc.data());
             return {...data, 'uid': doc.id};
           })
           .toList();
-
       if (results.isNotEmpty) return results;
       final fallback = await _db.collection('users').limit(50).get();
       return fallback.docs
@@ -303,7 +408,6 @@ Stream<List<Recipe>> streamPublishedRecipes() {
       final batch = _db.batch();
       final myRef = _db.collection('users').doc(myUid);
       final otherRef = _db.collection('users').doc(fromUid);
-
       batch.update(myRef, {
         'friendRequests': FieldValue.arrayRemove([fromUid]),
         'friends': FieldValue.arrayUnion([fromUid])
@@ -312,7 +416,6 @@ Stream<List<Recipe>> streamPublishedRecipes() {
         'friends': FieldValue.arrayUnion([myUid]),
         'outgoingRequests': FieldValue.arrayRemove([myUid])
       });
-      // Also ensure any outgoingRequests entries cleaned up both sides
       await batch.commit();
       return true;
     } catch (e) {

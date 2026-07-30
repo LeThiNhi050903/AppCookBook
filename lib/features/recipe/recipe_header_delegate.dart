@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/recipe.dart';
+import '../../core/services/firebase_service.dart';
 
 class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
   final Recipe recipe;
   final double expandedHeight;
+  static final FirebaseService _firebaseService = FirebaseService();
   RecipeHeaderDelegate({
     required this.recipe,
     required this.expandedHeight,
   });
 
   @override
-  double get minExtent => kToolbarHeight + 10;
+  double get minExtent => 110;
 
   @override
   double get maxExtent => expandedHeight;
@@ -21,10 +23,10 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    final double progress = (shrinkOffset / (maxExtent - minExtent)).clamp(0.0, 1.0);
-    final bool collapsed = progress > 0.15;
-    final double statusBarHeight = MediaQuery.of(context).padding.top;
-    final double currentHeight = (maxExtent - shrinkOffset).clamp(minExtent, maxExtent);
+    final progress = (shrinkOffset / (maxExtent - minExtent)).clamp(0.0, 1.0);
+    final collapsed = progress > 0.35;
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+    final currentHeight = (maxExtent - shrinkOffset).clamp(minExtent, maxExtent);
     return SizedBox(
       height: currentHeight,
       child: Container(
@@ -43,9 +45,7 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
               top: statusBarHeight,
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
-                color: collapsed
-                    ? Colors.black26
-                    : Colors.transparent,
+                color: Colors.black26,
               ),
             ),
             Positioned.fill(
@@ -57,37 +57,89 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
                     end: Alignment.bottomCenter,
                     colors: [
                       Colors.transparent,
-                      Colors.black12,
+                      Colors.black45,
                     ],
                   ),
                 ),
               ),
             ),
             Positioned(
-              top: statusBarHeight + 12,
+              top: statusBarHeight + 16,
               left: 16,
               right: 16,
               child: Row(
-                  children: [
-                    _circleButton(
-                      icon: Icons.arrow_back_ios_new,
-                      onTap: () => Navigator.pop(context),
-                    ),
-                    const Spacer(),
-                    _circleButton(
-                      icon: Icons.bookmark_border,
-                      onTap: () {
-                        // TODO: lưu món
+                children: [
+                  _circleButton(
+                    icon: Icons.arrow_back_ios_new,
+                    onTap: () => Navigator.pop(context),
+                  ),
+                  const Spacer(),
+                  SizedBox(
+                    width: 44,
+                    child: StreamBuilder<bool>(
+                      stream: _firebaseService.streamIsRecipeSaved(recipe.id),
+                      builder: (context, snapshot) {
+                        final isSaved = snapshot.data ?? false;
+                        return TweenAnimationBuilder<double>(
+                          duration: const Duration(milliseconds: 220),
+                          tween: Tween(begin: 0.9, end: 1),
+                          builder: (context, scale, child) {
+                            return Transform.scale(
+                              scale: scale,
+                              child: child,
+                            );
+                          },
+                          child: _circleButton(
+                            icon: isSaved
+                                ? Icons.bookmark
+                                : Icons.bookmark_border,
+                            iconColor:
+                                isSaved ? Colors.amber : Colors.white,
+                            onTap: () async {
+                              await _firebaseService.toggleSaveRecipe(
+                                recipe.id,
+                              );
+                            },
+                          ),
+                        );
                       },
                     ),
-                    const SizedBox(width: 10),
-                    _circleButton(
-                      icon: Icons.more_vert,
-                      onTap: () => _showMoreMenu(context),
-                    ),
-                  ],
+                  ),
+
+                  const SizedBox(width: 10),
+
+                  _circleButton(
+                    icon: Icons.more_vert,
+                    onTap: () => _showMoreMenu(context),
+                  ),
+                ],
               ),
             ),
+            if (collapsed)
+              Positioned.fill(
+                top: statusBarHeight + 16,
+                child: IgnorePointer(
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 90,
+                        right: 110,
+                      ),
+                      child: Text(
+                        recipe.name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
@@ -147,20 +199,36 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
   Widget _circleButton({
     required IconData icon,
     required VoidCallback onTap,
+    Color iconColor = Colors.white,
   }) {
-    return Material(
-      color: Colors.black26,
-      shape: const CircleBorder(),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(50),
-        onTap: onTap,
-        child: SizedBox(
-          width: 40,
-          height: 40,
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 20,
+    return SizedBox(
+      width: 44,
+      height: 44,
+      child: Material(
+        color: Colors.black38,
+        shape: const CircleBorder(),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: onTap,
+          child: Center(
+            child: AnimatedSwitcher(
+              duration: const Duration(
+                milliseconds: 250,
+              ),
+              transitionBuilder:
+                  (child, animation) {
+                return ScaleTransition(
+                  scale: animation,
+                  child: child,
+                );
+              },
+              child: Icon(
+                icon,
+                key: ValueKey(icon),
+                color: iconColor,
+                size: 21,
+              ),
+            ),
           ),
         ),
       ),
