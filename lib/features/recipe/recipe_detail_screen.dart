@@ -500,6 +500,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     username: username,
                     isLoading: false,
                     radius: 23,
+                    useCurrentUserAvatar: true,
                   ),
 
                   const SizedBox(width: 12),

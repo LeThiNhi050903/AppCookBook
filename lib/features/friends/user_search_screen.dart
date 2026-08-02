@@ -22,11 +22,9 @@ class _UserSearchScreenState extends State<UserSearchScreen> {
     final meUid = _svc.auth.currentUser?.uid;
     Map<String, dynamic>? me;
     if (meUid != null) me = await _svc.getUserByUid(meUid);
-
     final following = me?['following'] as List? ?? [];
     final outgoing = me?['outgoingRequests'] as List? ?? [];
     final friends = me?['friends'] as List? ?? [];
-
     setState(() {
       _results = r.map((u) {
         final uid = u['uid'];
@@ -172,15 +170,11 @@ class _UserSearchScreenState extends State<UserSearchScreen> {
                                               onPressed: () async {
                                                 if (user['isFriend'] == true) return;
                                                 if (user['hasOutgoingRequest'] == true) return;
-
                                                 final messenger = ScaffoldMessenger.of(context);
                                                 final ok = await _svc.sendFriendRequest(user['uid']);
                                                 final msg = ok ? 'Đã gửi lời mời kết bạn' : (_svc.lastError ?? 'Lỗi');
-
                                                 if (!mounted) return;
-                                                messenger.showSnackBar(
-                                                  SnackBar(content: Text(msg)),
-                                                );
+                                                messenger.showSnackBar(SnackBar(content: Text(msg)),);
                                                 if (ok) _search();
                                               },
                                               child: FittedBox( 
@@ -192,8 +186,7 @@ class _UserSearchScreenState extends State<UserSearchScreen> {
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          
+                                          ),                                         
                                           const SizedBox(width: 10), 
                                           Expanded(
                                             child: ElevatedButton(
@@ -220,11 +213,8 @@ class _UserSearchScreenState extends State<UserSearchScreen> {
                                                 }
                                                 final ok = await _svc.followUser(user['uid']);
                                                 final msg = ok ? 'Đã theo dõi' : (_svc.lastError ?? 'Lỗi');
-
                                                 if (!mounted) return;
-                                                messenger.showSnackBar(
-                                                  SnackBar(content: Text(msg)),
-                                                );
+                                                messenger.showSnackBar(SnackBar(content: Text(msg)),);
                                                 if (ok) _search();
                                               },
                                               child: FittedBox(

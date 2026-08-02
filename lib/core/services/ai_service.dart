@@ -7,7 +7,6 @@ class AIService {
   static String get _apiKey => dotenv.env['API_KEY'] ?? '';
   static const String _baseUrl =
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent";
-
   static final Logger _logger = Logger();
   static Future<String> sendMessage(
     String message,
@@ -16,22 +15,20 @@ class AIService {
     if (_apiKey.isEmpty) {
       return "Lỗi: API key không tồn tại. Kiểm tra file .env";
     }
-
     final Uri url = Uri.parse("$_baseUrl?key=$_apiKey");
     final String prompt = """
-Bạn là một đầu bếp chuyên nghiệp. Hãy trả lời ngắn gọn, rõ ràng và phù hợp cho ứng dụng nấu ăn.
-Không cần mở đầu, không cần giải thích thêm.
-Lịch sử chat:
-${history.map((m) => "${m['role']}: ${m['content']}").join("\n")}
+      Bạn là một đầu bếp chuyên nghiệp. Hãy trả lời ngắn gọn, rõ ràng và phù hợp cho ứng dụng nấu ăn.
+      Không cần mở đầu, không cần giải thích thêm.
+      Lịch sử chat:
+      ${history.map((m) => "${m['role']}: ${m['content']}").join("\n")}
 
-Câu hỏi hiện tại: $message
-Trả lời bằng tiếng Việt và chỉ sử dụng định dạng sau:
-- Tên món:
-- Nguyên liệu:
-- Các bước thực hiện:
-- Lưu ý:
-""";
-
+      Câu hỏi hiện tại: $message
+      Trả lời bằng tiếng Việt và chỉ sử dụng định dạng sau:
+      - Tên món:
+      - Nguyên liệu:
+      - Các bước thực hiện:
+      - Lưu ý:
+      """;
     try {
       final response = await http.post(
         url,

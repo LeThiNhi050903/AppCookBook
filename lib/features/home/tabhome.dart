@@ -171,6 +171,7 @@ class _TabHomeState extends State<TabHome> {
             radius: 25,
             backgroundColor: Colors.white,
             textColor: Colors.orange,
+            useCurrentUserAvatar: true,
             onTap: () => debugPrint("Click vào Avatar"),
           ),
           const SizedBox(width: 12),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../../core/services/firebase_service.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({super.key});
@@ -37,6 +38,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         await user.updatePassword(_passwordController.text);
         _showSnackBar("Đổi mật khẩu thành công! Vui lòng đăng nhập lại.");
         await FirebaseAuth.instance.signOut();
+        try {
+          final svc = FirebaseService();
+          await svc.setAdminMode(false);
+        } catch (_) {}
         if (mounted) {
           Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
         }

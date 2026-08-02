@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-
 import '../services/profile_image_service.dart';
 
 class UserAvatar extends StatelessWidget {
@@ -10,8 +8,11 @@ class UserAvatar extends StatelessWidget {
   final VoidCallback? onTap;
   final Color backgroundColor;
   final Color textColor;
-  final double radius; 
+  final double radius;
   final String? imagePath; // optional override
+  final String? imageUrl; // optional network image override
+  final bool useCurrentUserAvatar;
+
   const UserAvatar({
     super.key,
     required this.username,
@@ -19,8 +20,10 @@ class UserAvatar extends StatelessWidget {
     this.onTap,
     this.backgroundColor = Colors.orange,
     this.textColor = Colors.white,
-    this.radius = 22, 
+    this.radius = 22,
     this.imagePath,
+    this.imageUrl,
+    this.useCurrentUserAvatar = false,
   });
 
   @override
@@ -29,35 +32,62 @@ class UserAvatar extends StatelessWidget {
     if (username.trim().isNotEmpty) {
       displayLetter = username.trim()[0].toUpperCase();
     }
+    if (imagePath != null) {
+      return GestureDetector(
+        onTap: onTap,
+        child: CircleAvatar(
+          radius: radius,
+          backgroundColor: backgroundColor,
+          backgroundImage: File(imagePath!).existsSync()
+              ? FileImage(File(imagePath!))
+              : null,
+          child: _buildChild(displayLetter),
+        ),
+      );
+    }
+
+    if (imageUrl != null && imageUrl!.trim().isNotEmpty) {
+      return GestureDetector(
+        onTap: onTap,
+        child: CircleAvatar(
+          radius: radius,
+          backgroundColor: backgroundColor,
+          backgroundImage: NetworkImage(imageUrl!),
+          child: _buildChild(displayLetter),
+        ),
+      );
+    }
+
+    if (useCurrentUserAvatar) {
+      return GestureDetector(
+        onTap: onTap,
+        child: ValueListenableBuilder<String?>(
+          valueListenable: ProfileImageService.instance.avatarPath,
+          builder: (context, value, _) {
+            if (value != null && File(value).existsSync()) {
+              return CircleAvatar(
+                radius: radius,
+                backgroundColor: backgroundColor,
+                backgroundImage: FileImage(File(value)),
+              );
+            }
+            return CircleAvatar(
+              radius: radius,
+              backgroundColor: backgroundColor,
+              child: _buildChild(displayLetter),
+            );
+          },
+        ),
+      );
+    }
 
     return GestureDetector(
       onTap: onTap,
-      child: imagePath != null
-          ? CircleAvatar(
-              radius: radius,
-              backgroundColor: backgroundColor,
-              backgroundImage: File(imagePath!).existsSync()
-                  ? FileImage(File(imagePath!))
-                  : null,
-              child: _buildChild(displayLetter),
-            )
-          : ValueListenableBuilder<String?>(
-              valueListenable: ProfileImageService.instance.avatarPath,
-              builder: (context, value, _) {
-                if (value != null && File(value).existsSync()) {
-                  return CircleAvatar(
-                    radius: radius,
-                    backgroundColor: backgroundColor,
-                    backgroundImage: FileImage(File(value)),
-                  );
-                }
-                return CircleAvatar(
-                  radius: radius,
-                  backgroundColor: backgroundColor,
-                  child: _buildChild(displayLetter),
-                );
-              },
-            ),
+      child: CircleAvatar(
+        radius: radius,
+        backgroundColor: backgroundColor,
+        child: _buildChild(displayLetter),
+      ),
     );
   }
 

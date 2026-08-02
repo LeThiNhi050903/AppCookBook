@@ -23,8 +23,7 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    final progress = (shrinkOffset / (maxExtent - minExtent)).clamp(0.0, 1.0);
-    final collapsed = progress > 0.35;
+    (shrinkOffset / (maxExtent - minExtent)).clamp(0.0, 1.0);
     final statusBarHeight = MediaQuery.of(context).padding.top;
     final currentHeight = (maxExtent - shrinkOffset).clamp(minExtent, maxExtent);
     return SizedBox(
@@ -74,6 +73,13 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
                     onTap: () => Navigator.pop(context),
                   ),
                   const Spacer(),
+                  _circleButton(
+                    icon: Icons.push_pin_outlined,
+                    onTap: () {
+    
+                    },
+                  ),
+                  const SizedBox(width: 10),
                   SizedBox(
                     width: 44,
                     child: StreamBuilder<bool>(
@@ -105,9 +111,7 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
                       },
                     ),
                   ),
-
                   const SizedBox(width: 10),
-
                   _circleButton(
                     icon: Icons.more_vert,
                     onTap: () => _showMoreMenu(context),
@@ -115,31 +119,6 @@ class RecipeHeaderDelegate extends SliverPersistentHeaderDelegate {
                 ],
               ),
             ),
-            if (collapsed)
-              Positioned.fill(
-                top: statusBarHeight + 16,
-                child: IgnorePointer(
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 90,
-                        right: 110,
-                      ),
-                      child: Text(
-                        recipe.name,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
           ],
         ),
       ),

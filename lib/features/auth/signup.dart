@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../home/admin_home_screen.dart';
+import '../../core/services/firebase_service.dart';
+import '../../core/services/profile_image_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../home/home.dart';
@@ -80,6 +83,7 @@ class _SignupPageState extends State<SignupPage> {
         'outgoingRequests': [],
         'createdAt': Timestamp.now(),
       });
+      await ProfileImageService.instance.init();
       if (!mounted) return;
       setState(() {
         _isLoading = false;
@@ -407,12 +411,18 @@ class _SignupPageState extends State<SignupPage> {
             if (!mounted) return; 
             setState(() => _isLoading = false);
             if (user != null) {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HomeScreen(),
-                ),
-              );
+              final svc = FirebaseService();
+              if (svc.isAdminUser) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AdminHomeScreen()),
+                );
+              } else {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              }
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Google login failed')),

@@ -5,7 +5,6 @@ import 'input.dart';
 import 'tab_ai.dart';
 import '../../core/services/ai_service.dart';
 import '../../core/services/local_service.dart';
-
 enum AiFeedback { none, liked, disliked }
 
 class AiScreen extends StatefulWidget {
@@ -19,7 +18,6 @@ class _AiScreenState extends State<AiScreen> {
   final TextEditingController controller = TextEditingController();
   final ScrollController scrollController = ScrollController();
   final LocalService localService = LocalService();
-
   List<Map<String, String>> messages = [];
   List<List<Map<String, String>>> chatHistory = [];
   int currentChatIndex = -1;
@@ -167,8 +165,7 @@ class _AiScreenState extends State<AiScreen> {
                       if (msg["role"] == "user") {
                         return ChatBubble(text: msg["content"]!, isUser: true);
                       }
-                      final feedback =
-                          responseFeedback[index] ?? AiFeedback.none;
+                      final feedback = responseFeedback[index] ?? AiFeedback.none;
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -181,21 +178,16 @@ class _AiScreenState extends State<AiScreen> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  // Lưu vào ghi chú
                                   GestureDetector(
                                     onTap: () async {
                                       final response = msg["content"];
                                       if (response == null) return;
-
                                       final messenger = ScaffoldMessenger.of(context);
                                       final userQuestion = index > 0 && messages[index - 1]["role"] == "user"
                                           ? messages[index - 1]["content"] ?? "Câu hỏi"
                                           : "Câu hỏi";
-
                                       await localService.saveAiNote(response, userQuestion: userQuestion);
-
                                       if (!mounted) return;
-
                                       messenger.showSnackBar(
                                         const SnackBar(
                                           content: Text('Đã lưu ghi chú AI'),
@@ -231,23 +223,16 @@ class _AiScreenState extends State<AiScreen> {
                                       ),
                                     ),
                                   ),
-
                                   const SizedBox(width: 8),
-
-                                  // Copy
                                   GestureDetector(
                                     onTap: () async {
                                       final response = msg["content"];
                                       if (response == null) return;
-
                                       final messenger = ScaffoldMessenger.of(context);
-
                                       await Clipboard.setData(
                                         ClipboardData(text: response),
                                       );
-
                                       if (!mounted) return;
-
                                       messenger.showSnackBar(
                                         const SnackBar(
                                           content: Text('Đã sao chép câu trả lời'),
@@ -264,10 +249,7 @@ class _AiScreenState extends State<AiScreen> {
                                       ),
                                     ),
                                   ),
-
                                   const SizedBox(width: 10),
-
-                                  // Like
                                   GestureDetector(
                                     onTap: () {
                                       setState(() {
@@ -288,10 +270,7 @@ class _AiScreenState extends State<AiScreen> {
                                       ),
                                     ),
                                   ),
-
                                   const SizedBox(width: 10),
-
-                                  // Unlike
                                   GestureDetector(
                                     onTap: () {
                                       setState(() {

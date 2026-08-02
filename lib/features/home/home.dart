@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/services/firebase_service.dart';
 import '../../core/services/local_service.dart';
+import '../../core/services/profile_image_service.dart';
 import '../../core/widgets/avatar.dart';
 import '../../core/widgets/bottomnav.dart';
 import '../../core/widgets/ai_plant_button.dart';
@@ -57,6 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> loadData() async {
     final currentUser = firebaseService.auth.currentUser;
+
+    await ProfileImageService.instance.init();
 
     if (widget.isAdmin || currentUser?.email == 'adminCookBook@gmail.com') {
       username = 'Admin';
@@ -141,6 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
         UserAvatar(
           username: username,
           isLoading: isLoading,
+          useCurrentUserAvatar: true,
           onTap: () => _scaffoldKey.currentState?.openDrawer(),
         ),
 
@@ -238,14 +242,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   selectedCategory = null;
                   return;
                 }
-
                 final selectedItem = categories.removeAt(index);
                 categories.insert(0, selectedItem);
 
                 selectedIndex = 0;
                 selectedCategory = categories[0]['name'];
               });
-
               _scrollController.animateTo(
                 0,
                 duration: const Duration(milliseconds: 300),
@@ -312,22 +314,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return StreamBuilder<List<Recipe>>(
       stream: firebaseService.streamPublishedRecipes(),
       builder: (context, snapshot) {
-
         print(snapshot.connectionState);
         print(snapshot.hasData);
         print(snapshot.hasError);
-
         if (snapshot.hasError) {
           print(snapshot.error);
           return Text(snapshot.error.toString());
         }
-
         if (!snapshot.hasData) {
           return const CircularProgressIndicator();
         }
-
         print("Recipe count = ${snapshot.data!.length}");
-
         return const Text("OK");
       },
     );
@@ -350,13 +347,10 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           _buildSectionTitle("Thịnh hành", showUpdate: true),
           _buildTrending(),
-
           _buildSectionTitle("Tìm kiếm gần đây"),
           _buildRecentSearch(),
-
           _buildSectionTitle("Các món đã xem gần đây"),
           _buildRecentViewed(),
-
           const SizedBox(height: 100),
         ],
       ),

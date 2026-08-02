@@ -14,7 +14,6 @@ class _SaveRecipeScreenState extends State<SaveRecipeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -37,7 +36,6 @@ class _SaveRecipeScreenState extends State<SaveRecipeScreen> {
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
         stream: _svc.getDraftRecipes(),
         builder: (context, snapshot) {
-
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
@@ -62,9 +60,7 @@ class _SaveRecipeScreenState extends State<SaveRecipeScreen> {
               ),
             );
           }
-
           final drafts = snapshot.data!.docs;
-
           return ListView.builder(
             padding: const EdgeInsets.all(16),
             itemCount: drafts.length,
@@ -105,7 +101,6 @@ class _SaveRecipeScreenState extends State<SaveRecipeScreen> {
                           ),
                         ),
                       ),
-
                       ElevatedButton(
                         onPressed: () {
                           Navigator.push(
@@ -117,11 +112,9 @@ class _SaveRecipeScreenState extends State<SaveRecipeScreen> {
                             ),
                           );
                         },
-
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                         ),
-
                         child: const Text(
                           "Chỉnh sửa",
                           style: TextStyle(

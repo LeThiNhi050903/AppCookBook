@@ -3,7 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'login.dart';
 import '../home/home.dart';
+import '../home/admin_home_screen.dart';
 import 'googlelogin.dart';
+import '../../core/services/firebase_service.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -55,12 +57,24 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     if (!mounted) return;
     setState(() => _isLoading = false);
     if (user != null) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
-        ),
-      );
+      final svc = FirebaseService();
+      // ensure we load persisted admin mode if present
+      await svc.loadAdminMode();
+      if (svc.isAdminUser) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const AdminHomeScreen(),
+          ),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+        );
+      }
     } else {
       showMessage("Google login failed");
     }
@@ -114,8 +128,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     prefixIcon: const Icon(Icons.email_outlined),
                     filled: true,
                     fillColor: Colors.white,
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 15),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 15),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25),
                     ),
@@ -141,9 +154,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       ),
                     ),
                     child: _isLoading
-                        ? const CircularProgressIndicator(
-                            color: Colors.white,
-                          )
+                        ? const CircularProgressIndicator(color: Colors.white,)
                         : const Text(
                             "GỬI",
                             style: TextStyle(
@@ -172,7 +183,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           if (_isLoading)
             Container(
-              color: Colors.black.withValues(alpha: 0.2),
+              color: Colors.black.withOpacity(0.2),
               child: const Center(
                 child: CircularProgressIndicator(),
               ),

@@ -20,7 +20,6 @@ class _RecipeMedia {
   final File? file;
   final String? url;
   final String type;
-
   const _RecipeMedia({
     this.file,
     this.url,
@@ -52,9 +51,7 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   ];
   final LayerLink _layerLink = LayerLink();
   OverlayEntry? _overlayEntry;
-  final List<TextEditingController> ingredientControllers = [
-    TextEditingController(),
-  ];
+  final List<TextEditingController> ingredientControllers = [TextEditingController(),];
   final List<TextEditingController> stepControllers = [TextEditingController()];
   final List<List<_RecipeMedia>> stepMedia = [[]];
 
@@ -67,7 +64,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         ? await _picker.pickVideo(source: source)
         : await _picker.pickImage(source: source);
     if (!mounted || picked == null) return;
-
     final media = _RecipeMedia(
       file: File(picked.path),
       url: null,
@@ -258,9 +254,7 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   @override
   void initState() {
     super.initState();
-
     _draftId = widget.draftId;
-
     if (_draftId != null) {
       _loadDraft();
     }
@@ -289,7 +283,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
     _servingsController.text = data["servings"] ?? "";
     selectedCategory = data["category"];
     _mainMedia.clear();
-
     if ((data["imageUrl"] ?? "").toString().isNotEmpty) {
       _mainMedia.add(
         _RecipeMedia(
@@ -298,7 +291,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         ),
       );
     }
-
     for (final c in ingredientControllers) {
       c.dispose();
     }
@@ -307,7 +299,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
     final ingredients = List<String>.from(
       data["ingredients"] ?? [],
     );
-
     if (ingredients.isEmpty) {
       ingredientControllers.add(TextEditingController());
     } else {
@@ -322,15 +313,12 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
     }
     stepControllers.clear();
     stepMedia.clear();
-
     final steps = List<String>.from(
       data["steps"] ?? [],
     );
-
     final medias = List<Map<String, dynamic>>.from(
       data["stepMedia"] ?? [],
     );
-
     if (steps.isEmpty) {
       stepControllers.add(TextEditingController());
       stepMedia.add([]);
@@ -339,18 +327,14 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         stepControllers.add(
           TextEditingController(text: steps[i]),
         );
-
         final List<_RecipeMedia> mediaList = [];
-
         final mediaData = medias.where(
           (e) => e["stepIndex"] == i,
         );
-
         for (final item in mediaData) {
           final media = List<Map<String, dynamic>>.from(
             item["media"] ?? [],
           );
-
           for (final m in media) {
             mediaList.add(
               _RecipeMedia(
@@ -360,7 +344,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
             );
           }
         }
-
         stepMedia.add(mediaList);
       }
     }
@@ -373,7 +356,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         .map((e) => e.text.trim())
         .where((e) => e.isNotEmpty)
         .toList();
-
     final recipeSteps = <RecipeStep>[];
       for (int i = 0; i < stepControllers.length; i++) {
         final description = stepControllers[i].text.trim();
@@ -411,7 +393,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
           .map((list) => list.map((m) => m.type).toList())
           .toList(),
     );
-
     if (!mounted) return;
     if (draftId != null) {
       _draftId = draftId;
@@ -420,7 +401,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
           content: Text("Đã lưu bản nháp"),
         ),
       );
-
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -447,7 +427,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
       );
       return;
     }
-
     final ingredientTexts = ingredientControllers
         .map((c) => c.text.trim())
         .where((t) => t.isNotEmpty)
@@ -465,7 +444,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
           ),
         );
       }
-
     final recipeId = await _svc.createRecipe(
       title: title,
       category: selectedCategory!,
@@ -489,7 +467,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
           .map((list) => list.map((m) => m.type).toList())
           .toList(),
     );
-
     if (!mounted) return;
     if (recipeId != null) {
       if (_draftId != null) {
@@ -579,7 +556,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                 ),
               );
             }
-
             if (value == 'status') {
               Navigator.push(
                 context,
@@ -829,7 +805,6 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                 ),
               ),
             ),
-
             ...stepMedia[index].asMap().entries.map(
               (e) => Stack(
                 children: [

@@ -87,6 +87,7 @@ class ProfileScreen extends StatelessWidget {
                       username: username,
                       isLoading: false,
                       radius: 26,
+                      useCurrentUserAvatar: true,
                     ),
 
                     const SizedBox(width: 12),

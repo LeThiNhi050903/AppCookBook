@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import '../../core/widgets/avatar.dart';
 import '../../data/models/comments.dart';
 
@@ -76,12 +75,8 @@ class CommentTile extends StatelessWidget {
                       child: Row(
                         children: [
                           Icon(
-                            liked
-                                ? Icons.favorite
-                                : Icons.favorite_border,
-                            color: liked
-                                ? Colors.red
-                                : Colors.grey,
+                            liked ? Icons.favorite : Icons.favorite_border,
+                            color: liked ? Colors.red : Colors.grey,
                             size: 20,
                           ),
                           const SizedBox(width: 4),

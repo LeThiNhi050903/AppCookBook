@@ -7,7 +7,6 @@ class CommentService {
   static final CommentService instance = CommentService._();
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
   CollectionReference<Map<String, dynamic>> _commentRef(
     String recipeId,
   ) {
@@ -54,9 +53,7 @@ class CommentService {
     required CommentModel comment,
   }) async {
     final uid = _auth.currentUser!.uid;
-
     final doc = _commentRef(recipeId).doc(comment.id);
-
     if (comment.likedUsers.contains(uid)) {
       await doc.update({
         "likedUsers": FieldValue.arrayRemove([uid]),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dantn_app_cookbook/features/home/home.dart';
+import 'package:dantn_app_cookbook/features/home/admin_home_screen.dart';
+import '../../core/services/firebase_service.dart';
 import 'package:dantn_app_cookbook/features/create_recipe/create_recipe.dart';
 import '../../features/storage/storage_screen.dart';
 
@@ -12,22 +14,27 @@ class AppBottomNav extends StatelessWidget {
 
   void _onItemTapped(BuildContext context, int index) {
     if (index == currentIndex) return;
-
     switch (index) {
       case 0:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (_) => const HomeScreen()),
-        );
+        final svc = FirebaseService();
+        if (svc.isAdminUser) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const AdminHomeScreen()),
+          );
+        } else {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const HomeScreen()),
+          );
+        }
         break;
-
       case 1:
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (_) => const StorageScreen()),
         );
         break;
-
       case 2:
         Navigator.push(
           context,

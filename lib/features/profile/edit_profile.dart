@@ -130,6 +130,7 @@ class _EditProfileScreenState
                     username: nameController.text,
                     isLoading: false,
                     radius: 42,
+                    useCurrentUserAvatar: true,
                   ),
                   Positioned(
                     right: 0,

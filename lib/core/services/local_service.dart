@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
 import '../../data/models/recipe.dart';
@@ -9,6 +10,12 @@ class LocalService {
   static const String _keyRecentViewed = 'recentViewed';
   static const String _keyAiNotes = 'aiNotes';
   static const String _keyAiChatHistory = 'aiChatHistory';
+
+  String _prefKey(String baseKey) {
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    return uid == null ? baseKey : '$baseKey:$uid';
+  }
+
   static Future<List<Recipe>> loadRecipesFromJson() async {
     try {
       final String response = await rootBundle.loadString('assets/json/recipe.json');
@@ -62,7 +69,7 @@ class LocalService {
 
   Future<List<Map<String, String>>> getAiNotes() async {
     final prefs = await SharedPreferences.getInstance();
-    final raw = prefs.getStringList(_keyAiNotes) ?? [];
+    final raw = prefs.getStringList(_prefKey(_keyAiNotes)) ?? [];
     return raw.map((e) {
       try {
         final decoded = jsonDecode(e);
@@ -78,7 +85,8 @@ class LocalService {
 
   Future<void> saveAiNote(String content, {String? userQuestion}) async {
     final prefs = await SharedPreferences.getInstance();
-    List<String> list = prefs.getStringList(_keyAiNotes) ?? [];
+    final key = _prefKey(_keyAiNotes);
+    List<String> list = prefs.getStringList(key) ?? [];
     final title = userQuestion ?? _extractAiNoteTitle(content);
     final noteData = jsonEncode({'title': title, 'content': content});
     list.removeWhere((item) {
@@ -94,21 +102,22 @@ class LocalService {
     });
     list.insert(0, noteData);
     if (list.length > 50) list = list.sublist(0, 50);
-    await prefs.setStringList(_keyAiNotes, list);
+    await prefs.setStringList(key, list);
   }
 
   Future<void> deleteAiNoteAt(int index) async {
     final prefs = await SharedPreferences.getInstance();
-    List<String> list = prefs.getStringList(_keyAiNotes) ?? [];
+    final key = _prefKey(_keyAiNotes);
+    List<String> list = prefs.getStringList(key) ?? [];
     if (index >= 0 && index < list.length) {
       list.removeAt(index);
-      await prefs.setStringList(_keyAiNotes, list);
+      await prefs.setStringList(key, list);
     }
   }
 
   Future<List<List<Map<String, String>>>> getAiChatHistory() async {
     final prefs = await SharedPreferences.getInstance();
-    final raw = prefs.getStringList(_keyAiChatHistory) ?? [];
+    final raw = prefs.getStringList(_prefKey(_keyAiChatHistory)) ?? [];
     return raw.map((item) {
       try {
         final decoded = jsonDecode(item);
@@ -129,8 +138,9 @@ class LocalService {
 
   Future<void> saveAiChatHistory(List<List<Map<String, String>>> chatHistory) async {
     final prefs = await SharedPreferences.getInstance();
+    final key = _prefKey(_keyAiChatHistory);
     final raw = chatHistory.map((chat) => jsonEncode(chat)).toList();
-    await prefs.setStringList(_keyAiChatHistory, raw);
+    await prefs.setStringList(key, raw);
   }
 
   String _extractAiNoteTitle(String content) {

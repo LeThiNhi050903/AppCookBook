@@ -44,7 +44,6 @@ class Sidebar extends StatelessWidget {
                       String title = chat.isNotEmpty 
                           ? chat.firstWhere((m) => m["role"] == "user")["content"]!
                           : "Chat trống";
-
                       return ListTile(
                         leading: const Icon(Icons.chat_bubble_outline, size: 20),
                         title: Text(

@@ -4,7 +4,6 @@ import '../../data/models/recipe.dart';
 class RecipeCard extends StatelessWidget {
   final Recipe recipe;
   final VoidCallback? onTap;
-
   const RecipeCard({
     super.key,
     required this.recipe,
@@ -33,7 +32,6 @@ class RecipeCard extends StatelessWidget {
                 ),
               ),
             ),
-
             Positioned(
               left: 0,
               right: 0,

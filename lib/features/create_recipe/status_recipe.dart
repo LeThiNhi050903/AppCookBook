@@ -7,7 +7,6 @@ class StatusRecipeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -26,7 +25,6 @@ class StatusRecipeScreen extends StatelessWidget {
           ),
         ),
       ),
-
       body: const Center(
         child: Text(
           "Chưa có đơn nào",

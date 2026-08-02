@@ -8,10 +8,8 @@ class GoogleAuthService {
 
   Future<User?> signInWithGoogle() async {
     try {
-      final GoogleSignInAccount googleUser =
-          await GoogleSignIn.instance.authenticate();
-      final GoogleSignInAuthentication googleAuth =
-          googleUser.authentication;
+      final GoogleSignInAccount googleUser = await GoogleSignIn.instance.authenticate();
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
       if (googleAuth.idToken == null) {
         _logger.w("Google login failed: missing ID token");
         return null;
@@ -19,8 +17,7 @@ class GoogleAuthService {
       final credential = GoogleAuthProvider.credential(
         idToken: googleAuth.idToken,
       );
-      UserCredential userCredential =
-          await _auth.signInWithCredential(credential);
+      UserCredential userCredential = await _auth.signInWithCredential(credential);
       _logger.i("Google login success: ${userCredential.user?.email}");
       return userCredential.user;
     } catch (e) {

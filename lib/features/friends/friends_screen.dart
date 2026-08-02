@@ -39,7 +39,6 @@ class _FriendsScreenState extends State<FriendsScreen> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     const primaryOrange = Colors.orange;
-
     return Scaffold(
       backgroundColor: Colors.white, 
       appBar: AppBar(
@@ -106,8 +105,7 @@ class _FriendsScreenState extends State<FriendsScreen> with SingleTickerProvider
                             ),
                           );
                         },
-                      ),
-                
+                      ),            
                 _requests.isEmpty
                     ? const Center(
                         child: Text(
@@ -152,15 +150,13 @@ class _FriendsScreenState extends State<FriendsScreen> with SingleTickerProvider
                                       ),
                                     ),
                                   ],
-                                ),
-                                
+                                ),                              
                                 const SizedBox(height: 16), 
                                 Row(
-                                  children: [
-                                 
+                                  children: [                                
                                     Expanded(
                                       child: SizedBox(
-                                        height: 40, // Độ cao vừa vặn cho nút bấm di động
+                                        height: 40,
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: primaryOrange,
@@ -174,8 +170,7 @@ class _FriendsScreenState extends State<FriendsScreen> with SingleTickerProvider
                                             final messenger = ScaffoldMessenger.of(context);
                                             final ok = await _svc.acceptFriendRequest(u['uid']);
                                             if (ok) {
-                                              messenger.showSnackBar(
-                                                  const SnackBar(content: Text('Đã chấp nhận lời mời')));
+                                              messenger.showSnackBar(const SnackBar(content: Text('Đã chấp nhận lời mời')));
                                               await _load();
                                             } else {
                                               messenger.showSnackBar(
@@ -188,11 +183,8 @@ class _FriendsScreenState extends State<FriendsScreen> with SingleTickerProvider
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    
-                                    const SizedBox(width: 12), // Khoảng cách ngang giữa 2 nút
-                                    
-                                    // Nút Từ chối
+                                    ),                                  
+                                    const SizedBox(width: 12), 
                                     Expanded(
                                       child: SizedBox(
                                         height: 40,
@@ -208,12 +200,10 @@ class _FriendsScreenState extends State<FriendsScreen> with SingleTickerProvider
                                             final messenger = ScaffoldMessenger.of(context);
                                             final ok = await _svc.cancelFriendRequest(u['uid']);
                                             if (ok) {
-                                              messenger.showSnackBar(
-                                                  const SnackBar(content: Text('Đã từ chối lời mời')));
+                                              messenger.showSnackBar(const SnackBar(content: Text('Đã từ chối lời mời')));
                                               await _load();
                                             } else {
-                                              messenger.showSnackBar(
-                                                  SnackBar(content: Text(_svc.lastError ?? 'Lỗi')));
+                                              messenger.showSnackBar(SnackBar(content: Text(_svc.lastError ?? 'Lỗi')));
                                             }
                                           },
                                           child: const Text(

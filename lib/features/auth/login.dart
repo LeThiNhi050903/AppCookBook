@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../../core/services/profile_image_service.dart';
 import '../../core/utils/auth_utils.dart';
+import '../../core/services/firebase_service.dart';
 import 'googlelogin.dart';
 import 'signup.dart';
 import '../home/home.dart';
@@ -49,6 +51,8 @@ class _LoginPageState extends State<LoginPage> {
     try {
       final isAdmin = isAdminCredentials(email, password);
       if (isAdmin) {
+        final svc = FirebaseService();
+        await svc.setAdminMode(true);
         await FirebaseAuth.instance.signOut();
         if (!mounted) return;
         setState(() => _isLoading = false);
@@ -59,10 +63,11 @@ class _LoginPageState extends State<LoginPage> {
         return;
       }
 
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
+      await ProfileImageService.instance.init();
       if (!mounted) return;
       setState(() {
         _isLoading = false;

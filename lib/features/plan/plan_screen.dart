@@ -37,7 +37,7 @@ class _PlanScreenState extends State<PlanScreen> {
           ),
         ),
       ),
-      body: isWeekView ? const PlanWeek() : const PlanMonth(),
+      body: isWeekView ? PlanWeek() : const PlanMonth(),
     );
   }
 

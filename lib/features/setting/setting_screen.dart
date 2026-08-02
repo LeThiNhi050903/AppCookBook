@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '../../core/services/firebase_service.dart';
 import '../../features/notification/notification_screen.dart';
 import '../../core/widgets/bottomnav.dart';
 import 'new_password.dart';
@@ -53,6 +54,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _handleLogout() async {
     try {
       await FirebaseAuth.instance.signOut();
+
+      // clear admin mode flag when signing out
+      try {
+        final svc = FirebaseService();
+        await svc.setAdminMode(false);
+      } catch (_) {}
 
       if (!mounted) return;
 
@@ -140,7 +147,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
+            color: Colors.black.withOpacity(0.08),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -280,7 +287,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     backgroundColor: Colors.orange,
                     elevation: 4,
                     shadowColor:
-                        Colors.black.withValues(alpha: 0.2),
+                      Colors.black.withOpacity(0.2),
                     shape: RoundedRectangleBorder(
                       borderRadius:
                           BorderRadius.circular(30),

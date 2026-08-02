@@ -5,6 +5,8 @@ import 'ai_note.dart';
 import '../../core/widgets/ai_plant_button.dart';
 import '../../core/widgets/bottomnav.dart';
 import '../home/home.dart';
+import '../home/admin_home_screen.dart';
+import '../../core/services/firebase_service.dart';
 
 class StorageScreen extends StatefulWidget {
   const StorageScreen({super.key});
@@ -81,9 +83,14 @@ class _StorageScreenState extends State<StorageScreen> with SingleTickerProvider
         children: [
           IconButton(
             icon: const Icon(Icons.arrow_back),
-            onPressed: () => Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => const HomeScreen())
-            ),
+            onPressed: () {
+              final svc = FirebaseService();
+              if (svc.isAdminUser) {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AdminHomeScreen()));
+              } else {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+              }
+            },
           ),
           Expanded(
             child: Container(

@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/utils/auth_utils.dart';
 import '../../data/models/recipe.dart';
 
@@ -17,12 +18,34 @@ class FirebaseService {
   CollectionReference<Map<String, dynamic>> _savedRecipesRef(String uid) {
     return _usersCollection.doc(uid).collection('savedRecipes');
   }
-  CollectionReference<Map<String, dynamic>> get _drafts => _db.collection('draft_recipes');
+  // draft collection is accessed directly where needed
   String? lastError;
+  static bool _adminModeCache = false;
 
   bool get isAdminUser {
     final email = _auth.currentUser?.email;
-    return email != null && isAdminEmail(email);
+    return _adminModeCache || (email != null && isAdminEmail(email));
+  }
+
+  Future<void> setAdminMode(bool enabled) async {
+    _adminModeCache = enabled;
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('admin_mode', enabled);
+    } catch (e) {
+      debugPrint('setAdminMode error: $e');
+    }
+  }
+
+  Future<bool> loadAdminMode() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _adminModeCache = prefs.getBool('admin_mode') ?? false;
+      return _adminModeCache;
+    } catch (e) {
+      debugPrint('loadAdminMode error: $e');
+      return _adminModeCache;
+    }
   }
 
   Future<Map<String, dynamic>?> getUserProfile() async {
@@ -76,16 +99,13 @@ Stream<List<Recipe>> streamPublishedRecipes() {
       .orderBy('createdAt', descending: true)
       .snapshots()
       .map((snapshot) {
-
         debugPrint(
             "========== Published Recipes ==========");
         debugPrint(
             "Docs: ${snapshot.docs.length}");
-
         for (final doc in snapshot.docs) {
           debugPrint(doc.data().toString());
         }
-
         return snapshot.docs
             .map((doc) => Recipe.fromFirestore(doc))
             .toList();
@@ -99,11 +119,7 @@ Stream<List<Recipe>> streamPublishedRecipes() {
         .map((snapshot) {
           final recipes = snapshot.docs
               .map((e) => Recipe.fromFirestore(e))
-              .where(
-                (recipe) =>
-                    recipe.category.trim().toLowerCase() ==
-                    category.trim().toLowerCase(),
-              )
+              .where((recipe) => recipe.category.trim().toLowerCase() == category.trim().toLowerCase(),)
               .toList();
           recipes.sort(
             (a, b) => b.createdAt.compareTo(a.createdAt),
@@ -433,7 +449,6 @@ Stream<List<Recipe>> streamPublishedRecipes() {
       final batch = _db.batch();
       final myRef = _db.collection('users').doc(myUid);
       final targetRef = _db.collection('users').doc(targetUid);
-
       batch.update(myRef, {
         'followingCount': FieldValue.increment(1),
         'following': FieldValue.arrayUnion([targetUid])
@@ -459,7 +474,6 @@ Stream<List<Recipe>> streamPublishedRecipes() {
       final batch = _db.batch();
       final myRef = _db.collection('users').doc(myUid);
       final targetRef = _db.collection('users').doc(targetUid);
-
       batch.update(myRef, {
         'followingCount': FieldValue.increment(-1),
         'following': FieldValue.arrayRemove([targetUid])
@@ -553,129 +567,114 @@ Stream<List<Recipe>> streamPublishedRecipes() {
   }
 
   Future<String?> createRecipe({
-  required String title,
-  required String category,
-  required String servings,
-  required List<String> ingredients,
-  required List<RecipeStep> steps,
-  required List<File> mainMediaFiles,
-  required List<String> mainMediaTypes,
-  required List<List<File>> stepMediaFiles,
-  required List<List<String>> stepMediaTypes,
-  String status = 'published',
-}) async {
-  try {
-    final current = _auth.currentUser;
-    if (current == null) return null;
-    final recipeRef = _recipes.doc();
-    final recipeId = recipeRef.id;
-
-    String? mainMediaUrl;
-    String? mainMediaType;
-
-    // Upload ảnh/video đại diện
-    if (mainMediaFiles.isNotEmpty) {
-      final uploaded = await _uploadMediaFiles(
-        files: mainMediaFiles,
-        types: mainMediaTypes,
-        recipeId: recipeId,
-        userId: current.uid,
-        folder: 'main',
-      );
-
-      if (uploaded.isNotEmpty) {
-        mainMediaUrl = uploaded.first['url'] as String?;
-        mainMediaType = uploaded.first['type'] as String?;
+    required String title,
+    required String category,
+    required String servings,
+    required List<String> ingredients,
+    required List<RecipeStep> steps,
+    required List<File> mainMediaFiles,
+    required List<String> mainMediaTypes,
+    required List<List<File>> stepMediaFiles,
+    required List<List<String>> stepMediaTypes,
+    String status = 'published',
+  }) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return null;
+      final recipeRef = _recipes.doc();
+      final recipeId = recipeRef.id;
+      String? mainMediaUrl;
+      String? mainMediaType;
+      if (mainMediaFiles.isNotEmpty) {
+        final uploaded = await _uploadMediaFiles(
+          files: mainMediaFiles,
+          types: mainMediaTypes,
+          recipeId: recipeId,
+          userId: current.uid,
+          folder: 'main',
+        );
+        if (uploaded.isNotEmpty) {
+          mainMediaUrl = uploaded.first['url'] as String?;
+          mainMediaType = uploaded.first['type'] as String?;
+        }
       }
-    }
-
-    // Upload media từng bước
-    final stepMediaData = <Map<String, dynamic>>[];
-
-    for (int i = 0; i < stepMediaFiles.length; i++) {
-      if (stepMediaFiles[i].isEmpty) continue;
-      final uploaded = await _uploadMediaFiles(
-        files: stepMediaFiles[i],
-        types: stepMediaTypes[i],
-        recipeId: recipeId,
-        userId: current.uid,
-        folder: 'step_$i',
-      );
-      stepMediaData.add({
-        "stepIndex": i,
-        "media": uploaded,
+      final stepMediaData = <Map<String, dynamic>>[];
+      for (int i = 0; i < stepMediaFiles.length; i++) {
+        if (stepMediaFiles[i].isEmpty) continue;
+        final uploaded = await _uploadMediaFiles(
+          files: stepMediaFiles[i],
+          types: stepMediaTypes[i],
+          recipeId: recipeId,
+          userId: current.uid,
+          folder: 'step_$i',
+        );
+        stepMediaData.add({
+          "stepIndex": i,
+          "media": uploaded,
+        });
+      }
+      final recipeSteps = <Map<String, dynamic>>[];
+      for (int i = 0; i < steps.length; i++) {
+        recipeSteps.add({
+          "stepNumber": i + 1,
+          "title": "Bước ${i + 1}",
+          "description": steps[i],
+          "images": stepMediaData
+              .where((e) => e["stepIndex"] == i)
+              .expand((e) => (e["media"] as List))
+              .map((e) => e["url"])
+              .toList(),
+        });
+      }
+      final userDoc = await _users.doc(current.uid).get();
+      final userData = userDoc.data() ?? {};
+      final String authorName =
+          (userData["username"] as String?)?.trim().isNotEmpty == true
+              ? userData["username"]
+              : (current.displayName ?? "Người dùng");
+      final String authorAvatar =
+          (userData["avatarUrl"] as String?)?.trim().isNotEmpty == true
+              ? userData["avatarUrl"]
+              : (current.photoURL ?? "");
+      final String authorLocation =
+          (userData["location"] as String?)?.trim().isNotEmpty == true
+              ? userData["location"]
+              : "Việt Nam";
+      await recipeRef.set({
+        "id": recipeId,
+        "name": title,
+        "title": title,
+        "category": category,
+        "thumbnail": mainMediaUrl ?? "",
+        "image": mainMediaUrl ?? "",
+        "imageUrl": mainMediaUrl ?? "",
+        "ingredientTitle": "Nguyên liệu",
+        "ingredients": ingredients,
+        "steps": recipeSteps,
+        "servings": servings,
+        "authorId": current.uid,
+        "authorName": authorName,
+        "authorLocation": authorLocation,
+        "authorAvatar": authorAvatar,
+        "userId": current.uid,
+        "userName": authorName,
+        "userAvatar": authorAvatar,
+        "isAdmin": false,
+        "status": status,
+        "mainMediaType": mainMediaType ?? "",
+        "stepMedia": stepMediaData,
+        "createdAt": Timestamp.now(),
+        "updatedAt": Timestamp.now(),
+        "submittedAt": Timestamp.now(),
+        "week": status == "published" ? getCurrentWeek() : 0,
       });
+      return recipeId;
+    } catch (e) {
+      debugPrint("Lỗi createRecipe: $e");
+      lastError = e.toString();
+      return null;
     }
-
-    // Chuyển các bước thành đúng cấu trúc RecipeStep
-    final recipeSteps = <Map<String, dynamic>>[];
-    for (int i = 0; i < steps.length; i++) {
-      recipeSteps.add({
-        "stepNumber": i + 1,
-        "title": "Bước ${i + 1}",
-        "description": steps[i],
-        "images": stepMediaData
-            .where((e) => e["stepIndex"] == i)
-            .expand((e) => (e["media"] as List))
-            .map((e) => e["url"])
-            .toList(),
-      });
-    }
-
-    final userDoc = await _users.doc(current.uid).get();
-    final userData = userDoc.data() ?? {};
-    final String authorName =
-        (userData["username"] as String?)?.trim().isNotEmpty == true
-            ? userData["username"]
-            : (current.displayName ?? "Người dùng");
-
-    final String authorAvatar =
-        (userData["avatarUrl"] as String?)?.trim().isNotEmpty == true
-            ? userData["avatarUrl"]
-            : (current.photoURL ?? "");
-
-    final String authorLocation =
-        (userData["location"] as String?)?.trim().isNotEmpty == true
-            ? userData["location"]
-            : "Việt Nam";
-
-    await recipeRef.set({
-      "id": recipeId,
-      "name": title,
-      "title": title,
-      "category": category,
-      "thumbnail": mainMediaUrl ?? "",
-      "image": mainMediaUrl ?? "",
-      "imageUrl": mainMediaUrl ?? "",
-      "ingredientTitle": "Nguyên liệu",
-      "ingredients": ingredients,
-      "steps": recipeSteps,
-      "servings": servings,
-      "authorId": current.uid,
-      "authorName": authorName,
-      "authorLocation": authorLocation,
-      "authorAvatar": authorAvatar,
-      "userId": current.uid,
-      "userName": authorName,
-      "userAvatar": authorAvatar,
-      "isAdmin": false,
-      "status": status,
-      "mainMediaType": mainMediaType ?? "",
-      "stepMedia": stepMediaData,
-      "createdAt": Timestamp.now(),
-      "updatedAt": Timestamp.now(),
-      "submittedAt": Timestamp.now(),
-      "week": status == "published"
-          ? getCurrentWeek()
-          : 0,
-    });
-    return recipeId;
-  } catch (e) {
-    debugPrint("Lỗi createRecipe: $e");
-    lastError = e.toString();
-    return null;
   }
-}
   Future<bool> updateRecipeStatus(
     String recipeId,
     String status, {
@@ -721,7 +720,6 @@ Stream<List<Recipe>> streamPublishedRecipes() {
       final draftRef = draftId == null
           ? _db.collection('draft_recipes').doc()
           : _db.collection('draft_recipes').doc(draftId);
-
       final id = draftRef.id;
       String? mainMediaUrl;
       String? mainMediaType;
@@ -784,26 +782,112 @@ Stream<List<Recipe>> streamPublishedRecipes() {
 
   Stream<QuerySnapshot<Map<String, dynamic>>> getDraftRecipes() {
     final current = _auth.currentUser;
+    if (current == null) return const Stream.empty();
     return _db
         .collection('draft_recipes')
-        //.where('userId', isEqualTo: current!.uid)
-        //.orderBy('updatedAt', descending: true)
+        .where('userId', isEqualTo: current.uid)
+        .orderBy('updatedAt', descending: true)
         .snapshots();
   }
 
-  Future<DocumentSnapshot<Map<String, dynamic>>> getDraft(
-      String draftId) async {
-    return await _db
-        .collection('draft_recipes')
-        .doc(draftId)
-        .get();
+  Future<DocumentSnapshot<Map<String, dynamic>>> getDraft(String draftId) async {
+    final doc = await _db.collection('draft_recipes').doc(draftId).get();
+    final current = _auth.currentUser;
+    if (current == null) return doc;
+    final data = doc.data();
+    if (data == null) return doc;
+    if (data['userId'] == current.uid) {
+      return doc;
+    }
+    // If not owner, return an empty DocumentSnapshot-like object by throwing or returning original; here return original but caller should check ownership
+    return doc;
   }
 
   Future<void> deleteDraft(String draftId) async {
-    await _db
-        .collection('draft_recipes')
-        .doc(draftId)
-        .delete();
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return;
+      final docRef = _db.collection('draft_recipes').doc(draftId);
+      final doc = await docRef.get();
+      if (!doc.exists) return;
+      final data = doc.data();
+      if (data != null && data['userId'] == current.uid) {
+        await docRef.delete();
+      }
+    } catch (e) {
+      debugPrint('Lỗi deleteDraft: $e');
+    }
+  }
+
+  // Plans: stored under users/{uid}/plans to ensure per-user isolation
+  CollectionReference<Map<String, dynamic>> _plansRef(String uid) {
+    return _db.collection('users').doc(uid).collection('plans');
+  }
+
+  Stream<List<Map<String, dynamic>>> streamUserPlans(String uid) {
+    return _plansRef(uid)
+        .orderBy('date', descending: false)
+        .snapshots()
+        .map((snap) => snap.docs.map((d) {
+              final data = Map<String, dynamic>.from(d.data());
+              data['id'] = d.id;
+              return data;
+            }).toList());
+  }
+
+  Future<String?> savePlan({
+    String? planId,
+    required String recipeId,
+    required DateTime date,
+    required String meal,
+    required int quantity,
+  }) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return null;
+      final ref = planId == null
+          ? _plansRef(current.uid).doc()
+          : _plansRef(current.uid).doc(planId);
+      final id = ref.id;
+      await ref.set({
+        'recipeId': recipeId,
+        'date': Timestamp.fromDate(DateTime(date.year, date.month, date.day)),
+        'meal': meal,
+        'quantity': quantity,
+        'userId': current.uid,
+        'updatedAt': Timestamp.now(),
+      }, SetOptions(merge: true));
+      return id;
+    } catch (e) {
+      debugPrint('Lỗi savePlan: $e');
+      lastError = e.toString();
+      return null;
+    }
+  }
+
+  Future<void> deletePlan(String planId) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return;
+      await _plansRef(current.uid).doc(planId).delete();
+    } catch (e) {
+      debugPrint('Lỗi deletePlan: $e');
+    }
+  }
+
+  Future<Map<String, dynamic>?> getPlan(String planId) async {
+    try {
+      final current = _auth.currentUser;
+      if (current == null) return null;
+      final doc = await _plansRef(current.uid).doc(planId).get();
+      if (!doc.exists) return null;
+      final data = Map<String, dynamic>.from(doc.data()!);
+      data['id'] = doc.id;
+      return data;
+    } catch (e) {
+      debugPrint('Lỗi getPlan: $e');
+      return null;
+    }
   }
 
   Future<List<Map<String, dynamic>>> _uploadMediaFiles({

@@ -40,10 +40,7 @@ class Recipe {
       ingredientTitle: json['ingredientTitle'] ?? '',
       ingredients: List<String>.from(json['ingredients'] ?? []),
       steps: (json['steps'] as List<dynamic>?)
-              ?.map(
-                (step) =>
-                    RecipeStep.fromJson(Map<String, dynamic>.from(step)),
-              )
+              ?.map((step) => RecipeStep.fromJson(Map<String, dynamic>.from(step)),)
               .toList() ??
           [],
       authorId: json['authorId'] ?? "admin",
@@ -68,10 +65,7 @@ class Recipe {
       ingredientTitle: data['ingredientTitle'] ?? 'Nguyên liệu',
       ingredients: List<String>.from(data['ingredients'] ?? []),
       steps: (data['steps'] as List<dynamic>?)
-              ?.map(
-                (step) =>
-                    RecipeStep.fromJson(Map<String, dynamic>.from(step)),
-              )
+              ?.map((step) =>RecipeStep.fromJson(Map<String, dynamic>.from(step)),)
               .toList() ??
           [],
       authorId: data['authorId'] ?? data['userId'] ?? 'admin',
