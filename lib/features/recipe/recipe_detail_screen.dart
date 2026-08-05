@@ -6,10 +6,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../core/widgets/avatar.dart';
 import '../comments/comment_screen.dart';
+import '../../core/services/firebase_service.dart';
 
 class RecipeDetailScreen extends StatefulWidget {
   final Recipe recipe;
-
   const RecipeDetailScreen({
     super.key,
     required this.recipe,
@@ -21,12 +21,21 @@ class RecipeDetailScreen extends StatefulWidget {
 }
 
 class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
+  final FirebaseService firebaseService = FirebaseService();
   late final Recipe recipe;
 
   @override
   void initState() {
     super.initState();
     recipe = widget.recipe;
+    _saveViewedHistory();
+  }
+  Future<void> _saveViewedHistory() async {
+    try {
+      await firebaseService.saveRecentViewed(recipe.id);
+    } catch (e) {
+      debugPrint("Save viewed failed: $e");
+    }
   }
 
   @override

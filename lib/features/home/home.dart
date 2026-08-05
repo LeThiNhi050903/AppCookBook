@@ -10,6 +10,7 @@ import 'tabhome.dart';
 import '../../data/models/recipe.dart';
 import '../../core/widgets/recipe_card.dart';
 import '../recipe/recipe_detail_screen.dart';
+import 'trending_recipe_picker_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isAdmin;
@@ -25,6 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
   final LocalService localService = LocalService();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final ScrollController _scrollController = ScrollController();
+  final TextEditingController _searchController = TextEditingController();
+  Future<List<Recipe>>? _searchFuture;
+  String _searchQuery = '';
   String username = "User";
   bool isLoading = true;
   int selectedIndex = -1;
@@ -58,15 +62,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> loadData() async {
     final currentUser = firebaseService.auth.currentUser;
-
     await ProfileImageService.instance.init();
-
     if (widget.isAdmin || currentUser?.email == 'adminCookBook@gmail.com') {
       username = 'Admin';
       if (mounted) setState(() => isLoading = false);
       return;
     }
-
     final userData = await firebaseService.getUserProfile();
     if (userData != null && userData['username'] != null) {
       username = userData['username'].toString();
@@ -81,8 +82,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    _scrollController.dispose(); 
+    _scrollController.dispose();
+    _searchController.dispose();
     super.dispose();
+  }
+
+  void _onSearchChanged(String value) {
+    final query = value.trim();
+    setState(() {
+      _searchQuery = query;
+      if (query.isEmpty) {
+        _searchFuture = null;
+      } else {
+        _searchFuture = firebaseService.searchPublishedRecipes(query);
+      }
+    });
+  }
+  Future<void> _openRecipeDetail(Recipe recipe) async {
+    await firebaseService.saveRecentViewed(recipe.id);
+    if (!mounted) return;
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => RecipeDetailScreen(
+          recipe: recipe,
+        ),
+      ),
+    );
   }
 
   @override
@@ -99,9 +125,11 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 _buildFixedTopSection(),
                 Expanded(
-                  child: selectedCategory == null
-                    ? _buildHomeContent()
-                    : _buildCategoryContent(selectedCategory!),
+                  child: _searchQuery.isNotEmpty
+                    ? _buildSearchResults()
+                    : (selectedCategory == null
+                        ? _buildHomeContent()
+                        : _buildCategoryContent(selectedCategory!)),
                 ),
               ],
             ),
@@ -147,13 +175,11 @@ class _HomeScreenState extends State<HomeScreen> {
           useCurrentUserAvatar: true,
           onTap: () => _scaffoldKey.currentState?.openDrawer(),
         ),
-
         const SizedBox(width: 12),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Text(
                 username,
                 maxLines: 1,
@@ -163,7 +189,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               Text(
                 widget.isAdmin ? "Quản trị viên" : "Xin chào!",
                 style: TextStyle(
@@ -174,7 +199,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-
         if (!widget.isAdmin)
           IconButton(
             icon: const Icon(
@@ -209,9 +233,26 @@ class _HomeScreenState extends State<HomeScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: TextField(
+        controller: _searchController,
+        onChanged: _onSearchChanged,
+        onSubmitted: (value) async {
+          final keyword = value.trim();
+          if (keyword.isNotEmpty) {
+            await firebaseService.saveRecentSearch(keyword);
+          }
+        },
         decoration: InputDecoration(
           hintText: "Nhập tên món ăn...",
           prefixIcon: const Icon(Icons.search),
+          suffixIcon: _searchQuery.isNotEmpty
+              ? IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () {
+                    _searchController.clear();
+                    _onSearchChanged('');
+                  },
+                )
+              : null,
           filled: true,
           fillColor: Colors.grey.shade100,
           contentPadding: EdgeInsets.zero,
@@ -221,6 +262,61 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildSearchResults() {
+    return FutureBuilder<List<Recipe>>(
+      future: _searchFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError) {
+          return Center(child: Text('Lỗi tìm kiếm: ${snapshot.error}'));
+        }
+        final recipes = snapshot.data ?? [];
+        if (recipes.isEmpty) {
+          return const Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+              child: Text(
+                'Không tìm thấy công thức phù hợp.',
+                style: TextStyle(color: Colors.grey, fontSize: 16),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          );
+        }
+        return GridView.builder(
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 12,
+            bottom: 130,
+          ),
+          itemCount: recipes.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 1.45,
+          ),
+          itemBuilder: (context, index) {
+            return RecipeCard(
+              recipe: recipes[index],
+              onTap: () async {
+                await firebaseService.saveRecentSearch(
+                  _searchController.text.trim(),
+                );
+                await _openRecipeDetail(
+                  recipes[index],
+                );
+              },
+            );
+          },
+        );
+      },
     );
   }
 
@@ -244,7 +340,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
                 final selectedItem = categories.removeAt(index);
                 categories.insert(0, selectedItem);
-
                 selectedIndex = 0;
                 selectedCategory = categories[0]['name'];
               });
@@ -294,17 +389,34 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildSectionTitle(String title, {bool showUpdate = false}) {
+  Widget _buildSectionTitle(
+    String title, {
+    bool showUpdate = false,
+  }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 12,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title,
-              style:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           if (showUpdate)
-            const Text("Cập nhật 04:30", style: TextStyle(fontSize: 12, color: Colors.black)),
+            TextButton.icon(
+              onPressed: _showTrendingPicker,
+              icon: const Icon(
+                Icons.edit,
+                size: 18,
+              ),
+              label: const Text("Cập nhật"),
+            ),
         ],
       ),
     );
@@ -312,40 +424,152 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildTrending() {
     return StreamBuilder<List<Recipe>>(
-      stream: firebaseService.streamPublishedRecipes(),
+      stream: firebaseService.streamFeaturedRecipes(),
       builder: (context, snapshot) {
-        print(snapshot.connectionState);
-        print(snapshot.hasData);
-        print(snapshot.hasError);
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
         if (snapshot.hasError) {
-          print(snapshot.error);
-          return Text(snapshot.error.toString());
+          return Center(
+            child: Text(snapshot.error.toString()),
+          );
         }
-        if (!snapshot.hasData) {
-          return const CircularProgressIndicator();
+        final recipes = snapshot.data ?? [];
+        if (recipes.isEmpty) {
+          return const Padding(
+            padding: EdgeInsets.all(16),
+            child: Text(
+              "Chưa có món thịnh hành",
+            ),
+          );
         }
-        print("Recipe count = ${snapshot.data!.length}");
-        return const Text("OK");
+        return SizedBox(
+          height: 200,
+          child: GridView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            itemCount: recipes.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
+              childAspectRatio: 1.45,
+            ),
+            itemBuilder: (_, index) {
+              return RecipeCard(
+                recipe: recipes[index],
+                onTap: () async {
+                  await _openRecipeDetail(
+                    recipes[index],
+                  );
+                },
+              );
+            },
+          ),
+        );
       },
     );
   }
 
-  Widget _buildRecentSearch() => const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Text("Chưa có tìm kiếm",
-          style: TextStyle(color: Colors.grey)));
+  Widget _buildRecentSearch() {
+    return StreamBuilder<List<String>>(
+      stream: firebaseService.streamRecentSearch(),
+      builder: (context, snapshot) {
+        final searches = snapshot.data ?? [];
+        if (searches.isEmpty) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              "Chưa có tìm kiếm",
+              style: TextStyle(color: Colors.grey),
+            ),
+          );
+        }
+        return SizedBox(
+          height: 42,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            itemCount: searches.length,
+            separatorBuilder: (_, _) => const SizedBox(width: 8),
+            itemBuilder: (_, index) {
+              final keyword = searches[index];
+              return ActionChip(
+                label: Text(keyword),
+                onPressed: () {
+                  _searchController.text = keyword;
+                  _onSearchChanged(keyword);
+                },
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
 
-  Widget _buildRecentViewed() => const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Text("Bạn chưa xem món nào",
-          style: TextStyle(color: Colors.grey)));
-
+  Widget _buildRecentViewed() {
+    return StreamBuilder<List<Recipe>>(
+      stream: firebaseService.streamRecentViewedRecipes(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20),
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+        if (snapshot.hasError) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(snapshot.error.toString()),
+          );
+        }
+        final recipes = snapshot.data ?? [];
+        if (recipes.isEmpty) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              "Bạn chưa xem món nào",
+              style: TextStyle(color: Colors.grey),
+            ),
+          );
+        }
+        return SizedBox(
+          height: 100,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            physics: const BouncingScrollPhysics(),
+            itemCount: recipes.length,
+            itemBuilder: (context, index) {
+              return SizedBox(
+                width: 150,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: RecipeCard(
+                    recipe: recipes[index],
+                    onTap: () async {
+                      await _openRecipeDetail(recipes[index]);
+                    },
+                  ),
+                ),
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
   Widget _buildHomeContent() {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildSectionTitle("Thịnh hành", showUpdate: true),
+          _buildSectionTitle("Thịnh hành", showUpdate: widget.isAdmin,),
           _buildTrending(),
           _buildSectionTitle("Tìm kiếm gần đây"),
           _buildRecentSearch(),
@@ -395,14 +619,9 @@ class _HomeScreenState extends State<HomeScreen> {
           itemBuilder: (context, index) {
             return RecipeCard(
               recipe: recipes[index],
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => RecipeDetailScreen(
-                      recipe: recipes[index],
-                    ),
-                  ),
+              onTap: () async {
+                await _openRecipeDetail(
+                  recipes[index],
                 );
               },
             );
@@ -411,4 +630,19 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
   }
+    Future<void> _showTrendingPicker() async {
+      await showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        backgroundColor: Colors.white,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(22),
+          ),
+        ),
+        builder: (_) {
+          return const TrendingRecipePickerSheet();
+        },
+      );
+    }
 }

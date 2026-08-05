@@ -42,9 +42,7 @@ class SupportScreen extends StatelessWidget {
 
               },
             ),
-
             const SizedBox(height: 22),
-
             _buildSupportItem(
               icon: Icons.help,
               iconColor: Colors.amber,
@@ -55,9 +53,7 @@ class SupportScreen extends StatelessWidget {
                 );
               },
             ),
-
             const SizedBox(height: 22),
-
             _buildSupportItem(
               icon: Icons.send,
               iconColor: Colors.black87,
@@ -93,7 +89,7 @@ class SupportScreen extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.15),
+              color: Colors.black.withValues(alpha: 0.15),
               blurRadius: 6,
               offset: const Offset(0, 4),
             ),
@@ -102,19 +98,16 @@ class SupportScreen extends StatelessWidget {
         child: Row(
           children: [
             const SizedBox(width: 18),
-
             CircleAvatar(
               radius: 18,
-              backgroundColor: iconColor.withOpacity(0.15),
+              backgroundColor: iconColor.withValues(alpha: 0.15),
               child: Icon(
                 icon,
                 color: iconColor,
                 size: 26,
               ),
             ),
-
             const SizedBox(width: 16),
-
             Expanded(
               child: Text(
                 title,

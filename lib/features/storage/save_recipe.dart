@@ -43,7 +43,6 @@ class SaveRecipeTab extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             final recipe = recipes[index];
-
             return GestureDetector(
               onTap: () {
                 Navigator.push(

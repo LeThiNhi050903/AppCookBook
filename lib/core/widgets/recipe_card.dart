@@ -42,12 +42,12 @@ class RecipeCard extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.55),
+                  color: Colors.black.withValues(alpha: 0.55),
                 ),
                 child: Text(
                   recipe.name,
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                  overflow: TextOverflow.ellipsis, 
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 13,

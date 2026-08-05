@@ -62,7 +62,7 @@ class _PlanMonthState extends State<PlanMonth> {
                     shape: BoxShape.circle,
                   ),
                   todayDecoration: BoxDecoration(
-                    color: Colors.orange.withOpacity(0.3),
+                    color: Colors.orange.withValues(alpha: 0.3),
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -90,7 +90,7 @@ class _PlanMonthState extends State<PlanMonth> {
                 ),
               ),
               StreamBuilder<List<Map<String, dynamic>>>(
-                stream: _firebase.streamUserPlans(_firebase.auth.currentUser?.uid ?? ''),
+                stream: _firebase.streamUserPlans(_firebase.currentUserId ?? ''),
                 builder: (context, snap) {
                   final plans = snap.data ?? [];
                   final dayPlans = plans.where((p) {

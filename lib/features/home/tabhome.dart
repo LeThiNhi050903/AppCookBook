@@ -11,6 +11,7 @@ import '../support/support.dart';
 import '../../features/profile/profile_screen.dart';
 import '../../features/profile/admin_profile_screen.dart';
 import '../../features/friends/friends_screen.dart';
+import '../create_recipe/review_requests_screen.dart';
 import 'admin_home_screen.dart';
 
 class TabHome extends StatefulWidget {
@@ -91,8 +92,11 @@ class _TabHomeState extends State<TabHome> {
             }),
             _drawerItem(context, Icons.fact_check, "Xét duyệt công thức", () {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Màn hình xét duyệt sẽ được tích hợp ở bước tiếp theo')),
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ReviewRequestsScreen(),
+                ),
               );
             }),
             _drawerItem(context, Icons.person_outline, "Hồ sơ", () {

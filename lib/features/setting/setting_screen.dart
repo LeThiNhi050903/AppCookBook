@@ -147,7 +147,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -287,7 +287,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     backgroundColor: Colors.orange,
                     elevation: 4,
                     shadowColor:
-                      Colors.black.withOpacity(0.2),
+                      Colors.black.withValues(alpha: 0.2),
                     shape: RoundedRectangleBorder(
                       borderRadius:
                           BorderRadius.circular(30),

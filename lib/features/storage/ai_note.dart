@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../core/services/local_service.dart';
 
 class AiNoteTab extends StatefulWidget {
@@ -51,11 +50,9 @@ class _AiNoteTabState extends State<AiNoteTab> {
     if (_isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
-
     if (_notes.isEmpty) {
       return const EmptyStateWidget();
     }
-
     return ListView.separated(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       itemCount: _notes.length,
@@ -93,7 +90,6 @@ class _AiNoteTabState extends State<AiNoteTab> {
 class AiNoteDetailPage extends StatelessWidget {
   final String title;
   final String content;
-
   const AiNoteDetailPage({
     super.key,
     required this.title,

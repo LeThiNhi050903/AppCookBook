@@ -198,6 +198,7 @@ class _CreatePlanScreenState extends State<CreatePlanScreen> {
       meal: meal,
       quantity: quantity,
     );
+    if (!mounted) return;
     if (id != null) {
       Navigator.pop(context, true);
     } else {

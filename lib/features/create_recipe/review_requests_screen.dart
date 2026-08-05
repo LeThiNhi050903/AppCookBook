@@ -1,43 +1,14 @@
-﻿import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../core/services/firebase_service.dart';
 import '../../data/models/recipe.dart';
 import 'review_request_detail_screen.dart';
 
-class StatusRecipeScreen extends StatelessWidget {
-  const StatusRecipeScreen({super.key});
+class ReviewRequestsScreen extends StatelessWidget {
+  const ReviewRequestsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final currentUser = FirebaseAuth.instance.currentUser;
-    if (currentUser == null) {
-      return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          centerTitle: true,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          title: const Text(
-            "Đơn đã tạo",
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        body: const Center(
-          child: Text('Vui lòng đăng nhập để xem trạng thái đơn.'),
-        ),
-      );
-    }
-
     final FirebaseService svc = FirebaseService();
     return Scaffold(
       backgroundColor: Colors.white,
@@ -47,20 +18,15 @@ class StatusRecipeScreen extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Đơn đã tạo",
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+          'Xét duyệt công thức',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: svc.getUserReviewStatus(currentUser.uid),
+        stream: svc.getReviewRequestsForAdmin(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -69,41 +35,23 @@ class StatusRecipeScreen extends StatelessWidget {
             return Center(child: Text(snapshot.error.toString()));
           }
           final docs = snapshot.data?.docs ?? [];
-          docs.sort((a, b) {
-            final aCreated = a.data()['createdAt'];
-            final bCreated = b.data()['createdAt'];
-            final aDate = aCreated is Timestamp ? aCreated.toDate() : DateTime.fromMillisecondsSinceEpoch(0);
-            final bDate = bCreated is Timestamp ? bCreated.toDate() : DateTime.fromMillisecondsSinceEpoch(0);
-            return bDate.compareTo(aDate);
-          });
-          if (docs.isEmpty) {
+          final pendingDocs = docs
+              .where((doc) => (doc.data()['status'] as String?) == 'pending')
+              .toList();
+          if (pendingDocs.isEmpty) {
             return const Center(
-              child: Text(
-                "Chưa có đơn nào",
-                style: TextStyle(fontSize: 16),
-              ),
+              child: Text('Không có đơn nào đang chờ xét duyệt'),
             );
           }
           return ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: docs.length,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8,
+              vertical: 16,
+            ),
+            itemCount: pendingDocs.length,
             itemBuilder: (context, index) {
-              final doc = docs[index];
+              final doc = pendingDocs[index];
               final recipe = Recipe.fromFirestore(doc);
-              final statusText = recipe.status == 'pending'
-                  ? 'Đang xét duyệt'
-                  : recipe.status == 'approved'
-                      ? 'Thông qua'
-                      : recipe.status == 'rejected'
-                          ? 'Từ chối'
-                          : recipe.status;
-              final statusColor = recipe.status == 'pending'
-                  ? Colors.orange
-                  : recipe.status == 'approved'
-                      ? Colors.green
-                      : recipe.status == 'rejected'
-                          ? Colors.red
-                          : Colors.grey;
               return Card(
                 margin: const EdgeInsets.only(bottom: 16),
                 elevation: 2,
@@ -119,7 +67,7 @@ class StatusRecipeScreen extends StatelessWidget {
                         builder: (_) => ReviewRequestDetailScreen(
                           requestId: doc.id,
                           recipe: recipe,
-                          isAdminReview: false,
+                          isAdminReview: true,
                         ),
                       ),
                     );
@@ -161,26 +109,30 @@ class StatusRecipeScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 8),
                               Text(
-                                statusText,
-                                style: TextStyle(
+                                recipe.authorName,
+                                style: const TextStyle(
                                   fontSize: 14,
-                                  color: statusColor,
-                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey,
                                 ),
                               ),
-                              if (recipe.status == 'rejected' && recipe.reviewReason.isNotEmpty)
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8),
-                                  child: Text(
-                                    'Lý do: ${recipe.reviewReason}',
-                                    style: const TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black54,
-                                    ),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
+                              const SizedBox(height: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  color: Colors.orange.shade100,
+                                ),
+                                child: const Text(
+                                  'Đang xét duyệt',
+                                  style: TextStyle(
+                                    color: Colors.orange,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                              ),
                             ],
                           ),
                         ),

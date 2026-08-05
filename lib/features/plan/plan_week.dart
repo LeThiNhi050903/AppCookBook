@@ -47,7 +47,7 @@ class PlanWeek extends StatelessWidget {
     final weekDays = _getCurrentWeekDays();
     final currentMonthYear =
         DateFormat('MM/yyyy').format(DateTime.now());
-    final currentUid = _firebase.auth.currentUser?.uid;
+    final currentUid = _firebase.currentUserId;
 
     return Column(
       children: [
@@ -128,11 +128,11 @@ class PlanWeek extends StatelessWidget {
                                 horizontal: 12,
                               ),
                               decoration: BoxDecoration(
-                                color: isToday ? Colors.orange.withOpacity(0.05) : Colors.grey[100],
+                                color: isToday ? Colors.orange.withValues(alpha: 0.05) : Colors.grey[100],
                                 borderRadius: BorderRadius.circular(12),
                                 border: isToday
                                     ? Border.all(
-                                        color: Colors.orange.withOpacity(0.3),
+                                        color: Colors.orange.withValues(alpha: 0.3),
                                       )
                                     : null,
                               ),

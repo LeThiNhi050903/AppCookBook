@@ -51,8 +51,9 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   ];
   final LayerLink _layerLink = LayerLink();
   OverlayEntry? _overlayEntry;
-  final List<TextEditingController> ingredientControllers = [TextEditingController(),];
-  final List<TextEditingController> stepControllers = [TextEditingController()];
+  final List<TextEditingController> ingredientControllers = [TextEditingController()];
+  final List<TextEditingController> stepTitleControllers = [TextEditingController()];
+  final List<TextEditingController> stepDescriptionControllers = [TextEditingController()];
   final List<List<_RecipeMedia>> stepMedia = [[]];
 
   Future<void> _pickMedia({
@@ -184,8 +185,9 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                   ingredientControllers.removeAt(index);
                 }
               } else {
-                if (stepControllers.length > 1) {
-                  stepControllers.removeAt(index);
+                if (stepTitleControllers.length > 1) {
+                  stepTitleControllers.removeAt(index);
+                  stepDescriptionControllers.removeAt(index);
                   stepMedia.removeAt(index);
                 }
               }
@@ -268,7 +270,10 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
     for (var c in ingredientControllers) {
       c.dispose();
     }
-    for (var c in stepControllers) {
+    for (var c in stepTitleControllers) {
+      c.dispose();
+    }
+    for (var c in stepDescriptionControllers) {
       c.dispose();
     }
     super.dispose();
@@ -277,7 +282,10 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   Future<void> _loadDraft() async {
     if (_draftId == null) return;
     final doc = await _svc.getDraft(_draftId!);
-    if (!doc.exists) return;
+    if (doc == null || !doc.exists) {
+      _draftId = null;
+      return;
+    }
     final data = doc.data()!;
     _nameController.text = data["title"] ?? "";
     _servingsController.text = data["servings"] ?? "";
@@ -308,25 +316,32 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         );
       }
     }
-    for (final c in stepControllers) {
+    for (final c in stepTitleControllers) {
       c.dispose();
     }
-    stepControllers.clear();
+    for (final c in stepDescriptionControllers) {
+      c.dispose();
+    }
+    stepTitleControllers.clear();
+    stepDescriptionControllers.clear();
     stepMedia.clear();
-    final steps = List<String>.from(
-      data["steps"] ?? [],
-    );
+    final rawSteps = data["steps"] ?? [];
     final medias = List<Map<String, dynamic>>.from(
       data["stepMedia"] ?? [],
     );
-    if (steps.isEmpty) {
-      stepControllers.add(TextEditingController());
-      stepMedia.add([]);
-    } else {
-      for (int i = 0; i < steps.length; i++) {
-        stepControllers.add(
-          TextEditingController(text: steps[i]),
-        );
+    if (rawSteps is List && rawSteps.isNotEmpty) {
+      for (int i = 0; i < rawSteps.length; i++) {
+        final stepData = rawSteps[i];
+        String title = '';
+        String description = '';
+        if (stepData is String) {
+          description = stepData;
+        } else if (stepData is Map<String, dynamic>) {
+          title = stepData["title"]?.toString() ?? '';
+          description = stepData["description"]?.toString() ?? '';
+        }
+        stepTitleControllers.add(TextEditingController(text: title));
+        stepDescriptionControllers.add(TextEditingController(text: description));
         final List<_RecipeMedia> mediaList = [];
         final mediaData = medias.where(
           (e) => e["stepIndex"] == i,
@@ -347,6 +362,11 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         stepMedia.add(mediaList);
       }
     }
+    if (stepTitleControllers.isEmpty) {
+      stepTitleControllers.add(TextEditingController());
+      stepDescriptionControllers.add(TextEditingController());
+      stepMedia.add([]);
+    }
     setState(() {});
   }
   Future<void> _saveDraft() async {
@@ -357,13 +377,14 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         .where((e) => e.isNotEmpty)
         .toList();
     final recipeSteps = <RecipeStep>[];
-      for (int i = 0; i < stepControllers.length; i++) {
-        final description = stepControllers[i].text.trim();
-        if (description.isEmpty) continue;
+      for (int i = 0; i < stepTitleControllers.length; i++) {
+        final title = stepTitleControllers[i].text.trim();
+        final description = stepDescriptionControllers[i].text.trim();
+        if (title.isEmpty && description.isEmpty) continue;
         recipeSteps.add(
           RecipeStep(
             stepNumber: recipeSteps.length + 1,
-            title: '',
+            title: title,
             description: description,
             images: const [],
           ),
@@ -432,51 +453,81 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         .where((t) => t.isNotEmpty)
         .toList();
     final recipeSteps = <RecipeStep>[];
-      for (int i = 0; i < stepControllers.length; i++) {
-        final description = stepControllers[i].text.trim();
-        if (description.isEmpty) continue;
+      for (int i = 0; i < stepTitleControllers.length; i++) {
+        final title = stepTitleControllers[i].text.trim();
+        final description = stepDescriptionControllers[i].text.trim();
+        if (title.isEmpty && description.isEmpty) continue;
         recipeSteps.add(
           RecipeStep(
             stepNumber: recipeSteps.length + 1,
-            title: '',
+            title: title,
             description: description,
             images: const [],
           ),
         );
       }
-    final recipeId = await _svc.createRecipe(
-      title: title,
-      category: selectedCategory!,
-      servings: servings.isEmpty ? '1 phần' : servings,
-      ingredients: ingredientTexts,
-      steps: recipeSteps,
-      mainMediaFiles: _mainMedia
-          .where((m) => m.file != null)
-          .map((m) => m.file!)
-          .toList(),
-      mainMediaTypes: _mainMedia.map((m) => m.type).toList(),
-      stepMediaFiles: stepMedia
-          .map(
-            (list) => list
+    final isAdminFlow = _svc.isAdminUser;
+    final recipeId = isAdminFlow
+        ? await _svc.createRecipe(
+            title: title,
+            category: selectedCategory!,
+            servings: servings.isEmpty ? '1 phần' : servings,
+            ingredients: ingredientTexts,
+            steps: recipeSteps,
+            isAdmin: true,
+            mainMediaFiles: _mainMedia
                 .where((m) => m.file != null)
                 .map((m) => m.file!)
                 .toList(),
+            mainMediaTypes: _mainMedia.map((m) => m.type).toList(),
+            stepMediaFiles: stepMedia
+                .map(
+                  (list) => list
+                      .where((m) => m.file != null)
+                      .map((m) => m.file!)
+                      .toList(),
+                )
+                .toList(),
+            stepMediaTypes: stepMedia
+                .map((list) => list.map((m) => m.type).toList())
+                .toList(),
           )
-          .toList(),
-      stepMediaTypes: stepMedia
-          .map((list) => list.map((m) => m.type).toList())
-          .toList(),
-    );
+        : await _svc.createReviewRequest(
+            title: title,
+            category: selectedCategory!,
+            servings: servings.isEmpty ? '1 phần' : servings,
+            ingredients: ingredientTexts,
+            steps: recipeSteps,
+            mainMediaFiles: _mainMedia
+                .where((m) => m.file != null)
+                .map((m) => m.file!)
+                .toList(),
+            mainMediaTypes: _mainMedia.map((m) => m.type).toList(),
+            stepMediaFiles: stepMedia
+                .map(
+                  (list) => list
+                      .where((m) => m.file != null)
+                      .map((m) => m.file!)
+                      .toList(),
+                )
+                .toList(),
+            stepMediaTypes: stepMedia
+                .map((list) => list.map((m) => m.type).toList())
+                .toList(),
+          );
     if (!mounted) return;
     if (recipeId != null) {
       if (_draftId != null) {
         await _svc.deleteDraft(_draftId!);
+        if (!mounted) return;
       }
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Đã đăng món thành công')),
       );
       Navigator.pop(context);
     } else {
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(_svc.lastError ?? 'Đăng món thất bại')),
       );
@@ -556,7 +607,7 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                 ),
               );
             }
-            if (value == 'status') {
+            if (value == 'status' && !_svc.isAdminUser) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -565,15 +616,16 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
               );
             }
           },
-          itemBuilder: (context) => const [
-            PopupMenuItem(
+          itemBuilder: (context) => [
+            const PopupMenuItem(
               value: 'draft',
               child: Text("Bản nháp"),
             ),
-            PopupMenuItem(
-              value: 'status',
-              child: Text("Đơn đã tạo"),
-            ),
+            if (!_svc.isAdminUser)
+              const PopupMenuItem(
+                value: 'status',
+                child: Text("Đơn đã tạo"),
+              ),
           ],
         ),
         const SizedBox(width: 8),
@@ -593,7 +645,10 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        child: const Text("Tạo", style: TextStyle(color: Colors.white)),
+        child: Text(
+          _svc.isAdminUser ? 'Đăng' : 'Tạo',
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
     );
   }
@@ -683,10 +738,11 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         ReorderableListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: stepControllers.length,
+          itemCount: stepTitleControllers.length,
           onReorder: (old, n) => setState(() {
             var newIdx = n > old ? n - 1 : n;
-            stepControllers.insert(newIdx, stepControllers.removeAt(old));
+            stepTitleControllers.insert(newIdx, stepTitleControllers.removeAt(old));
+            stepDescriptionControllers.insert(newIdx, stepDescriptionControllers.removeAt(old));
             stepMedia.insert(newIdx, stepMedia.removeAt(old));
           }),
           itemBuilder: (context, index) =>
@@ -695,7 +751,8 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
         Center(
           child: GestureDetector(
             onTap: () => setState(() {
-              stepControllers.add(TextEditingController());
+              stepTitleControllers.add(TextEditingController());
+              stepDescriptionControllers.add(TextEditingController());
               stepMedia.add([]);
             }),
             child: const Padding(
@@ -749,10 +806,10 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                 TextField(
                   controller: isIngredient
                       ? ingredientControllers[index]
-                      : stepControllers[index],
-                  maxLines: isIngredient ? 1 : null,
+                      : stepTitleControllers[index],
+                  maxLines: 1,
                   decoration: InputDecoration(
-                    hintText: isIngredient ? "200 gr bột" : "Mô tả bước...",
+                    hintText: isIngredient ? "200 gr bột" : "Tiêu đề bước...",
                     filled: true,
                     fillColor: Colors.grey[100],
                     border: OutlineInputBorder(
@@ -770,6 +827,22 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                     ),
                   ),
                 ),
+                if (!isIngredient) ...[
+                  const SizedBox(height: 8),
+                  TextField(
+                    controller: stepDescriptionControllers[index],
+                    maxLines: null,
+                    decoration: InputDecoration(
+                      hintText: "Mô tả bước...",
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ],
                 if (!isIngredient) _buildStepImageGrid(index, imgSize),
               ],
             ),

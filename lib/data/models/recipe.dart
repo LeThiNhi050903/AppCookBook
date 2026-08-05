@@ -12,6 +12,11 @@ class Recipe {
   final String authorName;
   final String authorLocation;
   final String authorAvatar;
+  final String userId;
+  final String status;
+  final String reviewReason;
+  final String createdByRole;
+  final String? draftId;
   final bool isAdmin;
   final DateTime createdAt;
 
@@ -27,6 +32,11 @@ class Recipe {
     this.authorName = "Admin",
     this.authorLocation = "Hà Nội - Việt Nam",
     this.authorAvatar = "",
+    this.userId = "",
+    this.status = "published",
+    this.reviewReason = "",
+    this.createdByRole = "admin",
+    this.draftId,
     this.isAdmin = true,
     DateTime? createdAt,
   }) : createdAt = createdAt ?? DateTime.now();
@@ -36,7 +46,7 @@ class Recipe {
       id: json['id'] ?? '',
       name: json['name'] ?? '',
       category: json['category'] ?? '',
-      thumbnail: json['thumbnail'] ?? '',
+      thumbnail: json['thumbnail'] ?? json['image'] ?? json['imageUrl'] ?? '',
       ingredientTitle: json['ingredientTitle'] ?? '',
       ingredients: List<String>.from(json['ingredients'] ?? []),
       steps: (json['steps'] as List<dynamic>?)
@@ -61,7 +71,7 @@ class Recipe {
       id: data['id'] ?? doc.id,
       name: data['name'] ?? '',
       category: data['category'] ?? '',
-      thumbnail: data['thumbnail'] ?? data['image'] ?? '',
+      thumbnail: data['thumbnail'] ?? data['image'] ?? data['imageUrl'] ?? '',
       ingredientTitle: data['ingredientTitle'] ?? 'Nguyên liệu',
       ingredients: List<String>.from(data['ingredients'] ?? []),
       steps: (data['steps'] as List<dynamic>?)
@@ -72,6 +82,11 @@ class Recipe {
       authorName: data['authorName'] ?? data['userName'] ?? 'Admin',
       authorLocation: data['authorLocation'] ?? 'Việt Nam',
       authorAvatar: data['authorAvatar'] ?? data['userAvatar'] ?? "",
+      userId: data['userId'] ?? data['authorId'] ?? '',
+      status: data['status'] ?? 'published',
+      reviewReason: data['reviewReason'] ?? '',
+      createdByRole: data['createdByRole'] ?? (data['isAdmin'] == true ? 'admin' : 'user'),
+      draftId: data['draftId'],
       isAdmin: data['isAdmin'] ?? false,
       createdAt: data['createdAt'] is Timestamp
           ? (data['createdAt'] as Timestamp).toDate()
@@ -113,9 +128,13 @@ class Recipe {
       "authorName": authorName,
       "authorLocation": authorLocation,
       "authorAvatar": authorAvatar,
-      "userId": authorId,
+      "userId": userId,
       "userName": authorName,
       "userAvatar": authorAvatar,
+      "status": status,
+      "reviewReason": reviewReason,
+      "createdByRole": createdByRole,
+      if (draftId != null) "draftId": draftId,
       "isAdmin": isAdmin,
       "createdAt": Timestamp.fromDate(createdAt),
     };

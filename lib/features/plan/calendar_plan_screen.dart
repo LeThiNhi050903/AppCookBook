@@ -90,7 +90,7 @@ class _CalendarPlanScreenState extends State<CalendarPlanScreen> {
             shape: BoxShape.circle,
           ),
           todayDecoration: BoxDecoration(
-            color: Colors.orange.withOpacity(.3),
+            color: Colors.orange.withValues(alpha: 0.3),
             shape: BoxShape.circle,
           ),
         ),

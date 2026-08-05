@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import '../../data/models/recipe.dart';
 
 class LocalService {
@@ -22,7 +23,7 @@ class LocalService {
       final List<dynamic> data = jsonDecode(response);
       return data.map((json) => Recipe.fromJson(json)).toList();
     } catch (e) {
-      print('Lỗi đọc file recipe.json: $e');
+      debugPrint('Lỗi đọc file recipe.json: $e');
       return [];
     }
   }
@@ -130,7 +131,6 @@ class LocalService {
           }).toList();
         }
       } catch (_) {
-        // ignore invalid stored entry
       }
       return <Map<String, String>>[];
     }).where((chat) => chat.isNotEmpty).toList();

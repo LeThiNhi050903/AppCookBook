@@ -60,6 +60,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       final svc = FirebaseService();
       // ensure we load persisted admin mode if present
       await svc.loadAdminMode();
+      if (!mounted) return;
       if (svc.isAdminUser) {
         Navigator.pushReplacement(
           context,
@@ -76,6 +77,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         );
       }
     } else {
+      if (!mounted) return;
       showMessage("Google login failed");
     }
   }
@@ -183,7 +185,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           if (_isLoading)
             Container(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.black.withValues(alpha: 0.2),
               child: const Center(
                 child: CircularProgressIndicator(),
               ),
